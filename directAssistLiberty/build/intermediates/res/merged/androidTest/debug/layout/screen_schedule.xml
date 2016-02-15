@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/application_background"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/screenSchedule_Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/ctrl_include_header" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <!--
+                     <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="5dp"     
+	                android:textColor="#000000"
+	                android:textStyle="bold"
+	                android:text="@string/ScheduleHelper" />
+                -->
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/schedule_from_toproundrect" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:text="From"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnTimeBegin"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/location_button"
+                        android:text="16:00"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnDateBegin"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:layout_toLeftOf="@+id/btnTimeBegin"
+                        android:background="@drawable/location_button"
+                        android:text="27/12/2011"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/bottom_round_rect" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:text="@string/ScheduleTo"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnTimeEnd"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/location_button"
+                        android:text="18:00"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--
+                 <Button
+			    android:id="@+id/btnConfirm"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="10dp"
+			    android:text="@string/Confirm" />
+            -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--
+         <include 
+        layout="@layout/ctrl_include_footer" 
+        android:layout_width="fill_parent"/>
+    -->
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssistLiberty/src/main/res/layout/screen_schedule.xml --><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssistLiberty/build/intermediates/bundles/debug/res/layout/screen_schedule.xml -->

@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"    
+    style="@style/layout_style_activity"
+    tools:context=".LoginRecuperacaoActivity" >
+
+	<include
+        layout="@layout/navigation_bar" />
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:padding="0sp"
+        android:background="@drawable/home_area_login">
+
+        <TextView
+            android:id="@+id/textTituloLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+	        android:layout_marginBottom="5sp"
+            android:layout_marginLeft="8sp"
+            android:layout_marginRight="8sp"
+            android:padding="5sp"
+            android:text="@string/text_recuperacao_senha"
+            android:background="@color/blue_title"
+			android:textColor="@color/white"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" 
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp">
+
+	        <EditText
+	            android:id="@+id/editUsuarioLogin"
+	            style="@style/edit_text"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="10sp"
+	            android:padding="10sp"
+	            android:hint="@string/text_cpf" >
+	
+	            <requestFocus />
+	        </EditText>
+	
+	        <EditText
+	            android:id="@+id/editSenhaLogin"
+	            style="@style/edit_text"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		        android:layout_marginBottom="10sp"
+		        android:padding="10sp"
+	            android:hint="@string/text_email" 
+	            android:inputType="text|textEmailAddress"
+	            />
+
+			<Button
+		        android:id="@+id/btnLogin"
+		        style="@style/orange_button_wide"
+		        android:layout_marginBottom="20sp"
+		        android:text="@string/text_enviar" />
+    		
+		</LinearLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/layout/activity_login_recuperacao.xml -->

@@ -1,0 +1,17 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:shape="rectangle"> 
+ <stroke android:width="3dp"
+         android:color="#FFFFFF"
+         />
+
+ <padding android:left="1dp"
+          android:top="1dp"
+          android:right="1dp"
+          /> 
+<gradient 
+	    android:startColor="#FFFFFF" 
+	    android:endColor="#FFFFFF" /> 
+ <corners android:radius="0dp"
+  android:bottomRightRadius="0dp" android:bottomLeftRadius="0dp" 
+  android:topLeftRadius="8dp" android:topRightRadius="8dp"/> 
+  </shape><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssistLiberty/src/main/res/drawable/top_round_rect.xml --><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssistLiberty/unspecified/res/drawable/top_round_rect.xml -->

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/application_background"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/newAssistance_Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/ctrl_include_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/apolice_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/escolher_apolice_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"                       
+                        android:text="Escolher uma apolice"
+                         android:textColor="@color/ColorMenu"
+                        android:textStyle="bold"
+                        android:scaleX="1"
+                        android:textSize="13sp"
+                         />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/ColorMenu"
+                        android:textStyle="bold"
+                        android:scaleX="1"
+                        android:textSize="14sp"
+                        android:singleLine="false"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Clique aqui para escolher uma apolice"
+                        android:id="@+id/selectApoliceButton"
+                        android:background="@drawable/grey_line"/>
+                    <!-- Selecionar apolice -->
+                    <!--   <Spinner
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:paddingLeft="25dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/white_line"
+                        android:entries="@array/Service" /> -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/causa_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/causa_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#0D3F7A"
+                        android:padding="10dp"
+                        android:text="Causa"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/causa_listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical" />
+                </LinearLayout>
+
+                
+                  <LinearLayout
+                    android:id="@+id/problem_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/problem_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#0D3F7A"
+                        android:padding="10dp"
+                        android:text="Problema"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/problem_listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical" />
+                </LinearLayout>
+                
+                
+                <LinearLayout
+                    android:id="@+id/servico_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/servico_textview_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#0D3F7A"
+                        android:padding="10dp"
+                        android:text="Serviço"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/service_listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical" />
+
+                    <TextView
+                        android:id="@+id/servico_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:padding="10dp"
+                        android:singleLine="false"
+                        android:text="Para outro Serviço ligue para Assistência 24h" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/callforAssistance_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/yellow_background"
+                    android:text="@string/CallForAssistance24h"
+                    android:textColor="#9B592F"
+                    android:textScaleX="1"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/causa_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@android:color/white"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/localizacao_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        
+                        android:background="#0D3F7A"
+                        android:padding="10dp"
+                        android:text="Localização"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginRight="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@android:color/white" >
+
+                        <TextView
+                            android:id="@+id/endereco_textview"
+                            android:layout_width="140dp"
+                            android:paddingBottom="3dp"
+                            android:layout_height="wrap_content"
+                            android:text="Endereço"
+                            android:background="@drawable/line_separater"
+                            android:paddingRight="50dp"
+                            android:paddingLeft="15dp"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/ColorMenu" />
+
+                        <Button
+                            android:id="@+id/vermapa_button"
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:textColor="#ffffff"
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/actionbar_bg"
+                            android:text="Ver mapa" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/referencias_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" 
+                         android:paddingBottom="3dp"
+                         android:background="@drawable/line_separater"
+                        android:layout_marginBottom="10dp"                     
+                        android:hint="Referências do local" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/agendar_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/agendar_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#0D3F7A"
+                        android:padding="10dp"
+                        android:text="Agendar"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/white" >
+                        <Button
+                            android:id="@+id/agenda_date__Button"
+                            android:layout_width="fill_parent"
+                            android:layout_margin="10dp"
+                            android:layout_height="40dp"  
+                            android:textStyle="bold"                        
+                            android:layout_centerVertical="true"
+                            android:text="04 de janeiro, 2013"
+                            android:background="@drawable/grey_line"
+                            android:textColor="@color/ColorMenu" />
+                        </RelativeLayout>
+                   <!--  <TextView
+                        android:id="@+id/agenda_date_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/white"
+                        android:padding="15dp"
+                        android:text="04 de janeiro, 2013"
+                        android:textColor="@android:color/darker_gray" /> -->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/white" >
+
+                        <TextView
+                            android:id="@+id/agenda_de_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:padding="15dp"
+                            android:text="De"
+                            android:textColor="@color/ColorMenu" />
+
+                        <Button
+                            android:id="@+id/agenda_startime_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_toRightOf="@id/agenda_de_textview"                           
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/ColorMenu"
+                            android:textStyle="bold"
+                            android:background="@drawable/grey_line"
+                            android:text="08:00"
+                            
+                            />
+
+                        <TextView
+                            android:id="@+id/agenda_ate_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="50dp"
+                            android:layout_toRightOf="@id/agenda_startime_button"
+                            android:background="@android:color/white"
+                            android:padding="15dp"
+                            android:text="Até"
+                            android:textColor="@color/ColorMenu" />
+                         <Button
+                            android:id="@+id/agenda_endtime_Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_toRightOf="@id/agenda_ate_textview"                          
+                            android:layout_centerVertical="true"
+                            android:text="08:00"
+                            android:textColor="@color/ColorMenu"
+                            android:textStyle="bold"
+                            android:background="@drawable/grey_line" />
+
+                        <!-- <TextView
+                            android:id="@+id/agenda_endtime_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/agenda_ate_textview"
+                            android:background="@android:color/white"
+                            android:padding="15dp"
+                            android:text="09:00"
+                            android:textColor="@android:color/darker_gray" /> -->
+                    </RelativeLayout>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/btnCreateFile"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textStyle="bold"
+                    android:textScaleX="1"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#9B592F"
+                    android:text="@string/send_solicitation"
+                    android:background="@drawable/yellow_background" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssistLiberty/src/main/res/layout/screen_newassistance.xml --><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssistLiberty/build/intermediates/bundles/debug/res/layout/screen_newassistance.xml -->

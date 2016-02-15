@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="63dp"
+    android:weightSum="1" >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txt_cadastro"
+            style="@style/txt_cadastro"
+            android:inputType="none"
+            android:text="input do texto"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ToggleButton
+                android:id="@+id/btn_olho"
+                style="@style/btn_olho"
+                android:textOff=" "
+                android:textOn=" " />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btn_apagar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageButton
+                style="@style/btn_apagar"
+                android:src="@drawable/btn_apagar" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/linha" style="@style/line_cadastro" />
+
+    <TextView
+        android:id="@+id/tvw_cadastro"
+        style="@style/tvw_cadastro"
+        android:text="Mensagem de Erro"
+        android:enabled="false"
+        android:focusable="false" />
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/layout/ls_textfield.xml -->

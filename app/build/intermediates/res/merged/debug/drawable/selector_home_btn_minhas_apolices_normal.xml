@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bitmap 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/home_btn_minhas_apolices" />
+<!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/drawable/selector_home_btn_minhas_apolices_normal.xml -->

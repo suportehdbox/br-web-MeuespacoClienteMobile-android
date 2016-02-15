@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid
+        android:color="#FFFFFF" />
+    <corners
+        android:radius="1px"
+        android:topLeftRadius="0px"
+        android:topRightRadius="0px"
+        android:bottomLeftRadius="12px"
+        android:bottomRightRadius="12px" />
+</shape><!-- From: file:/TFS/LS-MobileApps/Main/LibertySegurosBrasil-Android/app/src/main/res/drawable/selectable_list_last_item_off.xml -->

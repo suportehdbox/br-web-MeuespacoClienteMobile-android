@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/splash"
+        android:drawingCacheQuality="high"
+        android:scaleType="centerCrop"
+         />     
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssistLiberty/src/main/res/layout/screen_splash.xml --><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssistLiberty/unspecified/res/layout/screen_splash.xml -->

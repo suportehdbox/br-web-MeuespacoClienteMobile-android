@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/table_layout"
+    android:orientation="vertical" >
+
+    <TableLayout
+        style="@style/wrap_height_fill_width" >
+        
+            <EditText
+                android:id="@+id/notes"
+                style="@style/edit_text_note"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:maxLength="1000" 
+                android:hint="@string/notes_heading"/>
+    </TableLayout>
+
+</LinearLayout><!-- From: file:/TFS/LS-MobileApps/Main/LibertySegurosBrasil-Android/app/src/main/res/layout/note.xml -->

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layout_style_activity"
+    tools:context=".CompartilharDadosActivity" >
+
+    <include layout="@layout/navigation_bar" />
+
+    <ScrollView
+        android:id="@+id/contact_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="0sp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/linear_layout"
+                android:background="@color/gray_title" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10sp"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="10sp"
+                    android:text="@string/text_meus_dados"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TableLayout style="@style/table_layout" >
+
+                <TableRow style="@style/input_field_row" >
+
+                    <EditText
+                        android:id="@+id/edit_first_name"
+                        style="@style/edit_text"
+                        android:hint="@string/first_name_label"
+                        android:singleLine="true" />
+                </TableRow>
+
+                <TableRow style="@style/input_field_row" >
+
+                    <EditText
+                        android:id="@+id/edit_last_name"
+                        style="@style/edit_text"
+                        android:hint="@string/last_name_label"
+                        android:singleLine="true" />
+                </TableRow>
+
+                <TableRow style="@style/input_field_row" >
+
+                    <EditText
+                        android:id="@+id/edit_policy_number"
+                        style="@style/edit_text"
+                        android:hint="@string/auto_policy_number_label"
+                        android:inputType="number"
+                        android:maxLength="20"
+                        android:singleLine="true" />
+                </TableRow>
+
+                <TableRow style="@style/input_field_row" >
+
+                    <EditText
+                        android:id="@+id/edit_phone"
+                        style="@style/edit_text"
+                        android:hint="@string/phone_label"
+                        android:inputType="phone"
+                        android:maxLength="17"
+                        android:singleLine="true" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+            <Button
+                android:id="@+id/send_info_button"
+                style="@style/orange_button_wide"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp"
+                android:layout_marginTop="5sp"
+                android:text="@string/btn_enviar" />
+
+</LinearLayout>

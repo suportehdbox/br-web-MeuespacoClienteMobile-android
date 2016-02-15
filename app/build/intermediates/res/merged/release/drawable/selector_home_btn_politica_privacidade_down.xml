@@ -1,0 +1,11 @@
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <gradient
+        android:startColor="#fb9d23"
+        android:endColor="#ffc579"
+        android:angle="90" />
+
+</shape>
+<!-- From: file:/TFS/LS-MobileApps/Main/LibertySegurosBrasil-Android/app/src/main/res/drawable/selector_home_btn_politica_privacidade_down.xml -->

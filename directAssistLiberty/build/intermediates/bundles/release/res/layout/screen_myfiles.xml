@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/mycases_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/ctrl_include_header" />
+
+    <ListView
+        android:id="@+id/listFiles"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:dividerHeight="0px"
+        android:drawSelectorOnTop="true"
+        android:focusableInTouchMode="true"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
+        android:scrollbars="horizontal" >
+    </ListView>
+<!-- <include 
+        layout="@layout/ctrl_include_footer" 
+        android:layout_width="fill_parent"/> -->
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssistLiberty/src/main/res/layout/screen_myfiles.xml -->

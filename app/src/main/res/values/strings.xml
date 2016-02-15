@@ -1,0 +1,266 @@
+<resources>
+    <string name="app_name">Liberty Seguros Brasil</string>
+
+    <!-- ACTIVITYS -->
+    <string name="title_activity_oficinas_referenciadas">Oficinas Referenciadas</string>
+    <string name="title_activity_oficinas_referenciadas_busca">Digitar CEP</string>
+    <string name="title_activity_comunicacao_acidente">Comunicação de Acidente</string>
+    <string name="title_activity_location">Local do Sinistro</string>
+    <string name="title_activity_minhas_apolices">Minhas Apólices</string>
+    <string name="title_activity_minhas_apolices_anteriores">Minhas Apólices Anteriores</string>
+    <string name="title_activity_minhas_apolices_detalhe">Minha Apólice</string>
+    <string name="title_activity_minhas_apolices_parcelas">Parcelas</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_login_recuperacao">Recuperacao de Login</string>
+    <string name="title_activity_clube_liberty">Clube Liberty de Vantagens</string>
+    <string name="title_activity_clube_liberty_locais">Locais Clube Liberty</string>
+    <string name="title_activity_clube_liberty_locais_detalhe">Detalhe Local Clube Liberty</string>
+    <string name="title_activity_clube_liberty_locais_mapa">Mapa Local Clube Liberty</string>
+    <string name="title_activity_atendimento">Atendimento</string>
+    <string name="title_activity_politica_privacidade">Política de Privacidade</string>
+    <string name="title_activity_notificacao_consulta">Notificações</string>
+    <string name="title_activity_cadastro_segurado">Cadastro Segurado</string>
+
+    <!-- BOTÕES -->
+    <string name="btn_enviar_sinistro">Enviar Sinistro</string>
+    <string name="btn_adicionar">  Adicionar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_remover">Remover</string>
+    <string name="btn_minha_localizacao">Minha localização</string>
+    <string name="btn_consultar">Consultar</string>
+    <string name="btn_apolices_anteriores">Apólices Anteriores</string>
+    <string name="btn_comunicacao_acidente">Comunicação de Acidente</string>
+    <string name="btn_assistencia">Assistência 24h</string>
+    <string name="btn_minha_apolice">Minha Apólice</string>
+    <string name="btn_oficinas">Oficinas Referenciadas</string>
+    <string name="btn_clube_liberty">Clube Liberty de Vantagens</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="btn_cadastre_se">Cadastre-se</string>
+    <string name="btn_politica_privacidade">Política de Privacidade</string>
+    <string name="btn_enviar">Enviar</string>
+    <string name="box_atendimento_capitais">CAPITAIS E REGIÕES METROPOLITANAS</string>
+    <string name="btn_atendimento_capitais">4004 5423</string>
+    <string name="box_atendimento_demais_localidades">ATENDIMENTO DEMAIS LOCALIDADES</string>
+    <string name="btn_atendimento_demais_localidades">0800 709 5423</string>
+    <string name="box_atendimento_assistencia_24h_auto_vida">ASSISTÊNCIA 24H AUTO E VIDA</string>
+    <string name="btn_atendimento_assistencia_24h_auto_vida">0800 701 4120</string>
+    <string name="box_atendimento_assistencia_24h_empresas_residencias">ASSISTÊNCIA 24H EMPRESAS E RESIDÊNCIAS</string>
+    <string name="btn_atendimento_assistencia_24h_empresas_residencias">0800 702 5100</string>
+    <string name="confirm_call_generic_dialog_body">Ligação para %1$s, você gostaria de continuar?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="btn_mapa">MAPA</string>
+    <string name="btn_ligar">LIGAR</string>
+    <string name="btn_lista">LISTA</string>
+    <string name="btn_endereco">ENDEREÇO</string>
+    <string name="btn_parcelas">Parcelas</string>
+    <string name="btn_config">Config.</string>
+
+    <!-- Shared -->
+    <string name="aviso">Aviso</string>
+    <string name="aguarde">Aguarde...</string>
+    <string name="delete">Excluir</string>
+    <string name="first_name_label">Nome</string>
+    <string name="last_name_label">Sobrenome</string>
+    <string name="home_phone_label">Telefone fixo</string>
+    <string name="mobile_phone_label">Celular</string>
+    <string name="phone_label">Telefone</string>
+    <string name="email_address_label">E-mail</string>
+    <string name="address_label">Endereço</string>
+    <string name="city_label">Cidade</string>
+    <string name="zip_code_label">CEP</string>
+    <string name="auto_policy_number_label">Número da Apólice</string>
+    <string name="build_number">(2015.09)</string>
+    <string name="share_info_email_subject">Informação de seguro Automóvel</string>
+    <string name="enviando_email">Enviando email...</string>
+    <string name="por_favor_insira">Por favor insira</string>
+    <string name="deseja_salvar_alteracoes">Deseja salvar as alterações?</string>
+    <string name="excluir_contato">Deseja excluir este contato?</string>
+
+    <!-- Oficinas referenciadas -->
+    <string name="configuracao_de_gps">Configuração de GPS</string>
+    <string name="o_gps_nao_esta_ligado">O GPS não está ligado. Gostaria de ir ao menu de configurações para ligá-lo?</string>
+    <string name="nao_encontrado_informar_cep">Não obteve CEP. Deseja informar endereço?</string>
+    <string name="text_cep">CEP</string>
+    <string name="text_buscar">Buscar</string>
+
+    <!-- Comunicação de Acidente -->
+    <string name="abrir_novo_sinistro">Abrir novo Sinistro</string>
+    <string name="claims_title">Meus Sinistros</string>
+    <string name="automovel">Automóvel</string>
+    <string name="email_sinistro">celulasinistro@libertyseguros.com.br</string>
+    <string name="add_claim_title">Novo Sinistro</string>
+    <string name="delete_submitted_claim_confirmation">Nota: A sua solicitação já foi enviada para a liberty Seguros.
+        Se você apagar, ela apenas será removida de seu aparelho.</string>
+    <string name="delete_claim_confirmation">A solicitação ainda não foi enviada, deseja apagar?</string>
+    <string name="auto_claim_title">Sinistro Automóvel</string>
+    <string name="claim_type_label">Tipo:</string>
+    <string name="incident_date_time_label">Data do Sinistro:</string>
+    <string name="incident_location_label">Local do Sinistro:</string>
+
+    <string name="my_info_title">Dados de contato</string>
+    <string name="choose_claim_type">Tipo de Sinistro</string>
+    <string name="add_time">Data e hora</string>
+    <string name="simpledateformat">dd/MM/yyyy    hh:mm</string>
+    <string name="add_location">Local</string>
+    <string name="collect_contact_info">Contato dos envolvidos</string>
+    <string name="take_pictures">Tirar fotos</string>
+    <string name="add_your_notes">Observações</string>
+    <string name="compartilhar_dados">Compartilhar dados</string>
+    <string name="text_note">Texto</string>
+    <string name="voice_note">Audio</string>
+    <string name="voice_text_notes">Audio + Texto</string>
+    <string name="selecao_da_apolice">Seleção da Apólice</string>
+    <string name="informe_o_numero_da_apolice_doispontos">Informe o número da apólice:</string>
+    <string name="auto_policy_number_hint">XXXXXXXXXX</string>
+
+    <!-- CheckBox -->
+    <string name="cbx_acidente_outro_veiculo">Acidente com outro veículo</string>
+    <string name="cbx_acidente_terceiro">Acidente sem terceiro envolvido</string>
+    <string name="cbx_acidente_capotamento">Capotamento</string>
+    <string name="cbx_acidente_alagamento">Alagamento</string>
+    <string name="cbx_acidente_furto_roubo">Furto/Roubo</string>
+    <string name="cbx_acidente_outros">Outros</string>
+
+    <!-- Collect Contacts Page -->
+    <string name="contact_info_title">Contato dos envolvidos</string>
+    <string name="other_drivers_heading">Outros condutores</string>
+    <string name="witnesses_heading">Testemunhas</string>
+    <string name="police_info_heading">Policial</string>
+
+    <!-- Other Driver Page -->
+    <string name="other_driver_title">Outro Condutor</string>
+    <string name="seguradora">Seguradora</string>
+    <string name="apolice">Apólice</string>
+
+    <!-- Note Shared -->
+    <string name="notes_heading">Notas</string>
+
+    <!-- Witness Page -->
+    <string name="witness_title">Testemunha</string>
+
+    <!-- Vehicle Shared -->
+    <string name="year_label">Ano</string>
+    <string name="make_label">Marca</string>
+    <string name="model_label">Modelo</string>
+    <string name="color_label">Cor</string>
+    <string name="license_plate_number_label">Placa do veículo</string>
+    <string name="vehicle_information_heading">Dados do veículo</string>
+
+    <!-- Police Info Page -->
+    <string name="entidade">Entidade</string>
+    <string name="localidade">Localidade</string>
+
+    <!-- Pictures  -->
+    <string name="choose_from_library">Escolher da Biblioteca</string>
+    <string name="de">de</string>
+    <string name="erro_ao_ler_imagem">Erro ao ler imagem, por favor, tente novamente mais tarde.</string>
+    <string name="confirm_photo_delete">Deseja remover esta imagem?</string>
+    <string name="camera_error">Houve um erro ao obter os dados da Câmara. Por favor, tente novamente.</string>
+    <string name="camera_no_external_media">Não é possível tirar a foto: memória externa não disponível.</string>
+    <string name="no_camera_text">Câmera não disponível</string>
+    <string name="take_pictures_title">Fotos do acidente</string>
+    <string name="title_acidente_fotos_text">Fotos do incidente irão manter um registro e tornar mais ágil o nosso processamento de sinistro.</string>
+    <string name="title_acidente_fotos_dica">Dica: peça autorização ao outro condutor para fotografar a apólice do seguro. A informação poderá ser útil mais tarde.</string>
+    <string name="title_meu_carro">Meu veículo</string>
+    <string name="title_outro_carro">Outros veículos</string>
+    <string name="title_local_acidente">Local do acidente</string>
+    <string name="title_documentos">Documentos</string>
+
+    <!-- Notes Page -->
+    <string name="voice_note_title">Gravação de voz</string>
+
+    <!-- Voicenote Page -->
+    <string name="error_unable_to_play">Não pode reproduzir.</string>
+    <string name="error_unable_to_record">Não pode gravar.</string>
+    <string name="voice_note_record">Gravar</string>
+    <string name="voice_note_delete_recording">Apagar\nGravação</string>
+    <string name="voice_note_max_time">1:30</string>
+    <string name="voice_note_min_time">0:00</string>
+    <string name="voice_note_pause">Pausa</string>
+    <string name="voice_note_play">Reproduzir</string>
+    <string name="voice_note_resume_playing">Continuar\nGravação</string>
+    <string name="voice_note_stop">Parar</string>
+
+    <string name="text_meus_dados">Meus Dados</string>
+
+    <!-- MINHAS APOLICES -->
+    <string name="quitada">Quitada</string>
+    <string name="aberta">Aberta</string>
+    <string name="pendente">Pendente</string>
+    <string name="text_apolice_field">Apólice:</string>
+    <string name="text_status_pagamento_field">Status do pagamento:</string>
+    <string name="text_status_parcela_field">Status das parcelas:</string>
+    <string name="text_informacoes_pagamento">Informações de pagamento</string>
+    <string name="text_vigencia_field">Vigência:</string>
+    <string name="text_coberturas_field">Coberturas contratadas:</string>
+
+    <!--LOGIN-->
+    <string name="miss_liberty">MissLiberty</string>
+    <string name="login_ou_senha_invalidos">Login ou senha inválidos!</string>
+    <string name="text_minhascredenciais">Minhas credenciais</string>
+    <string name="text_login">E-mail ou CPF/CNPJ</string>
+    <string name="text_senha">Senha</string>
+    <string name="text_manterlogado">Manter Logado</string>
+    <string name="text_enviar">Enviar</string>
+    <string name="text_esqueci_minha_senha">Esqueci minha senha</string>
+
+    <string name="text_recuperacao_senha">Recuperação de senha</string>
+    <string name="text_cpf">CPF</string>
+    <string name="text_email">Email</string>
+    <string name="por_favor_informe_o_cpf_e_email">Por favor informe o cpf e email.</string>
+    <string name="cpf_invalido">CPF inválido!</string>
+    <string name="cnpj_invalido">CNPJ inválido!</string>
+
+    <!--CLUBE LIBERTY-->
+    <string name="ligacao_falhou">Ligação falhou</string>
+
+    <!--TELA DE CADASTRO-->
+    <string name="image">i</string>
+
+    <string name="informe_o_nome_completo">Informe o nome completo.\n</string>
+    <string name="informe_a_senha">Informe a senha.\n</string>
+    <string name="informe_a_senha_confirmacao">Informe a senha (confirmação).\n</string>
+    <string name="informe_o_email">Informe o email.\n</string>
+    <string name="informe_o_email_confirmacao">Informe o email (confirmação).\n</string>
+    <string name="informe_o_cpf">Informe o CPF ou CNPJ.\n</string>
+    <string name="informe_o_numero_da_apolice">Informe o número da apólice.\n</string>
+    <string name="numero_invalido_de_apolice">Número inválido de apólice.\n</string>
+    <string name="sua_senha_deve_possuir_no_minimo_8_caracteres">Sua senha deve possuir no mínimo 8 caracteres.</string>
+    <string name="as_senhas_informadas_sao_diferentes">As senhas informadas são diferentes.</string>
+    <string name="os_emails_informados_sao_diferentes">Os emails informados são diferentes.\n</string>
+    <string name="cadastro_efetuado_com_sucesso">Cadastro efetuado com sucesso! </string>
+
+    <string name="cadastro_aviso_mec">Cliente: este cadastro não é nescessário se você já esta cadastrado no Meu Espaço Cliente.</string>
+    <string name="cadastro_aviso_senha"><b>Atenção:</b> Digite uma combinação de pelo menos seis caracteres, incluindo número, letra e caracter especial (como ! e &amp;)</string>
+
+    <string name="nome_completo">Nome completo</string>
+    <string name="nome_invalido">Nome inválido! Preencha o campo adequadamente.</string>
+
+    <string name="apolice_invalida">Apólice não encontrada! Preencha com uma apólice válida.</string>
+
+    <string name="cpf">CPF/CNPJ</string>
+
+    <string name="email">E-mail</string>
+    <string name="email_invalido">Preencha o campo com um e-mail válido!</string>
+
+    <string name="confirme_o_email">Confirme o e-mail</string>
+    <string name="confirme_o_email_invalido">O e-mail confirmado não corresponde ao e-mail anterior!</string>
+
+    <string name="senha">Senha</string>
+    <string name="senha_invalida">Sua senha deve conter letras, números e caracteres especiais.</string>
+
+    <string name="confirme_a_senha">Confirme a senha</string>
+    <string name="confirme_a_senha_invalida">A senha confirmada não é a mesma do campo anterior!</string>
+
+    <string name="concordo_com_os">Concordo com os </string>
+    <string name="termos_condicoes"><u>termos, condições e política de privacidade.</u></string>
+
+    <string name="concorde_com_os_termos">Para finalizar seu registro concorde com os termos.</string>
+
+    <string name="registrar">REGISTRAR</string>
+
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+      >
+       
+     <RelativeLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+          android:gravity="center"
+          android:background="@drawable/actionbar_bg"
+         >	     
+         <RelativeLayout
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         >	     
+	 <ImageView
+	        android:id="@+id/backImageView"
+	        android:layout_width="10dp"
+	        android:layout_height="18dp"
+	        android:textColor="@color/ColorTextHeader"
+	        android:background="@drawable/back_arrow"
+	        android:layout_marginLeft="1dp"
+	        android:textStyle="bold"
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentLeft="true"
+	        android:visibility="visible" />   
+  
+    <ImageView
+	        android:id="@+id/libertView"
+	        android:layout_width="30dp"
+	        android:layout_height="35dp"
+	        android:textColor="@color/ColorTextHeader"
+	        android:background="@drawable/statue"
+	        android:layout_marginLeft="3dp"	        
+	        
+	        android:textStyle="bold"
+	        android:layout_toRightOf="@+id/backImageView"
+	        android:layout_centerVertical="true"
+	        android:paddingBottom="15dp"	       
+	        android:visibility="visible" /> 
+	        </RelativeLayout>
+	        
+	         <TextView
+	         android:id="@+id/viewScreenName"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="Screen Name"
+	         android:textAppearance="?android:attr/textAppearanceLarge"
+	         android:textStyle="bold"
+	         android:paddingRight="30dp"
+	         android:textSize="15dp"
+	         android:layout_marginTop="5dp"
+	         android:layout_marginLeft="15dp"
+	         android:textColor="@color/ColorTextHeader"
+	         android:shadowColor="@color/ColorTextHeaderShadow"
+	         android:shadowDx="2"
+	         android:background="@android:color/transparent"
+	         android:shadowDy="2"
+	         android:layout_centerVertical="true"
+	         android:layout_toRightOf="@+id/btnBack"
+	         
+	        /> 
+     <ImageView
+	        android:id="@+id/dottenImage"
+	       android:layout_width="7dp"
+	        android:layout_height="20dp"
+	        android:textColor="@color/ColorTextHeader"
+	        android:background="@drawable/dotted_bar"
+	        android:layout_marginRight="10dp"
+	        android:textStyle="bold"
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+	        android:visibility="visible" />
+      </RelativeLayout> 
+</RelativeLayout>

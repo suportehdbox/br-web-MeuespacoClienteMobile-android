@@ -1,0 +1,143 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.MenuPrincipalActivity" >
+
+    <Button
+        android:id="@+id/btnPolPrivacidade"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:background="@drawable/selector_home_btn_politica_privacidade" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/home_logo" 
+            android:contentDescription="@string/Error" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tableMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
+        android:shrinkColumns="true"
+        android:stretchColumns="true" >
+
+        <TableRow
+        android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnComunicacaoAcidente"
+                style="@style/btn_menu_principal"
+                android:background="@drawable/selector_home_btn_comunicacao" />
+
+            <Button
+                android:id="@+id/btnAssistencia"
+                style="@style/btn_menu_principal"
+                android:background="@drawable/selector_home_btn_assistencia24h" />
+        </TableRow>
+
+        <TableRow
+        android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnMinhaApolice"
+                style="@style/btn_menu_principal"
+                android:background="@drawable/selector_home_btn_minhas_apolices" />
+
+            <Button
+                android:id="@+id/btnOficinas"
+                style="@style/btn_menu_principal"
+                android:background="@drawable/selector_home_btn_oficinareferenciadas" />
+        </TableRow>
+
+        <TableRow
+        android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnClubeLiberty"
+                style="@style/btn_menu_principal"
+                android:background="@drawable/selector_home_btn_clubeliberty" />
+
+            <Button
+                android:id="@+id/btnAtendimento"
+                style="@style/btn_menu_principal"
+                android:background="@drawable/selector_home_btn_atendimento" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/llLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tableMenu"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/selector_home_btn_login"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnCadastre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_home_links"
+                android:gravity="center_horizontal"
+                android:text="@string/btn_cadastre_se"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/blue_title" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnPoliticaPrivacidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15sp"
+            android:background="@drawable/selector_home_links"
+            android:gravity="center_horizontal"
+            android:text="@string/btn_politica_privacidade"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/ColorMenu" />
+    </LinearLayout>
+    
+</RelativeLayout>
+
+<!-- From: file:/TFS/LS-MobileApps/Main/LibertySegurosBrasil-Android/app/src/main/res/layout/activity_menu_principal.xml -->

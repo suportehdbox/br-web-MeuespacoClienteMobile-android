@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layout_style_activity"
+    tools:context=".OficinasReferenciadasBuscaActivity" >
+
+    <include layout="@layout/navigation_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginRight="15sp"
+        android:layout_marginTop="20sp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_title"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textBuscaCEP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10sp"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/text_cep"
+                    android:textColor="@color/blue_text"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editBuscaCEP"
+                style="@style/edit_text"
+                android:inputType="number" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnBuscaCEP"
+            style="@style/orange_button_wide"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="20sp"
+            android:text="@string/text_buscar" />
+    </LinearLayout>
+
+</LinearLayout>

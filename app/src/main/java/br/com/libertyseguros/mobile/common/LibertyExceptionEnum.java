@@ -1,0 +1,12 @@
+package br.com.libertyseguros.mobile.common;
+
+public enum LibertyExceptionEnum {
+	LM_ERRO_OBTER_CODIGO_ACESSO, 
+	LM_ERRO_OBTER_APOLICE_DETALHE, 
+	LM_ERRO_ESQUECI_MINHA_SENHA_CORRETOR, 
+	LM_ERRO_REDE_DADOS, 
+	LM_ERRO_SSL, 
+	LM_ERRO_DECODE, 
+	LM_ERRO_SESSAO_INVALIDA,
+	LM_ERRO_GEOCODE_CEP
+}

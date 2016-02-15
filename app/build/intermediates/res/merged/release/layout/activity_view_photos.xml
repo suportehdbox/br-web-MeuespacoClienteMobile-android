@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <include
+            layout="@layout/navigation_bar" />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_main_photo"
+        android:layout_centerInParent="true"></ImageView>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_prev_pht"
+            android:onClick="showPreviousPhoto"
+            android:text="&#x2190;"
+            android:width="62dip"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_play_pht"
+            android:text="&#x25b6;"
+            android:width="62dip"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_next_pht"
+            android:onClick="showNextPhoto"
+            android:text="&#x2192;"
+            android:width="62dip"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_delete_pht"
+            android:onClick="deletePhoto"
+            android:text="@string/delete"></Button>
+    </LinearLayout>
+</RelativeLayout>
+<!-- From: file:/TFS/LS-MobileApps/Main/LibertySegurosBrasil-Android/app/src/main/res/layout/activity_view_photos.xml -->

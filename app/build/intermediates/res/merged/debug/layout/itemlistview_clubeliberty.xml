@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/textCategoria"
+        style="@style/custom_itemlistview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:drawable="@android:color/transparent">
+
+    </TextView>
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/layout/itemlistview_clubeliberty.xml -->

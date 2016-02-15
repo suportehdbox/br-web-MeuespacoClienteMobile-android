@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/application_background" >
+
+	<include layout="@layout/ctrl_include_header"/>
+    
+    <LinearLayout 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_weight="1" >
+
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+  			android:layout_gravity="top"
+	        android:orientation="vertical"
+	        android:padding="10dp"
+			android:background="#29000000"
+			style="@android:style/Theme.Translucent" >
+           
+	        <LinearLayout 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal" 
+				android:gravity="center">
+
+	            <RadioGroup
+	                android:id="@+id/radGrpType"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:orientation="horizontal" >
+
+	                <RadioButton
+	                    android:id="@+id/radMap"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginRight="5dp"
+	                    android:text="@string/Map"
+	                    android:checked="true" />
+
+	                <RadioButton
+	                    android:id="@+id/radList"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="5dp"
+	                    android:text="@string/List" />
+
+	            </RadioGroup>
+	            
+	            <Button
+					android:id="@+id/btnSearch"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="10dp"
+			        android:text="@string/Search"
+					android:layout_weight="1" />
+							
+			</LinearLayout>
+	            
+		</LinearLayout>
+			
+		<TableLayout
+		    android:id="@+id/tableControls"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent" >
+
+		    <TableRow
+		        android:id="@+id/rowMap"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent" >
+	            
+		        	<include 
+		        	    layout="@layout/ctrl_include_accredited_establishment_mapview"
+		        	    android:layout_width="fill_parent"
+		        	    android:layout_height="fill_parent"
+		        	    android:layout_weight="1" />
+		        	
+		    </TableRow>
+
+		    <TableRow
+		        android:id="@+id/rowList"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent" >
+		        	
+		        	<include 
+		        	    layout="@layout/ctrl_include_accredited_establishment_listview"
+		        	    android:layout_width="fill_parent"
+		        	    android:layout_height="fill_parent" 
+		        	    android:layout_weight="1"/>
+		        	
+		    </TableRow>
+
+		</TableLayout>
+
+	</LinearLayout>
+    
+    <include 
+        layout="@layout/ctrl_include_footer" 
+        android:layout_width="fill_parent"/>
+
+</LinearLayout>
+

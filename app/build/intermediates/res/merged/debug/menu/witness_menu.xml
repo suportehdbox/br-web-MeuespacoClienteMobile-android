@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_delete_witness"
+        android:title="@string/btn_remover" />
+</menu>
+<!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/menu/witness_menu.xml -->

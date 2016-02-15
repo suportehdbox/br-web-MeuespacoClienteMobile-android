@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/main_content"
+    android:baselineAligned="false"
+    tools:context=".MyInfoActivity" >
+
+    <include layout="@layout/navigation_bar" />
+
+    <ScrollView
+        android:id="@+id/contact_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="0sp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <include layout="@layout/contact" />
+
+            <include layout="@layout/address" />
+            
+        </LinearLayout>
+        
+    </ScrollView>
+
+    <include layout="@layout/button_bar" />
+
+</LinearLayout>

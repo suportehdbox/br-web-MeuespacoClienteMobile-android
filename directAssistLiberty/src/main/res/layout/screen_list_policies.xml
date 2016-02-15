@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/application_background"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/screenList_Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/ctrl_include_header" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/listLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp" >
+
+            <ListView
+                android:id="@+id/listPolicies"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="105dp"
+                android:background="@drawable/corner"
+                android:layout_marginTop="5dp"
+                android:cacheColorHint="#00000000"
+                android:divider="#B5B5B5"
+                android:dividerHeight="1dp"
+                android:drawSelectorOnTop="false"
+                android:focusableInTouchMode="true"
+                android:footerDividersEnabled="true"
+                android:headerDividersEnabled="true"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none" >
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+           android:layout_below="@+id/listLayout"
+            android:padding="2dp" >
+
+            <Button
+                android:id="@+id/btnAddPolicy"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                 android:textStyle="bold"
+                 android:textScaleX="1"
+                android:layout_marginTop="5dp"
+                android:textColor="#9B592F"
+                android:text="@string/Add"
+                android:background="@drawable/yellow_background" />
+            
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                 android:textScaleX="1"
+                 android:layout_below="@+id/btnAddPolicy"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#9B592F"
+                android:layout_marginTop="5dp"
+                android:text="@string/Edit"
+                android:visibility="gone"
+                android:background="@drawable/yellow_background" />
+        </RelativeLayout>
+    </RelativeLayout>
+	
+   <!--  <include 
+        layout="@layout/ctrl_include_footer" 
+        android:layout_width="fill_parent"/>  -->
+	
+</LinearLayout>

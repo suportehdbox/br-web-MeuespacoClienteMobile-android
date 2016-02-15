@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 'Google Inc.:Google APIs:22'
+    buildToolsVersion '22.0.1'
+
+    defaultConfig {
+        applicationId "br.com.libertyseguros.mobile"
+        minSdkVersion 9
+        targetSdkVersion 22
+        versionCode 21
+        versionName "1.21"
+    }
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    compile project(':directAssistLiberty')
+    compile 'com.android.support:support-v4:22.0.1'
+    compile 'com.android.support:appcompat-v7:22.0.1'
+    compile "com.google.android.gms:play-services:7.8.0"
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}

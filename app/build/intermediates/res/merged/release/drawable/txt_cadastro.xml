@@ -1,0 +1,19 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <shape>
+            <padding android:bottom="0dp" android:left="0dp" android:right="4dp" android:top="4dp" />
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape>
+            <padding android:bottom="0dp" android:left="0dp" android:right="4dp" android:top="4dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding android:bottom="0dp" android:left="0dp" android:right="4dp" android:top="4dp" />
+        </shape>
+    </item>
+
+</selector><!-- From: file:/TFS/LS-MobileApps/Main/LibertySegurosBrasil-Android/app/src/main/res/drawable/txt_cadastro.xml -->

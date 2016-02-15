@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/main_content" >
+
+    <include layout="@layout/navigation_bar" />
+
+    <FrameLayout
+        style="@style/wrap_height_wrap_width"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            style="@style/fill_height_fill_width"
+            android:orientation="vertical" >
+
+            <RelativeLayout style="@style/wrap_height_wrap_width" >
+
+                <ProgressBar
+                    android:id="@+id/voice_note_meter_bar"
+                    style="@style/voice_note_meter_bar"
+                    android:layout_marginLeft="25dip"
+                    android:layout_marginRight="25dip"
+                    android:layout_marginTop="10dip"
+                    android:indeterminate="false" />
+
+                <ImageView
+                    android:id="@+id/voice_note_meter"
+                    style="@style/voice_button_wide"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                style="@style/wrap_height_fill_width"
+                android:layout_marginLeft="4dip"
+                android:layout_marginRight="4dip"
+                android:layout_marginTop="@dimen/padding_medium" >
+
+                <TextView
+                    android:id="@+id/current_time_label"
+                    style="@style/voice_note_time"
+                    android:text="@string/voice_note_min_time" />
+
+                <ProgressBar
+                    android:id="@+id/voice_note_progress_bar"
+                    style="@style/voice_note_progress_bar"
+                    android:indeterminate="false" />
+
+                <TextView
+                    android:id="@+id/total_time_label"
+                    style="@style/voice_note_time"
+                    android:text="@string/voice_note_max_time" />
+            </LinearLayout>
+
+            <WebView
+                android:id="@+id/voice_notes_webview"
+                android:layout_marginTop="@dimen/padding_medium"
+                style="@style/fill_height_wrap_width" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout style="@style/voice_note_button_row" >
+
+        <Button
+            android:id="@+id/voice_note_left_button"
+            style="@style/voice_note_button"
+            android:background="@drawable/btn_record_green" />
+
+        <Button
+            android:id="@+id/voice_note_right_button"
+            style="@style/voice_note_button"
+            android:background="@drawable/btn_record_red" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/layout/activity_voice_notes.xml -->

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/table_layout" >
+
+    <TableRow style="@style/input_field_row" >
+
+        <EditText
+            android:id="@+id/vehicle_year"
+            style="@style/edit_text"
+            android:hint="@string/year_label"
+            android:inputType="number"
+            android:maxLength="4" />
+    </TableRow>
+
+    <TableRow style="@style/input_field_row" >
+
+        <EditText
+            android:id="@+id/vehicle_make"
+            style="@style/edit_text"
+            android:hint="@string/make_label"
+            android:inputType="textCapWords|textFilter"
+            android:maxLength="25" />
+    </TableRow>
+
+    <TableRow style="@style/input_field_row" >
+
+        <EditText
+            android:id="@+id/vehicle_model"
+            style="@style/edit_text"
+            android:hint="@string/model_label"
+            android:inputType="textCapWords|textFilter"
+            android:maxLength="40" />
+    </TableRow>
+
+    <TableRow
+        style="@style/input_field_row"
+        android:layout_height="match_parent" >
+
+        <EditText
+            android:id="@+id/vehicle_color"
+            style="@style/edit_text"
+            android:hint="@string/color_label"
+            android:inputType="textCapWords|textFilter"
+            android:maxLength="25" />
+    </TableRow>
+
+    <TableRow style="@style/input_field_row" >
+
+        <EditText
+            android:id="@+id/vehicle_license_plate"
+            style="@style/edit_text"
+            android:hint="@string/license_plate_number_label"
+            android:inputType="textCapCharacters|textFilter"
+            android:maxLength="7" />
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/main_content" >
+
+    <include layout="@layout/navigation_bar" />
+
+    <ScrollView 
+        android:layout_weight="1"
+        style="@style/fill_height_fill_width" >
+
+        <LinearLayout style="@style/input_layout" >
+
+            <include layout="@layout/note" />
+
+            <View style="@style/input_field_separator_horizontal" />
+
+            <TableLayout 
+                android:id="@+id/tl_voice_note_0"
+                style="@style/input_table" >
+
+                <Button
+                    android:id="@+id/voice_note_0"
+                    style="@style/button_list_item"
+                    android:drawableLeft="@drawable/btn_adicionar" />
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/rl_add_voice_note_button"
+                style="@style/input_table" >
+
+                <Button
+                    android:id="@+id/add_voice_note_button"
+                    style="@style/button_list_item"
+                    android:drawableLeft="@drawable/btn_adicionar"
+                    android:text="@string/voice_note_title" />
+            </TableLayout>
+
+            <View
+                style="@style/input_field_separator_horizontal"
+                android:paddingTop="@dimen/padding_small" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/button_bar" />
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/layout/activity_notes.xml -->

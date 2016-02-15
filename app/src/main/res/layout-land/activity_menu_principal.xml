@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.MenuPrincipalActivity" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+    		android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnPolPrivacidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_home_btn_politica_privacidade" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/imgLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/home_logo" 
+                    android:contentDescription="@string/Error"/>
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/tableMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                    android:layout_marginTop="85dp"
+                android:shrinkColumns="true"
+                android:stretchColumns="true" >
+
+                <TableRow android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/btnComunicacaoAcidente"
+                        style="@style/btn_menu_principal"
+                        android:background="@drawable/selector_home_btn_comunicacao" />
+
+                    <Button
+                        android:id="@+id/btnAssistencia"
+                        style="@style/btn_menu_principal"
+                        android:background="@drawable/selector_home_btn_assistencia24h" />
+
+                    <Button
+                        android:id="@+id/btnMinhaApolice"
+                        style="@style/btn_menu_principal"
+                        android:background="@drawable/selector_home_btn_minhas_apolices" />
+                </TableRow>
+
+                <TableRow android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/btnOficinas"
+                        style="@style/btn_menu_principal"
+                        android:background="@drawable/selector_home_btn_oficinareferenciadas" />
+
+                    <Button
+                        android:id="@+id/btnClubeLiberty"
+                        style="@style/btn_menu_principal"
+                        android:background="@drawable/selector_home_btn_clubeliberty" />
+
+                    <Button
+                        android:id="@+id/btnAtendimento"
+                        style="@style/btn_menu_principal"
+                        android:background="@drawable/selector_home_btn_atendimento" />
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:id="@+id/llLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tableMenu"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/selector_home_btn_login"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/white"
+                	android:layout_gravity="center"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/btnCadastre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:background="@drawable/selector_home_links"
+                        android:gravity="center_horizontal"
+                        android:text="@string/btn_cadastre_se"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/blue_title" />
+                </LinearLayout>
+            </LinearLayout>
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:layout_alignParentLeft="true"
+		        android:layout_below="@+id/llLogout"
+		        android:orientation="vertical" >
+		
+		        <Button
+		            android:id="@+id/btnPoliticaPrivacidade"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dp"
+		            android:layout_marginBottom="15sp"
+		            android:background="@drawable/selector_home_links"
+		            android:gravity="center_horizontal"
+		            android:text="@string/btn_politica_privacidade"
+		            android:textAppearance="?android:attr/textAppearanceSmall"
+            		android:textColor="@color/ColorMenu" />
+		    </LinearLayout>
+	    
+        </RelativeLayout>
+    
+    </ScrollView>
+    
+</RelativeLayout>

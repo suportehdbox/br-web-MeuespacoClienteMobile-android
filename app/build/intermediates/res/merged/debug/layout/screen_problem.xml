@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/application_background"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/screenProblem_Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/ctrl_include_header" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1"
+            android:text="@string/LabelScreenProblem"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#696969"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listProblems"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/corner"
+            android:cacheColorHint="#00000000"
+            android:divider="#B5B5B5"
+            android:dividerHeight="1dp"
+            android:drawSelectorOnTop="true"
+            android:focusableInTouchMode="true"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"
+            android:scrollbars="horizontal" >
+        </ListView>
+    </LinearLayout>
+
+    <!-- <include 
+        layout="@layout/ctrl_include_footer" 
+        android:layout_width="fill_parent"/> -->
+    
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssistLiberty/src/main/res/layout/screen_problem.xml --><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssistLiberty/unspecified/res/layout/screen_problem.xml -->

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout02"
+    style="@style/main_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/navigation_bar" />
+
+        <ScrollView
+            android:id="@+id/ScrollView01"
+            style="@style/base_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/LinearLayout01"
+                style="@style/input_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_picture_1"
+                    style="@style/textView_body"
+                    android:text="@string/title_acidente_fotos_text" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tv_picture_2"
+                    style="@style/textView_body"
+                    android:layout_marginTop="4dip"
+                    android:text="@string/title_acidente_fotos_dica" >
+                </TextView>
+
+                <View
+                    style="@style/input_field_separator_horizontal"
+                    android:layout_marginTop="@dimen/padding_medium" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginTop="5dip" >
+
+                    <TextView
+                        android:id="@+id/tv_photos_1"
+                        style="@style/collect_contacts_header_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="4dip"
+                        android:paddingLeft="52dip"
+                        android:text="@string/title_meu_carro"
+                        android:textSize="14sp"
+                        android:textStyle="bold" >
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:id="@+id/vehicle_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/add_vehicle_photo_btn"
+                        style="@style/add_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginTop="2dip"
+                        android:layout_toRightOf="@+id/vehicle_layout"
+                        android:clickable="true"
+                        android:onClick="addVehiclePhoto"
+                        android:text="@string/btn_adicionar" >
+                    </Button>
+                </RelativeLayout>
+
+                <View
+                    style="@style/input_field_separator_horizontal"
+                    android:layout_marginTop="@dimen/padding_medium" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginTop="5dip" >
+
+                    <TextView
+                        android:id="@+id/tv_photos_2"
+                        style="@style/collect_contacts_header_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="4dip"
+                        android:paddingLeft="52dip"
+                        android:text="@string/title_outro_carro"
+                        android:textSize="14sp"
+                        android:textStyle="bold" >
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:id="@+id/other_vehicle_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/add_other_vehicle_photo_btn"
+                        style="@style/add_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginTop="2dip"
+                        android:layout_toRightOf="@+id/other_vehicle_layout"
+                        android:clickable="true"
+                        android:onClick="addOtherVehiclePhoto"
+                        android:text="@string/btn_adicionar" >
+                    </Button>
+                </RelativeLayout>
+
+                <View
+                    style="@style/input_field_separator_horizontal"
+                    android:layout_marginTop="@dimen/padding_medium" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginTop="5dip" >
+
+                    <TextView
+                        android:id="@+id/tv_photos_3"
+                        style="@style/collect_contacts_header_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="4dip"
+                        android:paddingLeft="52dip"
+                        android:text="@string/title_local_acidente"
+                        android:textSize="14sp"
+                        android:textStyle="bold" >
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:id="@+id/surroundings_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/add_surroundings_photo_btn"
+                        style="@style/add_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginTop="2dip"
+                        android:layout_toRightOf="@+id/surroundings_layout"
+                        android:clickable="true"
+                        android:onClick="addSurroundingsPhoto"
+                        android:text="@string/btn_adicionar" >
+                    </Button>
+                </RelativeLayout>
+
+                <View
+                    style="@style/input_field_separator_horizontal"
+                    android:layout_marginTop="@dimen/padding_medium" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_pictures_4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginTop="5dip" >
+
+                    <TextView
+                        android:id="@+id/tv_photos_4"
+                        style="@style/collect_contacts_header_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="4dip"
+                        android:paddingLeft="52dip"
+                        android:text="@string/title_documentos"
+                        android:textSize="14sp"
+                        android:textStyle="bold" >
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:id="@+id/documents_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/add_documents_photo_btn"
+                        style="@style/add_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginTop="2dip"
+                        android:layout_toRightOf="@+id/documents_layout"
+                        android:clickable="true"
+                        android:onClick="addDocumentPhoto"
+                        android:text="@string/btn_adicionar" >
+                    </Button>
+                </RelativeLayout>
+
+                <View
+                    style="@style/input_field_separator_horizontal"
+                    android:layout_marginTop="@dimen/padding_medium" />
+            </LinearLayout>
+        </ScrollView>
+
+</LinearLayout><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/layout/activity_pictures.xml -->

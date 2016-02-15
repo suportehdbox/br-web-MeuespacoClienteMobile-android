@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/main_content"
+    tools:context=".ComunicacaoAcidenteApoliceActivity" >
+
+    <include layout="@layout/navigation_bar" />
+
+    <FrameLayout
+        style="@style/wrap_height_fill_width"
+        android:layout_weight="1" >
+
+        <ListView
+            android:id="@+id/radioGroupApolices"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+    		android:layout_marginBottom="5dip"
+	        android:cacheColorHint="@android:color/transparent"
+	    	android:background="@color/white"
+        	android:listSelector="@drawable/list_selector" 
+        	android:textColor="@android:color/black">
+        </ListView>
+    </FrameLayout>
+
+    <include layout="@layout/button_bar" />
+
+</LinearLayout>

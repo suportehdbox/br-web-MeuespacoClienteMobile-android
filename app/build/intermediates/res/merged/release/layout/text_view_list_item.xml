@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_text_view_list_item"
+    style="@style/base_layout" >
+
+    <Button
+        android:id="@+id/btn_list_item"
+        style="@style/button_list_item"
+        android:text="First Last"
+        android:textColor="#FF000000"
+        android:textStyle="bold" />
+
+</LinearLayout><!-- From: file:/TFS/LS-MobileApps/Main/LibertySegurosBrasil-Android/app/src/main/res/layout/text_view_list_item.xml -->
