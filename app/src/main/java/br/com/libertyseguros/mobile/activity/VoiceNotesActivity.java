@@ -245,10 +245,6 @@ public class VoiceNotesActivity extends LibertyMobileApp implements OnCompletion
 	 * listeners to the buttons in the view.
 	 * 
 	 * @param savedInstanceState
-	 *            if the activity is being re-initialized after previously being shut down then this Bundle contains the
-	 *            data it most recently supplied in {@link Activity.onSaveInstanceState(Bundle)}. Note: Otherwise it is
-	 *            null.
-	 * @see com.lmig.pm.internet.mobile.android.libertymutual.LibertyMutualActivity#onCreate(Bundle)
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState)

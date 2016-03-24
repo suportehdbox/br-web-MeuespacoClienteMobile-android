@@ -26,6 +26,7 @@ public class Constants {
     public static final String LM_EXTRA_ITEM = "itemSel";
     public static final String LM_EXTRA_CATEGORIA = "categoria";
     public static final String LM_EXTRA_PUSH = "push";
+    public static final String LM_EXTRA_SESSIONID = "sessionId";
 
     public static final String LM_WS_USUARIO = "mobile";
     public static final String LM_RESTORINGSTATE = "restoringState";

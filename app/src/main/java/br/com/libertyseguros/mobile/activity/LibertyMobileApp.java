@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.Html;
@@ -15,6 +16,8 @@ import android.text.style.TextAppearanceSpan;
 import android.view.View;
 import android.widget.TextView;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -30,12 +33,14 @@ import br.com.libertyseguros.mobile.common.util.ValidationUtils;
 import br.com.libertyseguros.mobile.constants.Constants;
 import br.com.libertyseguros.mobile.database.EventHelper;
 import br.com.libertyseguros.mobile.database.UserHelper;
+import br.com.libertyseguros.mobile.database.VoiceNoteHelper;
 import br.com.libertyseguros.mobile.model.Address;
 import br.com.libertyseguros.mobile.model.Contact;
 import br.com.libertyseguros.mobile.model.DadosLoginSegurado;
 import br.com.libertyseguros.mobile.model.Event;
 import br.com.libertyseguros.mobile.model.Policy;
 import br.com.libertyseguros.mobile.model.User;
+import br.com.libertyseguros.mobile.model.VoiceNote;
 
 /**
  * Base activity for all other Liberty Mutual Mobile activities. Provides convenience methods for setting up the views
@@ -674,7 +679,7 @@ public class LibertyMobileApp extends Activity {
 //        NotificationUtil.clearClaimNotification(getApplicationContext());
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND_MULTIPLE);
-        emailIntent.setType("text/html");
+        emailIntent.setType("*/*");
 
 //      << ANDROID STUDIO
 //      emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {LibertyEnvironment.getEmailAddress(getEnvironment(), getResources())});
@@ -685,12 +690,32 @@ public class LibertyMobileApp extends Activity {
         emailIntent.putExtra(Intent.EXTRA_TEXT, MailUtils.getBodyText(event, UserHelper.getCurrent(getApplicationContext()),
                 DeviceUtils.getVersionName(getApplicationContext()), getString(R.string.build_number)));
 
-        if (event.getPhotos() != null)
-        {
-            emailIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM,
-                MailUtils.getPhotoUris(event, getApplicationSpecificCacheDirectory()));
+
+//      << ADD AUDIO
+        ArrayList<Uri> uris = new ArrayList<Uri>();
+
+        // Case has photos
+        if (event.getPhotos() != null){
+            //emailIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, MailUtils.getPhotoUris(event, getApplicationSpecificCacheDirectory()));
+            uris = MailUtils.getPhotoUris(event, getApplicationSpecificCacheDirectory());
         }
-        startActivityForResult(Intent.createChooser(emailIntent, getString(R.string.enviando_email) ), EMAIL_INFO_INTENT);
+
+        // Case has audio
+        ArrayList<VoiceNote> voiceNoteList = VoiceNoteHelper.getByEvent(getApplicationContext(), getCurrentEvent().getId());
+
+        if (!voiceNoteList.isEmpty()) {
+            File file = new File(voiceNoteList.get(0).getPathToVoiceNote());
+            file.setReadable(true, false);
+            file.setReadable(true, false);
+            //String theMIMEcategory = getMIMEcategory(aFile);
+            Uri uri = Uri.fromFile(file);
+            uris.add(uri);
+        }
+//      >>
+
+        emailIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
+
+        startActivityForResult(Intent.createChooser(emailIntent, getString(R.string.enviando_email)), EMAIL_INFO_INTENT);
         // Log.v(TAG, ">>> startEventEmail()");
     }
 

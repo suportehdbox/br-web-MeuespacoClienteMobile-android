@@ -10,8 +10,8 @@ android {
         applicationId "br.com.libertyseguros.mobile"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 21
-        versionName "1.21"
+        versionCode 23
+        versionName "1.23"
     }
     buildTypes {
         debug {

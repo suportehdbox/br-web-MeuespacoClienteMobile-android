@@ -16,13 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.webkit.WebView;
 import android.widget.Button;
 
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-
-import org.apache.http.util.EncodingUtils;
 
 import java.util.ArrayList;
 
@@ -685,12 +682,10 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 	public void criarSessaoCallback(String sessionId){
 
 		try {
-//			String url = "http://libertyseguros.homolog.clubeben.proxy.media/auth/libertyseguros";
-			String url = "http://libertyseguros.clubeben.com.br/auth/libertyseguros";
-			WebView webview = new WebView(this);
-			setContentView(webview);
-			byte[] post = EncodingUtils.getBytes("sessionid=" + sessionId, "BASE64");
-			webview.postUrl(url, post);
+
+			Intent intent = new Intent(MenuPrincipalActivity.this, ClubeBeneficioActivity.class);
+			intent.putExtra(Constants.LM_EXTRA_SESSIONID, sessionId);
+			startActivityForResult(intent, 2);
 		}
 		catch (Exception e){
 			Util.showException(this, e);

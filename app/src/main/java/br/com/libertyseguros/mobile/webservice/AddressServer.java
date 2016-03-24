@@ -10,7 +10,7 @@ public enum AddressServer {
 //  http://br-lihi-dsv-spa:3257
 //  http://br-lihi-dsv-spa:9441
 	//ADDRESS_SERVER_SEGURADO_DESENV("http://br-lihi-dsv-spa:3257/LibertyPortalSegurado"),
-	ADDRESS_SERVER_SEGURADO_DESENV("http://10.136.187.30/LibertyPortalSeguradoControllerUI/ControllerUI.asmx"),
+	ADDRESS_SERVER_SEGURADO_DESENV("http://10.136.187.93/Liberty.Portal.Segurado.ControllerUI/ControllerUI.asmx"),
 	
 	/** Aceite visibilidade Interna*/
 	ADDRESS_SERVER_SEGURADO_ACEITE_INTERNO("http://10.158.138.21:9441/WSPortalSegurado"),      // http://VWKIUBR-SPAAP01:9442/WSPortalSegurado

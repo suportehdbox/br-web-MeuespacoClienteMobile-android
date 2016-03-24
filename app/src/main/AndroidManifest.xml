@@ -186,6 +186,10 @@
             android:windowSoftInputMode="stateHidden|stateUnchanged"
             android:configChanges="keyboardHidden|orientation"/>
         <activity
+            android:name="br.com.libertyseguros.mobile.activity.SendEventEmailActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged"
+            android:configChanges="keyboardHidden|orientation"/>
+        <activity
             android:name="br.com.libertyseguros.mobile.activity.MinhasApolicesActivity"
             android:windowSoftInputMode="stateHidden|stateUnchanged"
             android:configChanges="keyboardHidden|orientation" />
@@ -210,7 +214,7 @@
             android:windowSoftInputMode="stateHidden|stateUnchanged"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="br.com.libertyseguros.mobile.activity.ClubeLibertyActivity"
+            android:name="br.com.libertyseguros.mobile.activity.ClubeBeneficioActivity"
             android:windowSoftInputMode="stateHidden|stateUnchanged"
             android:configChanges="keyboardHidden|orientation" />
         <activity

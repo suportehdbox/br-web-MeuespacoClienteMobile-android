@@ -114,14 +114,10 @@ public class CallWebServices {
 		xmlRequest.append(	"</IdDevice><TipoSO>2</TipoSO>");
 		xmlRequest.append("</AutenticarRequest>");
 		
-		String xmlRequestString = xmlRequest.toString();
-		xmlRequestString = xmlRequestString.replace("<", "&lt;");
-	    xmlRequestString = xmlRequestString.replace(">", "&gt;");
-		
 		Map<String, Object> args = new HashMap<String, Object>();
 		args.put("usuarioId", user);
 		args.put("ativarTrace", trace);
-		args.put("xmlRequest", xmlRequestString);
+		args.put("xmlRequest", "<![CDATA[" + xmlRequest.toString() + "]]>");
 
 		// Chama o ws
 		new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "AutenticarMobileApp", args, true, logonSeguradoWsInterface).execute();
@@ -153,8 +149,8 @@ public class CallWebServices {
 		args.put("TokenNotificacao", tokenNotificacao);
 		
 		// Chama o ws
-		//new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "GravarTokenNotificacaoMobileApp", args, true, enviarTokenWsInterface).execute();
-		new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "GravarTokenNotificacaoMobileApp", args, enviarTokenWsInterface).execute();
+		new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "GravarTokenNotificacaoMobileApp", args, true, enviarTokenWsInterface).execute();
+		//new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "GravarTokenNotificacaoMobileApp", args, enviarTokenWsInterface).execute();
 	}
 	
 	public static boolean retEnviarToken(String result)  {

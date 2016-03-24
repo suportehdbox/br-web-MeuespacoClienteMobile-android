@@ -5,6 +5,7 @@
     <string name="title_activity_oficinas_referenciadas">Oficinas Referenciadas</string>
     <string name="title_activity_oficinas_referenciadas_busca">Digitar CEP</string>
     <string name="title_activity_comunicacao_acidente">Comunicação de Acidente</string>
+    <string name="title_activity_send_email">Enviar dados</string>
     <string name="title_activity_location">Local do Sinistro</string>
     <string name="title_activity_minhas_apolices">Minhas Apólices</string>
     <string name="title_activity_minhas_apolices_anteriores">Minhas Apólices Anteriores</string>
@@ -58,6 +59,8 @@
     <string name="btn_endereco">ENDEREÇO</string>
     <string name="btn_parcelas">Parcelas</string>
     <string name="btn_config">Config.</string>
+    <string name="btn_enviar_agora">Sim, enviar agora</string>
+    <string name="btn_ligar_atendimento">Não, ligar para o atendimento</string>
 
     <!-- Shared -->
     <string name="aviso">Aviso</string>
@@ -73,7 +76,7 @@
     <string name="city_label">Cidade</string>
     <string name="zip_code_label">CEP</string>
     <string name="auto_policy_number_label">Número da Apólice</string>
-    <string name="build_number">(2015.09)</string>
+    <string name="build_number">(2016.10)</string>
     <string name="share_info_email_subject">Informação de seguro Automóvel</string>
     <string name="enviando_email">Enviando email...</string>
     <string name="por_favor_insira">Por favor insira</string>
@@ -93,7 +96,7 @@
     <string name="automovel">Automóvel</string>
     <string name="email_sinistro">celulasinistro@libertyseguros.com.br</string>
     <string name="add_claim_title">Novo Sinistro</string>
-    <string name="delete_submitted_claim_confirmation">Nota: A sua solicitação já foi enviada para a liberty Seguros.
+    <string name="delete_submitted_claim_confirmation">Nota: A sua solicitação já foi enviada para a Liberty Seguros.
         Se você apagar, ela apenas será removida de seu aparelho.</string>
     <string name="delete_claim_confirmation">A solicitação ainda não foi enviada, deseja apagar?</string>
     <string name="auto_claim_title">Sinistro Automóvel</string>
@@ -116,6 +119,12 @@
     <string name="selecao_da_apolice">Seleção da Apólice</string>
     <string name="informe_o_numero_da_apolice_doispontos">Informe o número da apólice:</string>
     <string name="auto_policy_number_hint">XXXXXXXXXX</string>
+    <string name="confirm_call_auto_specialist">Ligar para a Central de Atendimento Auto?</string>
+    <string name="preparando_imagens">Preparando imagens &#8230;</string>
+    <string name="error_dialog_title">Erro na Foto</string>
+    <string name="error_dialog_msg">Erro processando imagem, favor tentar novamente mais tarde.</string>
+    <string name="enviar_dados">Enviar dados para a Liberty Seguros</string>
+    <string name="dados_enviados">Os dados do sinistro foram enviados com sucesso para a caixa de saída de email. Você irá receber um email de confirmação após a recepção</string>
 
     <!-- CheckBox -->
     <string name="cbx_acidente_outro_veiculo">Acidente com outro veículo</string>

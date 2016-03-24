@@ -45,21 +45,22 @@ import br.com.libertyseguros.mobile.model.VoiceNote;
  */
 public class ComunicacaoAcidenteDetalheActivity extends LibertyMobileApp implements OnClickListener {
 	
-	static final int CLAIM_NUMBER 	= 0;
-	static final int MY_INFO 		= 1;
-	static final int CHOOSE_CLAIM 	= 2;
-	static final int TIME_CLAIM 	= 3;
-	static final int LOCATION_CLAIM = 4;
-	static final int CONTACT_INFO	= 5;
-	static final int PICTURES		= 6;
-	static final int NOTES_CLAIM 	= 7;
-	static final int SHARE_DATA 	= 8;
+	static final int CLAIM_NUMBER 		= 0;
+	static final int MY_INFO 			= 1;
+	static final int CHOOSE_CLAIM 		= 2;
+	static final int TIME_CLAIM 		= 3;
+	static final int LOCATION_CLAIM 	= 4;
+	static final int CONTACT_INFO		= 5;
+	static final int PICTURES			= 6;
+	static final int NOTES_CLAIM 		= 7;
+	static final int SHARE_DATA 		= 8;
+	static final int SEND_EMAIL_INTENT 	= 9;
 
 	public static final String EXTRA_NAME_INITIAL_VIEW = "com.lmig.pm.internet.mobile.android.libertymutual.INITIAL";
 	
 	private static final String DELETE = "DELETE";
 
-	private static final int SEND_EMAIL_INTENT = 0;
+
 	
 	private ListView lvwList;
 	private List<ItemAdapter> listMenuItens;
@@ -325,6 +326,9 @@ public class ComunicacaoAcidenteDetalheActivity extends LibertyMobileApp impleme
 						listMenuItens.get(SHARE_DATA).setIcon(icons);
 					}
 					break;
+				}case SEND_EMAIL_INTENT:{
+					// retorno do envio da comuniação deve tornar a tela no modo leitura caso tenha enviado
+					setUpButtons();
 				}
 			}
 			
@@ -755,10 +759,8 @@ public class ComunicacaoAcidenteDetalheActivity extends LibertyMobileApp impleme
 			{
 //				saveForm();
 
-
-//				TODO ANDROID STUDIO
-//				Intent intent = new Intent(getApplicationContext(), SendEventEmailActivity.class);
-//				startActivityForResult(intent, SEND_EMAIL_INTENT);
+				Intent intent = new Intent(getApplicationContext(), SendEventEmailActivity.class);
+				startActivityForResult(intent, SEND_EMAIL_INTENT);
 			}
 			else
 			{
