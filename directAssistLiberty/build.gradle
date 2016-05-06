@@ -18,8 +18,8 @@ repositories {
 
 
 android {
-    compileSdkVersion 'Google Inc.:Google APIs:22'
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 'Google Inc.:Google APIs:23'
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         minSdkVersion 9
@@ -42,7 +42,7 @@ android {
 dependencies {
     compile project(':directAssist')
     compile 'com.android.support:support-v4:22.0.1'
-    compile "com.google.android.gms:play-services:7.8.0"
+    compile 'com.google.android.gms:play-services:7.8.0'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.0@aar') {
         transitive = true;
     }

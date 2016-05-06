@@ -137,7 +137,6 @@ public class GcmIntentService extends IntentService {
     // Ao clicar na notificção deve abrir a activity de consulta de notificações
     private void sendNotification(String msg) {
 
-    	/*
         NotificationManager mNotificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
 
         Bundle parms = new Bundle();
@@ -148,7 +147,7 @@ public class GcmIntentService extends IntentService {
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, it, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-        															.setSmallIcon(R.drawable.ic_launcher)
+        															.setSmallIcon(R.mipmap.ic_launcher)
 															        .setContentTitle("Liberty Seguros")
 															        .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
 															        .setContentText(msg)
@@ -158,9 +157,8 @@ public class GcmIntentService extends IntentService {
         mBuilder.setContentIntent(contentIntent);
         mBuilder.setOngoing(true);
         mNotificationManager.notify(Util.randInt(), mBuilder.build());
-        */
 
-
+        /* // API 22
         Bundle parms = new Bundle();
         parms.putBoolean(Constants.LM_EXTRA_PUSH, true);
 
@@ -190,6 +188,8 @@ public class GcmIntentService extends IntentService {
 
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(Util.randInt(), notification);
+*/
+
 //        Notification.Builder builder = new Notification.Builder(this);
 //
 //        builder.setAutoCancel(false);

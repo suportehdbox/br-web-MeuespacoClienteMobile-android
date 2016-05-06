@@ -3,15 +3,22 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 'Google Inc.:Google APIs:22'
-    buildToolsVersion '22.0.1'
-
+    signingConfigs {
+        config {
+            keyAlias 'Liberty Mobile'
+            keyPassword 'Liberty'
+            storeFile file('/SVN/WEB/trunk/LibertySegurosBrasil-Android/key/libertymobile.keystore')
+            storePassword 'Liberty'
+        }
+    }
+    compileSdkVersion 'Google Inc.:Google APIs:23'
+    buildToolsVersion '23.0.3'
     defaultConfig {
         applicationId "br.com.libertyseguros.mobile"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 23
-        versionName "1.23"
+        versionCode 24
+        versionName "1.24"
     }
     buildTypes {
         debug {
@@ -22,7 +29,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
@@ -36,6 +42,6 @@ dependencies {
     compile project(':directAssistLiberty')
     compile 'com.android.support:support-v4:22.0.1'
     compile 'com.android.support:appcompat-v7:22.0.1'
-    compile "com.google.android.gms:play-services:7.8.0"
+    compile 'com.google.android.gms:play-services:7.8.0'
     compile fileTree(include: ['*.jar'], dir: 'libs')
 }

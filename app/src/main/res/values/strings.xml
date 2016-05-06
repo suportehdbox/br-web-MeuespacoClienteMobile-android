@@ -244,7 +244,7 @@
     <string name="cadastro_efetuado_com_sucesso">Cadastro efetuado com sucesso! </string>
 
     <string name="cadastro_aviso_mec">Cliente: este cadastro não é nescessário se você já esta cadastrado no Meu Espaço Cliente.</string>
-    <string name="cadastro_aviso_senha"><b>Atenção:</b> Digite uma combinação de pelo menos seis caracteres, incluindo número, letra e caracter especial (como ! e &amp;)</string>
+    <string name="cadastro_aviso_senha"><b>Atenção:</b> Digite uma combinação de pelo menos oito caracteres, incluindo número, letra e caracter especial (como !, #, $ e *)</string>
 
     <string name="nome_completo">Nome completo</string>
     <string name="nome_invalido">Nome inválido! Preencha o campo adequadamente.</string>
