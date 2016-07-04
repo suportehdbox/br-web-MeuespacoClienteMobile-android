@@ -12,8 +12,6 @@ import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.common.Util;
 import br.com.libertyseguros.mobile.constants.Constants;
 
-//import br.com.libertyseguros.mobile.common.CustomApplication;
-
 public class NotificacaoAlertActivity extends Activity{
 
 	@Override

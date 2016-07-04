@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.common.Util;
 import br.com.libertyseguros.mobile.common.util.FieldUtils;
@@ -246,10 +247,6 @@ public class AddressLocationActivity extends LibertyMobileApp implements OnClick
 	 * worked and the status of the event.
 	 * 
 	 * @param savedInstanceState
-	 *            if the activity is being re-initialized after previously being shut down then this Bundle contains the
-	 *            data it most recently supplied in {@link Activity.onSaveInstanceState(Bundle)}. Note: Otherwise it is
-	 *            null.
-	 * @see com.lmig.pm.internet.mobile.android.libertymutual.LibertyMutualActivity#onCreate(Bundle)
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -465,10 +462,10 @@ public class AddressLocationActivity extends LibertyMobileApp implements OnClick
 				// >>
 
 				// alert the user they haven't met the minimum requirements
-				displayInfoAlert(	AddressLocationActivity.this, 
+				displayInfoAlert(	AddressLocationActivity.this,
 						getString(R.string.por_favor_insira),
 						missingInfo.toString(), 
-						getString(R.string.btn_ok), 
+						getString(R.string.btn_ok),
 						AddressLocationActivity.this);
 			}
 

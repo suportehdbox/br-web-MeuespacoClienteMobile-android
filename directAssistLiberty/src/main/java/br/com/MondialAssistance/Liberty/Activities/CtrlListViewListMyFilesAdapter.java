@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import br.com.MondialAssistance.DirectAssist.MDL.AutomotiveCase;
+import br.com.MondialAssistance.DirectAssist.MDL.Case;
+
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.MDL.AutomotiveCase;
-import br.com.MondialAssistance.Liberty.MDL.Case;
 
 public class CtrlListViewListMyFilesAdapter extends BaseAdapter {
 

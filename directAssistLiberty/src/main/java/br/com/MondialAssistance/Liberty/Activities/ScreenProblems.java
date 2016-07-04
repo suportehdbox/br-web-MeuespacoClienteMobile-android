@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import br.com.MondialAssistance.Liberty.BLL.BLLClient;
-import br.com.MondialAssistance.Liberty.MDL.ListItem;
 import br.com.MondialAssistance.Liberty.R;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLClient;
+import br.com.MondialAssistance.DirectAssist.MDL.ListItem;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;
 

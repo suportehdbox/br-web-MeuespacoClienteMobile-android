@@ -11,6 +11,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.util.Log;
+
 import br.com.libertyseguros.mobile.model.Address;
 import br.com.libertyseguros.mobile.model.Contact;
 

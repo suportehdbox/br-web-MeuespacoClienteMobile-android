@@ -33,7 +33,7 @@ public class NotificacaoConsultaActivity extends LibertyMobileApp implements OnI
 	
 	private ListView 			listViewNotificacoes;
 	private List<ItemAdapter> 	listItensNotificacoes;
-	private GenericAdapter 		adapter;
+	private GenericAdapter adapter;
 	private List<Map<String, Object>> arrayFields;
 
 	private Tracker mTracker;

@@ -16,11 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-
-import br.com.MondialAssistance.Liberty.MDL.ListItem;
-import br.com.MondialAssistance.Liberty.Params.ClientParams;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.MDL.ListItem;
+import br.com.MondialAssistance.Liberty.Params.ClientParams;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;

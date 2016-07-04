@@ -2,7 +2,7 @@ package br.com.MondialAssistance.Liberty.Activities;
 
 import android.content.Context;
 import br.com.MondialAssistance.Liberty.Params.ClientParams;
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 
 public class UtilityScreen {
 	

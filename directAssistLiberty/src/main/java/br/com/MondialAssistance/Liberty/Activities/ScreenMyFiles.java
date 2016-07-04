@@ -23,16 +23,16 @@ import com.google.android.gms.analytics.Tracker;
 
 import java.util.Vector;
 
-import br.com.MondialAssistance.Liberty.BLL.BLLAutomaker;
-import br.com.MondialAssistance.Liberty.BLL.BLLAutomotive;
-import br.com.MondialAssistance.Liberty.BLL.BLLProperty;
-import br.com.MondialAssistance.Liberty.MDL.AutomotiveCase;
-import br.com.MondialAssistance.Liberty.MDL.Case;
-import br.com.MondialAssistance.Liberty.Params.ClientParams;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.Util.Client;
-import br.com.MondialAssistance.Liberty.Util.ErrorHelper;
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLAutomaker;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLAutomotive;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLProperty;
+import br.com.MondialAssistance.DirectAssist.MDL.AutomotiveCase;
+import br.com.MondialAssistance.DirectAssist.MDL.Case;
+import br.com.MondialAssistance.Liberty.Params.ClientParams;
+import br.com.MondialAssistance.DirectAssist.Util.Client;
+import br.com.MondialAssistance.DirectAssist.Util.ErrorHelper;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 import br.com.MondialAssistance.Liberty.analytics.AnalyticsApplication;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 

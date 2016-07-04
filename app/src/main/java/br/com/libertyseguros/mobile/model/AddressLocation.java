@@ -5,15 +5,14 @@ import java.io.Serializable;
 public class AddressLocation implements Serializable {
 	
 	private static final long serialVersionUID = 9107072458243854482L;
-	private String city;
-	private String street;
-	private String postalCode;
-	
-	private String addressFormatted;
-
 	public static final String LONGITUDE = "longitude";
 	public static final String LATITUDE = "latitude";
 	public static final String LOCATION = "activity_location";
+
+	private String city;
+	private String street;
+	private String postalCode;
+	private String addressFormatted;
 
 	public String getCity()
 	{

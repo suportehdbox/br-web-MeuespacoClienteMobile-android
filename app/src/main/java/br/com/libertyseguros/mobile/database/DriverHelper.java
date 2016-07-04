@@ -6,13 +6,14 @@
 
 package br.com.libertyseguros.mobile.database;
 
-import java.util.ArrayList;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.util.Log;
+
+import java.util.ArrayList;
+
 import br.com.libertyseguros.mobile.model.Contact;
 import br.com.libertyseguros.mobile.model.Driver;
 import br.com.libertyseguros.mobile.model.Policy;

@@ -13,7 +13,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.MDL.ListItem;
+import br.com.MondialAssistance.DirectAssist.MDL.ListItem;
 
 public class CtrlListViewListNewAssistanceAdapter extends BaseAdapter{
 

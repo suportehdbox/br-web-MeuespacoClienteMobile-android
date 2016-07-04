@@ -1,1 +1,1 @@
-include ':app', ':directAssistLiberty', ':directAssist'
+include ':app', ':gcmsender', ':directassist', ':directAssistLiberty'

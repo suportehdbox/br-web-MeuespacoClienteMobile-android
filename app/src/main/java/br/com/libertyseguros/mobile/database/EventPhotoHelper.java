@@ -6,16 +6,16 @@
 
 package br.com.libertyseguros.mobile.database;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Environment;
 import android.util.Log;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import br.com.libertyseguros.mobile.model.EventPhoto;
 

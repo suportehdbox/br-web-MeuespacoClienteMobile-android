@@ -289,7 +289,7 @@ public class WebserviceInvokerTask extends AsyncTask<Void, Void, String> {
 		BufferedReader 		br 		= new BufferedReader(new StringReader(response), 8192);
 		
 		InputSource 		is 		= new InputSource(br);
-		ResponseParser 		parser 	= new ResponseParser(methodName + "Result");
+		ResponseParser parser 	= new ResponseParser(methodName + "Result");
 		SAXParserFactory 	factory = SAXParserFactory.newInstance();
 		SAXParser 			sp 		= factory.newSAXParser();
 		XMLReader 			reader	= sp.getXMLReader();

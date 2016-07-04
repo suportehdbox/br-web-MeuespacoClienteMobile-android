@@ -37,15 +37,15 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.Vector;
 
-import br.com.MondialAssistance.Liberty.BLL.BLLAddressFinder;
-import br.com.MondialAssistance.Liberty.BLL.BLLAutomaker;
-import br.com.MondialAssistance.Liberty.BLL.BLLAutomotive;
-import br.com.MondialAssistance.Liberty.MDL.AccreditedGarage;
-import br.com.MondialAssistance.Liberty.MDL.AddressLocation;
-import br.com.MondialAssistance.Liberty.Params.ClientParams;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.Util.ErrorHelper;
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLAddressFinder;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLAutomaker;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLAutomotive;
+import br.com.MondialAssistance.DirectAssist.MDL.AccreditedGarage;
+import br.com.MondialAssistance.DirectAssist.MDL.AddressLocation;
+import br.com.MondialAssistance.Liberty.Params.ClientParams;
+import br.com.MondialAssistance.DirectAssist.Util.ErrorHelper;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;

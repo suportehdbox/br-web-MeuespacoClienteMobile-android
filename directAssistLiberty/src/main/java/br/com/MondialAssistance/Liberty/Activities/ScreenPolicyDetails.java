@@ -15,12 +15,12 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import br.com.MondialAssistance.Liberty.BLL.BLLDirectAssist;
-import br.com.MondialAssistance.Liberty.Params.ClientParams;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.Util.Client;
-import br.com.MondialAssistance.Liberty.Util.ErrorHelper;
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLDirectAssist;
+import br.com.MondialAssistance.Liberty.Params.ClientParams;
+import br.com.MondialAssistance.DirectAssist.Util.Client;
+import br.com.MondialAssistance.DirectAssist.Util.ErrorHelper;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;

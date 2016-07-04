@@ -2,8 +2,7 @@ package br.com.MondialAssistance.Liberty.Activities;
 
 import java.util.ArrayList;
 
-import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.MDL.ListItem;
+import br.com.MondialAssistance.DirectAssist.MDL.ListItem;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import br.com.MondialAssistance.Liberty.R;
 
 public class CtrlListviewListMainMenuAdapter extends BaseAdapter{
 

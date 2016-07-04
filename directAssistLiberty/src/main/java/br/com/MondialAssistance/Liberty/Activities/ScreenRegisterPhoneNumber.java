@@ -13,11 +13,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import br.com.MondialAssistance.Liberty.BLL.BLLPhone;
-import br.com.MondialAssistance.Liberty.BLL.BLLPhone.PhoneNumberMask;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.Util.Client;
-import br.com.MondialAssistance.Liberty.Util.ErrorHelper;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLPhone;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLPhone.PhoneNumberMask;
+import br.com.MondialAssistance.DirectAssist.Util.Client;
+import br.com.MondialAssistance.DirectAssist.Util.ErrorHelper;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;
 

@@ -6,8 +6,6 @@
 
 package br.com.libertyseguros.mobile.activity;
 
-import java.util.ArrayList;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +15,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.common.Util;
 import br.com.libertyseguros.mobile.common.util.ValidationUtils;

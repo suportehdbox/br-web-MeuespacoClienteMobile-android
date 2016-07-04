@@ -1,16 +1,22 @@
 package br.com.libertyseguros.mobile.activity;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,12 +26,15 @@ import android.widget.Button;
 
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.MondialAssistance.Liberty.Activities.ScreenRegisterPhoneNumber;
 import br.com.MondialAssistance.Liberty.Activities.ScreenSelectLob;
-import br.com.MondialAssistance.Liberty.BLL.BLLPhone;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLPhone;
 import br.com.MondialAssistance.Liberty.analytics.AnalyticsApplication;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.common.LibertyException;
@@ -34,8 +43,7 @@ import br.com.libertyseguros.mobile.common.Util;
 import br.com.libertyseguros.mobile.common.util.DeviceUtils;
 import br.com.libertyseguros.mobile.common.util.ValidationUtils;
 import br.com.libertyseguros.mobile.constants.Constants;
-import br.com.libertyseguros.mobile.gcm.GcmRegisterInterface;
-import br.com.libertyseguros.mobile.gcm.GcmRegisterTask;
+import br.com.libertyseguros.mobile.gcm.RegistrationIntentService;
 import br.com.libertyseguros.mobile.model.DadosLoginSegurado;
 import br.com.libertyseguros.mobile.webservice.CallWebServices;
 import br.com.libertyseguros.mobile.webservice.WebserviceInterface;
@@ -73,35 +81,7 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 			AnalyticsApplication analyticsApplication = AnalyticsApplication.getInstance();
 			mTracker = analyticsApplication.getDefaultTracker(getApplication());
 
-//			checkPlayServices();
-
 			configScreen();
-
-		} catch (Exception e) {
-			Util.showException(this, e);
-		}
-	}
-
-	/**
-	 * Sends the registration ID to your server over HTTP, so it can use GCM/HTTP
-	 * or CCS to send messages to your app. Not needed for this demo since the
-	 * device sends upstream messages to a server that echoes back the message
-	 * using the 'from' address in the message.
-	 */
-	private void sendRegistrationIdToBackend(String tokenNotificacao) {
-
-		try {
-
-			WebserviceInterface enviarTokenWsInterface = new WebserviceInterface(this) {
-				@Override
-				public void callBackWebService(String response) {
-					// TODO 
-					Log.i("callEnviarToken", String.valueOf(CallWebServices.retEnviarToken(response)));
-				}
-			};
-
-			// Chama o ws  
-			CallWebServices.callEnviarToken(this, getDadosLoginSegurado().getCpf(), tokenNotificacao, enviarTokenWsInterface);
 
 		} catch (Exception e) {
 			Util.showException(this, e);
@@ -259,7 +239,7 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 			System.gc();
 			Runtime.getRuntime().gc();
 
-			// Somente na primeira execucao do app fara a leitura do preferences e seta no DadosSegurado 
+			// Somente na primeira execucao do app fara a leitura do preferences e seta no DadosSegurado
 			if (dadosLoginSegurado == null) {
 				dadosLoginSegurado = DadosLoginSegurado.getInstance();
 
@@ -349,7 +329,7 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 				}
 			};
 
-			// Chama o ws  
+			// Chama o ws
 			CallWebServices.callLogonSeguradoToken(this, getDadosLoginSegurado().getTokenAutenticacao(), getDadosLoginSegurado().getCpf(), loginTokenWsInterface);
 
 		} catch (Exception e) {
@@ -359,31 +339,18 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 
 	protected void registerTokeNotification() {
 
-//		// Fetch updated Instance ID token and notify our app's server of any changes (if applicable).
-//		Intent intent = new Intent(this, RegistrationIntentService.class);
-//		startService(intent);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean sentToken = sharedPreferences.getBoolean(Constants.SENT_TOKEN_TO_SERVER, false);
 
+        if (sentToken) {
+            // -- send the device token to Provider Liberty
+            String token = sharedPreferences.getString(Constants.TOKEN_GCM, "");
+            sendRegistrationIdToBackend(token);
 
-		GcmRegisterInterface registerInterface = new GcmRegisterInterface() {
-
-			@Override
-			public void callBackGcmRegister(String tokenNotificacao) {
-
-				// -- send the device token to Provider Liberty
-				sendRegistrationIdToBackend(tokenNotificacao);
-
-				atualizaDadosSegurado(tokenNotificacao);
-			}
-
-			@Override
-			public void callBackGcmRegisterFailWithError(LibertyException error) {
-				// EPO: Exibe menssagem de erro para o usuário
-				//Util.showException(context, error);
-				atualizaDadosSegurado("");
-			}
-		};
-
-		new GcmRegisterTask(context, registerInterface).execute();
+            atualizaDadosSegurado(token);
+        } else {
+            atualizaDadosSegurado("");
+        }
 
 	}
 
@@ -500,7 +467,7 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 				});
 			} else {
 				startActivityForResult(new Intent(this, ScreenSelectLob.class), 2);
-				//				finish();				
+				//				finish();
 			}
 		} catch (final Exception e) {
 			Util.showException(this, e);
@@ -512,8 +479,6 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 		try {
 			System.gc();
 			Runtime.getRuntime().gc();
-
-//	        initiateSkypeUri(this, "skype:Liberty.Matriz?call");
 
 			Intent it = new Intent(this, LoginActivity.class);
 			startActivityForResult(it, 1);
@@ -538,7 +503,7 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 			//CallWebServices.headerListHttp = null
 			CallWebServices.aspnetsession = null;
 
-			//EPO: remove os dados do clube libertu 
+			//EPO: remove os dados do clube libertu
 			setClubeLiberty(new ArrayList<Object>());
 
 			//EPO: remove dados do Segurado
@@ -633,6 +598,7 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 	public void onBackPressed() {
 		super.onBackPressed();
 		//logout();
+        System.exit(0);
 	}
 
 	@Override
@@ -643,7 +609,14 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 		if (null != getIntent().getExtras()
 				&& getIntent().getExtras().getBoolean(Constants.LM_EXTRA_PUSH)
 				&& isFromNotification) {
-			callActivity(NotificacaoConsultaActivity.class);
+
+//            // -- e caso já não esteja na tela de notificação
+//            ActivityManager am = (ActivityManager) this.getSystemService(ACTIVITY_SERVICE);
+//            List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
+//            String atual =  taskInfo.get(0).topActivity.getClassName();
+//             if (!atual.contains("NotificacaoConsultaActivity")) {
+                callActivity(NotificacaoConsultaActivity.class);
+//            }
 		}
 
 		//<< ANDROID STUDIO
@@ -651,9 +624,12 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 		mTracker.setScreenName("Menu Principal");
 		mTracker.send(new HitBuilders.ScreenViewBuilder().build());
 		//>>
-
-//		checkPlayServices();
 	}
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 
 	private void goClubeLiberty(){
 		try {
@@ -692,27 +668,38 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 			Util.showException(this, e);
 		}
 	}
+    /**
+     * Persist registration to third-party servers.
+     *
+     * Modify this method to associate the user's GCM registration token with any server-side account
+     * maintained by your application.
+     *
+     * @param tokenNotificacao The new token.
+     */
 
+    /**
+     * Sends the registration ID to your server over HTTP, so it can use GCM/HTTP
+     * or CCS to m messages to your app. Not needed for this demo since the
+     * device sends upstream messages to a server that echoes back the message
+     * using the 'from' address in the message.
+     */
+    private void sendRegistrationIdToBackend(String tokenNotificacao) {
 
-//    /**
-//     * Check the device to make sure it has the Google Play Services APK. If
-//     * it doesn't, display a dialog that allows users to download the APK from
-//     * the Google Play Store or enable it in the device's system settings.
-//     */
-//    private boolean checkPlayServices() {
-//
-//        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this.getApplicationContext());
-//
-//        if (resultCode != ConnectionResult.SUCCESS) {
-//            if (!GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
-////	            GooglePlayServicesUtil.getErrorDialog(resultCode, this, PLAY_SERVICES_RESOLUTION_REQUEST).show();
-////	        } else {else
-//                Log.i("CheckPlayServices", "This device is not supported.");
-//            }
-//            return false;
-//        }
-//        return true;
-//    }
+        try {
 
+            WebserviceInterface enviarTokenWsInterface = new WebserviceInterface(this) {
+                @Override
+                public void callBackWebService(String response) {
+                    // TODO
+                    Log.i("callEnviarToken", String.valueOf(CallWebServices.retEnviarToken(response)));
+                }
+            };
 
+            // Chama o ws
+            CallWebServices.callEnviarToken(this, getDadosLoginSegurado().getCpf(), tokenNotificacao, enviarTokenWsInterface);
+
+        } catch (Exception e) {
+            Util.showException(this, e);
+        }
+    }
 }

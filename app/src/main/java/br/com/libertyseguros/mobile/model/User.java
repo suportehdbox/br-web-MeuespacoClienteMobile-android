@@ -16,14 +16,8 @@ import br.com.libertyseguros.mobile.constants.Constants;
 public class User
 {
     private Contact contact;
-
     private Long id;
-
-    // EPO esta vers�o apenas sinistro de auto    
-//    private Policy homePolicy;
-
     private Policy autoPolicy;
-
     private boolean current;
 
     /**
@@ -41,10 +35,6 @@ public class User
         Policy auto = new Policy();
         auto.setPolicyLOB(Constants.LOB_AUTO);
         setAutoPolicy(auto);
-
-//        Policy home = new Policy();
-//        home.setPolicyLOB(Constants.LOB_HOME);
-//        setHomePolicy(home);
 
         setCurrent(true);
     }
@@ -65,13 +55,6 @@ public class User
         return contact;
     }
 
-//    /**
-//     * @return the homePolicy
-//     */
-//    public Policy getHomePolicy()
-//    {
-//        return homePolicy;
-//    }
 
     /**
      * @return the id
@@ -115,15 +98,6 @@ public class User
     {
         this.current = current;
     }
-
-//    /**
-//     * @param homePolicy
-//     *            the homePolicy to set
-//     */
-//    public void setHomePolicy(Policy homePolicy)
-//    {
-//        this.homePolicy = homePolicy;
-//    }
 
     /**
      * @param id

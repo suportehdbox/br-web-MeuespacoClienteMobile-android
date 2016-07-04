@@ -11,7 +11,7 @@ public class LibertyException extends Exception {
 
 	private static final long serialVersionUID = 7366348917805311402L;
 	
-	private  LibertyExceptionEnum libertyExceptionEnum;
+	private LibertyExceptionEnum libertyExceptionEnum;
 	
 
 	/**

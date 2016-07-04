@@ -23,9 +23,9 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import br.com.MondialAssistance.Liberty.Activities.ScreenAccreditedEstablishmentDetails;
 import br.com.MondialAssistance.Liberty.Activities.ScreenAddress;
-import br.com.MondialAssistance.Liberty.MDL.AccreditedGarage;
-import br.com.MondialAssistance.Liberty.MDL.AddressLocation;
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.MDL.AccreditedGarage;
+import br.com.MondialAssistance.DirectAssist.MDL.AddressLocation;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;

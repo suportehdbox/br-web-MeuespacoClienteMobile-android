@@ -29,9 +29,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import br.com.MondialAssistance.Liberty.R;
 
 import com.google.android.maps.OverlayItem;
+
+import br.com.MondialAssistance.Liberty.R;
 
 public class CustomBalloonOverlayView<Item extends OverlayItem> extends BalloonOverlayView<CustomOverlayItem> {
 

@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
 
-apply plugin: 'com.google.gms.google-services'
-
 android {
     signingConfigs {
         config {
@@ -12,13 +10,15 @@ android {
         }
     }
     compileSdkVersion 'Google Inc.:Google APIs:23'
-    buildToolsVersion '23.0.3'
+    buildToolsVersion '22.0.1'
     defaultConfig {
         applicationId "br.com.libertyseguros.mobile"
         minSdkVersion 9
         targetSdkVersion 22
         versionCode 25
         versionName "1.25"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         debug {
@@ -40,8 +40,19 @@ android {
 
 dependencies {
     compile project(':directAssistLiberty')
-    compile 'com.android.support:support-v4:22.0.1'
-    compile 'com.android.support:appcompat-v7:22.0.1'
-    compile 'com.google.android.gms:play-services:7.8.0'
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+    compile 'com.google.android.gms:play-services-analytics:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // Testing dependencies
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support:support-annotations:23.3.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

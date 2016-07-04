@@ -24,9 +24,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import br.com.MondialAssistance.Liberty.R;
 
 import com.google.android.maps.OverlayItem;
+
+import br.com.MondialAssistance.Liberty.R;
 
 /**
  * A view representing a MapView marker information balloon.

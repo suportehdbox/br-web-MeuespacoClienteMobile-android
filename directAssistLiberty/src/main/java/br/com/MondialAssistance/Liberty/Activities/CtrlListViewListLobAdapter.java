@@ -9,8 +9,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.MDL.ListItem;
+
+import br.com.MondialAssistance.DirectAssist.MDL.ListItem;
 
 public class CtrlListViewListLobAdapter extends BaseAdapter{
 

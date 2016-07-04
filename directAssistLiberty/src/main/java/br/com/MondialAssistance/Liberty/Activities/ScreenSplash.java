@@ -9,14 +9,14 @@ import android.os.Handler;
 import android.view.Window;
 import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
+//import com.crashlytics.android.Crashlytics;
 
-import br.com.MondialAssistance.Liberty.BLL.BLLPhone;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.Util.ErrorHelper;
-import br.com.MondialAssistance.Liberty.WS.BaseWS;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLPhone;
+import br.com.MondialAssistance.DirectAssist.Util.ErrorHelper;
+import br.com.MondialAssistance.DirectAssist.WS.BaseWS;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
-import io.fabric.sdk.android.Fabric;
+//import io.fabric.sdk.android.Fabric;
 
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;
 
@@ -25,7 +25,7 @@ public class ScreenSplash extends Activity implements Runnable {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Fabric.with(this, new Crashlytics());
+//		Fabric.with(this, new Crashlytics());
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.screen_splash);
 		

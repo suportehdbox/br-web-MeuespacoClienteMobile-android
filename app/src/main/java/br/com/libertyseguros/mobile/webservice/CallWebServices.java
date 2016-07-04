@@ -2,8 +2,6 @@ package br.com.libertyseguros.mobile.webservice;
 
 import android.content.Context;
 
-import org.apache.http.Header;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +38,7 @@ public class CallWebServices {
 	{
 		AddressServer addressServerSegurado = null;
 		
-		switch (Constants.execucao) 
+		switch (Constants.execucao)
 		{
 		case LMTipoExecucaoDesenv: 
 			addressServerSegurado = AddressServer.ADDRESS_SERVER_SEGURADO_DESENV;
@@ -60,35 +58,6 @@ public class CallWebServices {
 		}
 		return addressServerSegurado;
 	}
-	
-	//-------------------------------------------------------------------------------------------------------------------------------------
-	// << Chamadas do Portal Segurado
-	
-//	public static void callObterNovaImagemAcesso(Context context, String usuario, WebserviceInterface obterNovaImgWsInterface) {
-//
-//		// prepara os parametros
-//		Map<String, Object> args = new HashMap<String, Object>();
-//		args.put("usuarioId", usuario);
-//		args.put("ativarTrace", trace);
-//
-//		// Chama o ws
-//		new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "ObterNovaImagemAcessoMobileApp", args, obterNovaImgWsInterface).execute();
-//	}
-//
-	@SuppressWarnings("unchecked")
-//	public static Map<String, Object> retObterNovaImagemAcessogonSegurado(String result)  {
-//		Map<String, Object> imagemAcesso = null;
-//		if (!ValidationUtils.isStringEmpty(result)) {
-//			Map<String, Object> resultados = (Map<String, Object>)JsonHelper.jsonToArrayList(result);
-//
-//			Map<String, Object> mapTransactionMessages = (Map<String, Object>)resultados.get("TransactionMessages");
-//			if (getTransactionMessages(mapTransactionMessages).compareTo("") == 0) {
-//				imagemAcesso = (Map<String, Object>)resultados.get("ImagemAcesso");
-//			}
-//		}
-//		return imagemAcesso;
-//	}
-	
 	
 	public static void callLogonSegurado(Context context, String user, String password, boolean manterLogado, WebserviceInterface logonSeguradoWsInterface) {
 
@@ -127,7 +96,7 @@ public class CallWebServices {
 	public static DadosLoginSegurado retLogonSegurado(String result)  {
 		DadosLoginSegurado dadosLoginSegurado = null;
 		if (!ValidationUtils.isStringEmpty(result)) {
-			Map<String, Object> resultados = (Map<String, Object>)JsonHelper.jsonToArrayList(result);
+			Map<String, Object> resultados = (Map<String, Object>) JsonHelper.jsonToArrayList(result);
 			if (null != resultados) {
 				Map<String, Object> transactionMessages = (Map<String, Object>)resultados.get("TransactionMessages");
 				if (getTransactionMessages(transactionMessages).compareTo("") == 0) {
@@ -158,7 +127,7 @@ public class CallWebServices {
 		
 	    boolean returnToken = false;	
 	    if (!ValidationUtils.isStringEmpty(result)) {
-			Map<String, Object> resultados = (Map<String, Object>)JsonHelper.jsonToArrayList(result);
+			Map<String, Object> resultados = (Map<String, Object>) JsonHelper.jsonToArrayList(result);
 			if (null != resultados) {
 				Map<String, Object> transactionMessages = (Map<String, Object>)resultados.get("TransactionMessages");
 				if (getTransactionMessages(transactionMessages).compareTo("") == 0) {
@@ -190,7 +159,7 @@ public class CallWebServices {
 	public static DadosLoginSegurado retLogonSeguradoToken(String result)  {
 		DadosLoginSegurado dadosLoginSegurado = null;
 		if (!ValidationUtils.isStringEmpty(result)) {
-			Map<String, Object> resultados = (Map<String, Object>)JsonHelper.jsonToArrayList(result);
+			Map<String, Object> resultados = (Map<String, Object>) JsonHelper.jsonToArrayList(result);
 			if (null != resultados) {
 				Map<String, Object> transactionMessages = (Map<String, Object>)resultados.get("TransactionMessages");
 				if (getTransactionMessages(transactionMessages).compareTo("") == 0) {
@@ -238,51 +207,12 @@ public class CallWebServices {
 	public static String retEsqueciMinhaSenhaSegurado(String result)  {
 		String sRetorno = "";
 		if (!ValidationUtils.isStringEmpty(result)) {
-			Map<String, Object> transactionMessages = (Map<String, Object>)JsonHelper.jsonToArrayList(result);
+			Map<String, Object> transactionMessages = (Map<String, Object>) JsonHelper.jsonToArrayList(result);
 			Map<String, Object> mapTransactionMessages = (Map<String, Object>)transactionMessages.get("TransactionMessages");
 			sRetorno = getTransactionMessages(mapTransactionMessages);
 		}
 		return sRetorno;
 	}
-	
-//	public static void callObterDadosSegurado(Context context, String email, WebserviceInterface obterDadosSeguradoWsInterface) {
-//		
-//		// prepara os parametros
-//		StringBuilder xmlRequest = new StringBuilder();
-//		xmlRequest.append("<ObterDadosUsuarioRequest>");
-//		xmlRequest.append(	"<emailLogin>");
-//		xmlRequest.append(		email);
-//		xmlRequest.append(	"</emailLogin>");
-//		xmlRequest.append("</ObterDadosUsuarioRequest>");
-//		
-//		String xmlRequestString = xmlRequest.toString();
-//		xmlRequestString = xmlRequestString.replace("<", "&lt;");
-//	    xmlRequestString = xmlRequestString.replace(">", "&gt;");
-//
-//		Map<String, Object> args = new HashMap<String, Object>();
-//		args.put("usuarioId", email);
-//		args.put("ativarTrace", "false");
-//		args.put("xmlRequest", xmlRequestString);
-//		
-//		// Chama o ws
-//		new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "ObterDadosUsuarioMobileApp", args, obterDadosSeguradoWsInterface).execute();
-//	}
-//
-//	public static DadosLoginSegurado retObterDadosSegurado(String result) {
-//		DadosLoginSegurado dadosLoginSegurado = null;
-//		
-//		if (!ValidationUtils.isStringEmpty(result)) {
-//			Map<String, Object> resultados = (Map<String, Object>)JsonHelper.jsonToArrayList(result);
-//			Map<String, Object> transactionMessages = (Map<String, Object>)resultados.get("TransactionMessages");
-//			if (getTransactionMessages(transactionMessages).compareTo("") == 0) {
-//				dadosLoginSegurado = DadosLoginSegurado.getInstance();
-//				dadosLoginSegurado.setCpf((String)resultados.get("CPF")); 
-//				dadosLoginSegurado.setTokenAutenticacao((String)resultados.get("TokenAutenticacao"));
-//			}
-//		}
-//		
-//		return dadosLoginSegurado;		
-//	}
 	
 //	public static void callCadastrarUsuario(Context context, String nome, String senha, String email, String cpf, String numeroApolice, String fraseLembrete, String codigoImagemAcesso, WebserviceInterface cadastrarUsuarioWsInterface) {
 	public static void callCadastrarUsuario(Context context, /*String nome,*/ String senha, String email, String cpf, String numeroApolice, WebserviceInterface cadastrarUsuarioWsInterface) {
@@ -324,7 +254,7 @@ public class CallWebServices {
 		String retorno = "ERRO!";
 	
 		if (!ValidationUtils.isStringEmpty(result)) {
-			Map<String, Object> resultados = (Map<String, Object>)JsonHelper.jsonToArrayList(result);
+			Map<String, Object> resultados = (Map<String, Object>) JsonHelper.jsonToArrayList(result);
 			Map<String, Object> transactionMessages = (Map<String, Object>)resultados.get("TransactionMessages");
 			retorno = getTransactionMessages(transactionMessages);
 		}
@@ -360,7 +290,7 @@ public class CallWebServices {
 		new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "MeusSegurosLibertyMobileApp", args, meusSegurosLibertyWsInterface).execute();
 	}
 	
-	public static List<Object> retGetMeusSegurosLiberty(String result) throws LibertyException{
+	public static List<Object> retGetMeusSegurosLiberty(String result) throws LibertyException {
 		
 		List<Object> meusSeguros = new ArrayList<Object>();
 		if (!ValidationUtils.isStringEmpty(result)) {
@@ -465,7 +395,7 @@ public class CallWebServices {
 		new WebserviceInvokerTask(context, getAddressServerSegurado(), "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "ObterCoberturasMobileApp", args, coberturasApoliceWsInterface).execute();
 	}
 	
-	public static List<Object> retGetCoberturasApolice(String result) throws LibertyException{
+	public static List<Object> retGetCoberturasApolice(String result) throws LibertyException {
 		
 		List<Object> coberturas = new ArrayList<Object>();
 		if (!ValidationUtils.isStringEmpty(result)) {
@@ -485,55 +415,11 @@ public class CallWebServices {
             }
 			//>>
 			
-			coberturas = (ArrayList<Object>)JsonHelper.jsonToArrayList("Coberturas", result);
+			coberturas = (ArrayList<Object>) JsonHelper.jsonToArrayList("Coberturas", result);
 		}
 		return coberturas;
 	}
 		
-	// Chamadas do Portal Segurado >> 
-	
-	//-------------------------------------------------------------------------------------------------------------------------------------
-	// << Comum
-
-	/*
-	public static void callGetClubeLiberty(Context context, String email, WebserviceInterface clubeLibertyWsInterface) {
-		
-		// Seleciona o server
-		AddressServer server = null;
-		
-		switch (Constants.execucao) 
-		{
-			case LMTipoExecucaoDesenv: 
-			case LMTipoExecucaoAceiteInterno: 
-				server = AddressServer.ADDRESS_SERVER_SEGURADO_ACEITE_INTERNO;
-				break;
-			case LMTipoExecucaoProducaoInterno:
-				server = AddressServer.ADDRESS_SERVER_SEGURADO_PRODUCAO_INTERNO;
-				break;
-			case LMTipoExecucaoAceiteExterno: 
-			case LMTipoExecucaoProducaoExterno:
-				server = AddressServer.ADDRESS_SERVER_SEGURADO_PRODUCAO_EXTERNO;
-				break;
-		}
-		
-		// prepara os parametros
-		Map<String, Object> args = new HashMap<String, Object>();
-		args.put("usuarioId", email);
-		args.put("ativarTrace", "false");
-		
-		// Chama o ws
-		new WebserviceInvokerTask(context, server, "http://tempuri.org/LibertyPortalSegurado", "ControllerUI.asmx", "ObterClubeLibertyMobileApp", args, clubeLibertyWsInterface).execute();
-	}
-	
-	public static List<Object> retGetClubeLiberty(String result)  {
-		List<Object> clubeLiberty = new ArrayList<Object>();
-		if (!ValidationUtils.isStringEmpty(result)) {
-			clubeLiberty = JsonHelper.jsonToArrayList("ParceiroClubeLiberty", result);
-		}
-		return clubeLiberty;
-	}
-	*/
-
 	public  static void callCriarSessao(Context context, String usuarioId, WebserviceInterface criarSessaoWsInterface){
 
 		Map<String, Object> args = new HashMap<String, Object>();
@@ -557,7 +443,7 @@ public class CallWebServices {
 		// Seleciona o server
 		AddressServer server = null;
 		
-		switch (Constants.execucao) 
+		switch (Constants.execucao)
 		{
 			case LMTipoExecucaoDesenv: 
 			case LMTipoExecucaoAceiteInterno: 

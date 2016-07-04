@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.common.Util;
 import br.com.libertyseguros.mobile.common.util.FieldUtils;
@@ -526,10 +527,10 @@ public class PoliceInformationActivity extends LibertyMobileApp implements /*OnC
 			{
 				currentAction = DELETE;
 
-				displayConfirmAlert(PoliceInformationActivity.this, 
+				displayConfirmAlert(PoliceInformationActivity.this,
 						getString(R.string.delete),
-						getString(R.string.excluir_contato), 
-						getString(R.string.btn_ok), 
+						getString(R.string.excluir_contato),
+						getString(R.string.btn_ok),
 						getString(R.string.btn_cancelar),
 						PoliceInformationActivity.this);
 			}

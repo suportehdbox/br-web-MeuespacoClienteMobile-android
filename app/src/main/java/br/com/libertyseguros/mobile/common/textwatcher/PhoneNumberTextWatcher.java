@@ -9,6 +9,7 @@ package br.com.libertyseguros.mobile.common.textwatcher;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
+
 import br.com.libertyseguros.mobile.common.util.PhoneNumberUtils;
 
 /**

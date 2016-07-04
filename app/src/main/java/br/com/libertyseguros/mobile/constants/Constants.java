@@ -51,7 +51,7 @@ public class Constants {
     /**
      * Constante para sinalizar o tipo de execução (Setar de acordo com o ambiente de execução!)
      */
-    public static final LMTipoExecucao execucao = LMTipoExecucao.LMTipoExecucaoProducaoExterno;
+    public static final LMTipoExecucao execucao = LMTipoExecucao.LMTipoExecucaoAceiteInterno;
 
     public enum LMTipoExecucao {
         LMTipoExecucaoDesenv,
@@ -60,4 +60,8 @@ public class Constants {
         LMTipoExecucaoProducaoInterno,
         LMTipoExecucaoProducaoExterno;
     }
+
+    public static final String SENT_TOKEN_TO_SERVER = "sentTokenToServer";
+    public static final String TOKEN_GCM = "TOKEN_GCM";
+    public static final String REGISTRATION_COMPLETE = "registrationComplete";
 }

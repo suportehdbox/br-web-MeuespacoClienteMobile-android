@@ -10,8 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.MDL.AutomotivePolicy;
-import br.com.MondialAssistance.Liberty.MDL.PropertyPolicy;
+import br.com.MondialAssistance.DirectAssist.MDL.AutomotivePolicy;
+import br.com.MondialAssistance.DirectAssist.MDL.PropertyPolicy;
 
 public class CtrlListViewListPoliciesAdapter extends BaseAdapter{
 

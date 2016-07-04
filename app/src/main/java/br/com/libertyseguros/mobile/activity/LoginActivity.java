@@ -14,7 +14,7 @@ import android.widget.ToggleButton;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 import br.com.MondialAssistance.Liberty.analytics.AnalyticsApplication;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.common.LibertyException;

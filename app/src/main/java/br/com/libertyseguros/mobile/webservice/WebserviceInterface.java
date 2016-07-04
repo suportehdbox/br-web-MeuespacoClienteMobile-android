@@ -1,6 +1,7 @@
 package br.com.libertyseguros.mobile.webservice;
 
 import android.content.Context;
+
 import br.com.libertyseguros.mobile.common.LibertyException;
 
 /**

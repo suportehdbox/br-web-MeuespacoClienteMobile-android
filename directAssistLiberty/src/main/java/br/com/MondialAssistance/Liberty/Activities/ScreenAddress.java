@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import br.com.MondialAssistance.Liberty.R;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;

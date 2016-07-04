@@ -11,6 +11,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.util.Log;
+
 import br.com.libertyseguros.mobile.model.Contact;
 import br.com.libertyseguros.mobile.model.Policy;
 import br.com.libertyseguros.mobile.model.User;
@@ -234,9 +235,9 @@ public final class UserHelper
 
 		String createTableSQL = "CREATE TABLE " + TABLE_NAME 
 												+ " (" + ID_COLUMN + " INTEGER PRIMARY KEY AUTOINCREMENT, " 
-												+ CONTACT_ID_COLUMN + " INTEGER REFERENCES " + ContactHelper.TABLE_NAME + "(" + ContactHelper.ID_COLUMN + "), " 
+												+ CONTACT_ID_COLUMN + " INTEGER REFERENCES " + ContactHelper.TABLE_NAME + "(" + ContactHelper.ID_COLUMN + "), "
 												+ CURRENT_COLUMN + " INTEGER, "
-												+ AUTO_POLICY_COLUMN + " INTEGER REFERENCES " + PolicyHelper.TABLE_NAME + "(" + PolicyHelper.ID_COLUMN + "), " 
+												+ AUTO_POLICY_COLUMN + " INTEGER REFERENCES " + PolicyHelper.TABLE_NAME + "(" + PolicyHelper.ID_COLUMN + "), "
 												+ HOME_POLICY_COLUMN + " INTEGER REFERENCES " + PolicyHelper.TABLE_NAME + "(" + PolicyHelper.ID_COLUMN + "))";
 
         //Log.v(TAG, "<<< getCreateTableSQL()");
@@ -368,8 +369,7 @@ public final class UserHelper
 
     /**
      * @param context
-     * @param policies
-     * @param i
+     * @param policy
      */
     private static void insertOrUpdatePolicy(Context context, Policy policy)
     {

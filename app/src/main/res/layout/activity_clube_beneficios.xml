@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"    
     style="@style/layout_style_activity"
-    tools:context=".ClubeLibertyActivity" >
+    tools:context=".activity.ClubeBeneficioActivity" >
     
 	<include
         layout="@layout/navigation_bar" />

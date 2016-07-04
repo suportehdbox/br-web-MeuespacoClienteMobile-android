@@ -12,6 +12,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.common.Util;
 import br.com.libertyseguros.mobile.common.textwatcher.PhoneNumberTextWatcher;
@@ -216,7 +217,7 @@ public class CompartilharDadosActivity extends LibertyMobileApp implements OnCli
 
 			super.onCreate(savedInstanceState);
 
-			setContentView(R.layout.activity_compartilhar_dados); 
+			setContentView(R.layout.activity_compartilhar_dados);
 
 			if (savedInstanceState != null)
 			{

@@ -17,19 +17,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Vector;
-
-import br.com.MondialAssistance.Liberty.Activities.CtrlListViewListPoliciesAdapter.Items;
-import br.com.MondialAssistance.Liberty.BLL.BLLAutomaker;
-import br.com.MondialAssistance.Liberty.BLL.BLLAutomotive;
-import br.com.MondialAssistance.Liberty.BLL.BLLDirectAssist;
-import br.com.MondialAssistance.Liberty.BLL.BLLProperty;
-import br.com.MondialAssistance.Liberty.MDL.AutomotivePolicy;
-import br.com.MondialAssistance.Liberty.MDL.PropertyPolicy;
-import br.com.MondialAssistance.Liberty.Params.ClientParams;
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.Util.Client;
-import br.com.MondialAssistance.Liberty.Util.ErrorHelper;
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLAutomaker;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLAutomotive;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLDirectAssist;
+import br.com.MondialAssistance.DirectAssist.BLL.BLLProperty;
+import br.com.MondialAssistance.DirectAssist.MDL.AutomotivePolicy;
+import br.com.MondialAssistance.DirectAssist.MDL.PropertyPolicy;
+import br.com.MondialAssistance.Liberty.Params.ClientParams;
+import br.com.MondialAssistance.DirectAssist.Util.Client;
+import br.com.MondialAssistance.DirectAssist.Util.ErrorHelper;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;
@@ -132,7 +130,7 @@ public class ScreenListPolicies extends Activity implements Runnable {
 
 				CtrlListViewListPoliciesAdapter adapterListPolicies = (CtrlListViewListPoliciesAdapter) adapter
 						.getAdapter();
-				Items item = adapterListPolicies.getItem(position);
+				CtrlListViewListPoliciesAdapter.Items item = adapterListPolicies.getItem(position);
 
 				if (Edit == true) {
 

@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.common.Util;
 import br.com.libertyseguros.mobile.common.textwatcher.PhoneNumberTextWatcher;
@@ -589,10 +590,10 @@ public class WitnessActivity extends LibertyMobileApp implements DialogInterface
 			{
 				currentAction = DELETE;
 
-				displayConfirmAlert(WitnessActivity.this, 
+				displayConfirmAlert(WitnessActivity.this,
 						getString(R.string.delete),
-						getString(R.string.excluir_contato), 
-						getString(R.string.btn_ok), 
+						getString(R.string.excluir_contato),
+						getString(R.string.btn_ok),
 						getString(R.string.btn_cancelar),
 						WitnessActivity.this);
 			}

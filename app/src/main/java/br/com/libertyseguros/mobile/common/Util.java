@@ -113,7 +113,7 @@ public class Util {
      *            the listener which will be listening for the user's selection
      */
     public static void displayConfirmAlert(Context context, String title, String message, String positiveButton,
-                                           String negativeButton, android.content.DialogInterface.OnClickListener listener)
+                                           String negativeButton, DialogInterface.OnClickListener listener)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setCancelable(false);

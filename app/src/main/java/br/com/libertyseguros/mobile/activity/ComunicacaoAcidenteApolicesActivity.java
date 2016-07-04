@@ -333,13 +333,13 @@ public class ComunicacaoAcidenteApolicesActivity extends LibertyMobileApp implem
 	/**
 	 * @param dialog
 	 * @param which
-	 * @see android.content.DialogInterface.OnClickListener#onClick(android.content.DialogInterface, int)
+	 * @see DialogInterface.OnClickListener#onClick(DialogInterface, int)
 	 */
 	@Override
 	public void onClick(DialogInterface dialog, int which)
 	{
 		try {
-			// The user selected yes 
+			// The user selected yes
 			if (which == -1) {
 				wantSave = true;
 				salvaEfecha(null);
@@ -354,7 +354,7 @@ public class ComunicacaoAcidenteApolicesActivity extends LibertyMobileApp implem
 
 	/**
 	 * @param outState
-	 * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
+	 * @see android.app.Activity#onSaveInstanceState(Bundle)
 	 */
 	@Override
 	protected void onSaveInstanceState(Bundle outState)

@@ -12,7 +12,7 @@
 
         <!--android:icon="@drawable/logo"-->
         <!--android:theme="@style/DirectAssistTheme">-->
-        <!--android:name="br.com.MondialAssistance.DirectAssist.Activities.ScreenSplash" -->
+        <!--android:name="ScreenSplash" -->
     <!--<application-->
         <!--android:label="@string/app_name"-->
         <!--android:icon="@drawable/logo"-->

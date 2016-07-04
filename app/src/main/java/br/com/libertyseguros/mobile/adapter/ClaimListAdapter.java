@@ -23,6 +23,7 @@ import br.com.libertyseguros.mobile.model.Address;
 import br.com.libertyseguros.mobile.model.Event;
 
 //TODO - Convert this to a Cursor Adapter to improve performance
+
 /**
  * Adapter for displaying a list of claims and selecting a claim from the list
  * 

@@ -60,7 +60,7 @@ public class ComunicacaoAcidenteActivity extends LibertyMobileApp {
 
 
 			ListView		listViewNovoSinistro 		= (ListView) findViewById(R.id.list_novo_sinistro);
-			SectionAdapter	sectionAdapterNovoSinistro 	= new SectionAdapter(this);
+			SectionAdapter sectionAdapterNovoSinistro 	= new SectionAdapter(this);
 
 			// << Prepara os itens para exibição pelo listView:
 
@@ -95,7 +95,7 @@ public class ComunicacaoAcidenteActivity extends LibertyMobileApp {
 
 
 			listViewMeusSinistros = (ListView) findViewById(R.id.list_meus_sinistros);
-			SectionAdapter	sectionAdapterMeusSinistros = new SectionAdapter(this);
+			SectionAdapter sectionAdapterMeusSinistros = new SectionAdapter(this);
 
 			// << Prepara os itens para exibi�����o pelo listView:
 

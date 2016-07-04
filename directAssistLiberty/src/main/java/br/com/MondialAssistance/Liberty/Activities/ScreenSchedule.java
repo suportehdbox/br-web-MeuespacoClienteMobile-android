@@ -21,7 +21,7 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 
 import br.com.MondialAssistance.Liberty.R;
-import br.com.MondialAssistance.Liberty.Util.Utility;
+import br.com.MondialAssistance.DirectAssist.Util.Utility;
 import br.com.MondialAssistance.Liberty.common.CustomApplication;
 
 //import br.com.MondialAssistance.DirectAssist.Util.GoogleAnalytics;
