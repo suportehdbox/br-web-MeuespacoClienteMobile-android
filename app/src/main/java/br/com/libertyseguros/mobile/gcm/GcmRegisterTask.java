@@ -24,7 +24,8 @@ public class GcmRegisterTask extends AsyncTask<Void, Void, String> {
     /**
      * Sender ID here. This is the project number you got from the API Console.
      */
-	private final static String SENDER_ID 	= "578571555423"; //"libertysegurosbrasil2014"
+//	private final static String SENDER_ID 	= "578571555423"; //"libertysegurosbrasil2014"
+	private final static String SENDER_ID 	= "702655833911"; //"libertysegurosbrasil2014"
 	private Context context;
 	private GcmRegisterInterface gcmRegisterInterface;
 

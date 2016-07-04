@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="wsclient.android">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/directAssist/libs/wsclient.android.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

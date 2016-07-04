@@ -29,11 +29,12 @@ public class CallWebServices {
 //		this.reference = new WeakReference<ListView>(listView);
 	}
 
-	public static Header[] headerListHttp;
+	//public static Header[] headerListHttp;
 	public static String userErrorMessagesMsg;
 	
-	private static String trace = "false";
-	
+	private static String trace = "true";
+
+	public static String aspnetsession;
 	
 	public static AddressServer getAddressServerSegurado()
 	{

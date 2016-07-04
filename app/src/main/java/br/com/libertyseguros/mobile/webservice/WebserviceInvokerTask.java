@@ -153,6 +153,7 @@ public class WebserviceInvokerTask extends AsyncTask<Void, Void, String> {
 			
 			// Parte de cookie:
 
+			/* ANTIGO
 			if (CallWebServices.headerListHttp != null) {
 				
 		        for(Object header : CallWebServices.headerListHttp)
@@ -170,17 +171,34 @@ public class WebserviceInvokerTask extends AsyncTask<Void, Void, String> {
 			        	break;
 		        	}
 		        }
-			}
-			
+			}*/
+
+			request.setHeader("Cookie", CallWebServices.aspnetsession);
+
 			// Send request to ASMX service
 			DefaultHttpClient httpClient = new MyHttpClient(this.context);
 
 			HttpResponse response = httpClient.execute(request);
-			
+
 			if (saveCookie) {
-				CallWebServices.headerListHttp = response.getAllHeaders(); 
+				// ANTIGO: CallWebServices.headerListHttp = response.getAllHeaders();
+
+				for (Object header : response.getAllHeaders()) {
+					Header headerProperty = (Header) header;
+					if (null != headerProperty && !ValidationUtils.isStringEmpty(headerProperty.getName())
+							&& headerProperty.getName().toUpperCase().compareTo("SET-COOKIE") == 0) {
+						String value = headerProperty.getValue().toString();
+						String[] split = value.split(";");
+						value = split[0].toString();
+
+						if (value != "" && !value.contains("alive")) {
+							CallWebServices.aspnetsession = value;
+						}
+						break;
+					}
+				}
 			}
-			
+
 			HttpEntity responseEntity = response.getEntity();
 			
 			String envelopSoapResponse = convertStreamToString(responseEntity);

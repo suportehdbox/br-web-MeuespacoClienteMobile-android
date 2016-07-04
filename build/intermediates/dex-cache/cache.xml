@@ -2,277 +2,277 @@
 <items version="2" >
 
     <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.8.0/jars/classes.jar"
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics/2.5.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="130b32ed466fa0f63efd4c7d6250ccd2ed506790">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-dc756b6709340806b71b722b6d0b7b15cbec7a04.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="166e458ee3b5fb5fcff0f936df3f3a788e6c54f3">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-a902d52e421e2849c8c86e6f7c0a36b07aaa61d8.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-a350be1722950e06f3a9be2e4180c0c287187cca.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-079245cbfa44ca2344bedb213c16a097f2462551.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="0124ce31248c0e8acfa2b28283c6d1a4d76e73d2">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-58d895fac182915054f11ce50887f78558a9a438.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/answers/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="222f84147f4e660b0713d04aecdd73a5223aa82a">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-7992963ed22b1b6f171024f920a1f63279c17891.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics-core/2.3.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="3013d965c748748ec9c7d0d42102e9abd1c9ed91">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-d1043ddbb8d9f86702ec006d43c00389e64d9944.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssistLiberty/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="010690f0a36fecf703c2d61419a8d52f58942e8c">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-9f73915c7d961fe236b6d238ca19bdc626094d72.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/libs/httpcore-4.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="50d62373255daf8fa4f21ce381683ed64a3a95b8">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/httpcore-4.0-6cab2fcb421583b2c5d0cd742d7ce111551e6475.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssist/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="91dbdb83938dfd97c03badba719432074b969cf1">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-a3850cb7fcee50c5c0c3599b490d364bb4b5c123.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="edea92852b40eee716e910af8dad9eeaa58fb0e1">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-05a0c8381a8a54936e1e93508105183ca4810316.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/internal_impl-22.2.0-f9374ddf1d590c55a95faec32c04f874727b2ccb.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-c8585ca6008b93efb7896af083e7678d57d4f002.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/libs/gson-2.2.2.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="53bfcd3c8e310d1493b2691484525ed90b04e236">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/gson-2.2.2-f845c27c43173a6578440ac275485cd33927a642.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="77a9dcb5f8b1dba36aacaa9c150eb0942dbea158">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-998970eebcc8317a77019de00a10f2d77adaf0a6.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="e23ea11124bb700eeddd4ab7aa848c615f493850">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-34e2a5e1a53b7aa2eba0d746bc3aaddbf7b4783f.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-bdf2cebbd436f03971824e175a87554569f5fa12.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="2e24e5f1b11170163028277de63f709e42525db4">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-74c28941e31619ee3ad45675fa5679ccd351e79f.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/libs/httpclient-4.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="a76d7fd8033d48b4c67b4ccf159abb080c1059b6">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/httpclient-4.0-cc9dd52468a40aa1f70045e8be1c1bd88e233e2f.jar" />
-    </item>
-    <item
-        jar="/Users/evandro/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/support-annotations-22.2.0-66fc0a2e401cddd8309535de31af341b2ea2943e.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="c5cafb324568d954780abb858c25db7ce675ab3c">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-9de585f0a0e5df1feade2752f696e550d4bc7c10.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="c2ac04c5b232f6f0658ee4f1c13be09cd76406e2">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-8aac3f5e213646ed4e6241045cb088f1de4c04e0.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="adebe28e0c0c05d34a3bfd76f3275bf4d8ff87b6">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-9d34b2250cf420984ffdbf41112e5e3c138f27cf.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="42a1ee578b62fd1bd28b3307a679dc9ba0791587">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-a3efeb78cc1634e0d832f41b3eaad972f01e4465.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-176608da7ba10fe5b7a0da4bf1994eca73883a4f.jar" />
+        sha1="442495d769faa63f8a998fc0abb17ce187a6aa77">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.crashlytics.sdk.android-crashlytics-2.5.0_c33ea595a00e07ba0071f6468eca43e037dadc26.jar" />
     </item>
     <item
         jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
         sha1="98137c4d12c50923f5809852b1ef4d1c4e162081">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-c808fdc7b6dd130a99989d0a50fd89b5a774ac8b.jar" />
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appinvite-7.8.0_c808fdc7b6dd130a99989d0a50fd89b5a774ac8b.jar" />
     </item>
     <item
         jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
         sha1="d11330ea68c0d964d30d5caed1f27e6b1488b189">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-23768bac981dfd3850f68d83a01037c7a05ed2e3.jar" />
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-identity-7.8.0_23768bac981dfd3850f68d83a01037c7a05ed2e3.jar" />
     </item>
     <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.8.0/jars/classes.jar"
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="6e85edfc9b5346d216e50ccef1f8e825504144a3">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-2086a3d4b6f64b0c430f8ce2399faf7285a8aafd.jar" />
+        sha1="42a1ee578b62fd1bd28b3307a679dc9ba0791587">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-drive-7.8.0_a3efeb78cc1634e0d832f41b3eaad972f01e4465.jar" />
     </item>
     <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssist/unspecified/jars/libs/wsclient.android.jar"
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/libs/gson-2.2.2.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="2742071d4167d8a61f51336f565efec1c9693ac4">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/wsclient.android-58f670fd01fea75e3318af525b9db96e15b85c1a.jar" />
+        sha1="53bfcd3c8e310d1493b2691484525ed90b04e236">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/gson-2.2.2_f845c27c43173a6578440ac275485cd33927a642.jar" />
     </item>
     <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.5/jars/classes.jar"
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="6e65060ef2ec6ec98365250d2119d7968626fd3f">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-97d4a71874dd54b95929d758a48846354b52033a.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/internal_impl-22.2.0-3a11d5a1d88107f3b0daeff9991fd68f6587014d.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/beta/1.1.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="b7a78990c10481f43cb4909f535ef4f11e60f1ab">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-9f8fd922b6059edb9936a8bc473cfa941d310901.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics/2.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="442495d769faa63f8a998fc0abb17ce187a6aa77">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-c33ea595a00e07ba0071f6468eca43e037dadc26.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-1b98b71280bacaf5afef1658f93f8fe0aa0b023f.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-c9c77f6354f107be9d74e05578ded4247f600227.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/libs/ksoap2-android-assembly-2.5.4-jar-with-dependencies.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="a7bad1621042e11ec47a295ab9aa9f904ece8078">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/ksoap2-android-assembly-2.5.4-jar-with-dependencies-833589874621a2674cbc18a6c85ea6eb4e5cc97e.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="b99f0b78bbcb76b915bc6529a83b65d4d46990dd">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-15028b90316b585a44ad8fefa104eb04a3ba2db9.jar" />
-    </item>
-    <item
-        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.8.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="1ff30fa49c07a08c3035d7218a3efebf5680d522">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-dc0e6da63a49c899887ebc1c534072dbb574f9d7.jar" />
+        sha1="c2ac04c5b232f6f0658ee4f1c13be09cd76406e2">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wallet-7.8.0_8aac3f5e213646ed4e6241045cb088f1de4c04e0.jar" />
     </item>
     <item
         jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
         sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
-        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/release/classes-f14dbf8f90c28e2ab9993ffd98c2b94c70bb810c.jar" />
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.android.support-mediarouter-v7-22.2.0_f14dbf8f90c28e2ab9993ffd98c2b94c70bb810c.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-7.8.0_c9c77f6354f107be9d74e05578ded4247f600227.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0_f9374ddf1d590c55a95faec32c04f874727b2ccb.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/libs/httpclient-4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a76d7fd8033d48b4c67b4ccf159abb080c1059b6">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/httpclient-4.0_cc9dd52468a40aa1f70045e8be1c1bd88e233e2f.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2e24e5f1b11170163028277de63f709e42525db4">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-games-7.8.0_74c28941e31619ee3ad45675fa5679ccd351e79f.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-7.8.0_a350be1722950e06f3a9be2e4180c0c287187cca.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssistLiberty/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="bdf5489375db0b850b7e779514add2fd58869a2b">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/LibertySegurosBrasil-Android-directAssistLiberty-unspecified_9f73915c7d961fe236b6d238ca19bdc626094d72.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-7.8.0_1b98b71280bacaf5afef1658f93f8fe0aa0b023f.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics-core/2.3.3/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="3013d965c748748ec9c7d0d42102e9abd1c9ed91">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.crashlytics.sdk.android-crashlytics-core-2.3.3_d1043ddbb8d9f86702ec006d43c00389e64d9944.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/beta/1.1.3/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="b7a78990c10481f43cb4909f535ef4f11e60f1ab">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.crashlytics.sdk.android-beta-1.1.3_9f8fd922b6059edb9936a8bc473cfa941d310901.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-location-7.8.0_c8585ca6008b93efb7896af083e7678d57d4f002.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="77a9dcb5f8b1dba36aacaa9c150eb0942dbea158">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-fitness-7.8.0_998970eebcc8317a77019de00a10f2d77adaf0a6.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e23ea11124bb700eeddd4ab7aa848c615f493850">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-7.8.0_34e2a5e1a53b7aa2eba0d746bc3aaddbf7b4783f.jar" />
+    </item>
+    <item
+        jar="/Users/evandro/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0_66fc0a2e401cddd8309535de31af341b2ea2943e.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="edea92852b40eee716e910af8dad9eeaa58fb0e1">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appstate-7.8.0_05a0c8381a8a54936e1e93508105183ca4810316.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/libs/ksoap2-android-assembly-2.5.4-jar-with-dependencies.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a7bad1621042e11ec47a295ab9aa9f904ece8078">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/ksoap2-android-assembly-2.5.4-jar-with-dependencies_833589874621a2674cbc18a6c85ea6eb4e5cc97e.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0_3a11d5a1d88107f3b0daeff9991fd68f6587014d.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6e85edfc9b5346d216e50ccef1f8e825504144a3">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-panorama-7.8.0_2086a3d4b6f64b0c430f8ce2399faf7285a8aafd.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c5cafb324568d954780abb858c25db7ce675ab3c">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wearable-7.8.0_9de585f0a0e5df1feade2752f696e550d4bc7c10.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssist/unspecified/jars/libs/wsclient.android.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c3cf828601051096edc9d86622a9333dbb1b6023">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/wsclient.android_58f670fd01fea75e3318af525b9db96e15b85c1a.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-22.2.0_176608da7ba10fe5b7a0da4bf1994eca73883a4f.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.5/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6e65060ef2ec6ec98365250d2119d7968626fd3f">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/io.fabric.sdk.android-fabric-1.3.5_97d4a71874dd54b95929d758a48846354b52033a.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/libs/httpcore-4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="50d62373255daf8fa4f21ce381683ed64a3a95b8">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/httpcore-4.0_6cab2fcb421583b2c5d0cd742d7ce111551e6475.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="0124ce31248c0e8acfa2b28283c6d1a4d76e73d2">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-analytics-7.8.0_58d895fac182915054f11ce50887f78558a9a438.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="adebe28e0c0c05d34a3bfd76f3275bf4d8ff87b6">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-nearby-7.8.0_9d34b2250cf420984ffdbf41112e5e3c138f27cf.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="166e458ee3b5fb5fcff0f936df3f3a788e6c54f3">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-safetynet-7.8.0_a902d52e421e2849c8c86e6f7c0a36b07aaa61d8.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/LibertySegurosBrasil-Android/directAssist/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ab5753ab8ed576e5bb23a1a05e4cf5b0bfdfa672">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/LibertySegurosBrasil-Android-directAssist-unspecified_a3850cb7fcee50c5c0c3599b490d364bb4b5c123.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-22.2.0_bdf2cebbd436f03971824e175a87554569f5fa12.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/answers/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="222f84147f4e660b0713d04aecdd73a5223aa82a">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.crashlytics.sdk.android-answers-1.3.0_7992963ed22b1b6f171024f920a1f63279c17891.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="b99f0b78bbcb76b915bc6529a83b65d4d46990dd">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-vision-7.8.0_15028b90316b585a44ad8fefa104eb04a3ba2db9.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1ff30fa49c07a08c3035d7218a3efebf5680d522">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-7.8.0_dc0e6da63a49c899887ebc1c534072dbb574f9d7.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-plus-7.8.0_079245cbfa44ca2344bedb213c16a097f2462551.jar" />
+    </item>
+    <item
+        jar="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="130b32ed466fa0f63efd4c7d6250ccd2ed506790">
+        <dex dex="/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-cast-7.8.0_dc756b6709340806b71b722b6d0b7b15cbec7a04.jar" />
     </item>
 
 </items>

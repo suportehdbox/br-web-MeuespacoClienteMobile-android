@@ -535,7 +535,8 @@ public class MenuPrincipalActivity extends LibertyMobileApp {
 			setControlsLogin(View.VISIBLE);
 
 			// EPO: reset nos dados do cookie
-			CallWebServices.headerListHttp = null;
+			//CallWebServices.headerListHttp = null
+			CallWebServices.aspnetsession = null;
 
 			//EPO: remove os dados do clube libertu 
 			setClubeLiberty(new ArrayList<Object>());

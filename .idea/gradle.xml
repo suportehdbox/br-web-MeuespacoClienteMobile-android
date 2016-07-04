@@ -14,6 +14,14 @@
             <option value="$PROJECT_DIR$/directAssistLiberty" />
           </set>
         </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/directAssist" />
+            <option value="$PROJECT_DIR$/directAssistLiberty" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
