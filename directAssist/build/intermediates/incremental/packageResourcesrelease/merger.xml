@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssist/src/main/res"/><source path="/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssist/build/generated/res/rs/release"/><source path="/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssist/build/generated/res/resValues/release"/></dataSet><dataSet config="release"><source path="/SVN/WEB/trunk/LibertySegurosBrasil-Android/directAssist/src/release/res"/></dataSet><mergedItems/></merger>

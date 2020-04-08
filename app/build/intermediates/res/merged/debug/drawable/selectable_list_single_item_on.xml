@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (c) 2010, Liberty Mutual Proprietary and Confidential All Rights Reserved -->
-<shape
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid
-        android:color="#1E90FF" />
-    <corners
-        android:radius="9px" />
-</shape><!-- From: file:/SVN/WEB/trunk/LibertySegurosBrasil-Android/app/src/main/res/drawable/selectable_list_single_item_on.xml -->
