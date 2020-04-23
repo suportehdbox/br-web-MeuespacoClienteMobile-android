@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.libertyseguros.mobile">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission
+        android:name="android.permission.USE_FINGERPRINT"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="br.com.libertyseguros.mobile.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name="br.com.libertyseguros.mobile.util.AnalyticsApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification_default" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/color_notification" />
+
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Home"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Main"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Register"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ChangePassword"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ChangeEmail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ChangeEmailStepTwo"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Workshop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ListPolicy"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.DetailPolicy"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.WorkshopOff"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ChangePasswordLoginOn"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Support"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Parcels"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ChangeEmailLoginOn"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Club"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ClubWebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.VehicleAccidentStep1"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.VehicleAccidentStep2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.VehicleAccidentStep3"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.VehicleAccidentStep4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ExtendPagament"
+            android:theme="@style/TransparentTheme" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ChangeEmailStepThree"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar"  />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Notification"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.VehicleAccidentLogOff"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ListVehicleAccident"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ListVehicleAccidentStatus"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Assistance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.PrivacyPolicy"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Cities"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.UploadPictures"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Documents"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.ViewerDocuments"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.InsuranceCoverage"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.DocumentView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.GlassAssistanceWebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.Assistance24WebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.NotificationDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4184877f238774093b7b09ec5b7572c6d22c7846" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCyPgeh4Hi9nlPcsGHsKCIJPYZV4v_oPUw" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="br.com.libertyseguros" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.TransparentActivity"
+            android:theme="@style/Theme.Transparent"></activity>
+
+
+        <service android:name="br.com.libertyseguros.mobile.receiver.ServiceFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name="br.com.libertyseguros.mobile.receiver.FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- SmiSdk Intent Service required for all APIs  -->
+        <service android:name="com.datami.smi.SmiIntentService" />
+
+
+    </application>
+
+</manifest>

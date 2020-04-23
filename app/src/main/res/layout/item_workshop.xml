@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_default_2"
+        android:layout_marginRight="@dimen/margin_default_2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="3dp" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_default_3"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_recommended"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_default_0"
+                        android:layout_marginTop="@dimen/margin_default_2"
+                        android:textColor="@color/text_default_13"
+                        android:lines="1"
+                        android:text="@string/workshop_recommended"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_default_0"
+                        android:layout_marginTop="@dimen/margin_default_1"
+                        android:textColor="@color/text_default_5"
+                        android:textStyle="bold"
+                        android:lines="1"
+                        android:text="Automotivo Berrini"/>
+
+                    <TextView
+                        android:id="@+id/tv_full_workshop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_default_0"
+                        android:layout_marginTop="@dimen/margin_default_1"
+                        android:textColor="@color/text_default_8"
+                        android:lines="1"
+                        android:text="@string/workshop_full"/>
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_default_1"
+                        android:textColor="@color/text_default_3"
+                        android:textSize="@dimen/font_default_0"
+                        android:lines="2"
+                        android:text="Rua Funchal, 250"/>
+
+                    <TextView
+                        android:id="@+id/tv_address_comp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_default_3"
+                        android:textSize="@dimen/font_default_0"
+                        android:lines="1"
+                        android:text=" Vila Olimpia, SP"
+                        android:visibility="invisible"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="@dimen/margin_default_2">
+
+                            <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:scaleType="centerInside"
+                                android:id="@+id/iv_km"
+                                android:src="@drawable/icon_vehicle_green"/>
+
+                            <TextView
+                                android:id="@+id/tv_distance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/font_default"
+                                android:text="3 Km"
+                                android:layout_marginRight="@dimen/margin_default_2"
+                                android:layout_marginLeft="@dimen/margin_default_2"
+                                android:textColor="@color/text_default_7"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="@dimen/margin_default_2">
+
+                            <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:scaleType="centerInside"
+                                android:id="@+id/iv_phone"
+                                android:src="@drawable/icon_phone_green"/>
+
+                            <br.com.libertyseguros.mobile.view.custom.TextViewCustom
+                                android:id="@+id/tv_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/font_default"
+                                android:text="55 11 983402854"
+                                android:layout_marginRight="@dimen/margin_default_2"
+                                android:layout_marginLeft="@dimen/margin_default_2"
+                                android:textColor="@color/text_default_7"/>
+                         </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3" >
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/margin_default_2"
+                        android:layout_marginBottom="@dimen/margin_default_1"
+                        android:background="@color/line_default_2"/>
+
+                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                        android:id="@+id/ib_route"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/icon_size_default_width_1"
+                        android:layout_marginBottom="@dimen/margin_default_2"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_oval_trace_route_green"
+                        android:layout_centerInParent="true"
+                        android:background="@null"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_operation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:textSize="@dimen/font_default_8"
+                android:text="3 Km"
+                android:layout_marginRight="@dimen/margin_default_2"
+                android:layout_marginLeft="@dimen/margin_default_2"
+                android:textColor="@color/text_default_2"/>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

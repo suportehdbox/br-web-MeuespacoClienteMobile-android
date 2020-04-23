@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#D9000000">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/icon_oval_exclamation"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default_4"
+        android:gravity="center"
+        android:textSize="@dimen/font_default_5"
+        android:textColor="@color/text_default_15"
+        android:text="@string/photos_documents_sent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default_2"
+        android:layout_marginLeft="@dimen/margin_default_2"
+        android:layout_marginRight="@dimen/margin_default_2"
+        android:gravity="center"
+        android:textSize="@dimen/font_default_2"
+        android:textColor="@color/text_default_1"
+        android:text="@string/photos_documents_linked"/>
+
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_default_2"
+        android:layout_marginRight="@dimen/margin_default_2"
+        android:layout_marginTop="@dimen/margin_default_4"
+        android:layout_marginBottom="@dimen/margin_default_4"
+        android:gravity="center"
+        android:textSize="@dimen/font_default_3"
+        android:textColor="@color/text_default_1"/>
+
+    <ImageView
+        android:id="@+id/iv_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default_2"
+        android:layout_marginLeft="@dimen/margin_default_6"
+        android:layout_marginRight="@dimen/margin_default_6"
+        android:src="@drawable/bt_ok_text_white" />
+
+
+</LinearLayout>

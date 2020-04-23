@@ -1,0 +1,320 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/snackbarlocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout android:layout_width="match_parent"
+    android:id="@+id/mapFragmentContainer"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_app">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1.3">
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default_2"
+                android:textSize="@dimen/font_default_1"
+                android:gravity="center"
+                android:textColor="@color/text_default_2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/logo_liberty_blue"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.3">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_default_6"
+                    android:layout_alignParentTop="true"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:id="@+id/mapwhere" />
+
+                <android.support.v7.widget.CardView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_card_width"
+                    android:layout_marginLeft="@dimen/margin_default_2"
+                    android:layout_marginRight="@dimen/margin_default_2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="3dp" >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/background_box">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/font_default"
+                            android:text="@string/workshop_proximity"
+                            android:layout_marginTop="@dimen/margin_default_1"
+                            android:layout_marginLeft="@dimen/margin_default_3"
+                            android:layout_marginRight="@dimen/margin_default_3"/>
+
+                        <TextView
+                            android:id="@+id/tv_recommended"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_default_3"
+                            android:layout_marginRight="@dimen/margin_default_3"
+                            android:textSize="@dimen/font_default_0"
+                            android:textColor="@color/text_default_13"
+                            android:lines="1"
+                            android:text="@string/workshop_recommended"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_default_3"
+                            android:layout_marginTop="@dimen/margin_default_1"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tv_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/font_default_0"
+                                    android:textColor="@color/text_default_5"
+                                    android:textStyle="bold"
+                                    android:lines="1"
+                                    android:text="Automotivo Berrini"/>
+
+                                <TextView
+                                    android:id="@+id/tv_address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/font_default_0"
+                                    android:lines="2"/>
+
+                                <TextView
+                                    android:id="@+id/tv_address_comp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/font_default_0"
+                                    android:lines="1"
+                                    android:visibility="gone"
+                                    />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_default_2"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginTop="@dimen/margin_default_2">
+
+                                        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/iv_km"
+                                            android:src="@drawable/icon_vehicle_green"/>
+
+                                        <TextView
+                                            android:id= "@+id/tv_km"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/text_default_7"
+                                            android:textSize="@dimen/font_default_0"
+                                            android:layout_marginRight="@dimen/margin_default_2"
+                                            android:layout_marginLeft="@dimen/margin_default_2"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginTop="@dimen/margin_default_2">
+
+                                        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/iv_phone"
+                                            android:src="@drawable/icon_phone_green"/>
+
+                                        <br.com.libertyseguros.mobile.view.custom.TextViewCustom
+                                            android:id="@+id/tv_phone"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="@dimen/font_default_0"
+                                            android:textColor="@color/text_default_7"
+                                            android:layout_marginRight="@dimen/margin_default_2"
+                                            android:layout_marginLeft="@dimen/margin_default_2"/>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3" >
+
+                                <LinearLayout
+                                    android:layout_width="2dp"
+                                    android:layout_height="110dp"
+                                    android:layout_marginBottom="@dimen/margin_default"
+                                    android:background="@color/line_default_2"/>
+
+                                <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                                    android:id="@+id/ib_route"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/icon_size_default_width_1"
+                                    android:layout_marginBottom="@dimen/margin_default"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/icon_oval_trace_route_green"
+                                    android:layout_centerInParent="true"
+                                    android:background="@null"/>
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_operation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/font_default_8"
+                            android:layout_marginTop="@dimen/margin_default"
+                            android:layout_marginRight="@dimen/margin_default_2"
+                            android:layout_marginLeft="@dimen/margin_default_2"
+                            android:textColor="@color/text_default_2"/>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_default_2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_default_2"
+                    android:layout_marginLeft="-5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                        android:id="@+id/ib_sinistro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/icon_size_default_width_3"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_oval_assistence"
+                        android:layout_centerInParent="true"
+                        android:background="@null"/>
+
+                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                        android:id="@+id/iv_workshop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/icon_size_default_width_3"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_oval_workshop"
+                        android:layout_centerInParent="true"
+                        android:background="@null"/>
+
+                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                        android:id="@+id/iv_club"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/icon_size_default_width_3"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_oval_club"
+                        android:layout_centerInParent="true"
+                        android:background="@null"/>
+
+                </LinearLayout>
+
+                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                    android:id="@+id/bt_login"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:text="@string/button_login"
+                    android:textColor="@color/color_button_default_app"
+                    android:background="@drawable/bt_background_app"/>
+
+                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                    android:id="@+id/bt_register"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:text="@string/button_register"
+                    android:textColor="@color/color_button_default_app_second"
+                    android:background="@drawable/bt_background_app_second"/>
+            </LinearLayout>
+        </ScrollView>
+</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

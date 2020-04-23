@@ -1,0 +1,147 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/snackbarlocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/mapFragmentContainer"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background_app">
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default_2"
+                android:textSize="@dimen/font_default_1"
+                android:gravity="center"
+                android:textColor="@color/text_default_2"/>
+
+        </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ll_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <fragment
+                android:id="@+id/mapwhere"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:name="com.google.android.gms.maps.MapFragment" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.2"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:weightSum="3"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    >
+
+                    <Button
+                        android:id="@+id/iv_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/margin_default_4"
+                        android:paddingRight="@dimen/margin_default_4"
+                        android:layout_marginLeft="@dimen/margin_default_2"
+                        android:layout_marginRight="@dimen/margin_default_2"
+                        android:background="@drawable/round_button_workshop"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bt_search_location"
+                        android:text="@string/workshop_search_button"
+                        android:drawableLeft="@drawable/icon_pin_white"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_default"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/iv_change_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/margin_default_4"
+                        android:paddingRight="@dimen/margin_default_4"
+                        android:layout_marginRight="@dimen/margin_default_2"
+                        android:layout_marginLeft="@dimen/margin_default_2"
+                        android:background="@drawable/round_button_workshop"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bt_search_location"
+                        android:text="@string/workshop_change_search_near"
+                        android:drawableLeft="@drawable/icon_arrow_white"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_default"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lv_workshop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_default_2"
+                    android:background="@android:color/transparent"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:divider="@null"
+                    android:dividerHeight="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

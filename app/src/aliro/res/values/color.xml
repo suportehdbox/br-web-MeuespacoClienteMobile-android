@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ColorTop">#1C2D68</color>
+    <color name="ColorBottom">#0A0C4D</color>
+    <color name="ColorTextHeader">#FFFFFF</color>
+    <color name="ColorMenu">#7B7B7B</color>
+    <color name="ColorTextHeaderShadow">#000000</color>
+    <color name="ColorScreenBackground">#E8E8E8</color>
+    <color name="ColorListSuggestions">#297BC6</color>
+    <color name="ColorOrangeSA">#DC6B2F</color>
+    <color name="ColorOrange">#DE7134</color>
+    <color name="ColorBtnBlue">#1b355d</color>
+    <color name="ColorSelectedBlue">#23549d</color>
+    <color name="ColorOrangeLine">#f96d0a</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="whiteShadow">#FBFBFB</color>
+    <color name="gray">#aaaaaa</color>
+    <color name="grayDark">#626262</color>
+    <color name="blueDefault">#003b73</color>
+    <color name="blueHeaderLiberty">#003b73</color>
+    <color name="blueFont">#278dbd</color>
+    <color name="blueFontSelect">#0039b6</color>
+    <color name="yellow">#edb112</color>
+    <color name="orange">#DC6B2F</color>
+
+
+    <color name="background_app">#f2f2f2</color>
+    <color name="background_text">#f2f2f2</color>
+    <color name="background_register">#eeeeee</color>
+    <color name="background_dialog">#ffffff</color>
+
+    <color name="background_cell_notification">#304fff</color>
+
+    <color name="background_dialog_activity">#80000000</color>
+
+    <color name="background_navigation_menu_top">#0bb49d</color>
+    <color name="background_navigation_menu">#0cc4ab</color>
+
+    <color name="text_navigation_menu">#ffffff</color>
+    <color name="text_letter_menu">#ffffff</color>
+    <color name="background_sel_navigation_menu">#09a991</color>
+    <color name="background_action_bar">#0bb49d</color>
+    <color name="background_action_bar_2">#F20bb49d</color>
+
+    <color name="background_status_bar">#0bb49d</color>
+    <color name="background_status_bar_2">#000000</color>
+    <color name="background_status_bar_3">#ffffff</color>
+
+
+    <color name="background_box">#ffffff</color>
+
+
+    <color name="line_default_1">#aaaaaa</color>
+    <color name="line_default_2">#f2f2f2</color>
+    <color name="line_default_3">#ffffff</color>
+    <color name="line_default_4">#e6131c</color>
+    <color name="line_default_5">#000000</color>
+
+    <color name="status_1">#FFEFFCF3</color>
+    <color name="status_2">#fce8eb</color>
+    <color name="status_3">#fcefd4</color>
+    <color name="status_4">#5a278dbd</color>
+
+    <color name="text_dialog_image_type">#626262</color>
+
+
+    <color name="text_default_1">#FFFFFF</color>
+    <color name="text_default_2">#000000</color>
+    <color name="text_default_3">#626262</color>
+    <color name="text_default_4">#edb112</color>
+    <color name="text_default_5">#447add</color>
+    <color name="text_default_6">#3366cc</color>
+    <color name="text_default_7">#0bb49d</color>
+    <color name="text_default_8">#e6131c</color>
+    <color name="text_default_9">#424242</color>
+    <color name="text_default_10">#209cf5</color>
+    <color name="text_default_11">#aaaaaa</color>
+    <color name="text_default_12">#0cc4ab</color>
+    <color name="text_default_13">#009688</color>
+    <color name="text_default_14">#278dbd</color>
+    <color name="text_default_15">#0bb49d</color>
+    <color name="text_default_16">#447add</color>
+    <color name="text_default_17">#0bb49d</color>
+
+
+    <color name="circular_1">#209cf5</color>
+    <color name="circular_2">#edb112</color>
+    <color name="circular_3">#0bb49d</color>
+    <color name="circular_0">#c7c7c7</color>
+
+
+    <color name="hint_default_1">#aaaaaa</color>
+    <color name="hint_default_2">#aaaaaa</color>
+
+    <color name="background_title">#0284e4</color>
+    <color name="background_cb">#209cf5</color>
+    <color name="background_cb_arrow">#ffffff</color>
+
+
+    <color name="cursor_default_1">#E2F700</color>
+
+
+    <color name="transparente">#00FFFFFF</color>
+
+    <color name="background_eplv">#dae1eb</color>
+
+
+    <color name="color_notification">#0bb49d</color>
+
+    <color name="background_home">#FFDB00</color>
+    <color name="color_button_default_1">#0bb49d</color>
+    <color name="color_button_default_2">#FFFFFF</color>
+    <color name="color_button_default_3">#0bb49d</color>
+    <color name="color_button_default_app">#0bb49d</color>
+    <color name="color_button_default_app_second">#0bb49d</color>
+    <!-- <color name="text_default_5">#278dbc</color> -->
+    <color name="color_item_payment_1">#447add</color>
+
+
+    <!--<color name="text_default_9">#424242</color>-->
+    <color name="color_item_payment_2">#424242</color>
+
+    <color name="text_hint_focus">#0bb49d</color>
+    <color name="text_hint_nofocus">#626262</color>
+
+    <color name="round_button">#ffffff</color>
+    <color name="round_button_border">#278dbd</color>
+    <color name="text_round_button">#278dbd</color>
+
+    <!-- Vision 360 -->
+    <color name="title_vision">#1a1444</color>
+    <color name="line_vision_1">#f0f0f0</color>
+    <color name="line_vision_2">#fffaeb</color>
+    <color name="line_vision_3">#e3f6fa</color>
+    <color name="line_time_vision">#74e3e3</color>
+    <color name="title_detail_vision">#00708a</color>
+
+    <color name="subTitle_detail_vision">#241d4a</color>
+    <color name="text_home_vision">#ffffff</color>
+    <color name="background_date_vision">#74e3e3</color>
+
+
+</resources>

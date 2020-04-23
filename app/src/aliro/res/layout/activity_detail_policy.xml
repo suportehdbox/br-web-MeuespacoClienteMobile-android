@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/snackbarlocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_app"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/sv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/margin_default_2"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_default_4"
+                                android:layout_marginTop="@dimen/margin_default_4"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_default_2"
+                                    android:layout_marginRight="@dimen/margin_default_2"
+                                    android:gravity="center">
+
+                                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                                        android:id="@+id/iv_description"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="-3dp"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/bt_policy_image" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/margin_default_2"
+                                        android:text="@string/policy"
+                                        android:textColor="@color/text_default_6"
+                                        android:textSize="@dimen/font_default_1" />
+
+                                    <TextView
+                                        android:id="@+id/tv_policy"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/margin_default_2"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default_1" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_container_description"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_default_2"
+                                    android:layout_marginRight="@dimen/margin_default_2"
+                                    android:orientation="vertical"></LinearLayout>
+
+                                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                                    android:id="@+id/bt_coverage"
+                                    style="@style/ButtonDefault"
+                                    android:layout_width="wrap_content"
+                                    android:background="@drawable/bt_background_app"
+                                    android:text="@string/button_coverage"
+                                    android:textColor="@color/color_button_default_app" />
+
+
+                                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                                    android:id="@+id/bt_second_copy_policy"
+                                    style="@style/ButtonDefault"
+                                    android:layout_width="wrap_content"
+                                    android:background="@drawable/bt_background_app_second"
+                                    android:text="@string/button_second_policy"
+                                    android:textColor="@color/color_button_default_app_second" />
+
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="6" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/margin_default_2"
+                            android:layout_marginRight="@dimen/margin_default_2"
+                            android:background="@color/line_default_1" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_container_payment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                        </LinearLayout>
+
+                        <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="@dimen/margin_default_4"-->
+                        <!--android:orientation="horizontal">-->
+
+                        <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/payment"-->
+                        <!--android:textColor="@color/text_default_9"-->
+                        <!--android:textSize="@dimen/font_default" />-->
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/tv_date"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginBottom="@dimen/margin_default_1"-->
+                        <!--android:layout_marginTop="@dimen/margin_default_1"-->
+                        <!--android:text="25 de Setembro"-->
+                        <!--android:textColor="@color/text_default_5"-->
+                        <!--android:textSize="@dimen/font_default_1"-->
+                        <!--android:textStyle="bold" />-->
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/tv_value"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="R$ 000,00"-->
+                        <!--android:textColor="@color/text_default_9"-->
+                        <!--android:textSize="@dimen/font_default"-->
+                        <!--android:textStyle="bold" />-->
+                        <!--</LinearLayout>-->
+
+                        <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1.1"-->
+                        <!--android:gravity="center"-->
+                        <!--android:orientation="horizontal">-->
+
+                        <!--<LinearLayout-->
+                        <!--android:layout_width="1dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginRight="@dimen/margin_default_2"-->
+                        <!--android:background="@color/line_default_1" />-->
+
+                        <!--<br.com.libertyseguros.mobile.view.custom.ImageViewCustom-->
+                        <!--android:id="@+id/iv_icon_payment"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:adjustViewBounds="true"-->
+                        <!--android:src="@drawable/icon_oval_payment_success" />-->
+
+                        <!--<LinearLayout-->
+                        <!--android:layout_width="1dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginLeft="@dimen/margin_default_2"-->
+                        <!--android:background="@color/line_default_1" />-->
+
+
+                        <!--</LinearLayout>-->
+
+                        <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1.2"-->
+                        <!--android:gravity="center">-->
+
+                        <!--<br.com.libertyseguros.mobile.view.custom.ImageViewCustom-->
+                        <!--android:id="@+id/iv_icon_extends"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:adjustViewBounds="true"-->
+                        <!--android:src="@drawable/icon_oval_extends" />-->
+
+                        <!--</LinearLayout>-->
+
+                        <!--</LinearLayout>-->
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/tv_title_ipayment"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="@dimen/margin_default_2"-->
+                        <!--android:textColor="@color/text_default_9"-->
+                        <!--android:textSize="@dimen/font_default" />-->
+
+                        <!--<br.com.libertyseguros.mobile.view.custom.ImageViewCustom-->
+                        <!--android:id="@+id/iv_view_payment"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="@dimen/margin_default_4"-->
+                        <!--android:layout_marginRight="@dimen/margin_default_4"-->
+                        <!--android:layout_marginTop="@dimen/margin_default_4"-->
+                        <!--android:scaleType="centerInside"-->
+                        <!--android:src="@drawable/bt_view_payment_text_blue" />-->
+
+
+                        <!--<LinearLayout-->
+                        <!--android:id="@+id/ll_line_coverages"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:layout_marginRight="@dimen/margin_default_2"-->
+                        <!--android:layout_marginTop="@dimen/margin_default_4"-->
+                        <!--android:background="@color/line_default_1"-->
+                        <!--android:orientation="horizontal" />-->
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_coverages"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_default_2"
+                                android:text="@string/title_coverages"
+                                android:textColor="@color/text_default_6"
+                                android:textSize="@dimen/font_default_2" />
+
+                            <TextView
+                                android:id="@+id/tv_coverages"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_default_2"
+                                android:textColor="@color/text_default_3"
+                                android:textSize="@dimen/font_default_1" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginRight="@dimen/margin_default_2"
+                            android:layout_marginTop="@dimen/margin_default_4"
+                            android:background="@color/line_default_1"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_default_2"
+                            android:layout_marginRight="@dimen/margin_default_2"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="140dp"
+                                android:layout_marginTop="@dimen/margin_default_4"
+                                android:layout_marginBottom="@dimen/margin_default_4"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/ll_circle_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.7"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_title_circle_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_default_1"
+                                        android:text="@string/missing"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default_0" />
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent">
+
+                                        <com.github.rahatarmanahmed.cpv.CircularProgressView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            android:rotation="-90"
+                                            app:cpv_animAutostart="true"
+                                            app:cpv_animSteps="0"
+                                            app:cpv_animSwoopDuration="0"
+                                            app:cpv_color="@color/circular_0"
+                                            app:cpv_indeterminate="false"
+                                            app:cpv_maxProgress="100"
+                                            app:cpv_progress="100"
+                                            app:cpv_startAngle="240"
+                                            app:cpv_thickness="3dp" />
+
+                                        <com.github.rahatarmanahmed.cpv.CircularProgressView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/cp_1"
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            android:rotation="-90"
+                                            android:scaleY="-1"
+                                            app:cpv_animAutostart="true"
+                                            app:cpv_animSteps="0"
+                                            app:cpv_animSwoopDuration="0"
+                                            app:cpv_color="@color/circular_1"
+                                            app:cpv_indeterminate="false"
+                                            app:cpv_maxProgress="100"
+                                            app:cpv_progress="10"
+                                            app:cpv_startAngle="0"
+                                            app:cpv_thickness="3dp" />
+
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            android:layout_centerInParent="true"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/tv_date_cb_1"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="45"
+                                                android:textColor="@color/text_default_5"
+                                                android:textSize="@dimen/font_default_3"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/day"
+                                                android:textColor="@color/text_default_3"
+                                                android:textSize="@dimen/font_default_0" />
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin_default_2"
+                                        android:text="@string/policy_time"
+                                        android:gravity="center"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default_6" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_circle_2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginLeft="@dimen/margin_default_4"
+                                    android:layout_marginRight="@dimen/margin_default_4"
+                                    android:gravity="center"
+                                    android:visibility="gone"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_default_1"
+                                        android:text="@string/missing"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default_0" />
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent">
+
+                                        <com.github.rahatarmanahmed.cpv.CircularProgressView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            app:cpv_animAutostart="true"
+                                            app:cpv_animSteps="0"
+                                            app:cpv_animSwoopDuration="0"
+                                            app:cpv_color="@color/circular_0"
+                                            app:cpv_indeterminate="false"
+                                            app:cpv_maxProgress="100"
+                                            app:cpv_progress="100"
+                                            app:cpv_startAngle="0"
+                                            app:cpv_thickness="3dp" />
+
+                                        <com.github.rahatarmanahmed.cpv.CircularProgressView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/cp_2"
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            android:rotation="-90"
+                                            android:scaleY="-1"
+                                            app:cpv_animAutostart="true"
+                                            app:cpv_animSteps="0"
+                                            app:cpv_animSwoopDuration="0"
+                                            app:cpv_color="@color/circular_2"
+                                            app:cpv_indeterminate="false"
+                                            app:cpv_maxProgress="100"
+                                            app:cpv_progress="30"
+                                            app:cpv_startAngle="0"
+                                            app:cpv_thickness="3dp" />
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            android:layout_centerInParent="true"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/tv_date_cb_2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="45"
+                                                android:textColor="@color/text_default_4"
+                                                android:textSize="@dimen/font_default_3"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/day"
+                                                android:textColor="@color/text_default_3"
+                                                android:textSize="@dimen/font_default_0" />
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin_default_2"
+                                        android:text="@string/ipva"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default_6" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_circle_3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:gravity="center"
+                                    android:visibility="gone"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_default_1"
+                                        android:text="@string/missing"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default_0" />
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent">
+
+                                        <com.github.rahatarmanahmed.cpv.CircularProgressView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            app:cpv_animAutostart="true"
+                                            app:cpv_animSteps="0"
+                                            app:cpv_animSwoopDuration="0"
+                                            app:cpv_color="@color/circular_0"
+                                            app:cpv_indeterminate="false"
+                                            app:cpv_maxProgress="100"
+                                            app:cpv_progress="100"
+                                            app:cpv_startAngle="240"
+                                            app:cpv_thickness="3dp" />
+
+                                        <com.github.rahatarmanahmed.cpv.CircularProgressView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/cp_3"
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            android:rotation="-90"
+                                            android:scaleY="-1"
+                                            app:cpv_animAutostart="true"
+                                            app:cpv_animSteps="0"
+                                            app:cpv_animSwoopDuration="0"
+                                            app:cpv_color="@color/circular_3"
+                                            app:cpv_indeterminate="false"
+                                            app:cpv_maxProgress="100"
+                                            app:cpv_progress="50"
+                                            app:cpv_startAngle="0"
+                                            app:cpv_thickness="3dp" />
+
+                                        <LinearLayout
+                                            android:layout_width="@dimen/size_progress_oval"
+                                            android:layout_height="@dimen/size_progress_oval"
+                                            android:layout_centerInParent="true"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/tv_date_cb_3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="45"
+                                                android:textColor="@color/text_default_7"
+                                                android:textSize="@dimen/font_default_3"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/day"
+                                                android:textColor="@color/text_default_3"
+                                                android:textSize="@dimen/font_default" />
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin_default_2"
+                                        android:text="@string/licensing"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default_6" />
+
+                                </LinearLayout>
+
+
+                                <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/card_vision"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.4"
+                                    android:layout_marginRight="@dimen/margin_default"
+                                    android:animateLayoutChanges="true"
+                                    android:layout_alignRight="@+id/ll_circle_1"
+                                    app:cardCornerRadius="3dp"
+                                    app:cardElevation="4dp"
+                                    app:cardBackgroundColor="@color/text_default_7"
+                                    app:cardUseCompatPadding="true"
+                                    android:visibility="invisible"
+                                    >
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            >
+
+                                            <ImageView
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_margin="@dimen/margin_default_1"
+                                                android:src="@drawable/icon_warning"/>
+
+                                        </RelativeLayout>
+
+
+                                        <LinearLayout
+                                            android:id="@+id/ll_news"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/margin_default_2"
+                                            android:layout_marginRight="@dimen/margin_default_2"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/subtitle_news"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/text_default_1"
+                                                android:textSize="@dimen/font_default" />
+
+                                            <TextView
+                                                android:id="@+id/button_news"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="@dimen/margin_default_2"
+                                                android:layout_marginTop="@dimen/margin_default_2"
+                                                android:textAlignment="center"
+                                                android:text="@string/button_news"
+                                                android:textColor="@color/text_home_vision"
+                                                android:linksClickable="false"
+                                                android:autoLink="all"
+                                                android:textSize="@dimen/font_default" />
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </android.support.v7.widget.CardView>
+
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/margin_default_2"
+                            android:layout_marginRight="@dimen/margin_default_2"
+                            android:layout_marginTop="@dimen/margin_default_4"
+                            android:background="@color/line_default_1" />
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_cb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_default_2"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_default_1"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/speak_liberty_part4"
+                                    android:textColor="@color/text_default_3"
+                                    android:textSize="@dimen/font_default" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_default_1"
+                                    android:textColor="@color/text_default_3"
+                                    android:textSize="@dimen/font_default" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_default_5"
+                                android:textSize="@dimen/font_default_1"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_default_2"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/ll_phone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/icon_phone_blue" />
+
+                                    <TextView
+                                        android:id="@+id/tv_phone"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/margin_default_2"
+                                        android:text="@string/phone_5"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_email"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_default_4"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/icon_email" />
+
+                                    <TextView
+                                        android:id="@+id/tv_email"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/margin_default_2"
+                                        android:text="@string/sub_title_phone_5"
+                                        android:textColor="@color/text_default_3"
+                                        android:textSize="@dimen/font_default" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                            android:id="@+id/bt_policy_more"
+                            style="@style/ButtonDefault"
+                            android:layout_width="wrap_content"
+                            android:background="@drawable/bt_background_app"
+                            android:text="@string/button_old_policy"
+                            android:textColor="@color/color_button_default_app" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/margin_default_2" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_message_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default_2"
+                android:gravity="center"
+                android:textColor="@color/text_default_3"
+                android:textSize="@dimen/font_default_1"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

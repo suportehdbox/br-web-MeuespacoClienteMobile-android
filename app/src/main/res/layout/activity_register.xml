@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/snackbarlocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_app"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/sv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_register"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_tiltes_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_default_2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|right"
+                        android:text="@string/register_title1"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/ColorBtnBlue"
+                        android:textSize="@dimen/font_default_5"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/register_title2"
+                        android:textColor="@color/ColorBtnBlue"
+                        android:textSize="@dimen/font_default_5" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/register_warning"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/font_default_1" />
+
+                <LinearLayout
+                    android:id="@+id/ll_content_field_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_default_4"
+                    android:layout_marginBottom="@dimen/margin_default_2"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_content_policy_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:id="@+id/iv_auto_register"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ib_auto_register"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparente"
+                                android:src="@drawable/bt_auto"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/iv_home"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ib_home_register"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparente"
+                                android:src="@drawable/bt_home" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/iv_life"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ib_life_register"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparente"
+                                android:src="@drawable/bt_life" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/register_subtitle"
+                        android:textAlignment="center"
+                        android:layout_margin="@dimen/margin_default_2"
+                        android:textSize="@dimen/font_default_1" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_content_field_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+
+                <TextView
+                    android:id="@+id/tv_title_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_default_2"
+                    android:text="@string/register_info_password"
+                    android:textSize="@dimen/font_default_1" />
+
+                <LinearLayout
+                    android:id="@+id/ll_content_field_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_default_4"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_default_4"
+                        android:layout_marginRight="@dimen/margin_default_2"
+                        android:button="@drawable/checkbox_login" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/register_cb_terms"
+                            android:textColor="@color/text_default_3"
+                            android:textSize="@dimen/font_default_6" />
+
+                        <br.com.libertyseguros.mobile.view.custom.TextViewCustom
+                            android:id="@+id/tv_terms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_default"
+                            android:layout_marginRight="@dimen/margin_default_4"
+                            android:gravity="center"
+                            android:text="@string/register_cb_terms_2"
+                            android:textColor="@color/text_default_5"
+                            android:textSize="@dimen/font_default_6" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_check_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_default_2"
+                    android:layout_marginLeft="@dimen/margin_default_4"
+                    android:layout_marginRight="@dimen/margin_default_4"
+                    android:textColor="@color/text_default_8"
+                    android:textSize="@dimen/font_default_0"
+                    android:visibility="invisible" />
+
+                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                    android:id="@+id/bt_register"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bt_background_3"
+                    android:text="@string/button_send_register"
+                    android:textColor="@color/color_button_default_1" />
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_message_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default_2"
+                android:gravity="center"
+                android:textColor="@color/text_default_2"
+                android:textSize="@dimen/font_default_1"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/snackbarlocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/margin_default_2">
+
+            <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default_6"
+                android:src="@drawable/icon_oval_attention"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_default_2"
+                android:layout_marginTop="@dimen/margin_default_2"
+                android:textColor="@color/text_default_4"
+                android:text="@string/title_attention"/>
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default_2"
+                android:textSize="@dimen/font_default_2"
+                android:textColor="@color/text_default_3"
+                android:gravity="center"
+                android:text="@string/location_error"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/user_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_default_6"
+                    android:layout_marginLeft="@dimen/margin_default_6"
+                    android:layout_marginRight="@dimen/margin_default_6"
+                    android:theme="@style/TextInputLayoutDefault">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_cep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:textColor="@color/text_default_3"
+                        android:textColorHint="@color/hint_default_1"
+                        android:paddingTop="@dimen/margin_default_2"
+                        android:textSize="@dimen/font_default_1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:layout_marginLeft="@dimen/margin_default_6"
+                android:layout_marginRight="@dimen/margin_default_6"
+                android:background="@color/line_default_1"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default_2"
+            android:textSize="@dimen/font_default_2"
+            android:textColor="@color/text_default_11"
+            android:gravity="center"
+            android:text="@string/Or"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_6"
+            android:layout_marginLeft="@dimen/margin_default_6"
+            android:layout_marginRight="@dimen/margin_default_6"
+            android:theme="@style/TextInputLayoutDefault">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textColor="@color/text_default_3"
+                android:textColorHint="@color/hint_default_1"
+                android:paddingTop="@dimen/margin_default_2"
+                android:textSize="@dimen/font_default_1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_default_1"
+            android:layout_marginBottom="@dimen/margin_default_2"
+            android:layout_marginLeft="@dimen/margin_default_6"
+            android:layout_marginRight="@dimen/margin_default_6"
+            android:background="@color/line_default_1"/>
+
+        <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+            android:id="@+id/bt_location"
+            style="@style/ButtonDefault"
+            android:layout_width="wrap_content"
+            android:text="@string/button_location"
+            android:textColor="@color/color_button_default_app"
+            android:background="@drawable/bt_background_app"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>

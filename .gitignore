@@ -1,0 +1,5 @@
+.idea/
+.gradle/
+app/build/
+androidRecording/build/
+.DS_Store

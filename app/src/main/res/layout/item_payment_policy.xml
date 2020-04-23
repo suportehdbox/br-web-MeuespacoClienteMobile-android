@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_default_4"
+        android:layout_marginRight="@dimen/margin_default_4"
+        android:layout_marginTop="@dimen/margin_default_4"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_titlePayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment"
+                android:textColor="@color/color_item_payment_1"
+                android:textSize="@dimen/font_default" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default_1"
+                android:layout_marginTop="@dimen/margin_default_1"
+                android:text="25 de Setembro"
+                android:textColor="@color/color_item_payment_1"
+                android:textSize="@dimen/font_default_1"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 000,00"
+                android:textColor="@color/color_item_payment_1"
+                android:textSize="@dimen/font_default"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_default_2"
+                android:background="@color/line_default_1" />
+
+            <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                android:id="@+id/iv_icon_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_oval_payment_success" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_default_2"
+                android:background="@color/line_default_1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center">
+
+            <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                android:id="@+id/iv_icon_extends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_oval_extends" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title_ipayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_default_4"
+        android:layout_marginRight="@dimen/margin_default_4"
+        android:layout_marginTop="@dimen/margin_default_2"
+        android:textColor="@color/color_item_payment_1"
+        android:textSize="@dimen/font_default" />
+
+    <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+        android:id="@+id/bt_view_payment"
+        style="@style/ButtonDefault"
+        android:layout_width="wrap_content"
+        android:background="@drawable/bt_background_app"
+        android:text="@string/button_parcels"
+        android:textColor="@color/color_button_default_app" />
+
+    <TextView
+        android:id="@+id/tv_view_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_detalhes"
+        android:textColor="@color/blueFont"
+        android:layout_marginLeft="@dimen/margin_default_4"
+        android:layout_marginRight="@dimen/margin_default_4"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_line_coverages"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/margin_default_4"
+        android:layout_marginRight="@dimen/margin_default_4"
+        android:layout_marginTop="@dimen/margin_default_4"
+        android:background="@color/line_default_1"
+        android:orientation="horizontal" />
+</LinearLayout>

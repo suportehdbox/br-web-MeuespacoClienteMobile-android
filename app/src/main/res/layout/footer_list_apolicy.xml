@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+        android:id="@+id/bt_policy_more"
+        style="@style/ButtonDefault"
+        android:layout_width="wrap_content"
+        android:background="@drawable/bt_background_app"
+        android:text="@string/button_old_policy"
+        android:textColor="@color/color_button_default_app" />
+
+    <ProgressBar
+        android:id="@+id/pb_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default_4"
+        android:visibility="invisible" />
+
+</LinearLayout>

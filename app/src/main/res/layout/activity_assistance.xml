@@ -1,0 +1,171 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/snackbarlocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_app"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_default_4"
+            android:layout_marginTop="@dimen/margin_default_2"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_default_2"
+                android:layout_marginRight="@dimen/margin_default_2"
+                android:layout_marginTop="@dimen/margin_default_2"
+                android:text="@string/assistance_type"
+                android:textColor="@color/text_default_6"
+                android:textSize="@dimen/font_default_3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_default_2"
+                android:layout_marginRight="@dimen/margin_default_2"
+                android:layout_marginTop="@dimen/font_default_1"
+                android:text="@string/assistance_type_choose"
+                android:textColor="@color/text_default_3"
+                android:textSize="@dimen/font_default_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default_4"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                        android:id="@+id/iv_sinistro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/icon_size_default_width_2"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_oval_sinistro" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_assist24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                        android:id="@+id/iv_assistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/icon_size_default_width_2"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_oval_24_hours" />
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                        android:id="@+id/iv_glass_assistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/icon_size_default_width_2"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_oval_glass" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default_4"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sinistro_open"
+                    android:textColor="@color/text_default_3"
+                    android:textSize="@dimen/font_default_1" />
+
+                <br.com.libertyseguros.mobile.view.custom.TextViewCustom
+                    android:id="@+id/tv_click"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/click"
+                    android:textColor="@color/text_default_5"
+                    android:textSize="@dimen/font_default_1"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+
+                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                    android:id="@+id/ib_ac_sinistro"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bt_background_app"
+                    android:text="@string/button_sinistro"
+                    android:textColor="@color/color_button_default_app" />
+
+                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                    android:id="@+id/ib_ac_24"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bt_background_app_second"
+                    android:text="@string/button_assistence"
+                    android:textColor="@color/color_button_default_app_second" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|bottom">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/speak_liberty_part1"
+                    android:textColor="@color/text_default_3"
+                    android:textSize="@dimen/font_default_1" />
+
+                <br.com.libertyseguros.mobile.view.custom.TextViewCustom
+                    android:id="@+id/tv_speak_liberty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_default_2"
+                    android:layout_marginTop="@dimen/font_default_1"
+                    android:text="@string/speak_liberty_part2"
+                    android:textColor="@color/text_default_5"
+                    android:textSize="@dimen/font_default_1" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

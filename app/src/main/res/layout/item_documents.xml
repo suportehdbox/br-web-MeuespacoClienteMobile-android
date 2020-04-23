@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_documents"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:scaleType="fitCenter" />
+
+
+    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+        android:id="@+id/iv_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_default_2"
+        android:layout_marginTop="@dimen/margin_default"
+        android:src="@drawable/ic_check_delete"
+        android:visibility="invisible" />
+
+</RelativeLayout>

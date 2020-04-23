@@ -1,0 +1,57 @@
+<resources>
+
+
+    <dimen name="button_default_radius">5dp</dimen>
+
+    <dimen name="margin_default">2dp</dimen> <!-- valor -->
+    <dimen name="margin_default_1">5dp</dimen>
+    <dimen name="margin_default_2">10dp</dimen>
+    <dimen name="margin_default_3">15dp</dimen>
+    <dimen name="margin_default_4">20dp</dimen>
+    <dimen name="margin_default_5">30dp</dimen>
+    <dimen name="margin_default_6">40dp</dimen>
+    <dimen name="margin_default_7">50dp</dimen>
+    <dimen name="margin_default_8">60dp</dimen>
+    <dimen name="margin_default_9">70dp</dimen>
+    <dimen name="margin_default_10">80dp</dimen>
+    <dimen name="margin_default_11">90dp</dimen>
+    <dimen name="margin_default_12">100dp</dimen>
+    <dimen name="margin_default_13">110dp</dimen>
+    <dimen name="margin_default_14">120dp</dimen>
+    <dimen name="margin_default_15">1dp</dimen>
+    <dimen name="margin_default_16">22dp</dimen>
+
+    <dimen name="progress_bar_size">40dp</dimen>
+
+    <dimen name="dimen_button_next">110dp</dimen>
+
+    <dimen name="font_default">11dp</dimen>
+    <dimen name="font_default_0">12dp</dimen>
+    <dimen name="font_default_1">14dp</dimen>
+    <dimen name="font_default_2">16dp</dimen>
+    <dimen name="font_default_3">18sp</dimen>
+    <dimen name="font_default_4">9sp</dimen>
+    <dimen name="font_default_5">22sp</dimen>
+    <dimen name="font_default_6">10sp</dimen>
+    <dimen name="font_default_7">7sp</dimen>
+    <dimen name="font_default_8">8sp</dimen>
+
+
+    <dimen name="size_card_width_small">80dp</dimen>
+    <dimen name="size_card_width">180dp</dimen>
+    <dimen name="icon_size_default_width_1">70dp</dimen>
+    <dimen name="icon_size_default_width_2">100dp</dimen>
+    <dimen name="icon_size_default_width_3">95dp</dimen>
+    <dimen name="icon_size_default_width_4">60dp</dimen>
+    <dimen name="icon_size_default_width_5">30dp</dimen>
+
+
+    <dimen name="size_progress_oval">65dp</dimen>
+
+    <dimen name="size_photo_thumb_x">40dp</dimen>
+
+    <dimen name="size_photo_thumb_y">60dp</dimen>
+
+    <dimen name="size_dialog_cod_bar_message_y">150dp</dimen>
+
+</resources>

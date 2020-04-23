@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="workshop_recommended">NOSSA SUGESTÃO PARA VOCÊ</string>
+    <string name="workshop_full">Oficina lotada</string>
+    <string name="workshop_search_button">Pesquisar local</string>
+    <string name="workshop_change_search_near">Mais próximos</string>
+    <string name="workshop_change_search_score">Recomendados</string>
+    <string name="error_dialog_payment">Não foi possível efetuar essa operação, tente novamente mais tarde</string>
+    <string name="valor_franquia">Valor da Franquia: %s</string>
+
+</resources>

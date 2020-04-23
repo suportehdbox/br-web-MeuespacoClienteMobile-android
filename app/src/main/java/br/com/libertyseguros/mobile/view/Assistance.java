@@ -1,0 +1,248 @@
+package br.com.libertyseguros.mobile.view;
+
+import android.Manifest;
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Paint;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import br.com.libertyseguros.mobile.R;
+import br.com.libertyseguros.mobile.controller.AssistanceController;
+import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
+import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
+import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
+import br.com.libertyseguros.mobile.view.custom.TextViewCustom;
+
+
+public class Assistance extends BaseActionBar implements OnClickListener{
+
+    public  static Activity activity;
+
+    private TextViewCustom tvVehicleAccidentStatus;
+
+    private TextViewCustom tvSpeakLiberty;
+
+    private ImageViewCustom ivAssitance;
+
+    private ButtonViewCustom ibAcSinistro;
+
+    private ButtonViewCustom ibAc24;
+
+    private ImageViewCustom ivSinistro;
+    private ImageViewCustom ivGlass;
+
+    private boolean newVA;
+
+    private AssistanceController assistanceController;
+
+    private LinearLayout llStatus;
+
+    private Dialog dialogMessage;
+
+    public void onCreate(Bundle bundle){
+        super.onCreate(bundle);
+
+        setContentView(R.layout.activity_assistance);
+
+        mFirebaseAnalytics.setCurrentScreen(this, "Assistencia24h", null);
+
+
+        activity = this;
+
+        getSupportActionBar().setTitle(getString(R.string.title_action_bar_2));
+
+        tvSpeakLiberty = (TextViewCustom) findViewById(R.id.tv_speak_liberty);
+        tvSpeakLiberty.setPaintFlags(tvSpeakLiberty.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        String htmlString="<u>" + getString(R.string.speak_liberty_part2) + "</u>";
+        tvSpeakLiberty.setOnClickListener(this);
+        ivAssitance = (ImageViewCustom) findViewById(R.id.iv_assistance);
+        ivAssitance.setOnClickListener(this);
+
+        ivSinistro = (ImageViewCustom) findViewById(R.id.iv_sinistro);
+        ivSinistro.setOnClickListener(this);
+
+        tvVehicleAccidentStatus = (TextViewCustom) findViewById(R.id.tv_click);
+        tvVehicleAccidentStatus.setOnClickListener(this);
+
+        ibAcSinistro = (ButtonViewCustom) findViewById(R.id.ib_ac_sinistro);
+        ibAcSinistro.setOnClickListener(this);
+
+        ibAc24 = (ButtonViewCustom) findViewById(R.id.ib_ac_24);
+        ibAc24.setOnClickListener(this);
+
+
+
+        ivGlass = (ImageViewCustom) findViewById(R.id.iv_glass_assistance);
+        ivGlass.setOnClickListener(this);
+
+        assistanceController = new AssistanceController(this);
+
+        TextViewCustom tvClick = (TextViewCustom) findViewById(R.id.tv_click);
+        tvClick.setPaintFlags(tvClick.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        llStatus = (LinearLayout) findViewById(R.id.ll_status);
+
+        if(assistanceController.isloginOn()){
+            llStatus.setVisibility(View.VISIBLE);
+        } else {
+            llStatus.setVisibility(View.INVISIBLE);
+        }
+
+//        if(BuildConfig.brandMarketing == 2){
+//            LinearLayout ll_assist24 = (LinearLayout) findViewById(R.id.ll_assist24);
+//            LinearLayout ll_buttons = (LinearLayout) findViewById(R.id.ll_buttons);
+//            ll_buttons.setWeightSum(2);
+//            ll_assist24.setVisibility(View.GONE);
+//            ivAssitance.setVisibility(View.GONE);
+//
+//        }
+
+        ibAc24.setVisibility(View.GONE);
+
+        configDialog();
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+       try {
+           switch (v.getId()) {
+               case R.id.tv_click:
+                   assistanceController.openVehicleAccidentStatus(this);
+                   break;
+               case R.id.iv_assistance:
+                   startManagerLocation(true);
+                   break;
+               case R.id.tv_speak_liberty:
+                   assistanceController.openSupport(this);
+                   break;
+               case R.id.iv_sinistro:
+                   assistanceController.openVehicleAccident(this);
+                   break;
+               case R.id.ib_ac_24:
+                   startManagerLocation(false);
+                   break;
+               case R.id.ib_ac_sinistro:
+                   assistanceController.openVehicleAccidentStatus(this);
+
+                   break;
+               case R.id.iv_glass_assistance:
+                   assistanceController.openGlassAssistance(this);
+                   break;
+           }
+       }catch(Exception ex){
+           ex.printStackTrace();
+       }
+    }
+
+    @Override
+    public void onBackPressed(){
+        finish();
+        super.onBackPressed();
+    }
+
+
+    /**
+     * Start Manager Location
+     */
+    public void startManagerLocation(boolean newVA) {
+        this.newVA = newVA;
+
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED  ||
+                ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(activity,
+                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.ACCESS_FINE_LOCATION},
+                    1);
+
+
+        } else {
+            assistanceController.openAssitance(this, newVA);
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+
+                boolean permissionGranted = true;
+
+                for(int ind = 0; ind < permissions.length; ind++){
+                    if (grantResults[ind] != PackageManager.PERMISSION_GRANTED) {
+
+                        permissionGranted = false;
+
+                    }
+                }
+
+
+                if (permissionGranted) {
+
+                    assistanceController.openAssitance(this, newVA);
+
+                } else {
+                    dialogMessage.show();
+                }
+
+                return;
+            }
+        }
+
+    }
+
+
+    /**
+     * Config Dialogs
+     */
+    private void configDialog(){
+        dialogMessage = new Dialog(this,R.style.AppThemeDialog);
+        dialogMessage.setCancelable(true);
+
+        dialogMessage.setContentView(R.layout.dialog_message_permission_location);
+
+        TextView tvMessageDialog = (TextView) dialogMessage.findViewById(R.id.tv_dialog_message);
+        tvMessageDialog.setText(getString(R.string.error_location_permission));
+
+        TextView tvClose = (TextView) dialogMessage.findViewById(R.id.tv_close);
+
+        tvClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogMessage.dismiss();
+            }
+        });
+
+
+        TextView tvConfiguration = (TextView) dialogMessage.findViewById(R.id.tv_configuration);
+
+        tvConfiguration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                Uri uri = Uri.fromParts("package", getPackageName(), null);
+                intent.setData(uri);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+}

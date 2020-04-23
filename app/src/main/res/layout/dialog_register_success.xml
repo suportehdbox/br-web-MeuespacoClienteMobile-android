@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFF">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/icon_email_register"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default_7"
+        android:layout_marginLeft="@dimen/margin_default_2"
+        android:layout_marginRight="@dimen/margin_default_2"
+        android:gravity="left|start"
+        android:textSize="@dimen/font_default_5"
+        android:textColor="@color/text_default_6"
+        android:text="@string/InstrucoesCadastroSucesso"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default_2"
+        android:layout_marginLeft="@dimen/margin_default_2"
+        android:layout_marginRight="@dimen/margin_default_2"
+        android:layout_marginBottom="@dimen/margin_default_7"
+        android:gravity="left|start"
+        android:textSize="@dimen/font_default_2"
+        android:textColor="@color/text_default_3"
+        android:text="@string/InstrucoesCadastroSucesso2"/>
+
+
+    <Button
+        android:id="@+id/bt_ok_success"
+        style="@style/ButtonDefault"
+        android:layout_width="wrap_content"
+        android:text="@string/button_ok_understand"
+        android:textColor="@color/color_button_default_app"
+        android:background="@drawable/bt_background_app"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default_7"
+        android:gravity="center_horizontal|bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_default_3"
+            android:textSize="@dimen/font_default_1"
+            android:text="@string/EmailNotReceived1" />
+
+        <TextView
+            android:id="@+id/tv_resend_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_default_2"
+            android:textColor="@color/text_default_5"
+            android:layout_marginTop="@dimen/font_default_1"
+            android:textSize="@dimen/font_default_1"
+            android:text="@string/EmailNotReceived2" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

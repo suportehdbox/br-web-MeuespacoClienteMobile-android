@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/snackbarlocation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/margin_default_2">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_default_2"
+                        android:textColor="@color/text_default_6"
+                        android:textSize="@dimen/font_default_2"
+                        android:text="@string/vehicle_accident_title_log_off"/>
+
+                    <LinearLayout
+                        android:id="@+id/ll_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+
+                    <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                        android:id="@+id/bt_start"
+                        style="@style/ButtonDefault"
+                        android:layout_width="wrap_content"
+                        android:text="@string/button_start_sinistro"
+                        android:textColor="@color/color_button_default_app"
+                        android:background="@drawable/bt_background_app"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_default_4"
+                        android:textSize="@dimen/font_default_2"
+                        android:textColor="@color/text_default_3"
+                        android:gravity="center"
+                        android:text="@string/or"/>
+
+
+                    <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                        android:id="@+id/bt_login"
+                        style="@style/ButtonDefault"
+                        android:layout_width="wrap_content"
+                        android:text="@string/button_login"
+                        android:textColor="@color/color_button_default_app"
+                        android:background="@drawable/bt_background_app_second"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/margin_default_2">
+
+                        <TextView
+                            android:id="@+id/tv_forgot_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_default_4"
+                            android:textColor="@color/text_default_6"
+                            android:textSize="@dimen/font_default_0"
+                            android:text="@string/forgot_password"
+                            android:layout_alignParentLeft="true"/>
+
+                        <br.com.libertyseguros.mobile.view.custom.TextViewCustom
+                            android:id="@+id/tv_forgot_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_default_2"
+                            android:textColor="@color/text_default_5"
+                            android:textSize="@dimen/font_default_0"
+                            android:text="@string/forgot_now"
+                            android:layout_alignParentRight="true"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/margin_default_8"
+                        android:layout_marginBottom="@dimen/margin_default_2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_default_3"
+                            android:textSize="@dimen/font_default_0"
+                            android:text="@string/not_user_part1" />
+
+                        <br.com.libertyseguros.mobile.view.custom.TextViewCustom
+                            android:id="@+id/tv_not_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_default_2"
+                            android:textColor="@color/text_default_5"
+                            android:textSize="@dimen/font_default_0"
+                            android:text="@string/not_user_part2" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_default_6"
+                        android:layout_marginBottom="@dimen/margin_default_2">
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_default_4"
+                    android:layout_weight="10"
+                    android:gravity="bottom">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal|bottom">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_default_3"
+                            android:textSize="@dimen/font_default_1"
+                            android:text="@string/speak_liberty_part1" />
+
+                        <br.com.libertyseguros.mobile.view.custom.TextViewCustom
+                            android:id="@+id/tv_speak_liberty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_default_2"
+                            android:textColor="@color/text_default_5"
+                            android:textSize="@dimen/font_default_1"
+                            android:text="@string/speak_liberty_part2" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_message_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default_2"
+            android:textSize="@dimen/font_default_1"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="@color/text_default_2"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>

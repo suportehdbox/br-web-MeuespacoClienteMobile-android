@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default_2"
+        android:padding="@dimen/margin_default_2"
+        android:background="@color/background_app"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/icon_assistencia_image_view"
+            android:layout_width="@dimen/icon_size_default_width_5"
+            android:layout_height="@dimen/icon_size_default_width_5"
+            android:layout_marginRight="@dimen/margin_default_4"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_value"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_assistance_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_default_2"
+                android:textSize="@dimen/font_default_2"
+                android:text="Maio"
+                android:textStyle="bold"
+                android:textColor="@color/title_detail_vision"/>
+
+            <TextView
+                android:id="@+id/description_assistance_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_default_2"
+                android:textSize="@dimen/font_default_1"
+                android:textStyle="bold"
+                android:textColor="@color/title_vision"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/date_assistance_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_default_4"
+                android:text="17/10/2014"
+                android:textStyle="bold"
+                android:textColor="@color/title_detail_vision"/>
+
+            <TextView
+                android:id="@+id/time_assistance_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_default_4"
+                android:text="23:15"
+                android:textStyle="bold"
+                android:textColor="@color/title_detail_vision"/>
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "245912925036",
+    "project_id": "aliro-seguro-bcc93"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245912925036:android:6e07af271a11fd0a",
+        "android_client_info": {
+          "package_name": "br.com.libertyseguros.aliro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245912925036-2er9e8rgfaarc10ipgdtuhnoc5mpg6iu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt5R-g7c6hy-u2dKX-wTMS4RhO2oCCMMM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-108758781-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

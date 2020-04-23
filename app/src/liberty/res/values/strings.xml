@@ -1,0 +1,685 @@
+<resources>
+    <string name="app_name">Liberty</string>
+    <string name="host_prod">meuespaco.libertyseguros.com.br</string>
+    <string name="host_act">act-meuespaco.libertyseguros.com.br</string>
+
+    <string name="gcm_sender_id">578571555423</string>
+    <string name="sales_force_id_hom">2eb0b609-9d17-4623-97bf-de032fa434ad</string>
+    <string name="sales_force_id_prod">7a948da2-0713-4598-97ba-ca968ab02985</string>
+
+    <string name="sales_force_token_hom">yeqwjvmxj3e9yxxptaybcrcz</string>
+    <string name="sales_force_token_prod">e8psd3t2kh8hmhrwek54524p</string>
+
+    <string name="fabric_id">4184877f238774093b7b09ec5b7572c6d22c7846</string>
+    <string name="error_image_gallery">Não foi possível carregar a imagem selecionada</string>
+    <string name="legend_ac"> - AC</string>
+
+    <string name="facebook_app_id">1768051176754610</string>
+    <string name="facebook_button">Entrar com Facebook</string>
+    <string name="facebook_button_profile">ACESSAR TAMBÉM PELO FACEBOOK</string>
+    <string name="google_button">Entrar com Google</string>
+    <string name="google_button_profile">ACESSAR TAMBÉM PELO GOOGLE</string>
+    <string name="google_sign_error">Não foi possível efetuar o login pelo Google</string>
+    <string name="ucrop_label_edit_photo">Your custom title</string>
+    <string name="version_name">Versão: %s</string>
+
+    <string name="button_detail_notification">ABRIR</string>
+
+    <string-array name="nav_drawer_items">
+        <item>Faça seu login</item>
+        <item>Cadastrar</item>
+        <item>Acidente e Assistência</item>
+        <item>Oficina referenciadas</item>
+        <item>Meu Seguro</item>
+        <item>Clube de vantagens</item>
+        <item>Fale conosco</item>
+
+    </string-array>
+
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_drawer</item>
+        <item>@drawable/ic_drawer</item>
+        <item>@drawable/ic_drawer</item>
+        <item>@drawable/ic_drawer</item>
+        <item>@drawable/ic_drawer</item>
+        <item>@drawable/ic_drawer</item>
+    </array>
+
+    <string name="validation_token_error">Não foi possivel validar seu cadastro</string>
+
+
+    <string name="item_parcels">Parcela</string>
+    <string name="item_due_date">Vencimento</string>
+    <string name="item_value">Valor</string>
+    <string name="item_status">Status</string>
+    <string name="status_home_on">Status do <b>sinistro</b></string>
+    <string name="title_payments_home">Informações de\n<b>pagamento</b></string>
+    <string name="expand">expandir</string>
+    <string name="collapse">recolher</string>
+    <string name="ver_detalhes"><u>ver detalhes</u></string>
+
+    <string name="title_extends_ok">SUA PARCELA FOI \n PRORROGADA</string>
+    <string name="description_extends_ok">Veja abaixo os dados para pagamento da parcela:</string>
+    <string name="description_extends_obs">Atenção: Para realizar o pagamento do boleto, aguardar o prazo de 3 horas para que o mesmo seja registrado junto ao banco</string>
+    <string name="cod_number">Código de Barras:</string>
+
+    <string name="title_extends">Prorrogar data de pagamento</string>
+    <string name="description_extends_1">Ao prorrogar a data do pagamento de sua parcela você concorda com a correção do valor.</string>
+    <string name="description_extends_2">Para essa parcela a forma de pagamento será boleto</string>
+    <string name="new_data_extends">NOVA DATA</string>
+    <string name="value_extends">VALOR</string>
+    <string name="terms_extends">termos de acordo</string>
+
+
+    <string name="status_1">Quitado</string>
+    <string name="status_2">Atrasado</string>
+    <string name="status_3_novo">Processando</string>
+    <string name="status_4">Em Análise</string>
+    <string name="status_3">A Vencer</string>
+
+    <string name="hi">Olá</string>
+
+    <string name="in">de</string>
+    <string name="money">R$</string>
+    <string name="next_payment_dialog">Vencimento:</string>
+    <string name="next_payment_value_dialog">Valor:</string>
+
+    <string name="clipboard">Código barras foi copiado com sucesso</string>
+
+
+    <string name="next_payment">Vencimento da próxima fatura</string>
+    <string name="next_payment_1">, no valor de</string>
+
+
+    <string name="title_action_bar_0">Liberty Seguros</string>
+    <string name="title_action_bar_1">Oficinas</string>
+    <string name="title_action_bar_2">Acidente ou Assistência</string>
+    <string name="title_action_bar_3">Cadastre-se</string>
+    <string name="title_action_bar_4">Trocar E-mail</string>
+    <string name="title_action_bar_5">Meus Dados</string>
+    <string name="title_action_bar_6">Trocar Senha</string>
+    <string name="title_action_bar_7">Atendimento</string>
+    <string name="title_action_bar_8">Meu Seguro</string>
+    <string name="title_action_bar_9">Sinistro</string>
+    <string name="title_action_bar_10">Notificação</string>
+    <string name="title_action_bar_11">Clube Liberty Momentos</string>
+    <string name="title_action_bar_12">Política de Privacidade</string>
+    <string name="title_action_bar_13">Documentos e fotos</string>
+    <string name="title_action_bar_14">Assistência</string>
+
+    <string name="register_ok">Registro realizado com sucesso!</string>
+    <string name="register_title1">Cadastre-se. </string>
+    <string name="register_title2"> É super rápido!</string>
+    <string name="register_warning">Para começar, diga para nós qual é o seu seguro.\nSe tiver mais de um, escolha o que achar melhor!</string>
+    <string name="register_atention"><b>Atenção!</b> Sua senha deve conter letras e números e no mínimo 6 caracteres.</string>
+    <string name="register_subtitle">Só mais algumas informações:</string>
+    <string name="register_name">Nome</string>
+    <string name="register_apolice">Apólice</string>
+    <string name="register_apolice_plate">Digite sua apólice ou placa do carro</string>
+    <string name="register_apolice_cep">Digite sua apólice ou CEP</string>
+    <string name="register_apolice_date">Digite sua apólice ou data de nascimento</string>
+    <string name="register_cpf">CPF</string>
+    <string name="register_email">Email</string>
+    <string name="register_email_again">Confirme </string>
+    <string name="register_name_error">Preencha seu nome</string>
+    <string name="register_apolice_error">Preencha seu número de apólice</string>
+    <string name="register_cpf_cnpj_error">Preencha seu CPF ou CNPJ</string>
+    <string name="register_email_error">Preencha seu E-mail</string>
+    <string name="register_cpf_error">Preencha seu CPF</string>
+    <string name="register_error_password_confirm">Senha e senha de confirmação devem ser iguais</string>
+    <string name="register_error_email_confirm">E-mail e E-mail de confirmação devem ser iguais</string>
+    <string name="register_info_password"><b>Atenção!</b> Sua senha deve conter no mínimo 6 (seis) caracteres entre letras e números. Não é permitido utilizar seu nome, sobrenome ou "&amp;".</string>
+    <string name="register_cb_terms">Concordo com os </string>
+    <string name="register_cb_terms_2">termos, condições e política de privacidade</string>
+
+
+    <string name="extends_warning">Declaro que não tive sinistro enquanto essa parcela esteve vencida</string>
+
+
+    <string name="vehicle_accident_title_log_off">Digite os dados solicitados abaixo para continuar seu sinistro</string>
+    <string name="vehicle_accident_24_title_log_off">Digite os dados solicitados abaixo para continuar com sua assistência</string>
+
+    <string name="vehicle_accident_title_step_1">Por favor, escolha uma situação que se enquadra seu sinistro</string>
+    <string name="vehicle_accident_error_validation_step_1">Por favor, escolha uma situação que se enquadre seu sinistro.</string>
+
+    <string name="vehicle_accident_title_1_step_2">Confirme seus dados</string>
+    <string name="vehicle_accident_title_2_step_2">Segurado era o condutor?</string>
+    <string name="vehicle_accident_title_1_step_3">Confirme dia, horário e local do ocorrido</string>
+    <string name="vehicle_accident_title_1_step_4">Conte o que aconteceu</string>
+    <string name="vehicle_accident_title_list">Para qual das apólices abaixo você quer sinalizar um sinistro?</string>
+
+    <string name="icon_audio">Se preferir, envie seu relato em áudio</string>
+    <string name="icon_photo">Deseja adicionar fotos ou documentos do ocorrido?</string>
+    <string name="click_add_photo">Clique ao lado para adicionar</string>
+    <string name="click_add_photo_delete">Clique ao lado para adicionar ou clique e segure na imagem para apagar</string>
+    <string name="documents_warning">Salve aqui fotos ou documentos importantes como: carteira de habilitação, RG, documento do carro entre outros</string>
+
+
+    <string name="timerpicker_title">Selecione o horário</string>
+    <string name="datepicker_title">Selecione a data</string>
+
+
+    <string name="vehicle_accident_option_1_step_1">Roubo e furto</string>
+    <string name="vehicle_accident_option_2_step_1">Alagamento</string>
+    <string name="vehicle_accident_option_3_step_1">Acidentes envolvendo terceiros</string>
+    <string name="vehicle_accident_option_4_step_1">Acidente</string>
+
+    <string name="vehicle_accident_option_1_step_2">Sim</string>
+    <string name="vehicle_accident_option_2_step_2">Não</string>
+
+
+    <string name="Or">Ou</string>
+    <string name="or">ou</string>
+    <string name="password">Senha</string>
+    <string name="email_cpf">E-mail ou CPF/CNPJ</string>
+    <string name="privacy">Política de Privacidade</string>
+    <string name="keep_logged_in">Manter logado</string>
+    <string name="click">Clique aqui</string>
+
+    <string name="sinistro_open">Ou deseja acompanhar um atendimento?</string>
+
+    <string name="title_attention">ATENÇÃO!</string>
+    <string name="location_error">Não foi possível encontrar \n sua localização</string>
+    <string name="location_alert">Digite um dos Dados Abaixo</string>
+    <string name="location_enable_alert">Para usar todas as funcionalidades do aplicativo é necessário ativar a localização do dispositivo, deseja ativar?</string>
+
+
+    <string name="change_email_question">Para trocar seu email, responda as seguintes perguntas:</string>
+    <string name="change_email_cpf">Qual o CPF/CNPJ do segurado?</string>
+    <string name="error_change_email_answer">Preencha o campo de reposta</string>
+
+    <string name="change_email_ok">SEU E-MAIL FOI ALTERADO COM SUCESSO.</string>
+    <string name="change_password_ok">SUA SENHA FOI ALTERADA COM SUCESSO.</string>
+
+    <string name="change_password">Troca de senha</string>
+
+    <string name="change_email">Troca de e-mail</string>
+    <string name="change_email_title">Para trocar seu email, responda as seguintes perguntas:</string>
+    <string name="change_email_item_1_part2">Preencha o novo e-mail</string>
+    <string name="change_email_item_1">1.Qual o CEP de sua residência?</string>
+
+    <string name="change_phone_ok">SEU TELEFONE FOI ALTERADO COM SUCESSO.</string>
+
+    <string name="view_card">Visualizar Cartão Segurado</string>
+
+    <string name="about">Fale conosco</string>
+
+    <string name="about_app">Fale sobre este aplicativo</string>
+
+    <string name="forgot_password">Esqueceu sua senha?</string>
+    <string name="forgot_email">Esqueceu seu e-mail?</string>
+
+    <string name="not_user_part1">Ainda não é usuário?</string>
+    <string name="not_user_part2">Cadastre-se</string>
+
+    <string name="assistance_type">Qual tipo de atendimento para seu carro você quer solicitar?</string>
+    <string name="assistance_type_choose">Escolha uma opção para avançar</string>
+    <string name="speak_liberty_part1">Está com dúvidas?</string>
+    <string name="speak_liberty_part2">Fale com a Liberty</string>
+    <string name="speak_liberty_part3">FALE COM A LIBERTY</string>
+    <string name="speak_liberty_part4">Fale com seu corretor</string>
+
+    <string name="hint_cep">Digite o Cep</string>
+    <string name="hint_cep_1">Digite aqui o seu Cep!</string>
+    <string name="hint_address">Digite o Endereço</string>
+    <string name="hint_address_2">Digite o Endereço alternativo</string>
+    <string name="hint_cpf">CPF/CNPJ</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Senha</string>
+    <string name="hint_password_new">Digite a nova Senha</string>
+    <string name="hint_password_old">Digite sua Senha atual</string>
+    <string name="hint_confirm_password_new">Confirme a nova Senha</string>
+    <string name="hint_phone">Telefone</string>
+    <string name="hint_cpf_change_email">Digite Aqui o seu CPF/CNPJ</string>
+    <string name="hint_policy_vehicle">Placa do veículo ou Apólice</string>
+    <string name="hint_plate">Placa do veículo</string>
+
+    <string name="policy">Apólice</string>
+    <string name="car">Veículo</string>
+    <string name="address">Endereço</string>
+    <string name="insured">Segurado</string>
+
+
+    <string name="missing">Faltam</string>
+    <string name="missing_2">Falta</string>
+
+
+    <string name="policy_time">Para sua Renovação</string>
+    <string name="ipva">IPVA</string>
+    <string name="licensing">LICENCIAMENTO</string>
+    <string name="day">DIAS</string>
+
+    <string name="status_vehicle_accident">Status de Sinistro</string>
+
+    <string name="vehicle_accident">Sinistro</string>
+
+    <string name="payment">Pagamento</string>
+    <string name="payment_2">Pag.</string>
+
+    <string name="hint_confirm_password">Confirme sua senha</string>
+    <string name="hint_name">Nome</string>
+    <string name="hint_birthday">Nascimento</string>
+    <string name="hint_policy">Apólice</string>
+    <string name="hint_forgot_email">Digite seu novo E-mail</string>
+    <string name="hint_confirm_forgot_email">Confirme seu novo E-mail</string>
+    <string name="hint_confirm_email">Confirme o E-mail</string>
+    <string name="hint_change_email">Digite seu novo e-mail</string>
+    <string name="hint_change_email_new">Confirme seu novo e-mail</string>
+    <string name="hint_data">Data</string>
+    <string name="hint_change_phone">Digite seu telefone</string>
+    <string name="hint_change_ramal">Ramal</string>
+    <string name="hint_change_mobile_phone">Celular</string>
+
+    <string name="hint_hours">Horário</string>
+    <string name="hint_local">Local (Rua, Avenida...)</string>
+    <string name="hint_local_2">Endereço alternativo</string>
+    <string name="hint_number">Número</string>
+
+    <string name="hint_reference">Referência</string>
+    <string name="hint_city">Cidade</string>
+    <string name="hint_district">Bairro</string>
+
+    <string name="bt_Ok_3">OK, ENTENDI</string>
+    <string name="bt_Ok_2">OK ENTENDI</string>
+    <string name="bt_Ok">OK</string>
+    <string name="bt_yes">Sim</string>
+    <string name="bt_no">Não</string>
+    <string name="bt_close">Fechar</string>
+    <string name="bt_configuration">Configurações</string>
+
+    <string name="distance_unity">Km</string>
+
+    <string name="attetion">Atenção!</string>
+    <string name="second_copy_policy">2º via da apólice</string>
+
+    <string name="exit">Sair</string>
+
+    <string name="bt_cancel_up">CANCELAR</string>
+
+    <string name="bt_cancel">Cancelar</string>
+    <string name="bt_try_again">Tentar Novamente</string>
+
+    <string name="menu_off_item_1">Faça seu login</string>
+    <string name="menu_off_item_2">Cadastrar</string>
+    <string name="menu_off_item_3">Acidente ou Assistência</string>
+    <string name="menu_off_item_4">Oficinas referenciadas</string>
+    <string name="menu_off_item_5">Clube Liberty Momentos</string>
+    <string name="menu_off_item_6">Fale conosco</string>
+
+    <string name="menu_on_item_1">Meus dados</string>
+    <string name="menu_on_item_2">Meus Seguros</string>
+    <string name="menu_on_item_3">Acidente e Assistência</string>
+    <string name="menu_on_item_4">Oficinas referenciadas</string>
+    <string name="menu_on_item_5">Clube Liberty Momentos</string>
+    <string name="menu_on_item_6">Notificações</string>
+    <string name="menu_on_item_7">Fale conosco</string>
+    <string name="menu_on_item_8">Sair</string>
+
+    <string name="message_play_service">Para usar todas as funcionalidades do aplicativo é necessário instalar a última versão do Google Play Service.</string>
+
+    <string name="message_waiting_location">Aguarde, buscando localização</string>
+    <string name="message_waiting_workshop">Aguardando enquanto os dados estão sendo carregados!</string>
+    <string name="message_error_server">Não foi possível acessar a internet, verifique sua conexão</string>
+    <string name="message_location_error">Não foi possível encontrar sua localização</string>
+    <string name="message_no_cep_address">Necessário preencher um dos campos: Cep ou Endereço</string>
+    <string name="message_no_workshop">Não foi possível encontrar nenhuma oficina próxima da sua localização!</string>
+    <string name="message_error_login">Usuario e/ou senha inválidos!</string>
+    <string name="message_error_login_before_facebook">Não foi possível realizar o vínculo com o Facebook!</string>
+    <string name="message_sucess_login_before_facebook">Agora você já pode logar usando sua conta do Facebook!</string>
+    <string name="message_sucess_login_before_google">Agora você já pode logar usando sua conta do Google Plus!</string>
+    <string name="message_error_email_confirm">E-mail e E-mail de confirmação devem ser iguais</string>
+    <string name="message_error_password_confirm">Senha e senha de confirmação devem ser iguais</string>
+
+    <string name="message_check_box">Para realizar o cadastro é preciso concordar com os termos e condições de uso do aplicativo</string>
+
+    <string name="message_fingerprint_popup_title">Logar</string>
+    <string name="message_fingerprint_popup">Use sua digital para acessar sua conta de forma mais fácil e rápida \n\nConfirme a digital para continuar</string>
+    <string name="message_fingerprint_sensor">Sensor de digital</string>
+    <string name="message_fingertips_not_register">Sua impressão digital não foi registrada não configuração do aparelho</string>
+    <string name="message_fingertips_error">Não foi possivel validar sua impressão digital</string>
+    <string name="message_fingertips_success">Impressão digital validada com sucesso</string>
+
+
+    <string name="message_error_plate">Por favor insira um número de Placa válida</string>
+    <string name="message_error_policy">Por favor insira um número de Apolice válida</string>
+    <string name="message_error_CEP">Por favor insira um CEP válida</string>
+    <string name="message_error_bir">Por favor insira uma data de nascimento</string>
+
+
+    <string name="message_error_email">E-mail inválido</string>
+    <string name="message_empty_email">Preencha seu E-mail</string>
+
+    <string name="message_empty_location">Preencha seu endereço</string>
+    <string name="message_empty_ref">Preencha uma referência</string>
+    <string name="message_empty_city">Preencha sua cidade</string>
+    <string name="message_empty_district">Preencha seu bairro</string>
+    <string name="message_empty_number">Preencha seu número</string>
+    <string name="message_empty_number_vehicle">Preencha sua a apólice ou placa</string>
+    <string name="message_empty_number_plate">Preencha com sua placa</string>
+
+    <string name="message_empty_description_accident">Aviso! Por favor, nos conte o que aconteceu, escrevendo ou gravando um áudio</string>
+
+    <string name="message_empty_phone">Preencha seu telefone</string>
+    <string name="message_error_phone">Telefone inválido</string>
+
+    <string name="message_empty_birthday">Preencha seu nascimento</string>
+    <string name="message_error_birthday">Nascimento inválido</string>
+
+    <string name="message_step4"><![CDATA[ <b>Não sabe por onde começar? Veja nosso exemplo de relato:</b> Estava cruzando a Av.Ipiranga com a São João, quando o carro derrapou na pista e fui de encontro ao muro. ]]></string>
+
+    <string name="message_empty_name">Preencha seu nome</string>
+    <string name="message_empty_policy">Preencha seu número de Apólice</string>
+
+    <string name="message_error_cpf">CPF inválido</string>
+    <string name="message_empty_cpf">Preencha seu CPF</string>
+
+    <string name="message_error_cpf_email">Email ou CPF válido</string>
+    <string name="message_empty_cpf_email">Preencha seu CPF/CNPJ ou E-mail</string>
+
+    <string name="message_error_password">Sua senha deve conter letras e números e no mínimo 6 caracteres.</string>
+    <string name="message_empty_password">Preencha sua Senha</string>
+
+    <string name="message_error_cep">Por favor, digite um CEP para continuar!</string>
+
+    <string name="message_error_cpf_cnpj">CPF ou CNPJ inválido</string>
+    <string name="message_empty_cpf_cnpj">Preencha seu CPF ou CNPJ</string>
+
+    <string name="message_error_forgot_password">CPF ou E-mail Inválidos</string>
+
+    <string name="message_error_date">Preencha uma data</string>
+
+    <string name="message_error_date_b">Preencha sua data de nascimento</string>
+
+    <string name="message_error_state">Preencha um estado</string>
+
+    <string name="message_error_hours">Preencha um horário</string>
+
+    <string name="message_forgot_password">Um nova senha foi enviada para seu email!</string>
+    <string name="message_forgot_password_2">Sua senha foi alterada com sucesso!</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="workshop_proximity">Oficinas referenciadas mais próximas</string>
+
+    <string name="title_phone_1"><![CDATA[
+    ASSISTÊNCIA <b>24 HORAS</b> EMPRESAS E RESIDÊNCIA
+    ]]></string>
+    <string name="phone_1">0800 709 5423</string>
+
+    <string name="title_phone_2">
+        <![CDATA[ASSISTÊNCIA <b>24 HORAS</b> AUTO E VIDA]]></string>
+    <string name="phone_2"> 0800 702 5100</string>
+
+    <string name="title_skype">
+        <![CDATA[FALE CONOSCO <b>VIA SKYPE</b>]]></string>
+
+    <string name="title_phone_3">CAPITAL E REGIÕES METROPOLITANAS</string>
+    <string name="phone_3">4004-5423</string>
+    <string name="sub_title_phone_3">Segunda a Sábado (exceto feriados nacionais) - 6h às 22h</string>
+
+    <string name="title_phone_4">DEMAIS LOCALIDADES</string>
+    <string name="phone_4">0800 709 5423</string>
+    <string name="sub_title_phone_4">Segunda a Sábado (exceto feriados nacionais) - 6h às 22h</string>
+
+    <string name="header_title_phone_5">Apólice</string>
+    <string name="title_phone_5">Corretores Brasil</string>
+    <string name="phone_5">1234-5678</string>
+    <string name="sub_title_phone_5">corretora@brasil.com.br</string>
+
+    <string name="send_email_title">Enviar e-mail</string>
+
+    <string name="forgot_password_title">Recuperação de Senha</string>
+    <string name="forgot_email_title">Recuperação de Email</string>
+
+    <string name="title_navigation_drawer">Olá Visitante</string>
+
+    <string name="welcome">Bem-vindo</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>\
+
+    <string name="title_club"><![CDATA[
+    Aproveite um clube de benefícios exclusivos para você desfrutas e aproveitar o que realmente importa
+    ]]></string>
+
+    <string name="descritption_club"><![CDATA[
+    Aqui você encontra ofertas em diversão e cultura, gastronomia, viagens e experiências, compras e muito mais. Tudo isso sem pesar no bolso.
+    ]]></string>
+
+    <string name="descritption_club_on"><![CDATA[
+        Aqui você encontra ofertas em diversão e cultura, gastronomia, viagens e experiências, compras e muito mais. Tudo isso sem pesar no bolso.
+    ]]></string>
+
+    <string name="login_club"><![CDATA[
+    Para ter acesso ao Clube Liberty, <b>faça login</b> ou <b>cadastre-se</b> e aproveite todos os benefícios exclusivos:
+    ]]></string>
+
+    <string name="forgot_now">Recupere aqui</string>
+
+    <string name="report_here">Digite aqui seu relato</string>
+
+    <string name="delete_file">Tem certeza que deseja apagar?</string>
+
+    <string name="audio_time">Você atingiu o limite de tempo para gravação de audio!</string>
+
+    <string name="error_audio">Não foi possível gravar o áudio!</string>
+
+    <string name="error_camera">Não foi possível tirar uma foto!</string>
+
+    <string name="choose_photo">Escolha a origem da foto!</string>
+
+    <string name="photo_error">Não é possivel inserir mais de 8 fotos!</string>
+
+    <string name="photo_error_five">Não é possivel inserir mais de 5 fotos!</string>
+
+
+    <string name="open_pdf">Abrir PDF...</string>
+
+    <string name="erro_open_pdf">Você não possui um aplicativo para visualizar PDF!</string>
+
+    <string name="undo">Desfazer</string>
+
+    <string name="delete">Apagar</string>
+
+    <string name="error_notification">Nenhuma notificação disponível</string>
+
+    <string name="photo_size_part1">Você possui</string>
+
+    <string name="photo_size_part2">adicionadas</string>
+
+    <string name="photos">foto(s)</string>
+
+    <string name="title_dialog_workshop">CONHEÇA AS VANTAGENS:</string>
+    <string name="message_dialog_workshop_1">Peças novas e originais.</string>
+    <string name="message_dialog_workshop_2">Desconto no valor da franquia.</string>
+    <string name="message_dialog_workshop_3">Possibilidade de parcelamento.</string>
+    <string name="message_dialog_workshop_4"> Garantia ilimitada do reparo enquanto o veículo estiver em nome do segurado.</string>
+    <string name="message_dialog_workshop_5">Garantia de 1 ano no reparo realizado nos veículos de terceiros.</string>
+
+    <string name="message_success_vehicle_accident">AVISO DE SINISTRO \n ENVIADO COM SUCESSO</string>
+    <string name="title_number_vehicle_accident">O número do sinistro é</string>
+
+    <string name="title_warning_1_vehicle_accident">Fique tranquilo, entraremos em contato\nem até 12 horas úteis</string>
+    <string name="title_warning_2_vehicle_accident">Você receberá um e-mail com todos os dados\ndesse sinistro</string>
+
+    <string name="message_delete_photo">Estamos removendo os documentos selecionados, esta operação pode demorar alguns minutos</string>
+    <string name="message_upload_photo">Estamos enviando os arquivos para nossos servidores, esta operação pode demorar alguns minutos</string>
+    <string name="message_send_va">Enviando Sinistro</string>
+
+
+    <string name="status_10">Aviso de Sinistro Enviado</string>
+    <string name="status_20">Vistoria Agendada</string>
+    <string name="status_30">Tentativa de localizar o veículo (7 dias)</string>
+    <string name="status_40">Reparos Liberado</string>
+    <string name="status_50">Enviar Documentos</string>
+    <string name="status_90">Status Desconhecido</string>
+    <string name="status_100">Sinistro Concluido</string>
+
+    <string name="loading_register">Aguarde enquanto seu cadastro está sendo ativado!</string>
+
+    <string name="message_register_activated">A ativação do seu cadastro foi realizado com sucesso!</string>
+
+    <string name="file_size_error">Arquivo não pode ter mais de 10 MB</string>
+
+    <string name="date_open">Data de abertura</string>
+
+    <string name="not_upload"></string>
+
+    <string name="terms_extends_message">Confirmo a reprogramação da parcela do meu seguro e sei que não terei cobertura caso tenha acontecido algum sinistro neste período em que a parcela estiver pendente, conforme o Art. 763 do Código Civil Brasileiro citado abaixo. Após o pagamento a cobertura voltará a valer novamente. \n \n Art. 763 do Código Civil Brasileiro: Não terá direito a indenização o segurado que estiver em mora com o prêmio, se ocorrer sinistro antes de sua purgação.</string>
+
+    <string name="terms_extends_message_two">Art. 763 do Código Civil Brasileiro: Não terá direito a indenização o segurado que estiver em mora com o prêmio, se ocorrer sinistro antes de sua purgação.</string>
+
+
+    <string name="message_error_drive_name">Preencha o nome do condutor</string>
+
+
+    <string name="error_route">Não foi possível traça a rota</string>
+
+    <string name="image_delete">Toque na foto para exclui-la</string>
+
+    <string name="listvaerror">Desculpe! Você não possui nenhuma apólice vigente.</string>
+
+    <string name="and">e</string>
+
+    <string name="title_coverages">O que o meu seguro cobre?</string>
+
+    <string name="error_location_permission">Para prosseguir é necessário aceitar as permissões solicitadas.</string>
+
+    <string name="insurance_coverage">O QUE MEU SEGURO COBRE</string>
+
+    <string name="service_available">SERVIÇO DISPONÍVEL</string>
+
+    <string name="documents_phots">Documentos e Fotos</string>
+    <string name="my_documents">Meus Documentos</string>
+    <string name="my_phone">Atualizar Telefone</string>
+
+
+    <string name="error_get_document">Não foi possível acessar os documentos</string>
+    <string name="error_delete_document">Não foi possível apagar os documentos</string>
+    <string name="error_upload_document">Não foi possível realizar o upload dos documentos</string>
+    <string name="success_upload_document">IMAGEM ENVIADA COM SUCESSO!</string>
+    <string name="success_delete_document">AS IMAGENS FORAM APAGADAS COM SUCESSO!</string>
+
+    <string name="insurance_coverage_unavailable">Coberturas não disponíveis no momento!\nTente novamente mais tarde.</string>
+    <string name="other_item">OUTROS\nITENS</string>
+    <string name="claim_withou_msg">Relato enviado por áudio</string>
+    <string name="insurance_coverage_title_popup">Escolha o item desejado</string>
+    <string name="free_navigation">Você está navegando grátis!</string>
+    <string name="paid_navigation">A NAVEGAÇÃO GRATUITA NÃO ESTÁ DISPONÍVEL NO MOMENTO</string>
+    <string name="Add_Photos">Deseja adicionar\nfotos do ocorrido?</string>
+    <string name="add_photos_documentos">Deseja adicionar\nfotos e documentos?</string>
+    <string name="free_navigation_desc">Com a Liberty você economiza o seu pacote de dados</string>
+    <string name="free_navigation_check">Não voltar a mostrar</string>
+    <string name="photos_documents_sent">DOCUMENTOS ENVIADOS COM SUCESSO</string>
+    <string name="photos_documents_linked">Documentos vinculados ao sinistro:</string>
+    <string name="none_picture_error">Adicione pelo menos uma foto ou documento</string>
+
+    <string name="new_document">Documento novo</string>
+
+    <string name="old_document">Documento salvo</string>
+
+    <string name="choose_image_path">Escolha entre um documento salvo ou criar novo documento</string>
+    <string name="documents_empty">Você não possui nenhum documento salvo para esta apólice\nCaso deseja deixar previamente salvo acesse: Meus Dados -> Documentos e Fotos</string>
+
+    <string name="km">Km</string>
+
+    <string name="cod_title">Código de Barras</string>
+    <string name="cod_success">O Seguinte código de barras foi copiado para o clipboard:</string>
+
+    <string name="parcel_finish">Fique tranquilo! Faturas pagas</string>
+
+    <string name="operation_part_1">SEGUNDA A SEXTA DAS</string>
+    <string name="operation_part_2">AS</string>
+    <string name="operation_part_3">E SÁBADO DAS</string>
+
+    <string name="url_prod">https://mobile.libertyseguros.com.br/api/</string>
+    <string name="url_act">https://act-dmz.libertyseguros.com.br/MobileApi/api/</string>
+
+    <string name="url_club_prod1">https://libertyseguros.clubeben.com.br/auth/general/?token=</string>
+    <string name="url_club_act1">http://libertyseguros.homolog.clubeben.proxy.media/auth/libertyseguros</string>
+
+    <string name="url_club_prod">https://libertyseguros.clubeben.com.br/auth/general/?token=</string>
+    <string name="url_club_act">http://libertyseguros.homolog.clubeben.proxy.media/auth/general/?token=</string>
+
+    <string name="url_image_home">https://meuespaco.libertyseguros.com.br/SitePages/Deslogado/Imagens/Segurado/Android/</string>
+    <string name="url_image_home_act">https://meuespaco.libertyseguros.com.br/SitePages/Deslogado/Imagens/Segurado/Android/</string>
+
+
+    <string name="goto_login">Fazer login</string>
+    <string name="change_values">Alterar dados</string>
+    <string name="email_used">Esse e-mail já está em uso</string>
+
+    <string name="InstrucoesCadastroSucesso">Agora acesse seu e-mail</string>
+    <string name="InstrucoesCadastroSucesso2">Para finalizar seu cadastro, acesse seu e-mail e clique no link de ativação</string>
+    <string name="InstrucoesCadastroSucesso3">Esse procedimento garante a segurança dos seus dados</string>
+    <string name="EmailNotReceived1">Não recebeu o e-mail? </string>
+    <string name="EmailNotReceived2">Reenviar link</string>
+
+    <string name="title_bar_code_dialog">2ª Via de Pagamento</string>
+    <string name="title_2_bar_code_dialog">Para realizar o pagamento copie o código de barras e realize o pagamento no seu Banco.</string>
+    <string name="summary_instructions"> "Caso queira imprimir o seu boleto, acesse o Meu Espaço Cliente em Histórico de Pagamento e selecione a parcela desejada.</string>
+    <string name="instrucao_completa">Instrução completa</string>
+    <string name="titulo_boleto_vencido">Seu boleto venceu! :/</string>
+    <string name="sub_titulo_boleto_vencido">Para realizar a impressão da 2ª Via você deve acessar o site do Santander e gerar uma nova via com data e valor atualizados.</string>
+
+    <string name="url_glass_assistance">https://www.abraseuatendimento.com.br/liberty</string>
+    <string name="url_payment">https://portalintegracao.libertyseguros.com.br/PagamentoUI/UI/PagamentoOnline/PagamentoOnlineAPPController.aspx</string>
+    <string name="url_payment_act">https://act-dmz.libertyseguros.com.br/PagamentoUI/UI/PagamentoOnline/PagamentoOnlineAPPController.aspx</string>
+
+    <string name="TituloPagarParcela">Escolha como prefere pagar esta parcela:</string>
+    <string name="PagueAgora">Pagar Agora</string>
+    <string name="Consultar">Consultar</string>
+    <string name="SegundaViaBoleto">2ª Via de Boleto</string>
+    <string name="PagamentoOnline">Pagamento online</string>
+    <string name="ProrrogarParcela">Prorrogar Parcela</string>
+    <string name="ConsultarPagamento">Consultar Pagamento</string>
+    <string name="ButtonPagar">Pagar</string>
+
+    <string name="policy_2">Apólice</string>
+
+    <string name="loading_download_pdf">Aguarde, realizando o download do arquivo....</string>
+
+    <string name="title_news">Hey, temos uma novidade para você</string>
+    <string name="subtitle_news">Dá uma olhada em tudo que você utilizou até o momento com o seu seguro!</string>
+    <string name="title_detail_vision">Veja o quanto você economizou com a Liberty!</string>
+    <string name="title_assistance_used_detail_vision">Veja as assistências que você utilizou!</string>
+    <string name="button_news"><u>Quero ver</u></string>
+    <string name="sum_detail_vision">Total %s</string>
+    <string name="header_detail_vision">Valor do seu seguro \n  %s</string>
+
+    <string name="button_login">Login</string>
+    <string name="button_register">Faça seu cadastro</string>
+    <string name="button_login_after">Logar depois</string>
+    <string name="button_club">Acesse o clube</string>
+    <string name="button_go">Entrar</string>
+    <string name="button_detail_policy">Detalhes da Apólice</string>
+    <string name="button_coverage">O Que meu Seguro Cobre</string>
+    <string name="button_second_policy">2ª Via da Apólice</string>
+    <string name="button_parcels">Visualizar Parcelas</string>
+    <string name="button_old_policy">Ver Apólices Antigas</string>
+    <string name="button_more_policy">Mais Apólices</string>
+    <string name="button_share">Compartilhar</string>
+    <string name="button_download">Baixar</string>
+    <string name="button_sinistro">Meu Sinistro</string>
+    <string name="button_assistence">Minha Assistência</string>
+    <string name="button_change_password">Trocar Senha</string>
+    <string name="button_send">Enviar</string>
+    <string name="button_start_sinistro">Iniciar Sinistro</string>
+    <string name="button_start_assistance">Iniciar Assistência</string>
+    <string name="button_location">Localizar</string>
+    <string name="button_next">Avançar</string>
+    <string name="button_send_photos">Enviar Fotos</string>
+    <string name="button_ok">Concordo</string>
+    <string name="button_copy_bar_cod">Copiar Código</string>
+    <string name="button_site_santander">Acessar Site Santander</string>
+    <string name="button_ok_understand">Ok, Entendi</string>
+    <string name="button_change_email">Trocar Email</string>
+    <string name="button_send_register">Registrar</string>
+
+    <!--AMBIENTE DE TESTE INTUITIVE-->
+    <!--<string name="assist24_act">https://dqkr3yt2sbyrt.cloudfront.net/</string>-->
+    <string name="assist24_prod">https://mobile.libertyseguros.com.br/Assistencia24/</string>
+    <string name="assist24_act">https://act-meuespaco.libertyseguros.com.br/SitePages/AssistenciaAuto/</string>
+</resources>

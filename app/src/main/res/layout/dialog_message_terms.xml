@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#40000000">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default_2"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="3dp"
+            android:layout_centerInParent="true"
+            app:cardBackgroundColor="@color/background_app">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/margin_default_6"
+                    android:layout_marginBottom="@dimen/margin_default_6"
+                    android:scrollbarFadeDuration="0"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_dialog_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_default_4"
+                        android:layout_marginRight="@dimen/margin_default_4"
+                        android:textSize="@dimen/font_default_2"
+                        android:text="@string/terms_extends_message"
+                        android:textColor="@color/text_default_3"/>
+
+                </ScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/margin_default_4"
+                    android:gravity="right">
+
+
+                    <TextView
+                        android:id="@+id/tv_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_default_2"
+                        android:textColor="@color/text_default_3"
+                        android:layout_marginLeft="@dimen/margin_default_2"
+                        android:layout_marginRight="@dimen/margin_default_4"
+                        android:text="@string/bt_Ok_3"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</LinearLayout>

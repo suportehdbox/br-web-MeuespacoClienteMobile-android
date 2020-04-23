@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "578571555423",
+    "project_id": "libertysegurosbrasil2014"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578571555423:android:bf57675a8ca7ac9a",
+        "android_client_info": {
+          "package_name": "br.com.libertyseguros.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBccMxSM01Y5eGbFKnAzHtNUOjf-SM1to8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-3257253-38"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
