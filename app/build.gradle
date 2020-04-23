@@ -47,10 +47,10 @@ android {
             applicationId 'br.com.libertyseguros.mobile'
             buildConfigField "String", "tag", "\"LibertySeguros\""
             buildConfigField "String", "databasename", "\"libertymobile.db\""
-            buildConfigField "boolean", "prod", "false"
+            buildConfigField "boolean", "prod", "true"
             buildConfigField "int", "brandMarketing", "1"
             versionCode 418
-            versionName "4.1.2.ac"
+            versionName "4.1.2"
             multiDexEnabled true
             signingConfig signingConfigs.config
 
