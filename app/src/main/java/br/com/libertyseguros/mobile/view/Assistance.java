@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.GridLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +19,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.AssistanceController;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
@@ -41,7 +43,10 @@ public class Assistance extends BaseActionBar implements OnClickListener{
     private ButtonViewCustom ibAc24;
 
     private ImageViewCustom ivSinistro;
+
     private ImageViewCustom ivGlass;
+
+    private ImageViewCustom ivHome;
 
     private boolean newVA;
 
@@ -53,6 +58,10 @@ public class Assistance extends BaseActionBar implements OnClickListener{
 
     public void onCreate(Bundle bundle){
         super.onCreate(bundle);
+        assistanceController = new AssistanceController(this);
+
+
+
 
         setContentView(R.layout.activity_assistance);
 
@@ -80,14 +89,16 @@ public class Assistance extends BaseActionBar implements OnClickListener{
         ibAcSinistro.setOnClickListener(this);
 
         ibAc24 = (ButtonViewCustom) findViewById(R.id.ib_ac_24);
-        ibAc24.setOnClickListener(this);
-
-
+        ibAc24.setVisibility(View.GONE);
 
         ivGlass = (ImageViewCustom) findViewById(R.id.iv_glass_assistance);
         ivGlass.setOnClickListener(this);
 
-        assistanceController = new AssistanceController(this);
+
+        ivHome = (ImageViewCustom) findViewById(R.id.iv_home_assistance);
+        ivHome.setOnClickListener(this);
+
+
 
         TextViewCustom tvClick = (TextViewCustom) findViewById(R.id.tv_click);
         tvClick.setPaintFlags(tvClick.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -100,16 +111,15 @@ public class Assistance extends BaseActionBar implements OnClickListener{
             llStatus.setVisibility(View.INVISIBLE);
         }
 
-//        if(BuildConfig.brandMarketing == 2){
-//            LinearLayout ll_assist24 = (LinearLayout) findViewById(R.id.ll_assist24);
-//            LinearLayout ll_buttons = (LinearLayout) findViewById(R.id.ll_buttons);
-//            ll_buttons.setWeightSum(2);
-//            ll_assist24.setVisibility(View.GONE);
-//            ivAssitance.setVisibility(View.GONE);
-//
-//        }
+        GridLayout gl_buttons = findViewById(R.id.grid_buttons);
 
-        ibAc24.setVisibility(View.GONE);
+        if(assistanceController.homeAssistanceAllowed()) {
+            gl_buttons.setColumnCount(2);
+        }else{
+            gl_buttons.setColumnCount(3);
+            ivHome.setVisibility(View.GONE);
+        }
+
 
         configDialog();
 
@@ -121,10 +131,11 @@ public class Assistance extends BaseActionBar implements OnClickListener{
        try {
            switch (v.getId()) {
                case R.id.tv_click:
+               case R.id.ib_ac_sinistro:
                    assistanceController.openVehicleAccidentStatus(this);
                    break;
                case R.id.iv_assistance:
-                   startManagerLocation(true);
+                   assistanceController.openAssitance();
                    break;
                case R.id.tv_speak_liberty:
                    assistanceController.openSupport(this);
@@ -132,11 +143,8 @@ public class Assistance extends BaseActionBar implements OnClickListener{
                case R.id.iv_sinistro:
                    assistanceController.openVehicleAccident(this);
                    break;
-               case R.id.ib_ac_24:
-                   startManagerLocation(false);
-                   break;
-               case R.id.ib_ac_sinistro:
-                   assistanceController.openVehicleAccidentStatus(this);
+               case R.id.iv_home_assistance:
+                   assistanceController.openHomeAssistWebView();
 
                    break;
                case R.id.iv_glass_assistance:
@@ -155,56 +163,12 @@ public class Assistance extends BaseActionBar implements OnClickListener{
     }
 
 
-    /**
-     * Start Manager Location
-     */
-    public void startManagerLocation(boolean newVA) {
-        this.newVA = newVA;
-
-        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED  ||
-                ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(activity,
-                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
-                            Manifest.permission.ACCESS_FINE_LOCATION},
-                    1);
-
-
-        } else {
-            assistanceController.openAssitance(this, newVA);
-        }
-
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case 1: {
 
-                boolean permissionGranted = true;
-
-                for(int ind = 0; ind < permissions.length; ind++){
-                    if (grantResults[ind] != PackageManager.PERMISSION_GRANTED) {
-
-                        permissionGranted = false;
-
-                    }
-                }
-
-
-                if (permissionGranted) {
-
-                    assistanceController.openAssitance(this, newVA);
-
-                } else {
-                    dialogMessage.show();
-                }
-
-                return;
-            }
-        }
-
+        this.assistanceController.checkPermissionsGranted(requestCode, permissions, grantResults);
     }
 
 

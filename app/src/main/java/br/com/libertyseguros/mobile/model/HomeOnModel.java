@@ -36,6 +36,7 @@ import br.com.libertyseguros.mobile.view.Club;
 import br.com.libertyseguros.mobile.view.DetailPolicy;
 import br.com.libertyseguros.mobile.view.DialogPayments;
 import br.com.libertyseguros.mobile.view.ExtendPagament;
+import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
 import br.com.libertyseguros.mobile.view.ListPolicy;
 import br.com.libertyseguros.mobile.view.ListVehicleAccidentStatus;
 import br.com.libertyseguros.mobile.view.ListVision360;
@@ -152,6 +153,11 @@ public class HomeOnModel extends BaseModel{
                             Config.hasAutoPolicy = true;
                         }else{
                             Config.hasAutoPolicy = false;
+                        }
+                        if (homeBeans.getInsurance().isAllowPHS()) {
+                            Config.hasHomeAssistance = true;
+                        }else{
+                            Config.hasHomeAssistance = false;
                         }
 
 
@@ -280,6 +286,13 @@ public class HomeOnModel extends BaseModel{
                                     Config.hasAutoPolicy = false;
                                 }
 
+                                if (homeBeans.getInsurance().isAllowPHS()) {
+                                    Config.hasHomeAssistance = true;
+                                }else{
+                                    Config.hasHomeAssistance = false;
+                                }
+
+
                                 loadFile.savePref(Config.TAGHOMEON, result, Config.TAG, context);
                                 loadFile.savePref(Config.TAGHOMEONTIME, System.currentTimeMillis() + "", Config.TAG, context);
 
@@ -403,7 +416,12 @@ public class HomeOnModel extends BaseModel{
      * Open Assistence Screen
      */
     public void openAssistance(Context context){
-        Intent it = new Intent(context, Assistance.class);
+        Intent it = null;
+        if(Config.hasHomeAssistance && !Config.hasAutoPolicy ){
+            it = new Intent(context, HomeAssistanceWebView.class);
+        }else{
+            it = new Intent(context, Assistance.class);
+        }
         context.startActivity(it);
     }
 

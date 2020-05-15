@@ -1,30 +1,43 @@
 package br.com.libertyseguros.mobile.controller;
 
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
+import android.widget.TextView;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.model.AssistanceModel;
 import br.com.libertyseguros.mobile.view.GlassAssistanceWebView;
+import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
 import br.com.libertyseguros.mobile.view.ListVehicleAccidentStatus;
 import br.com.libertyseguros.mobile.view.Support;
 
 public class AssistanceController {
 
     private AssistanceModel assistanceModel;
-
-
+    private Dialog dialogMessage;
     public AssistanceController(Activity activity){
         assistanceModel = new AssistanceModel(activity);
     }
 
-    public void openAssitance(Activity context, boolean newVA){
-        assistanceModel.openAssistance(context, newVA);
+
+
+    public void openAssitance(){
+        assistanceModel.openAssistance();
     }
 
+    public boolean homeAssistanceAllowed() {
+        return assistanceModel.homeAssistanceAllowed();
+    }
     /**
      * Open Support
      * @param context
@@ -50,10 +63,52 @@ public class AssistanceController {
     }
 
     public void openGlassAssistance(Context context){
-//        Intent it = new Intent(context, GlassAssistanceWebView.class);
-//        context.startActivity(it);
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.url_glass_assistance)));
         context.startActivity(browserIntent);
+    }
+
+    /**
+     * Open Home Assistance WebView
+     */
+    public void openHomeAssistWebView(){
+        assistanceModel.openHomeAssistance();
+    }
+
+    /**
+     * Pass values from activity onRequestPermissionsResult
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     * @return
+     */
+    public boolean checkPermissionsGranted(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        return this.checkPermissionsGranted(requestCode,permissions,grantResults, true);
+    }
+
+    /**
+     * Pass values from activity onRequestPermissionsResult
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     * @param startAssist
+     * @return
+     */
+    public boolean checkPermissionsGranted(int requestCode,
+                                           String permissions[], int[] grantResults, boolean startAssist) {
+        return assistanceModel.checkPermissionsGranted(requestCode, permissions, grantResults, startAssist);
+    }
+
+
+
+    public boolean checkHomeAssistancePermissions(){
+        return  assistanceModel.checkHomeAssistancePermissions();
+    }
+
+
+
+    public String getUserToken(){
+        return assistanceModel.getAccessToken();
     }
 
     /**
@@ -63,4 +118,5 @@ public class AssistanceController {
     public boolean isloginOn() {
         return assistanceModel.isloginOn();
     }
+
 }

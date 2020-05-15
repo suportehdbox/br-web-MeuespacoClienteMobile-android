@@ -222,7 +222,10 @@
             android:name="br.com.libertyseguros.mobile.view.Assistance24WebView"
             android:screenOrientation="portrait"
             android:theme="@style/AppActionBar" />
-
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.HomeAssistanceWebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
         <activity
             android:name="br.com.libertyseguros.mobile.view.NotificationDetail"
             android:screenOrientation="portrait"

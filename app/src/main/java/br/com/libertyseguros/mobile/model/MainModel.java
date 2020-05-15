@@ -25,6 +25,7 @@ import br.com.libertyseguros.mobile.libray.ManagerLocation;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.view.Assistance;
 import br.com.libertyseguros.mobile.view.Club;
+import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.ListPolicy;
 import br.com.libertyseguros.mobile.view.Notification;
@@ -129,9 +130,12 @@ public class MainModel extends BaseModel {
                     activity.startActivity(it);
                     break;
                 case R.id.navigation_drawer_item_3:
-                    Workshop.setManagerLocation(managerLocation);
-                    it = new Intent(activity, Assistance.class);
-                    activity.startActivity(it);
+                    if(Config.hasHomeAssistance && !Config.hasAutoPolicy ){
+                        it = new Intent(context, HomeAssistanceWebView.class);
+                    }else{
+                        it = new Intent(context, Assistance.class);
+                    }
+                    context.startActivity(it);
                     break;
                 case R.id.navigation_drawer_item_4:
                     Workshop.setManagerLocation(managerLocation);

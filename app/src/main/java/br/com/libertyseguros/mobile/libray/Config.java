@@ -74,4 +74,6 @@ public class Config {
     public static boolean alreadySentGCM = false;
     public static boolean alreadyShownDialog = false;
     public static boolean hasAutoPolicy = true;
+    public static boolean hasHomeAssistance = false;
+
 }

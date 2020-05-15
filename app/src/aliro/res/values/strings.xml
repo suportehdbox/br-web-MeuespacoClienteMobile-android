@@ -681,10 +681,14 @@
     <string name="button_ok_understand">Ok, Entendi</string>
     <string name="button_change_email">Trocar Email</string>
     <string name="button_send_register">Registrar</string>
-
+    <string name="error_pick_image">Não é possível acessar as fotos do dispostivo</string>
+    <string name="title_pick_image">Escolher a foto de:</string>
+    <string name="share_title">Compartilhar</string>
     <!--AMBIENTE DE TESTE INTUITIVE-->
     <!--<string name="assist24_act">https://dqkr3yt2sbyrt.cloudfront.net/</string>-->
 
     <string name="assist24_prod">https://mobile.libertyseguros.com.br/Assistencia24/</string>
-    <string name="assist24_act">https://act-meuespaco.aliroseguro.com.br/SitePages/AssistenciaAuto/</string>
+    <string name="assist24_act">https://act-dmz.libertyseguros.com.br/Assistencia24/</string>
+    <string name="hom_assist_prod">https://mobile.libertyseguros.com.br/Assistencia24/</string>
+    <string name="hom_assist24_act">http://192.168.5.67:3000</string>
 </resources>

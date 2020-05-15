@@ -3,5 +3,9 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain
             includeSubdomains="true">cloudmi.datami.com</domain>
+        <domain
+            includeSubdomains="true">192.168.5.67</domain> <!-- local test -->
+        <domain
+            includeSubdomains="true">10.0.2.2</domain> <!-- local test -->
     </domain-config>
 </network-security-config>

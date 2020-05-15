@@ -48,7 +48,7 @@ public class PolicyBeansV2 {
         private String dataEndPolicy;
         private String dataStartPolicy;
         private int issuingAgency;
-
+        private boolean allowPHS;
 
         private InsuranceStatusBeans insuranceStatus;
 
@@ -160,6 +160,14 @@ public class PolicyBeansV2 {
 
         public void setIssuingAgency(int issuingAgency) {
             this.issuingAgency = issuingAgency;
+        }
+
+        public boolean isAllowPHS() {
+            return allowPHS;
+        }
+
+        public void setAllowPHS(boolean allowPHS) {
+            this.allowPHS = allowPHS;
         }
     }
 

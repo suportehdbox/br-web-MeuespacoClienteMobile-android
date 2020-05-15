@@ -444,6 +444,10 @@ public class HomeOn extends Fragment implements View.OnClickListener, Navigation
                                     llCircle3.setVisibility(View.GONE);
                                     ivWorkshop.setVisibility(View.GONE);
 
+                                    if(homeOnController.getPolicyBeans().getInsurance().isAllowPHS()){
+                                        ivSinisitro.setVisibility(View.VISIBLE);
+                                    }
+
                                     if(menuWorkshop != null){
                                         menuWorkshop.setVisible(false);
                                     }
@@ -453,7 +457,9 @@ public class HomeOn extends Fragment implements View.OnClickListener, Navigation
                                     llCircle2.setVisibility(View.GONE);
                                     llCircle3.setVisibility(View.GONE);
                                     ivWorkshop.setVisibility(View.GONE);
-
+                                    if(homeOnController.getPolicyBeans().getInsurance().isAllowPHS()){
+                                        ivSinisitro.setVisibility(View.VISIBLE);
+                                    }
 
                                     if(menuWorkshop != null){
                                         menuWorkshop.setVisible(false);

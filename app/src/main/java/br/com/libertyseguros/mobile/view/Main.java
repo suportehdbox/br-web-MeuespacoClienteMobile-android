@@ -206,7 +206,12 @@ public class Main extends AppCompatActivity {
                 super.onDrawerOpened(drawerView);
 
                 if (mainController.isIsloginOn()) {
-                    navigationView.getMenu().getItem(2).setVisible(Config.hasAutoPolicy);
+                    if(Config.hasAutoPolicy ||  Config.hasHomeAssistance ){
+                        navigationView.getMenu().getItem(2).setVisible(true);
+                    }else{
+                        navigationView.getMenu().getItem(2).setVisible(false);
+                    }
+
                     showNotificationNew();
                 }
             }
