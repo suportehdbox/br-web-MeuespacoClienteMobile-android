@@ -689,6 +689,6 @@
 
     <string name="assist24_prod">https://mobile.libertyseguros.com.br/Assistencia24/</string>
     <string name="assist24_act">https://act-dmz.libertyseguros.com.br/Assistencia24/</string>
-    <string name="hom_assist_prod">https://mobile.libertyseguros.com.br/Assistencia24/</string>
-    <string name="hom_assist24_act">http://192.168.5.67:3000</string>
+    <string name="home_assist_prod">https://mobile.libertyseguros.com.br/AssistenciaResidencia/</string>
+    <string name="home_assist_act">https://act-dmz.libertyseguros.com.br/AssistenciaResidencia/</string>
 </resources>
