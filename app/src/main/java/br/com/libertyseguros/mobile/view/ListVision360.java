@@ -2,11 +2,10 @@ package br.com.libertyseguros.mobile.view;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
-import android.util.Log;
+import androidx.cardview.widget.CardView;
+
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -14,13 +13,10 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.adapter.ListAssistanceVisionAdapter;
 import br.com.libertyseguros.mobile.adapter.ListVisionAdapter;
-import br.com.libertyseguros.mobile.beans.AssitanceVision360Beans;
 import br.com.libertyseguros.mobile.controller.ListVision360Controller;
 import br.com.libertyseguros.mobile.util.LocaleUtils;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;

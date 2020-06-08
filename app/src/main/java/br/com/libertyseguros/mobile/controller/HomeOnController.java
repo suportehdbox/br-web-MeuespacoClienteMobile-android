@@ -222,9 +222,9 @@ public class HomeOnController {
         homeOnModel.enableFingerprints(context);
     }
 
-    public void setSalesForceSDK(final String policy, final String CPF, final String Ramo) {
-        homeOnModel.setSalesForceSDK(policy, CPF, Ramo);
-    }
+//    public void setSalesForceSDK(final String policy, final String CPF, final String Ramo) {
+//        homeOnModel.setSalesForceSDK(policy, CPF, Ramo);
+//    }
 
 
     public void openParcels(Context context, int indexPayment){

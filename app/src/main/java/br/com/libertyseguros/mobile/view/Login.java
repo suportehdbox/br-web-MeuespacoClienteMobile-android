@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -44,18 +44,15 @@ import org.json.JSONObject;
 import java.util.Arrays;
 
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.beans.BarCodeBeans;
 import br.com.libertyseguros.mobile.controller.LoginController;
 import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.DownloadImageUser;
 import br.com.libertyseguros.mobile.libray.FingerprintsAndroid;
-import br.com.libertyseguros.mobile.model.DocumentsPictureModel;
 import br.com.libertyseguros.mobile.model.LoginModel;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
 import br.com.libertyseguros.mobile.view.custom.EditTextCustom;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 import br.com.libertyseguros.mobile.view.custom.TextViewCustom;
 
 

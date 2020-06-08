@@ -2,7 +2,7 @@ package br.com.libertyseguros.mobile.util;
 
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.datami.smi.SdState;
@@ -13,11 +13,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.salesforce.marketingcloud.InitializationStatus;
-import com.salesforce.marketingcloud.MarketingCloudConfig;
-import com.salesforce.marketingcloud.MarketingCloudSdk;
-import com.salesforce.marketingcloud.MCLogListener;
-import com.salesforce.marketingcloud.notifications.NotificationCustomizationOptions;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
@@ -40,54 +35,54 @@ public class AnalyticsApplication extends NavigationApplication implements SdSta
         return mFirebaseAnalytics;
     }
 
-    private void initSalesForce() {
-
-
-        String salesforceID = "";
-        String salesforceToken = "";
-
-        if (BuildConfig.prod) {
-            salesforceID = getResources().getString(R.string.sales_force_id_prod);
-            salesforceToken = getResources().getString(R.string.sales_force_token_prod);
-        } else {
-            salesforceID = getResources().getString(R.string.sales_force_id_hom);
-            salesforceToken = getResources().getString(R.string.sales_force_token_hom);
-        }
-
-        MarketingCloudSdk.init(this, MarketingCloudConfig.builder()
-                .setApplicationId(salesforceID)
-                .setAccessToken(salesforceToken)
-                .setSenderId(getString(R.string.gcm_sender_id))
-                .setNotificationCustomizationOptions(
-                        NotificationCustomizationOptions.create(R.drawable.icon_menu_notification)
-                ).build(this), new MarketingCloudSdk.InitializationListener() {
-                @Override
-                public void complete(InitializationStatus status) {
-                    if (status.isUsable()) {
-                        Log.i(Config.TAG, "Sales Force: " + status.status().name());
-                        if (status.status() == InitializationStatus.Status.COMPLETED_WITH_DEGRADED_FUNCTIONALITY) {
-                            // While the SDK is usable, something happened during init that you should address.
-                            // This could include:
-                            if (GoogleApiAvailability.getInstance().isUserResolvableError(status.playServicesStatus())) {
-                                //Google play services encountered a recoverable error
-                                GoogleApiAvailability.getInstance().showErrorNotification(AnalyticsApplication.this, status.playServicesStatus());
-                            }
-                        }
-                    } else {
-                        //Something went wrong with init that makes the SDK unusable.
-                    }
-                }
-            });
-
-        MarketingCloudSdk.requestSdk(new MarketingCloudSdk.WhenReadyListener() {
-            @Override
-            public void ready(@NonNull MarketingCloudSdk marketingCloudSdk) {
-
-            }
-        });
-        MarketingCloudSdk.setLogLevel(MCLogListener.VERBOSE);
-        MarketingCloudSdk.setLogListener(new MCLogListener.AndroidLogListener());
-    }
+//    private void initSalesForce() {
+//
+//
+//        String salesforceID = "";
+//        String salesforceToken = "";
+//
+//        if (BuildConfig.prod) {
+//            salesforceID = getResources().getString(R.string.sales_force_id_prod);
+//            salesforceToken = getResources().getString(R.string.sales_force_token_prod);
+//        } else {
+//            salesforceID = getResources().getString(R.string.sales_force_id_hom);
+//            salesforceToken = getResources().getString(R.string.sales_force_token_hom);
+//        }
+//
+//        MarketingCloudSdk.init(this, MarketingCloudConfig.builder()
+//                .setApplicationId(salesforceID)
+//                .setAccessToken(salesforceToken)
+//                .setSenderId(getString(R.string.gcm_sender_id))
+//                .setNotificationCustomizationOptions(
+//                        NotificationCustomizationOptions.create(R.drawable.icon_menu_notification)
+//                ).build(this), new MarketingCloudSdk.InitializationListener() {
+//                @Override
+//                public void complete(InitializationStatus status) {
+//                    if (status.isUsable()) {
+//                        Log.i(Config.TAG, "Sales Force: " + status.status().name());
+//                        if (status.status() == InitializationStatus.Status.COMPLETED_WITH_DEGRADED_FUNCTIONALITY) {
+//                            // While the SDK is usable, something happened during init that you should address.
+//                            // This could include:
+//                            if (GoogleApiAvailability.getInstance().isUserResolvableError(status.playServicesStatus())) {
+//                                //Google play services encountered a recoverable error
+//                                GoogleApiAvailability.getInstance().showErrorNotification(AnalyticsApplication.this, status.playServicesStatus());
+//                            }
+//                        }
+//                    } else {
+//                        //Something went wrong with init that makes the SDK unusable.
+//                    }
+//                }
+//            });
+//
+//        MarketingCloudSdk.requestSdk(new MarketingCloudSdk.WhenReadyListener() {
+//            @Override
+//            public void ready(@NonNull MarketingCloudSdk marketingCloudSdk) {
+//
+//            }
+//        });
+//        MarketingCloudSdk.setLogLevel(MCLogListener.VERBOSE);
+//        MarketingCloudSdk.setLogListener(new MCLogListener.AndroidLogListener());
+//    }
 
     @Override
     public void onCreate() {
@@ -101,7 +96,7 @@ public class AnalyticsApplication extends NavigationApplication implements SdSta
         }
 
 
-        initSalesForce();
+//        initSalesForce();
 
     }
 

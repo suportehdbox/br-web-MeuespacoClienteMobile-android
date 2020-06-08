@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.salesforce.marketingcloud.MarketingCloudSdk;
-import com.salesforce.marketingcloud.registration.RegistrationManager;
 
 import java.net.URLEncoder;
 import java.util.List;
@@ -605,33 +603,33 @@ public class HomeOnModel extends BaseModel{
         }
     }
 
-    public void setSalesForceSDK(final String policy, final String CPF, final String Ramo){
-        MarketingCloudSdk.requestSdk(new MarketingCloudSdk.WhenReadyListener() {
-            @Override public void ready(MarketingCloudSdk sdk) {
-                RegistrationManager registrationManager = sdk.getRegistrationManager();
-
-                // Set contact key
-                registrationManager
-                        .edit()
-                        .setContactKey(policy)
-                        .commit();
-
-                // Get contact key
-//                String contactKey = registrationManager.getContactKey();
-
-                registrationManager.edit()
-                        // Set attribute value
-                        .setAttribute("CPF", CPF)
-                        .setAttribute("Apólice", policy)
-                        .setAttribute("Ramo", Ramo)
-
-                        // Commit changes
-                        .commit();
-                // Get Attributes
-//                Map<String, String> attributes = registrationManager.getAttributesMap();
-
-            }
-        });
+//    public void setSalesForceSDK(final String policy, final String CPF, final String Ramo){
+//        MarketingCloudSdk.requestSdk(new MarketingCloudSdk.WhenReadyListener() {
+//            @Override public void ready(MarketingCloudSdk sdk) {
+//                RegistrationManager registrationManager = sdk.getRegistrationManager();
+//
+//                // Set contact key
+//                registrationManager
+//                        .edit()
+//                        .setContactKey(policy)
+//                        .commit();
+//
+//                // Get contact key
+////                String contactKey = registrationManager.getContactKey();
+//
+//                registrationManager.edit()
+//                        // Set attribute value
+//                        .setAttribute("CPF", CPF)
+//                        .setAttribute("Apólice", policy)
+//                        .setAttribute("Ramo", Ramo)
+//
+//                        // Commit changes
+//                        .commit();
+//                // Get Attributes
+////                Map<String, String> attributes = registrationManager.getAttributesMap();
+//
+//            }
+//        });
 
 //        MarketingCloudSdk.requestSdk(new MarketingCloudSdk.WhenReadyListener() {
 //            @Override public void ready(MarketingCloudSdk sdk) {
@@ -650,7 +648,7 @@ public class HomeOnModel extends BaseModel{
 //                Map<String, String> attributes = registrationManager.getAttributesMap();
 //            }
 //        });
-    }
+//    }
 
 
     /**

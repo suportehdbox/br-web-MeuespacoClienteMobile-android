@@ -4,7 +4,7 @@ package br.com.libertyseguros.mobile.model;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.MenuItem;
 
@@ -12,11 +12,9 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.net.URLEncoder;
 
-import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.libray.Config;
@@ -29,7 +27,6 @@ import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.ListPolicy;
 import br.com.libertyseguros.mobile.view.Notification;
-import br.com.libertyseguros.mobile.view.NotificationDetail;
 import br.com.libertyseguros.mobile.view.Register;
 import br.com.libertyseguros.mobile.view.Support;
 import br.com.libertyseguros.mobile.view.Workshop;

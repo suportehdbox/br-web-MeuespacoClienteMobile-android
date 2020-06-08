@@ -6,15 +6,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.VehicleAccidentSendBeans;
 import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.InfoUser;
-import br.com.libertyseguros.mobile.view.Assistance24WebView;
 import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
 import br.com.libertyseguros.mobile.view.ListVehicleAccident;
 import br.com.libertyseguros.mobile.view.ListVehicleAccidentStatus;

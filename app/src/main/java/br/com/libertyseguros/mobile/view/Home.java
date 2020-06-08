@@ -9,8 +9,8 @@ import android.content.pm.Signature;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +26,6 @@ import java.security.NoSuchAlgorithmException;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.controller.CitiesController;
 import br.com.libertyseguros.mobile.controller.HomeController;
 import br.com.libertyseguros.mobile.model.RegisterModel;
 import br.com.libertyseguros.mobile.controller.RegisterController;

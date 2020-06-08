@@ -3,8 +3,8 @@ package br.com.libertyseguros.mobile.util;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.design.widget.Snackbar;
-import android.support.multidex.MultiDex;
+
+import androidx.multidex.MultiDex;
 
 import com.datami.smi.SmiSdk;
 import br.com.libertyseguros.mobile.R;

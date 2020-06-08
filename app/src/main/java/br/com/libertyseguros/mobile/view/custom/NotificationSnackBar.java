@@ -2,7 +2,7 @@ package br.com.libertyseguros.mobile.view.custom;
 
 
 import android.content.Context;
-import android.support.design.widget.Snackbar;
+import com.google.android.material.snackbar.Snackbar;
 import android.view.View;
 
 import br.com.libertyseguros.mobile.R;

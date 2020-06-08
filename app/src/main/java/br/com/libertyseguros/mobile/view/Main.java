@@ -11,13 +11,13 @@ import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -28,9 +28,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amulyakhare.textdrawable.TextDrawable;
-import com.crashlytics.android.Crashlytics;
-
-import org.w3c.dom.Text;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
@@ -40,10 +37,8 @@ import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.libray.LoadFile;
 import br.com.libertyseguros.mobile.model.MainModel;
 import br.com.libertyseguros.mobile.model.PolicyModelV2;
-import br.com.libertyseguros.mobile.receiver.MyGcmListenerService;
 import br.com.libertyseguros.mobile.receiver.ServiceFirebaseMessagingService;
 import de.hdodenhof.circleimageview.CircleImageView;
-import io.fabric.sdk.android.Fabric;
 
 public class Main extends AppCompatActivity {
 

@@ -1,37 +1,20 @@
 package br.com.libertyseguros.mobile.view;
 
 
-import android.Manifest;
 import android.annotation.TargetApi;
-import android.app.Dialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.view.KeyEvent;
-import android.view.View;
-import android.webkit.GeolocationPermissions;
-import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import org.apache.http.util.EncodingUtils;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
-import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.controller.ClubController;
-import br.com.libertyseguros.mobile.libray.Config;
-import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 
 

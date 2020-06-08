@@ -11,11 +11,11 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.cardview.widget.CardView;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -396,8 +396,8 @@ public class HomeOn extends Fragment implements View.OnClickListener, Navigation
                                     ex.printStackTrace();
                                 }
 
-                                homeOnController.setSalesForceSDK(homeOnController.getPolicyBeans().getInsurance().getPolicy(),
-                                        homeOnController.getInfoUser().getCpfCnpj(), homeOnController.getPolicyBeans().getInsurance().getBranch());
+//                                homeOnController.setSalesForceSDK(homeOnController.getPolicyBeans().getInsurance().getPolicy(),
+//                                        homeOnController.getInfoUser().getCpfCnpj(), homeOnController.getPolicyBeans().getInsurance().getBranch());
 
                                 LoadFile loadFile = new LoadFile();
                                 loadFile.savePref(Config.TAGPOLICYNUMBER, homeOnController.getPolicyBeans().getInsurance().getPolicy() + "", Config.TAG, getActivity());

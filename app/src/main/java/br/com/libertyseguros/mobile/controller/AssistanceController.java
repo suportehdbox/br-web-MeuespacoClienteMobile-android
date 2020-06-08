@@ -1,25 +1,14 @@
 package br.com.libertyseguros.mobile.controller;
 
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.view.View;
-import android.widget.TextView;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.model.AssistanceModel;
-import br.com.libertyseguros.mobile.view.GlassAssistanceWebView;
-import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
-import br.com.libertyseguros.mobile.view.ListVehicleAccidentStatus;
-import br.com.libertyseguros.mobile.view.Support;
 
 public class AssistanceController {
 

@@ -1,9 +1,11 @@
 package br.com.libertyseguros.mobile.view.fragment;
 
 import android.app.Dialog;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -295,7 +297,7 @@ public class HomeOff extends SupportMapFragment implements OnMapReadyCallback, V
         mSupportMapFragment = (SupportMapFragment) getFragmentManager().findFragmentById(R.id.mapwhere);
 
         FragmentManager fragmentManager = getFragmentManager();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         mSupportMapFragment = SupportMapFragment.newInstance();
         fragmentTransaction.replace(R.id.mapwhere, mSupportMapFragment).commit();
 

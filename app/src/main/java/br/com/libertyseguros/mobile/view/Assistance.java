@@ -1,25 +1,20 @@
 package br.com.libertyseguros.mobile.view;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayout;
-import android.util.Log;
+
+import androidx.gridlayout.widget.GridLayout;
+
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.AssistanceController;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;

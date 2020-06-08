@@ -4,10 +4,8 @@ package br.com.libertyseguros.mobile.view;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -41,7 +39,6 @@ import br.com.libertyseguros.mobile.libray.LoadFile;
 import br.com.libertyseguros.mobile.libray.ManagerLocation;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 import br.com.libertyseguros.mobile.view.custom.MaskEditText;
 
 public class Workshop extends BaseActionBar implements View.OnClickListener {

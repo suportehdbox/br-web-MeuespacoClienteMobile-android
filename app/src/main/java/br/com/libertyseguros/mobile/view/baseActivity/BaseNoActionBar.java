@@ -2,12 +2,11 @@ package br.com.libertyseguros.mobile.view.baseActivity;
 
 
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.receiver.MyGcmListenerService;
 import br.com.libertyseguros.mobile.receiver.ServiceFirebaseMessagingService;
 import br.com.libertyseguros.mobile.util.NavigationApplication;
 import br.com.libertyseguros.mobile.view.custom.NotificationSnackBar;
