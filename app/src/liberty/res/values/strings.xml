@@ -682,6 +682,9 @@
     <string name="title_pick_image">Escolher a foto de:</string>
     <string name="share_title">Compartilhar</string>
 
+
+
+
     <!--AMBIENTE DE TESTE INTUITIVE-->
     <!--<string name="assist24_act">https://dqkr3yt2sbyrt.cloudfront.net/</string>-->
     <string name="assist24_prod">https://mobile.libertyseguros.com.br/Assistencia24/</string>

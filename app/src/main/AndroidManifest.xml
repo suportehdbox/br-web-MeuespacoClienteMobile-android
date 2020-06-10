@@ -30,7 +30,9 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.NovoClubeLiberty"></activity>
+
+        <activity android:name=".view.NovoClubeLiberty" android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar"></activity>
 
         <uses-library
             android:name="org.apache.http.legacy"

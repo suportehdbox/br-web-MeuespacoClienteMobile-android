@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/background_home"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:layout_marginHorizontal="@dimen/margin_default_4"
+        android:layout_marginTop="@dimen/margin_default_4"
+        android:layout_marginBottom="@dimen/margin_default_8"
+        android:src="@drawable/imagem_baloes" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:layout_margin="@dimen/margin_default_4"
+        android:text="@string/clube_baloes"
+        android:lines="3"
+        android:textSize="@dimen/font_default_5"
+        android:gravity="center"
+         />
+</RelativeLayout>

@@ -21,6 +21,7 @@ import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.view.Assistance;
 import br.com.libertyseguros.mobile.view.Club;
 import br.com.libertyseguros.mobile.view.Login;
+import br.com.libertyseguros.mobile.view.NovoClubeLiberty;
 import br.com.libertyseguros.mobile.view.Register;
 import br.com.libertyseguros.mobile.view.Workshop;
 
@@ -207,7 +208,7 @@ public class HomeOffModel extends BaseModel {
      * @param context
      */
     public void openClub(Context context){
-        Intent it = new Intent(context, Club.class);
+        Intent it = new Intent(context, NovoClubeLiberty.class);
         ClubModel.activityBefore = (Activity) context;
         context.startActivity(it);
     }

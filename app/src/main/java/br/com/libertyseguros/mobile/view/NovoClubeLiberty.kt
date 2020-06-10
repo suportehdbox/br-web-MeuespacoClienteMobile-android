@@ -2,58 +2,69 @@ package br.com.libertyseguros.mobile.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import br.com.libertyseguros.mobile.R
+import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar
+import com.google.android.material.tabs.TabLayout
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
-class NovoClubeLiberty : AppCompatActivity() {
+class NovoClubeLiberty : BaseActionBar(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_novo_clube_liberty)
+        val pager = findViewById<ViewPager2>(R.id.pager)
+
+        val demoAdapter = DemoCollectionAdapter(this)
+        pager.adapter = demoAdapter
+
+        val dotsIndicator = findViewById<WormDotsIndicator>(R.id.dots_indicator)
+        dotsIndicator.setViewPager2(pager)
+
     }
 }
-//
-//class DemoCollectionAdapter(fragment: Fragment) : FragmentStatePagerAdapter(fragment) {
-//
-//    fun createFragment(position: Int): Fragment {
-//        // Return a NEW fragment instance in createFragment(int)
-//        val fragment = DemoObjectFragment()
-//        fragment.arguments = Bundle().apply {
-//            // Our object is just an integer :-P
-//            putInt(ARG_OBJECT, position + 1)
-//        }
-//        return fragment
-//    }
-//
-//    override fun getItem(position: Int): Fragment {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//    }
-//
-//    override fun getCount(): Int {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//        return 100
-//    }
-//}
-//
-//private const val ARG_OBJECT = "object"
-//
-//// Instances of this class are fragments representing a single
-//// object in our collection.
-//class DemoObjectFragment : Fragment() {
-//
-//    override fun onCreateView(
-//            inflater: LayoutInflater,
-//            container: ViewGroup?,
-//            savedInstanceState: Bundle?
-//    ): View {
-//        return inflater.inflate(R.layout.fragment_collection_object, container, false)
-//    }
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        arguments?.takeIf { it.containsKey(ARG_OBJECT) }?.apply {
-//            val textView: TextView = view.findViewById(android.R.id.text1)
-//            textView.text = getInt(ARG_OBJECT).toString()
-//        }
-//    }
+
+class DemoCollectionAdapter(activity: AppCompatActivity) : FragmentStateAdapter (activity) {
+
+    val arrayLayout = listOf (R.layout.fragment_club_tutorial, R.layout.fragment_club_tutorial_2, R.layout.fragment_club_tutorial_3, R.layout.fragment_club_tutorial_4)
+
+
+    override fun createFragment(position: Int): Fragment {
+        val fragment = DemoObjectFragment()
+        fragment.arguments = Bundle().apply {
+            // Our object is just an integer :-P
+            putInt(ARG_OBJECT, arrayLayout[position])
+        }
+        return fragment
+    }
+    override fun getItemCount(): Int {
+        return arrayLayout.size
+    }
+}
+
+private const val ARG_OBJECT = "layout"
+
+// Instances of this class are fragments representing a single
+// object in our collection.
+class DemoObjectFragment : Fragment() {
+
+    override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+    ): View {
+
+        return inflater.inflate(arguments!!.getInt(ARG_OBJECT), container, false)
+
+    }
+
+}
 
