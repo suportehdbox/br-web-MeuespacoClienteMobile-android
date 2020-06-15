@@ -68,6 +68,19 @@ public class InfoUser {
         loadFile.savePref(Config.TAGUSERINFO, result, Config.TAG, context);
     }
 
+    /**
+     * Save user Info
+     * @param result
+     * @param context
+     */
+    public void saveClubTerms(Boolean agreed, String CPF, Context context){
+        loadFile.savePref("Key_Agreed_"+CPF, agreed, Config.TAG, context);
+    }
+
+    public boolean getClubTerms(String CPF, Context context){
+        return loadFile.loadBoolPref(Config.TAG, context, "Key_Agreed_"+CPF);
+    }
+
 
     public String getCpfCnpj(Context context){
         return lb.getCpfCnpj();

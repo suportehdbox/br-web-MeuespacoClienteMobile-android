@@ -120,10 +120,7 @@
             android:name="br.com.libertyseguros.mobile.view.ChangeEmailLoginOn"
             android:screenOrientation="portrait"
             android:theme="@style/AppActionBar" />
-        <activity
-            android:name="br.com.libertyseguros.mobile.view.Club"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppActionBar" />
+
         <activity
             android:name="br.com.libertyseguros.mobile.view.ClubWebView"
             android:screenOrientation="portrait"

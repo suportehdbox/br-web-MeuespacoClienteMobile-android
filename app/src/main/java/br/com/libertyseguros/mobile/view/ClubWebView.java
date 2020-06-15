@@ -103,9 +103,7 @@ public class ClubWebView extends BaseActionBar implements View.OnClickListener{
                         public void run() {
                             try{
                                 showLoading(false);
-                                String postData =  clubController.getPostData();
-                                String url = clubController.getUrl(ClubWebView.this) +  URLEncoder.encode(postData, "UTF-8");
-                                wvClub.loadUrl(url);
+                                wvClub.loadUrl(clubController.getUrl(ClubWebView.this));
 
                             } catch(Exception ex){
                                 ex.printStackTrace();

@@ -1,14 +1,17 @@
 package br.com.libertyseguros.mobile.beans;
 
 
-public class ClubBeans {
-    private String sessionId;
+public class ClubBeans extends MessageBeans{
+    private String url;
 
-    public String getSessionId() {
-        return sessionId;
+
+    public String getUrl() {
+        return url;
     }
 
-    public void setSessionId(String sessionId) {
-        this.sessionId = sessionId;
+    public void setUrl(String url) {
+        this.url = url;
     }
+
+
 }

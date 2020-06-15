@@ -1,6 +1,7 @@
 package br.com.libertyseguros.mobile.controller;
 
 
+import android.app.Activity;
 import android.content.Context;
 
 import br.com.libertyseguros.mobile.beans.MessageBeans;
@@ -14,11 +15,26 @@ public class ClubController extends BaseModel{
     private ClubModel clubModel;
 
 
+    public ClubController(Context context){
+        clubModel = new ClubModel(null, null,context);
+    }
 
     public ClubController(OnConnectionResult onConnectionResult, DownloadImageClub.OnClubImageDownloaded onClubImageDownloaded, Context context){
         clubModel = new ClubModel(onConnectionResult,onClubImageDownloaded, context);
     }
 
+    public void checkTermsAlreadyAgreed(Activity activity){
+        if(clubModel.getLb().getAccess_token() == null || clubModel.getLb().getAccess_token().isEmpty()){
+            return;
+        }
+
+        if(!clubModel.getAgreedTerms(activity)){
+            return;
+        }
+
+        this.openClubWebview(activity);
+        activity.finish();
+    }
 
     /**
      * Get Club info
@@ -46,22 +62,6 @@ public class ClubController extends BaseModel{
         return clubModel.getTypeError();
     }
 
-
-    /**
-     * get Login on
-     * @return
-     */
-    public boolean isloginOn() {
-        return clubModel.isloginOn();
-    }
-
-    /**
-     * Set Login on/off
-     * @param isloginOn
-     */
-    public void setIsloginOn(boolean isloginOn) {
-        clubModel.setIsloginOn(isloginOn);
-    }
 
     /**
      * Open Login Screen
@@ -95,17 +95,7 @@ public class ClubController extends BaseModel{
     }
 
 
-    /**
-     * Get Post
-     Data
-     * @return
-     */
-    public String getPostData() {
-        return clubModel.getPostData();
-    }
-
-
-    /**
+       /**
      * Get Url
      * @return
      */
@@ -113,9 +103,6 @@ public class ClubController extends BaseModel{
         return clubModel.getUrl(context);
     }
 
-    public String getNameImage() {
-        return clubModel.getNameImage();
-    }
 
 
 }

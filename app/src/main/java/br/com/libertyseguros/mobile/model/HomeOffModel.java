@@ -19,7 +19,6 @@ import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.ManagerLocation;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.view.Assistance;
-import br.com.libertyseguros.mobile.view.Club;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.NovoClubeLiberty;
 import br.com.libertyseguros.mobile.view.Register;

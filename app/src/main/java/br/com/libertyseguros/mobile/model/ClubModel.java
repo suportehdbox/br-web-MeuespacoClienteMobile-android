@@ -48,21 +48,10 @@ public class ClubModel extends BaseModel{
 
     private InfoUser infoUser;
 
-    private boolean isloginOn;
-
     private ClubBeans clubBeans;
-
-    //private String url = "http://libertyseguros.homolog.clubeben.proxy.media/auth/libertyseguros";
-   // private String url = "http://libertyseguros.clubeben.com.br/auth/libertyseguros";
 
     private String url;
     private String postData;
-
-
-    private DownloadImageClub dih;
-    private String nameImage;
-
-
 
     /**
      * Get Post
@@ -79,15 +68,8 @@ public class ClubModel extends BaseModel{
      * @return
      */
     public String getUrl(Context context) {
+        return clubBeans.getUrl();
 
-
-        if(BuildConfig.prod){
-            url = context.getString(R.string.url_club_prod);
-        } else {
-            url = context.getString(R.string.url_club_act);
-        }
-
-        return url;
     }
 
 
@@ -98,28 +80,18 @@ public class ClubModel extends BaseModel{
         infoUser = new InfoUser();
 
         lb = infoUser.getUserInfo(context);
-
-
-        if(lb.getAccess_token() != null) {
-            isloginOn = true;
-        } else {
-            isloginOn = false;
-        }
-
-
-        dih = new DownloadImageClub(context,listener );
-
-        nameImage = dih.getNameImage();
-
-        dih.startDownload();
     }
 
-    /**
-     * Get Name file image Home
-     * @return
-     */
-    public String getNameImage(){
-        return nameImage;
+    public LoginBeans getLb(){
+        return lb;
+    }
+
+    public void saveAgreedTerms(Context context){
+        infoUser.saveClubTerms(true, lb.getCpfCnpj(), context);
+    }
+
+    public Boolean getAgreedTerms(Context context){
+        return infoUser.getClubTerms(lb.getCpfCnpj(), context);
     }
 
     /**
@@ -133,19 +105,11 @@ public class ClubModel extends BaseModel{
 
         createConnection();
 
-        String param = "";
-
         lb = new LoginBeans();
         lb = infoUser.getUserInfo(context);
 
-        try{
-            param = "varToken=" + URLEncoder.encode(lb.getAuthToken(), "UTF-8");
-        } catch(Exception ex){
-            ex.printStackTrace();
-        }
 
-
-        conn.startConnectionV2("Segurado/Clube/", param, 1, true);
+        conn.startConnectionV3("Segurado/Clube/", "", 2, true);
     }
 
     /**
@@ -172,24 +136,19 @@ public class ClubModel extends BaseModel{
                 Log.i(Config.TAG, "ClubModel: " + result);
 
                 try {
-                    if(result.contains("sessionId")){
-                        clubBeans = gson.fromJson(result, ClubBeans.class);
-                        postData = clubBeans.getSessionId();
+                    clubBeans = gson.fromJson(result, ClubBeans.class);
+                    if(clubBeans.getSuccess()){
+                        url = clubBeans.getUrl();
                         onConnectionResult.onSucess();
                     } else {
-                        message = gson.fromJson(result, MessageBeans.class);
                         typeError = 2;
                         onConnectionResult.onError();
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
-
-                    message = gson.fromJson(result, MessageBeans.class);
                     typeError = 2;
                     onConnectionResult.onError();
                 }
-
-
             }
         });
     }
@@ -199,8 +158,8 @@ public class ClubModel extends BaseModel{
      * Get message error
      * @return
      */
-    public MessageBeans getMessage() {
-        return message;
+    public ClubBeans getMessage() {
+        return clubBeans;
     }
 
     /**
@@ -211,22 +170,6 @@ public class ClubModel extends BaseModel{
         return typeError;
     }
 
-
-    /**
-     * get Login on
-     * @return
-     */
-    public boolean isloginOn() {
-        return isloginOn;
-    }
-
-    /**
-     * Set Login on/off
-     * @param isloginOn
-     */
-    public void setIsloginOn(boolean isloginOn) {
-        this.isloginOn = isloginOn;
-    }
 
     /**
      * Open Login Screen

@@ -134,10 +134,7 @@
             android:name=".view.ChangeEmailLoginOn"
             android:screenOrientation="portrait"
             android:theme="@style/AppActionBar" />
-        <activity
-            android:name=".view.Club"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppActionBar" />
+
         <activity
             android:name=".view.ClubWebView"
             android:screenOrientation="portrait"

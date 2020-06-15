@@ -37,7 +37,22 @@ public class LoadFile {
 		SharedPreferences.Editor editor = prefs.edit();
 
 		editor.putString(key, info);
+		return editor.commit();
+	}
+	/**
+	 * Save Booelean in SharedPreferences
+	 * @param key
+	 * @param info
+	 * @param prefName
+	 * @param mContext
+	 * @return
+	 */
+	public boolean savePref(String key, Boolean info, String prefName,
+							Context mContext) {
+		SharedPreferences prefs = mContext.getSharedPreferences(prefName, 0);
+		SharedPreferences.Editor editor = prefs.edit();
 
+		editor.putBoolean(key, info);
 		return editor.commit();
 	}
 
@@ -53,6 +68,20 @@ public class LoadFile {
 
 		return prefs.getString(key, null);
 	}
+
+	/**
+	 * Loading String in SharedPreferences
+	 * @param prefName
+	 * @param mContext
+	 * @param key
+	 * @return
+	 */
+	public Boolean loadBoolPref(String prefName, Context mContext, String key) {
+		SharedPreferences prefs = mContext.getSharedPreferences(prefName, 0);
+
+		return prefs.getBoolean(key, false);
+	}
+
 
 
 

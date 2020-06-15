@@ -30,7 +30,6 @@ import br.com.libertyseguros.mobile.util.OnBarCode;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.Assistance;
-import br.com.libertyseguros.mobile.view.Club;
 import br.com.libertyseguros.mobile.view.DetailPolicy;
 import br.com.libertyseguros.mobile.view.DialogPayments;
 import br.com.libertyseguros.mobile.view.ExtendPagament;
@@ -38,6 +37,7 @@ import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
 import br.com.libertyseguros.mobile.view.ListPolicy;
 import br.com.libertyseguros.mobile.view.ListVehicleAccidentStatus;
 import br.com.libertyseguros.mobile.view.ListVision360;
+import br.com.libertyseguros.mobile.view.NovoClubeLiberty;
 import br.com.libertyseguros.mobile.view.Workshop;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -563,7 +563,7 @@ public class HomeOnModel extends BaseModel{
      * @param context
      */
     public void openClub(Context context){
-        Intent it = new Intent(context, Club.class);
+        Intent it = new Intent(context, NovoClubeLiberty.class);
         context.startActivity(it);
     }
 

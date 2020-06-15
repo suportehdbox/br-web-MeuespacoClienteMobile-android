@@ -16,7 +16,7 @@ public class MessageBeans {
         this.message = message;
     }
 
-    public boolean isSuccess() {
+    public boolean getSuccess() {
         return success;
     }
 

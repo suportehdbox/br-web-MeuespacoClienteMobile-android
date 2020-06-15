@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.beans.ClubBeans;
+import br.com.libertyseguros.mobile.beans.PaymentAccessBeans;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.PaymentPriceBeans;
@@ -38,7 +38,7 @@ public class PaymentModel extends BaseModel{
     private InfoUser infoUser;
 
 
-    private ClubBeans clubBeans;
+    private PaymentAccessBeans clubBeans;
 
     //private String url = "http://libertyseguros.homolog.clubeben.proxy.media/auth/libertyseguros";
    // private String url = "http://libertyseguros.clubeben.com.br/auth/libertyseguros";
@@ -191,7 +191,7 @@ public class PaymentModel extends BaseModel{
 
                 try {
                     if(result.contains("sessionId")){
-                        clubBeans = gson.fromJson(result, ClubBeans.class);
+                        clubBeans = gson.fromJson(result, PaymentAccessBeans.class);
                         postData = clubBeans.getSessionId();
                         onConnectionResult.onSucess();
                     } else {

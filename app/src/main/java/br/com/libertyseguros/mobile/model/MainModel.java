@@ -22,11 +22,11 @@ import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.ManagerLocation;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.view.Assistance;
-import br.com.libertyseguros.mobile.view.Club;
 import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.ListPolicy;
 import br.com.libertyseguros.mobile.view.Notification;
+import br.com.libertyseguros.mobile.view.NovoClubeLiberty;
 import br.com.libertyseguros.mobile.view.Register;
 import br.com.libertyseguros.mobile.view.Support;
 import br.com.libertyseguros.mobile.view.Workshop;
@@ -140,7 +140,7 @@ public class MainModel extends BaseModel {
                     activity.startActivity(it);
                     break;
                 case R.id.navigation_drawer_item_5:
-                    it = new Intent(activity, Club.class);
+                    it = new Intent(activity, NovoClubeLiberty.class);
                     activity.startActivity(it);
                     break;
                 case R.id.navigation_drawer_item_6:
@@ -189,7 +189,7 @@ public class MainModel extends BaseModel {
 
                 case R.id.navigation_drawer_item_5:
                     ClubModel.activityBefore = activity;
-                    it = new Intent(activity, Club.class);
+                    it = new Intent(activity, NovoClubeLiberty.class);
                     activity.startActivity(it);
                     break;
                 case R.id.navigation_drawer_item_6:

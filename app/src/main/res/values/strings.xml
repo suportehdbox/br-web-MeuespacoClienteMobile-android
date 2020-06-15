@@ -17,7 +17,8 @@
         • Descontos de até <b>60%</b>\n
         • Acessos <b>gratuítos</b>\n
     </string>
-    <string name="clube_final">Aceite os novos termos e condições\npara aproveitar as vantagens\nque preparamos para você!</string>
+    <string name="clube_final_logado">Aceite os novos termos e condições\npara aproveitar as vantagens\nque preparamos para você!</string>
+    <string name="clube_final_nao_logado">Faça seu login ou cadastre-se\nno App para aproveitar as vantagens\nque preparamos para você!</string>
     <string name="novos_termos">Concordo com os novos\n<u>termos, condições e política de privacidade</u> </string>
     <string name="acessar_club_button">ACESSAR O +LIBERTY</string>
 </resources>
