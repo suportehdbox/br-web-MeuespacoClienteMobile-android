@@ -1,5 +1,7 @@
 package br.com.libertyseguros.mobile.view
 
+import android.graphics.PorterDuff
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,27 +19,79 @@ import br.com.libertyseguros.mobile.viewmodel.NovoClubeViewModel
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 
-class NovoClubeLiberty : BaseActionBar(){
+class NovoClubeLiberty : BaseActionBar(), View.OnClickListener{
 
     lateinit var clubController: ClubController
+    private lateinit var btPrevious: ImageButton
+    private lateinit var btNext: ImageButton
+    private lateinit var pager:ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_novo_clube_liberty)
-        val pager = findViewById<ViewPager2>(R.id.pager)
+        mFirebaseAnalytics.setCurrentScreen(this, getString(R.string.title_action_bar_11), null)
 
+        setTitle(getString(R.string.title_action_bar_11))
+        pager = findViewById<ViewPager2>(R.id.pager)
+
+        btPrevious = findViewById<ImageButton>(R.id.bt_previous)
+        btPrevious.setOnClickListener(this)
+        btNext = findViewById<ImageButton>(R.id.bt_next)
+        btNext.setOnClickListener(this)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            btPrevious.background.setColorFilter(getColor(R.color.blueDefault), PorterDuff.Mode.SRC_IN)
+            btNext.background.setColorFilter(getColor(R.color.blueDefault), PorterDuff.Mode.SRC_IN)
+        }else{
+            btPrevious.background.setColorFilter(resources.getColor(R.color.blueDefault), PorterDuff.Mode.SRC_IN)
+            btNext.background.setColorFilter(resources.getColor(R.color.blueDefault), PorterDuff.Mode.SRC_IN)
+        }
 
 
 
         val demoAdapter = DemoCollectionAdapter(this)
         pager.adapter = demoAdapter
+        pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                updateButtonsAtPageIndex(position)
+
+                super.onPageSelected(position)
+            }
+        })
 
         val dotsIndicator = findViewById<WormDotsIndicator>(R.id.dots_indicator)
         dotsIndicator.setViewPager2(pager)
 
         clubController = ClubController(this)
         clubController.checkTermsAlreadyAgreed(this)
+
+        updateButtonsAtPageIndex(0)
     }
+
+    private fun updateButtonsAtPageIndex(index: Int){
+        btPrevious.visibility = View.VISIBLE
+        btNext.visibility = View.VISIBLE
+        when(index){
+            0 -> {
+                btPrevious.visibility = View.GONE
+            }
+            3 ->{
+                btNext.visibility = View.GONE
+            }
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when(v!!.id){
+            btPrevious.id -> {
+                pager.currentItem = pager.currentItem-1
+            }
+            btNext.id ->{
+                pager.currentItem = pager.currentItem+1
+            }
+        }
+    }
+
 }
 
 class DemoCollectionAdapter(activity: AppCompatActivity) : FragmentStateAdapter (activity) {
@@ -73,6 +127,7 @@ class TutorialStepFragment : Fragment(), View.OnClickListener {
     private lateinit var btRegister: Button
     private lateinit var btOpen: Button
     private lateinit var txtClub: TextView
+    private lateinit var txtTerms: TextView
     private lateinit var clubController:ClubController
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -95,6 +150,7 @@ class TutorialStepFragment : Fragment(), View.OnClickListener {
             checkbox = view.findViewById(R.id.checkbox_clube)
             btOpen = view.findViewById(R.id.bt_acessar_clube)
             btLogin = view.findViewById(R.id.bt_login_club)
+            txtTerms = view.findViewById(R.id.txt_terms)
             btRegister = view.findViewById(R.id.bt_register_club)
             llCheck = view.findViewById(R.id.ll_terms)
             btOpen = view.findViewById(R.id.bt_acessar_clube)
@@ -103,7 +159,7 @@ class TutorialStepFragment : Fragment(), View.OnClickListener {
             btOpen.setOnClickListener(this)
             btLogin.setOnClickListener(this)
             btRegister.setOnClickListener(this)
-
+            txtTerms.setOnClickListener(this)
             clubController = ClubController(activity)
             updateView()
         }
@@ -131,6 +187,9 @@ class TutorialStepFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v!!.id){
+            txtTerms.id ->{
+                clubController.openTerms(activity)
+            }
             btOpen.id -> {
                 mViewModel.agreedTerms()
                 clubController.openClubWebview(activity)

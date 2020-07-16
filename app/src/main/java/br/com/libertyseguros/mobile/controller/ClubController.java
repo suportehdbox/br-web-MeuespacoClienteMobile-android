@@ -4,6 +4,9 @@ package br.com.libertyseguros.mobile.controller;
 import android.app.Activity;
 import android.content.Context;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.libray.DownloadImageClub;
 import br.com.libertyseguros.mobile.model.BaseModel;
@@ -94,13 +97,29 @@ public class ClubController extends BaseModel{
         clubModel.openClubWebview(context);
     }
 
+    public void openTerms(Context context){
+        clubModel.openTerms(context);
+    }
+
 
        /**
      * Get Url
      * @return
      */
-    public String getUrl(Context context) {
-        return clubModel.getUrl(context);
+    public String getUrl() {
+        return clubModel.getUrl();
+    }
+
+    public byte[] getPostData (){
+        String params = "token=";
+        try {
+            params += URLEncoder.encode(clubModel.getToken(),"UTF-8");
+        } catch (NullPointerException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+            params += "invalidToken";
+        }
+
+        return params.getBytes();
     }
 
 

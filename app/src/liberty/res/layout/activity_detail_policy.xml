@@ -98,6 +98,7 @@
                                     android:id="@+id/bt_coverage"
                                     style="@style/ButtonDefault"
                                     android:layout_width="wrap_content"
+                                    android:layout_gravity="center"
                                     android:background="@drawable/bt_background_app"
                                     android:text="@string/button_coverage"
                                     android:textColor="@color/color_button_default_app" />
@@ -106,6 +107,7 @@
                                     android:id="@+id/bt_second_copy_policy"
                                     style="@style/ButtonDefault"
                                     android:layout_width="wrap_content"
+                                    android:layout_gravity="center"
                                     android:background="@drawable/bt_background_app_second"
                                     android:text="@string/button_second_policy"
                                     android:textColor="@color/color_button_default_app_second" />
@@ -752,6 +754,7 @@
                             android:layout_width="wrap_content"
                             android:background="@drawable/bt_background_app"
                             android:text="@string/button_old_policy"
+                            android:layout_gravity="center"
                             android:textColor="@color/color_button_default_app" />
 
 

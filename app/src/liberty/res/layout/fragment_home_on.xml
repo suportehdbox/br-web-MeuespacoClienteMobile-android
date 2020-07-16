@@ -244,6 +244,7 @@
                                     android:layout_width="wrap_content"
                                     android:background="@drawable/bt_background_app"
                                     android:text="@string/button_detail_policy"
+                                    android:layout_gravity="center"
                                     android:textColor="@color/color_button_default_app" />
 
 
@@ -820,6 +821,7 @@
                     android:layout_margin="@dimen/margin_default_4"
                     android:background="@drawable/bt_background_app_second"
                     android:text="@string/button_more_policy"
+                    android:layout_gravity="center"
                     android:textColor="@color/color_button_default_app_second" />
 
                 <ImageView

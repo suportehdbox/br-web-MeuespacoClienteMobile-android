@@ -88,6 +88,7 @@ public class BaseActionBar extends AppCompatActivity implements NavigationApplic
         actionBar.setDisplayShowTitleEnabled(true);
         lf = new LoadFile();
 
+
         //NavigationApplication nav = (NavigationApplication) getApplication();
         //nav.setNavigationListener(this);
     }

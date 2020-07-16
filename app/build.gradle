@@ -18,7 +18,7 @@ android {
     compileSdkVersion 28
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 28
         flavorDimensions "versionCode"
         vectorDrawables.useSupportLibrary = true
@@ -49,10 +49,10 @@ android {
             applicationId 'br.com.libertyseguros.mobile'
             buildConfigField "String", "tag", "\"LibertySeguros\""
             buildConfigField "String", "databasename", "\"libertymobile.db\""
-            buildConfigField "boolean", "prod", "false"
+            buildConfigField "boolean", "prod", "true"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 421
-            versionName "4.1.3"
+            versionCode 432
+            versionName "4.1.5"
             multiDexEnabled true
             signingConfig signingConfigs.config
 
@@ -63,8 +63,8 @@ android {
             buildConfigField "String", "databasename", "\"aliro.db\""
             buildConfigField "boolean", "prod", "true"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 416
-            versionName "4.1.1"
+            versionCode 430
+            versionName "4.1.4"
             multiDexEnabled true
             signingConfig signingConfigs.config
         }

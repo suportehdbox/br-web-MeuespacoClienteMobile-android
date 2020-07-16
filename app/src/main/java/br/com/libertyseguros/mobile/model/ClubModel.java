@@ -8,24 +8,19 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
-import java.net.URLEncoder;
-
-import br.com.libertyseguros.mobile.BuildConfig;
-import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.ClubBeans;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
-import br.com.libertyseguros.mobile.controller.ClubController;
 import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.DownloadImageClub;
-import br.com.libertyseguros.mobile.libray.DownloadImageHome;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.ChangePassword;
 import br.com.libertyseguros.mobile.view.ClubWebView;
 import br.com.libertyseguros.mobile.view.Login;
+import br.com.libertyseguros.mobile.view.PrivacyPolicy;
 import br.com.libertyseguros.mobile.view.Register;
 
 public class ClubModel extends BaseModel{
@@ -50,16 +45,14 @@ public class ClubModel extends BaseModel{
 
     private ClubBeans clubBeans;
 
-    private String url;
-    private String postData;
 
     /**
      * Get Post
      Data
      * @return
      */
-    public String getPostData() {
-        return postData;
+    public String getToken() {
+        return clubBeans.getToken();
     }
 
 
@@ -67,7 +60,7 @@ public class ClubModel extends BaseModel{
      * Get Url
      * @return
      */
-    public String getUrl(Context context) {
+    public String getUrl() {
         return clubBeans.getUrl();
 
     }
@@ -138,7 +131,6 @@ public class ClubModel extends BaseModel{
                 try {
                     clubBeans = gson.fromJson(result, ClubBeans.class);
                     if(clubBeans.getSuccess()){
-                        url = clubBeans.getUrl();
                         onConnectionResult.onSucess();
                     } else {
                         typeError = 2;
@@ -211,6 +203,11 @@ public class ClubModel extends BaseModel{
      */
     public void openClubWebview(Context context){
         Intent it = new Intent(context, ClubWebView.class);
+        context.startActivity(it);
+    }
+
+    public void openTerms(Context context){
+        Intent it = new Intent(context, PrivacyPolicy.class);
         context.startActivity(it);
     }
 }

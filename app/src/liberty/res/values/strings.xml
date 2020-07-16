@@ -31,7 +31,7 @@
         <item>Acidente e Assistência</item>
         <item>Oficina referenciadas</item>
         <item>Meu Seguro</item>
-        <item>Clube de vantagens</item>
+        <item>+Liberty</item>
         <item>Fale conosco</item>
 
     </string-array>
@@ -102,7 +102,7 @@
     <string name="title_action_bar_8">Meu Seguro</string>
     <string name="title_action_bar_9">Sinistro</string>
     <string name="title_action_bar_10">Notificação</string>
-    <string name="title_action_bar_11">Clube Liberty Momentos</string>
+    <string name="title_action_bar_11">+Liberty</string>
     <string name="title_action_bar_12">Política de Privacidade</string>
     <string name="title_action_bar_13">Documentos e fotos</string>
     <string name="title_action_bar_14">Assistência</string>
@@ -303,14 +303,14 @@
     <string name="menu_off_item_2">Cadastrar</string>
     <string name="menu_off_item_3">Acidente ou Assistência</string>
     <string name="menu_off_item_4">Oficinas referenciadas</string>
-    <string name="menu_off_item_5">Clube Liberty Momentos</string>
+    <string name="menu_off_item_5">+Liberty</string>
     <string name="menu_off_item_6">Fale conosco</string>
 
     <string name="menu_on_item_1">Meus dados</string>
     <string name="menu_on_item_2">Meus Seguros</string>
     <string name="menu_on_item_3">Acidente e Assistência</string>
     <string name="menu_on_item_4">Oficinas referenciadas</string>
-    <string name="menu_on_item_5">Clube Liberty Momentos</string>
+    <string name="menu_on_item_5">+Liberty</string>
     <string name="menu_on_item_6">Notificações</string>
     <string name="menu_on_item_7">Fale conosco</string>
     <string name="menu_on_item_8">Sair</string>
@@ -405,11 +405,11 @@
     <string name="title_phone_1"><![CDATA[
     ASSISTÊNCIA <b>24 HORAS</b> EMPRESAS E RESIDÊNCIA
     ]]></string>
-    <string name="phone_1">0800 709 5423</string>
+    <string name="phone_1">0800 701 4120</string>
 
     <string name="title_phone_2">
         <![CDATA[ASSISTÊNCIA <b>24 HORAS</b> AUTO E VIDA]]></string>
-    <string name="phone_2"> 0800 702 5100</string>
+    <string name="phone_2">0800 702 5100</string>
 
     <string name="title_skype">
         <![CDATA[FALE CONOSCO <b>VIA SKYPE</b>]]></string>

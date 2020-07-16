@@ -1,7 +1,14 @@
 package br.com.libertyseguros.mobile.view.baseActivity;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
+
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -24,6 +31,7 @@ public class BaseActivity extends Activity implements NavigationApplication.Navi
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+
 
         // NavigationApplication nav = (NavigationApplication) getApplication();
         //nav.setNavigationListener(this);

@@ -61,7 +61,7 @@ public class ClubWebView extends BaseActionBar implements View.OnClickListener{
 
         setTitle(getResources().getString(R.string.title_action_bar_11));
 
-        mFirebaseAnalytics.setCurrentScreen(this, "Club Liberty", null);
+        mFirebaseAnalytics.setCurrentScreen(this, getResources().getString(R.string.title_action_bar_11), null);
 
         clubController = new ClubController(new OnConnectionResult() {
             @Override
@@ -103,7 +103,8 @@ public class ClubWebView extends BaseActionBar implements View.OnClickListener{
                         public void run() {
                             try{
                                 showLoading(false);
-                                wvClub.loadUrl(clubController.getUrl(ClubWebView.this));
+
+                                wvClub.postUrl(clubController.getUrl(), clubController.getPostData());
 
                             } catch(Exception ex){
                                 ex.printStackTrace();

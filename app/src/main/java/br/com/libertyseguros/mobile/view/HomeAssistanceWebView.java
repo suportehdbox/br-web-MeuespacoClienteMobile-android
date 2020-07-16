@@ -1,6 +1,7 @@
 package br.com.libertyseguros.mobile.view;
 
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Dialog;
@@ -49,6 +50,8 @@ public class HomeAssistanceWebView extends BaseActionBar {
     private AssistanceController controller;
     private Dialog dialogMessage;
 
+    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressWarnings("unchecked")
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);

@@ -26,6 +26,7 @@ public class BaseNoActionBar extends AppCompatActivity implements NavigationAppl
 
         getSupportActionBar().hide();
 
+
         //  NavigationApplication nav = (NavigationApplication) getApplication();
         // nav.setNavigationListener(this);
     }
