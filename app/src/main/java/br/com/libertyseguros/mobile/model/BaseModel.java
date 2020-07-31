@@ -2,12 +2,14 @@ package br.com.libertyseguros.mobile.model;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
 
@@ -20,6 +22,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Locale;
 
+import br.com.libertyseguros.mobile.BuildConfig;
+import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.libray.LoadFile;
 
@@ -208,6 +212,17 @@ public class BaseModel {
 
         return new Float(dist * meterConversion).floatValue();
 
+    }
+
+    public void openCanalReport(Context context){
+        String url = context.getString(R.string.url_canal_report_prod);
+        if(!BuildConfig.prod){
+            url = context.getString(R.string.url_canal_report_act);
+        }
+        Uri webpage = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
 }

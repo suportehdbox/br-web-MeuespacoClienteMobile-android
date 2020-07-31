@@ -140,6 +140,10 @@ public class RegisterController {
         registerModel.openLinkTerms(context);
     }
 
+    public void openCanalReport(Context context){
+        registerModel.openCanalReport(context);
+    }
+
     /**
      * Get Register Error Messagea
      */

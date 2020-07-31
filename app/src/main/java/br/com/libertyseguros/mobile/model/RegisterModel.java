@@ -3,6 +3,8 @@ package br.com.libertyseguros.mobile.model;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -26,7 +28,7 @@ import br.com.libertyseguros.mobile.util.ValidEmail;
 import br.com.libertyseguros.mobile.util.ValidPassword;
 import br.com.libertyseguros.mobile.view.PrivacyPolicy;
 
-public class RegisterModel {
+public class RegisterModel extends BaseModel{
 
     public final static int REGISTER_STEP1 = -5;
 
@@ -76,6 +78,13 @@ public class RegisterModel {
     private String idFacebook;
 
     private VerifyBeans verifyBeans;
+
+    public RegisterModel() {
+        validCPF = new ValidCPF();
+        validCNPJ = new ValidCNPJ();
+        validEmail = new ValidEmail();
+        validPassword = new ValidPassword();
+    }
 
     public RegisterModel(OnConnectionResult onConnectionResult) {
         validCPF = new ValidCPF();
@@ -370,6 +379,8 @@ public class RegisterModel {
         Intent it = new Intent(context, PrivacyPolicy.class);
         context.startActivity(it);
     }
+
+
 
 
     /**

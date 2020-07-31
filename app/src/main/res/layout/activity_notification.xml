@@ -1,5 +1,6 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -10,15 +11,33 @@
         android:orientation="vertical"
         android:background="@color/background_app">
 
-        <ListView
-            android:id="@+id/lv_notification"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/margin_default_2"
-            android:divider="@null"
-            android:dividerHeight="0dp"
-            android:background="@color/background_app"/>
-
+            android:weightSum="10"
+            android:orientation="vertical">
+            <ListView
+                android:id="@+id/lv_notification"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9"
+                android:layout_margin="@dimen/margin_default_2"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:background="@color/background_app"/>
+            <TextView
+                android:id="@+id/tv_lgpd"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/margin_default_2"
+                android:layout_marginLeft="@dimen/margin_default_2"
+                android:layout_marginRight="@dimen/margin_default_2"
+                android:text="@string/lgpd_grupo_liberty"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="30sp"
+                app:autoSizeStepGranularity="1sp" />
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_loading"
             android:layout_width="match_parent"

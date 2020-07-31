@@ -293,6 +293,38 @@
                             android:layout_marginTop="@dimen/margin_default_2"
                             android:background="@color/line_default_1" />
 
+                        <LinearLayout
+                            android:id="@+id/ll_dados"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_default_2"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_lgpd_app" />
+
+                            <TextView
+                                android:id="@+id/tv_dados"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_default_4"
+                                android:text="@string/tratamento_dados"
+                                android:textColor="@color/text_default_6"
+                                android:textSize="@dimen/font_default_0" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="@dimen/margin_default_2"
+                            android:layout_marginTop="@dimen/margin_default_2"
+                            android:background="@color/line_default_1" />
 
                         <LinearLayout
                             android:id="@+id/ll_exit"

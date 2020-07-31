@@ -3,6 +3,7 @@ package br.com.libertyseguros.mobile.view;
 import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Paint;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.InputFilter;
@@ -427,6 +428,30 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             auto_view.setLayoutParams(childParam1);
         }
 
+        TextView lgpd = findViewById(R.id.tv_lgpd);
+        StringBuilder builder = new StringBuilder();
+        builder.append(getString(R.string.lgpd_grupo_liberty));
+        builder.append("<u>");
+
+        if(BuildConfig.prod){
+            builder.append(getString(R.string.url_canal_report_prod));
+        }else{
+            builder.append(getString(R.string.url_canal_report_act));
+        }
+
+        builder.append("</u>");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            lgpd.setText(Html.fromHtml(builder.toString(), Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            lgpd.setText(Html.fromHtml(builder.toString()));
+        }
+
+        lgpd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registerController.openCanalReport(getApplicationContext());
+            }
+        });
         configDialog();
 
     }

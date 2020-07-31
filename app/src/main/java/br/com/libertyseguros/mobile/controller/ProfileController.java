@@ -43,6 +43,10 @@ public class ProfileController {
         profileModel.openSupport(context);
     }
 
+    public void openLgpd(Context context){
+        profileModel.openLgpd(context);
+    }
+
     /**
      * Get InfoUser
      * @return

@@ -21,4 +21,7 @@
     <string name="clube_final_nao_logado">Faça seu login ou cadastre-se\nno App para aproveitar as vantagens\nque preparamos para você!</string>
     <string name="novos_termos">Concordo com os novos\n<u>termos, condições e política de privacidade</u> </string>
     <string name="acessar_club_button">ACESSAR O +LIBERTY</string>
+    <string name="tratamento_dados">Tratamento De Dados</string>
+    <string name="acessar_canal_comunicacao">Acessar Canal de Comunicação</string>
+    <string name="lgpd_grupo_liberty">O Grupo Liberty está adequado à lei no. 13.709 de 14 de Agosto de 2018 e portanto os seus dados pessoais serão utilizados único e exclusivamente para a finalidade proposta. Qualquer dúvida sobre o tratamento dos seus dados pessoais, por favor entre em contato conosco pelo nosso canal de comunicação:</string>
 </resources>

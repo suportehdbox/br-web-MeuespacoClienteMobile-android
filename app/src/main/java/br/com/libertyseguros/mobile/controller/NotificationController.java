@@ -32,6 +32,9 @@ public class NotificationController extends BaseModel{
     public void getNotification(Context ctx){
       notificationModel.getNotification(ctx);
     }
+    public void openCanalReport(Context ctx){
+        notificationModel.openCanalReport(ctx);
+    }
 
 
 

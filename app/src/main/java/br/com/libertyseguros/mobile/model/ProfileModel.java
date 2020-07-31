@@ -13,6 +13,7 @@ import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.view.ChangeEmailLoginOn;
 import br.com.libertyseguros.mobile.view.ChangePasswordLoginOn;
 import br.com.libertyseguros.mobile.view.ChangePhoneLoginOn;
+import br.com.libertyseguros.mobile.view.Lgpd;
 import br.com.libertyseguros.mobile.view.ListPolicy;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.Support;
@@ -82,6 +83,10 @@ public class ProfileModel extends BaseModel {
         context.startActivity(it);
     }
 
+    public void openLgpd(Context context){
+        Intent it = new Intent(context, Lgpd.class);
+        context.startActivity(it);
+    }
     /**
      * Get InfoUser
      * @return

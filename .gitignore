@@ -3,3 +3,5 @@
 app/build/
 androidRecording/build/
 .DS_Store
+app/liberty/release/
+app/aliro/release/

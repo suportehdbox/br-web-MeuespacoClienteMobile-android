@@ -106,6 +106,7 @@
     <string name="title_action_bar_12">Política de Privacidade</string>
     <string name="title_action_bar_13">Documentos e fotos</string>
     <string name="title_action_bar_14">Assistência</string>
+    <string name="title_action_bar_15">Tratamento de Dados</string>
 
     <string name="register_ok">Registro realizado com sucesso!</string>
     <string name="register_title1">Cadastre-se. </string>
@@ -685,8 +686,11 @@
 
 
 
+
     <!--AMBIENTE DE TESTE INTUITIVE-->
     <!--<string name="assist24_act">https://dqkr3yt2sbyrt.cloudfront.net/</string>-->
+    <string name="url_canal_report_act">http://act-institucional/Pages/atendimento/dados-pessoais.aspx</string>
+    <string name="url_canal_report_prod">https://www.libertyseguros.com.br/Pages/atendimento/dados-pessoais.aspx</string>
     <string name="assist24_prod">https://mobile.libertyseguros.com.br/Assistencia24/</string>
     <string name="assist24_act">https://act-dmz.libertyseguros.com.br/Assistencia24/</string>
     <string name="home_assist_prod">https://mobile.libertyseguros.com.br/AssistenciaResidencia/</string>

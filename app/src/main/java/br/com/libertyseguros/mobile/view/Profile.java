@@ -79,6 +79,8 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
 
     private LinearLayout llAbout;
 
+    private LinearLayout ll_dados;
+
     private TextView tvExit;
 
     private LinearLayout llExit;
@@ -196,6 +198,8 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
         tvAbout.setOnClickListener(this);
         llAbout.setOnClickListener(this);
 
+        ll_dados = findViewById(R.id.ll_dados);
+        ll_dados.setOnClickListener(this);
 
         tvDocuments = (TextView) findViewById(R.id.tv_documents);
         llDocuments = (LinearLayout) findViewById(R.id.ll_documents);
@@ -313,6 +317,9 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
             case R.id.tv_about:
             case R.id.ll_about:
                 profileController.openSupport(Profile.this);
+                break;
+            case R.id.ll_dados:
+                profileController.openLgpd(Profile.this);
                 break;
             case R.id.tv_exit:
             case R.id.ll_exit:

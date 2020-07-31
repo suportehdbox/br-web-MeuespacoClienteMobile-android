@@ -1,18 +1,24 @@
 package br.com.libertyseguros.mobile.view;
 
 
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.hudomju.swipe.SwipeToDismissTouchListener;
 import com.hudomju.swipe.adapter.ListViewAdapter;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
+import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.adapter.ListNotification;
 import br.com.libertyseguros.mobile.beans.NotificationBeans;
@@ -38,6 +44,7 @@ public class Notification extends BaseActionBar {
     private boolean value;
 
     private LinearLayout llLoading;
+
 
     public static boolean blocked;
 
@@ -146,6 +153,30 @@ public class Notification extends BaseActionBar {
 
         beans = new ArrayList<>();
 
+        TextView lgpd = findViewById(R.id.tv_lgpd);
+        StringBuilder builder = new StringBuilder();
+        builder.append(getString(R.string.lgpd_grupo_liberty));
+        builder.append("<u>");
+
+        if(BuildConfig.prod){
+            builder.append(getString(R.string.url_canal_report_prod));
+        }else{
+            builder.append(getString(R.string.url_canal_report_act));
+        }
+
+        builder.append("</u>");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            lgpd.setText(Html.fromHtml(builder.toString(), Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            lgpd.setText(Html.fromHtml(builder.toString()));
+        }
+
+        lgpd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                notificationController.openCanalReport(getApplicationContext());
+            }
+        });
 
         showLoading(true);
         notificationController.getNotification(this);
