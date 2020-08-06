@@ -51,8 +51,8 @@ android {
             buildConfigField "String", "databasename", "\"libertymobile.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 440
-            versionName "4.2.0 ac"
+            versionCode 441
+            versionName "4.2.0 ac(1)"
             multiDexEnabled true
             signingConfig signingConfigs.config
 
@@ -63,8 +63,8 @@ android {
             buildConfigField "String", "databasename", "\"aliro.db\""
             buildConfigField "boolean", "prod", "true"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 440
-            versionName "4.2.0 ac"
+            versionCode 441
+            versionName "4.2.0 ac(1)"
             multiDexEnabled true
             signingConfig signingConfigs.config
         }

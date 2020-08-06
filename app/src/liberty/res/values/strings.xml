@@ -131,7 +131,7 @@
     <string name="register_error_email_confirm">E-mail e E-mail de confirmação devem ser iguais</string>
     <string name="register_info_password"><b>Atenção!</b> Sua senha deve conter no mínimo 6 (seis) caracteres entre letras e números. Não é permitido utilizar seu nome, sobrenome ou "&amp;".</string>
     <string name="register_cb_terms">Concordo com os </string>
-    <string name="register_cb_terms_2">termos, condições e política de privacidade</string>
+    <string name="register_cb_terms_2">termos, condições e privacidade, e conheço os tratamentos dos meus dados pessoais.</string>
 
 
     <string name="extends_warning">Declaro que não tive sinistro enquanto essa parcela esteve vencida</string>

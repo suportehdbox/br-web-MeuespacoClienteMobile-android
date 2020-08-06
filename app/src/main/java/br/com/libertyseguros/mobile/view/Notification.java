@@ -156,15 +156,17 @@ public class Notification extends BaseActionBar {
         TextView lgpd = findViewById(R.id.tv_lgpd);
         StringBuilder builder = new StringBuilder();
         builder.append(getString(R.string.lgpd_grupo_liberty));
-        builder.append("<u>");
 
+        builder.append(" <u><a href='");
         if(BuildConfig.prod){
             builder.append(getString(R.string.url_canal_report_prod));
         }else{
             builder.append(getString(R.string.url_canal_report_act));
         }
+        builder.append("'>");
+        builder.append(getString(R.string.lgpd_grupo_liberty_link));
 
-        builder.append("</u>");
+        builder.append("</a></u>");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             lgpd.setText(Html.fromHtml(builder.toString(), Html.FROM_HTML_MODE_COMPACT));
         } else {

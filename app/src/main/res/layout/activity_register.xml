@@ -177,13 +177,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="@string/register_cb_terms"
-                            android:textColor="@color/text_default_3"
-                            android:textSize="@dimen/font_default_6" />
 
                         <br.com.libertyseguros.mobile.view.custom.TextViewCustom
                             android:id="@+id/tv_terms"
@@ -191,7 +184,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/margin_default"
                             android:layout_marginRight="@dimen/margin_default_4"
-                            android:gravity="center"
+                            android:gravity="left"
                             android:text="@string/register_cb_terms_2"
                             android:textColor="@color/text_default_5"
                             android:textSize="@dimen/font_default_6" />

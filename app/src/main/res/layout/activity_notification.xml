@@ -33,10 +33,14 @@
                 android:layout_marginBottom="@dimen/margin_default_2"
                 android:layout_marginLeft="@dimen/margin_default_2"
                 android:layout_marginRight="@dimen/margin_default_2"
+                android:textSize="@dimen/font_default_3"
+                app:autoSizeMinTextSize="@dimen/font_default_8"
                 android:text="@string/lgpd_grupo_liberty"
                 app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="30sp"
-                app:autoSizeStepGranularity="1sp" />
+                app:autoSizeMaxTextSize="@dimen/font_default_3"
+                app:autoSizeStepGranularity="1sp"
+                android:lines="5"
+               />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_loading"
