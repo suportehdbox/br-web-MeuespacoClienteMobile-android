@@ -252,6 +252,7 @@
                                 <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
                                     android:id="@+id/bt_detail"
                                     style="@style/ButtonDefault"
+                                    android:layout_gravity="center"
                                     android:layout_width="wrap_content"
                                     android:background="@drawable/bt_background_app"
                                     android:text="@string/button_detail_policy"
@@ -827,6 +828,7 @@
                 <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
                     android:id="@+id/bt_more_policy"
                     style="@style/ButtonDefault"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_margin="@dimen/margin_default_4"
                     android:background="@drawable/bt_background_app_second"

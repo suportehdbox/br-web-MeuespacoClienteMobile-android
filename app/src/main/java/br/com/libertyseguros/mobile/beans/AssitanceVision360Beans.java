@@ -77,9 +77,9 @@ public class AssitanceVision360Beans {
 
                 String hoursSplit = arrayHours[1].split("-")[0];
 
-                SimpleDateFormat spf=new SimpleDateFormat("hh:mm:ss");
+                SimpleDateFormat spf=new SimpleDateFormat("HH:mm:ss");
                 Date newDate=spf.parse(hoursSplit);
-                spf= new SimpleDateFormat("hh:mm");
+                spf= new SimpleDateFormat("HH:mm");
 
                 hora = spf.format(newDate);
 

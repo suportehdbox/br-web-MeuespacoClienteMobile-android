@@ -177,6 +177,7 @@ public class Support extends BaseActionBar implements View.OnClickListener {
 
         llSkype = (LinearLayout) findViewById(R.id.skype);
         llSkype.setOnClickListener(this);
+        llSkype.setVisibility(View.GONE);
     }
 
     @Override

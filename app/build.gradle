@@ -48,11 +48,11 @@ android {
         liberty {
             applicationId 'br.com.libertyseguros.mobile'
             buildConfigField "String", "tag", "\"LibertySeguros\""
-            buildConfigField "String", "databasename", "\"libertymobile.db\""
+            buildConfigField "String", "databasename", "\"libertymobile2020.db\""
             buildConfigField "boolean", "prod", "true"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 446
-            versionName "4.2.1"
+            versionCode 447
+            versionName "4.2.2"
             multiDexEnabled true
             signingConfig signingConfigs.config
 
@@ -60,11 +60,11 @@ android {
         aliro {
             applicationId 'br.com.libertyseguros.aliro'
             buildConfigField "String", "tag", "\"AliroSeguros\""
-            buildConfigField "String", "databasename", "\"aliro.db\""
-            buildConfigField "boolean", "prod", "true"
+            buildConfigField "String", "databasename", "\"aliro2020.db\""
+            buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 446
-            versionName "4.2.1"
+            versionCode 447
+            versionName "4.2.2 ACT"
             multiDexEnabled true
             signingConfig signingConfigs.config
         }

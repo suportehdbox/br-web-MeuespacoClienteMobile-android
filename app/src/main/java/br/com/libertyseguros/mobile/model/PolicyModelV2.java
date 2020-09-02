@@ -2,6 +2,7 @@ package br.com.libertyseguros.mobile.model;
 
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -353,20 +354,23 @@ public class PolicyModelV2 {
      * @param file
      */
     private void shareSecondCopyPolicy(File file){
-        Intent intent = new Intent();
 
-        Uri uri = null;
 
-        if (Build.VERSION.SDK_INT >= 24) {
-             uri = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".provider", file);
-        } else {
-            uri = Uri.fromFile(file);
-        }
+            Intent intent = new Intent();
 
-        intent.setAction(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_STREAM, uri);
-        intent.setType("application/pdf");
-        context.startActivity(Intent.createChooser(intent, context.getResources().getText(R.string.app_name)));
+            Uri uri = null;
+
+            if (Build.VERSION.SDK_INT >= 24) {
+                 uri = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".provider", file);
+            } else {
+                uri = Uri.fromFile(file);
+            }
+
+            intent.setAction(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_STREAM, uri);
+            intent.setType("application/pdf");
+            context.startActivity(Intent.createChooser(intent, context.getResources().getText(R.string.app_name)));
+
     }
 
     /**
@@ -374,23 +378,27 @@ public class PolicyModelV2 {
      * @param file
      */
     private void viewSecondCopyPolicy(File file){
-        Intent intent = new Intent();
+        try{
+            Intent intent = new Intent();
 
-        if (Build.VERSION.SDK_INT >= 24) {
+            if (Build.VERSION.SDK_INT >= 24) {
 
-            Uri apkURI = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".provider", file);
+                Uri apkURI = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".provider", file);
 
-            intent.setDataAndType(apkURI, "application/pdf");
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                intent.setDataAndType(apkURI, "application/pdf");
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-        } else {
-            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            } else {
+                intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            }
+
+            intent.setAction(android.content.Intent.ACTION_VIEW);
+
+
+            context.startActivity(intent);
+        }catch (ActivityNotFoundException e){
+            Toast.makeText(context, context.getString(R.string.erro_open_pdf), Toast.LENGTH_LONG).show();
         }
-
-        intent.setAction(android.content.Intent.ACTION_VIEW);
-
-
-        context.startActivity(intent);
     }
 
     /**
