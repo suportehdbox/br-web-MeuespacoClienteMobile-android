@@ -695,4 +695,6 @@
     <string name="assist24_act">https://act-dmz.libertyseguros.com.br/Assistencia24/</string>
     <string name="home_assist_prod">https://mobile.libertyseguros.com.br/AssistenciaResidencia/</string>
     <string name="home_assist_act">https://act-dmz.libertyseguros.com.br/AssistenciaResidencia/</string>
+    <string name="auto_claim_prod">https://mobile.libertyseguros.com.br/AvisoSinistroAutoApp/</string>
+    <string name="auto_claim_act">https://act-dmz.libertyseguros.com.br/AvisoSinistroAutoApp/</string>
 </resources>

@@ -65,6 +65,7 @@ android {
             versionCode 448
             versionName "4.2.3 ACT"
             multiDexEnabled true
+            isDefault.set(true)
             signingConfig signingConfigs.config
 
         }
@@ -77,6 +78,7 @@ android {
             versionCode 447
             versionName "4.2.3 ACT"
             multiDexEnabled true
+            isDefault.set(false)
             signingConfig signingConfigs.config
         }
     }

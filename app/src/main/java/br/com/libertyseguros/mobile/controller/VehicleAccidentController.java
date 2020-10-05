@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import br.com.libertyseguros.mobile.BuildConfig;
+import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.NumberWarningVehicleAccidentBeans;
@@ -434,5 +436,19 @@ public class VehicleAccidentController {
      */
     public void cropImage(Uri uri, int INT_CROP, Activity activity){
 
+    }
+
+
+
+
+    public String getWebViewUrl(Context context){
+        String url = context.getString(R.string.auto_claim_prod);
+
+        if (!BuildConfig.prod) {
+            url = context.getString(R.string.auto_claim_act);
+        }
+        url += "?tk=" + VehicleAccidentModel.vasb.getPolicy();
+
+        return url;
     }
 }

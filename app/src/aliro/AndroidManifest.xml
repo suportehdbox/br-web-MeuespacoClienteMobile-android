@@ -220,6 +220,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppActionBar" />
         <activity
+            android:name="br.com.libertyseguros.mobile.view.AutoClaimWebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
+
+        <activity
             android:name="br.com.libertyseguros.mobile.view.HomeAssistanceWebView"
             android:screenOrientation="portrait"
             android:theme="@style/AppActionBar" />

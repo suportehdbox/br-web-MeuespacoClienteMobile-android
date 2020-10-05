@@ -76,4 +76,6 @@ public class Config {
     public static boolean hasAutoPolicy = true;
     public static boolean hasHomeAssistance = false;
 
+    public final static boolean ClaimWebView = true;
+
 }
