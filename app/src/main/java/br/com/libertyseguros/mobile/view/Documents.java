@@ -456,6 +456,7 @@ public class Documents extends BaseActionBar implements View.OnClickListener {
             }
 
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     /* Show progress loading

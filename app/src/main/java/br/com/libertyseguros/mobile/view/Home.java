@@ -16,9 +16,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.crashlytics.android.Crashlytics;
-
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.security.MessageDigest;
@@ -36,7 +33,6 @@ import br.com.libertyseguros.mobile.view.baseActivity.BaseActivity;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
 import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 import br.com.libertyseguros.mobile.view.fragment.HomeOff;
-import io.fabric.sdk.android.Fabric;
 
 public class Home extends BaseActivity implements View.OnClickListener {
 
@@ -62,8 +58,6 @@ public class Home extends BaseActivity implements View.OnClickListener {
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-
-        Fabric.with(this, new Crashlytics());
 
         setContentView(R.layout.activity_home);
 

@@ -404,7 +404,7 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
         } else {
             callbackManager.onActivityResult(requestCode, resultCode, data);
         }
-
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
 

@@ -551,6 +551,7 @@ public class UploadPictures extends BaseActionBar implements View.OnClickListene
             }
 
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     /* Show progress loading
