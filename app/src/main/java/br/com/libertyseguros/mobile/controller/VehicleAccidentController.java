@@ -447,7 +447,8 @@ public class VehicleAccidentController {
         if (!BuildConfig.prod) {
             url = context.getString(R.string.auto_claim_act);
         }
-        url += "?tk=" + VehicleAccidentModel.vasb.getPolicy();
+
+        url += "?plate=" + VehicleAccidentModel.vasb.getLicensePlate() + "&document=" + getLoginBeans(context).getCpfCnpj();
 
         return url;
     }
