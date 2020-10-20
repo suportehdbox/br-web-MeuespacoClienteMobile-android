@@ -241,10 +241,12 @@ public class AutoClaimWebView extends BaseActionBar {
             }
 
             if (photoFile != null) {
+
                 Uri photoURI = FileProvider.getUriForFile(AutoClaimWebView.this,
                         (packageName + ".provider"),
                         photoFile);
                 saveImageUri = Uri.fromFile(photoFile);
+                takePicture.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 takePicture.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
             }
 
