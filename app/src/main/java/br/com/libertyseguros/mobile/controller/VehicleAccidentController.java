@@ -17,6 +17,7 @@ import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.NumberWarningVehicleAccidentBeans;
+import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.model.VehicleAccidentModel;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
@@ -453,7 +454,10 @@ public class VehicleAccidentController {
         }
 
 
-        url += "?plate=" + plate + "&document=" + getLoginBeans(context).getCpfCnpj();
+        url += "?plate=" + plate + "&document=" + getLoginBeans(context).getCpfCnpj() +
+                "&issuingAgency=" + VehicleAccidentModel.vasb.getIssuingAgency() +
+                "&itemCode=" + VehicleAccidentModel.vasb.getItemCode() +
+                "&brandMarketing=" + BuildConfig.brandMarketing;
 
         return url;
     }
