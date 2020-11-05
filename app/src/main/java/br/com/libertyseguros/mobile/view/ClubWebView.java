@@ -129,7 +129,7 @@ public class ClubWebView extends BaseActionBar implements View.OnClickListener{
         wvClub.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if(url.contains("#extenal")){
+                if(url.contains("#external")){
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setPackage("com.android.chrome");
                     i.setData(Uri.parse(url));
