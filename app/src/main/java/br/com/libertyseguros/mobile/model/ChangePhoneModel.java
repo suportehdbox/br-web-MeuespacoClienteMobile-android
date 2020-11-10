@@ -220,7 +220,7 @@ public class ChangePhoneModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "ChangeEmail: " + result);
+                //Log.i(Config.TAG, "ChangeEmail: " + result);
                 Gson gson = new Gson();
 
                 try {

@@ -7,6 +7,7 @@ import android.content.pm.Signature;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -14,6 +15,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import br.com.libertyseguros.mobile.BuildConfig;
+import br.com.libertyseguros.mobile.libray.Security;
 import br.com.libertyseguros.mobile.util.NavigationApplication;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseNoActionBar;
 
@@ -28,8 +30,6 @@ public class Splash extends BaseNoActionBar {
     public void onCreate(Bundle bundle){
         super.onCreate(bundle);
 
-
-        openScreenHome();
     }
 
     private void openScreenHome(){

@@ -77,7 +77,7 @@ public class DownloadImageClub {
 
 
         if(vc.typeConnection(context)){
-            Log.i(Config.TAG, "start download image WIFI");
+            //Log.i(Config.TAG, "start download image WIFI");
             managerFile.download(namemImage, url + typeImage +  namemImage, onDownloadFile, context);
         } else {
             if(download3G()){
@@ -95,17 +95,17 @@ public class DownloadImageClub {
         String time = lf.loadPref(Config.TAG, context, Config.TAGTIMEIMAGE);
 
         if(time == null){
-            Log.i(Config.TAG, "start download image 3G, time == null");
+            //Log.i(Config.TAG, "start download image 3G, time == null");
 
             return true;
         } else {
             long timeLong = Long.parseLong(time);
 
             if((System.currentTimeMillis() - timeLong) < defaultTime){
-                Log.i(Config.TAG, "Not start download image 3G, time < 1 Week");
+                //Log.i(Config.TAG, "Not start download image 3G, time < 1 Week");
                 return false;
             } else{
-                Log.i(Config.TAG, "start download image 3G, time > 1 Week");
+                //Log.i(Config.TAG, "start download image 3G, time > 1 Week");
 
                 return true;
             }

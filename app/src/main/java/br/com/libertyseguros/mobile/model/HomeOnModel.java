@@ -128,7 +128,7 @@ public class HomeOnModel extends BaseModel{
 
         if(result != null){
             if(result.equals("")){
-                Log.i(Config.TAG, "Info home on new login");
+                //Log.i(Config.TAG, "Info home on new login");
                 createParams();
             } else {
                 try {
@@ -141,7 +141,7 @@ public class HomeOnModel extends BaseModel{
                     if (timeDiff >= -99) {
                         createParams();
 
-                        Log.i(Config.TAG, "Info home on cache > 1 day");
+                        //Log.i(Config.TAG, "Info home on cache > 1 day");
 
 
                     } else {
@@ -161,18 +161,18 @@ public class HomeOnModel extends BaseModel{
 
                         onConnectionResult.onSucess();
 
-                        Log.i(Config.TAG, "Info home on cache < 1 day");
+                        //Log.i(Config.TAG, "Info home on cache < 1 day");
                     }
 
                 }  catch (Exception ex){
                     createParams();
-                    Log.i(Config.TAG, "Info home on error");
+                    //Log.i(Config.TAG, "Info home on error");
 
                 }
             }
 
         } else {
-            Log.i(Config.TAG, "Info home on not found");
+            //Log.i(Config.TAG, "Info home on not found");
             createParams();
         }
     }
@@ -240,7 +240,7 @@ public class HomeOnModel extends BaseModel{
                 @Override
                 public void onSucess(String result) {
                     if(!BuildConfig.prod) {
-                        Log.i(Config.TAG, "HomeOnModel - type Connection" + typeConnection + " : " + result);
+                        //Log.i(Config.TAG, "HomeOnModel - type Connection" + typeConnection + " : " + result);
                     }
 
                     if(typeConnection == 1) {
@@ -659,7 +659,7 @@ public class HomeOnModel extends BaseModel{
         try{
             loadFile.savePref(Config.TAGFINGERENALBE, "1", Config.TAG, context);
         }catch (Exception ex){
-            Log.i(Config.TAG, ex.toString());
+            //Log.i(Config.TAG, ex.toString());
         }
     }
 }

@@ -170,7 +170,7 @@ public class UploadPictures extends BaseActionBar implements View.OnClickListene
                                     } else {
                                         tvMessageError.setText(getResources().getString(R.string.message_upload_photo));
                                         uploadPicturesController.createUploadFiles(UploadPictures.this);
-                                        Log.i(Config.TAG, "File Size > 10 new connection");
+                                        //Log.i(Config.TAG, "File Size > 10 new connection");
                                     }
 
                                 }
@@ -441,11 +441,11 @@ public class UploadPictures extends BaseActionBar implements View.OnClickListene
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i(Config.TAG, "onActivityResult");
+        //Log.i(Config.TAG, "onActivityResult");
         if (!skipOnActivity) {
 
             if (requestCode == 1 && resultCode == RESULT_OK) {
-                Log.i(Config.TAG, "OK Camera");
+                //Log.i(Config.TAG, "OK Camera");
 
                 if (data != null) {
                     Uri uriImage = data.getData();
@@ -632,7 +632,7 @@ public class UploadPictures extends BaseActionBar implements View.OnClickListene
                 for (int ind = 0; ind < listPhotos.size(); ind++) {
                     Uri uriImage = Uri.parse(listPhotos.get(ind));
 
-                    Log.i(Config.TAG, "URI: " + uriImage.toString());
+                    //Log.i(Config.TAG, "URI: " + uriImage.toString());
                     String path = uploadPicturesController.getRealPathFromURI(uriImage, UploadPictures.this);
 
 

@@ -19,8 +19,8 @@ public class ServiceFirebaseMessagingService extends FirebaseMessagingService {
 
 
             if(remoteMessage != null && remoteMessage.getNotification() != null && remoteMessage.getNotification().getBody() != null) {
-                Log.d(TAG, "From: " + remoteMessage.getFrom());
-                Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
+                //Log.d(TAG, "From: " + remoteMessage.getFrom());
+                //Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
 
                 CheckForeground checker = new CheckForeground();
                 if (checker.isAppInForeground(getBaseContext().getPackageName(), getBaseContext())) {

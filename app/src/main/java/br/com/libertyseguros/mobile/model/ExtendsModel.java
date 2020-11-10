@@ -157,7 +157,7 @@ public class ExtendsModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "Extend Model: " + result);
+                //Log.i(Config.TAG, "Extend Model: " + result);
 
                 if (typeConnection == 1) {
                     try {

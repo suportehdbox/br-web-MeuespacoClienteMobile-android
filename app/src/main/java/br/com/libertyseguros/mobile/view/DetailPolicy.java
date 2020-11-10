@@ -134,7 +134,7 @@ public class DetailPolicy extends BaseActionBar implements View.OnClickListener,
                         }
                     }
                 }catch (Exception ex){
-                    Log.i(Config.TAG, ex.toString());
+                    //Log.i(Config.TAG, ex.toString());
                 }
             }
 
@@ -149,7 +149,7 @@ public class DetailPolicy extends BaseActionBar implements View.OnClickListener,
                     indexPayment = -1;
                 }
             } catch (Exception ex){
-                Log.i(Config.TAG, ex.toString());
+                //Log.i(Config.TAG, ex.toString());
             }
             ExtendPagament.isExtends = false;
         }
@@ -456,7 +456,7 @@ public class DetailPolicy extends BaseActionBar implements View.OnClickListener,
                                         try{
                                             vision360CardView.setVisibility(View.INVISIBLE);
                                         }catch (Exception ex){
-                                            Log.i(Config.TAG, ex.toString());
+                                            //Log.i(Config.TAG, ex.toString());
                                         }
                                     }
 
@@ -481,7 +481,7 @@ public class DetailPolicy extends BaseActionBar implements View.OnClickListener,
                                                 });
                                             }
                                         }catch (Exception ex){
-                                            Log.i(Config.TAG, ex.toString());
+                                            //Log.i(Config.TAG, ex.toString());
                                         }
                                     }
                                 });
@@ -785,7 +785,7 @@ public class DetailPolicy extends BaseActionBar implements View.OnClickListener,
             coverages = "";
         }
 
-        Log.i(Config.TAG, "Cobertura: " + coverages);
+        //Log.i(Config.TAG, "Cobertura: " + coverages);
 
         return coverages;
     }

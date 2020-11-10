@@ -231,7 +231,7 @@ public class HomeAssistanceWebView extends BaseActionBar {
                         Environment.DIRECTORY_DOWNLOADS), "JPEG_" + System.currentTimeMillis() + ".jpg");
 
             } catch (Exception ex) {
-                Log.v(Config.TAG, "Error image = " + ex.toString());
+                //Log.v((Config.TAG, "Error image = " + ex.toString());
             }
 
             if (photoFile != null) {

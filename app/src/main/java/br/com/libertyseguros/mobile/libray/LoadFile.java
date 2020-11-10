@@ -112,14 +112,14 @@ public class LoadFile {
 
 			if(imagefile.exists()){
 				isImage = true;
-				Log.i(Config.TAG, "Image " + image + " exists sdcard ");
+				//Log.i(Config.TAG, "Image " + image + " exists sdcard ");
 			} else {
-				Log.i(Config.TAG, "Image " + image + " not exists ");
+				//Log.i(Config.TAG, "Image " + image + " not exists ");
 			}
 		} else {
 			isImage = true;
 
-			Log.i(Config.TAG, "Image " + image + " exists drawable ");
+			//Log.i(Config.TAG, "Image " + image + " exists drawable ");
 		}
 
 		return isImage;
@@ -164,7 +164,7 @@ public class LoadFile {
 			}
 
 		} catch(Exception ex){
-			Log.i(Config.TAG, "Image: " + image + " não encontrada no sdcard: ");
+			//Log.i(Config.TAG, "Image: " + image + " não encontrada no sdcard: ");
 		}
 
 
@@ -207,11 +207,11 @@ public class LoadFile {
 
 				fosTemp.close();
 			} catch (FileNotFoundException e) {
-				Log.d(Config.TAG, "Image File Not Found: " + e.getMessage());
+				//Log.d(Config.TAG, "Image File Not Found: " + e.getMessage());
 			} catch (IOException e) {
-				Log.d(Config.TAG, "Error on store image file: " + e.getMessage());
+				//Log.d(Config.TAG, "Error on store image file: " + e.getMessage());
 			} catch (Exception e) {
-				Log.d(Config.TAG, "Erro on store image file: " + e.getMessage());
+				//Log.d(Config.TAG, "Erro on store image file: " + e.getMessage());
 			}
 		}
 
@@ -244,7 +244,7 @@ public class LoadFile {
 
 				if(tempFile.exists()){
 					if(!tempFile.delete()){
-						Log.v(Config.TAG,"Error deleting photo");
+						//Log.v((Config.TAG,"Error deleting photo");
 					}
 				}
 
@@ -254,11 +254,11 @@ public class LoadFile {
 
 				fosTemp.close();
 			} catch (FileNotFoundException e) {
-				Log.d(Config.TAG, "Image File Not Found: " + e.getMessage());
+				//Log.d(Config.TAG, "Image File Not Found: " + e.getMessage());
 			} catch (IOException e) {
-				Log.d(Config.TAG, "Error on store image file: " + e.getMessage());
+				//Log.d(Config.TAG, "Error on store image file: " + e.getMessage());
 			} catch (Exception e) {
-				Log.d(Config.TAG, "Erro on store image file: " + e.getMessage());
+				//Log.d(Config.TAG, "Erro on store image file: " + e.getMessage());
 			}
 		}
 
@@ -301,12 +301,12 @@ public class LoadFile {
 			}
 
 		} catch (FileNotFoundException e) {
-			Log.d(Config.TAG, "Image File Not Found: " + e.getMessage());
+			//Log.d(Config.TAG, "Image File Not Found: " + e.getMessage());
 		} catch (IOException e) {
-			Log.d(Config.TAG, "Error loading image file 1: " + e.getMessage());
+			//Log.d(Config.TAG, "Error loading image file 1: " + e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
-			Log.d(Config.TAG, "Erro loading image file 2: " + e.getMessage());
+			//Log.d(Config.TAG, "Erro loading image file 2: " + e.getMessage());
 		}
 
 		return bitmap;

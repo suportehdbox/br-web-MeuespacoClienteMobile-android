@@ -108,7 +108,7 @@ public class ListVehicleAccidentModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "ListVehicleAccidentModel: " + result);
+                //Log.i(Config.TAG, "ListVehicleAccidentModel: " + result);
 
                 try {
 
@@ -237,7 +237,7 @@ public class ListVehicleAccidentModel {
             intent.putExtra("plate", listVehicleAccidentBeans.getInsurances()[index].getInsuranceStatus().getLicensePlate());
             intent.putExtra("callButton", bt);
 
-            Log.i(Config.TAG, "New 24 hours: " + "CPF " + infoUser.getCpfCnpj(ctx) + " - Plate " + listVehicleAccidentBeans.getInsurances()[index].getInsuranceStatus().getLicensePlate());
+            //Log.i(Config.TAG, "New 24 hours: " + "CPF " + infoUser.getCpfCnpj(ctx) + " - Plate " + listVehicleAccidentBeans.getInsurances()[index].getInsuranceStatus().getLicensePlate());
 
 
             ctx.startActivity(intent);

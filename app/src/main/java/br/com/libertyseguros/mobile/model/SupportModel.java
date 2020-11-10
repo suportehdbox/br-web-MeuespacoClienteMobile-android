@@ -169,7 +169,7 @@ public class SupportModel extends BaseModel{
 
                 @Override
                 public void onSucess(String result) {
-                    Log.i(Config.TAG, "SupportModel: " + result);
+                    //Log.i(Config.TAG, "SupportModel: " + result);
 
                     try {
 
@@ -265,7 +265,7 @@ public class SupportModel extends BaseModel{
                 sky.setData(Uri.parse("skype:" + "libertyseguros_central"));
                 ctx.startActivity(sky);
             } catch (ActivityNotFoundException e) {
-                Log.e("SKYPE CALL", "Skype failed", e);
+                //Log.e("SKYPE CALL", "Skype failed", e);
             }
         } else {
             final String appPackageName = context.getPackageName();

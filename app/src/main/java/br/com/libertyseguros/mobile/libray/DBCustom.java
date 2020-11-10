@@ -203,7 +203,7 @@ public class DBCustom extends SQLiteOpenHelper {
 	 * @return
 	 */
 	public Cursor selectBD(String sql) {
-		Log.i(Config.TAG, "sql: " + sql);
+		//Log.i(Config.TAG, "sql: " + sql);
 
 		openDataBase();
 

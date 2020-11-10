@@ -239,7 +239,7 @@ public class ChangeEmailOffModel extends BaseModel{
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "typeConnection:" + typeConnection + " - " + "ChangeEmailOff: " + result);
+                //Log.i(Config.TAG, "typeConnection:" + typeConnection + " - " + "ChangeEmailOff: " + result);
 
                 try {
                     if(typeConnection == 1){

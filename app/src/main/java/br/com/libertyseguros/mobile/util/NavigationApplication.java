@@ -51,13 +51,13 @@ public class NavigationApplication extends Application {
 //            return;
 //        }
 //        SdState sdState = currentSmiResult.getSdState();
-//        Log.v(Config.TAG, "sponsored data state : " + sdState);
+//        //Log.v((Config.TAG, "sponsored data state : " + sdState);
 //        if(sdState == SdState.SD_AVAILABLE) {
 //            // TODO: show a banner or message to user, indicating that the data usage is sponsored and charges do not apply to user data plan
 //            listener.OnDataPlanChange(true);
 //        } else if(sdState == SdState.SD_NOT_AVAILABLE) {
 //            // TODO: show a banner or message to user, indicating that the data usage is NOT sponsored and charges apply to user data plan
-//            Log.d(Config.TAG, " - reason: " + currentSmiResult.getSdReason());
+//            //Log.d(Config.TAG, " - reason: " + currentSmiResult.getSdReason());
 //            listener.OnDataPlanChange(false);
 //        } else if(sdState == SdState.WIFI) {
 //            // device is in wifi

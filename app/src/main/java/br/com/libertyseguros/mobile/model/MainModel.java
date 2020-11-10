@@ -342,7 +342,7 @@ public class MainModel extends BaseModel {
         }
 
         //TODO Remover Log
-//        Log.i(Config.TAG, "TOKEN NOT: " + GCM);
+//        //Log.i(Config.TAG, "TOKEN NOT: " + GCM);
 
         try {
             //Não remover o teste=1
@@ -351,7 +351,7 @@ public class MainModel extends BaseModel {
             ex.printStackTrace();
         }
 
-        Log.i(Config.TAG, "Connection PARAM: " + param);
+        //Log.i(Config.TAG, "Connection PARAM: " + param);
 
         if (!GCM.equals("")) {
             conn.startConnection("Notificacao/Token", param, 1, true);
@@ -372,7 +372,7 @@ public class MainModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "SendToken: " + result);
+                //Log.i(Config.TAG, "SendToken: " + result);
 
                 if (result.equals("")) {
                     loadFile.savePref(Config.TAGGCMSEND, "1", Config.TAG, context);

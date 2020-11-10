@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.datami.smi.SmiSdk;
 import com.google.android.gms.common.ConnectionResult;
@@ -25,6 +26,7 @@ import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.libray.DownloadImageHome;
 import br.com.libertyseguros.mobile.libray.InfoUser;
+import br.com.libertyseguros.mobile.libray.Security;
 import br.com.libertyseguros.mobile.receiver.RegistrationIntentService;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.Main;
@@ -58,6 +60,13 @@ public class HomeModel extends BaseModel {
 
         dih.startDownload();
 
+
+        Security sec = new Security();
+        if(!sec.isDeviceCompliance(activity)) {
+            Toast.makeText(activity, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
+            activity.finish();
+            return;
+        }
         if (BuildConfig.brandMarketing == 3) {
             if (shouldShowPopUpAgain() && !Config.alreadyShownDialog) {
                 //showDialogNavigation();

@@ -177,7 +177,7 @@ public class VehicleAccidentModel extends BaseModel{
             @Override
             public void onError(String msg) {
                 try{
-                    Log.i(Config.TAG, "Error upload connection");
+                    //Log.i(Config.TAG, "Error upload connection");
                     typeError = 1;
                     indexRemove = -1;
                     onConnectionResult.onError();
@@ -189,7 +189,7 @@ public class VehicleAccidentModel extends BaseModel{
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "Upload: " + result);
+                //Log.i(Config.TAG, "Upload: " + result);
 
                 try {
                         if(result.contains("idsDocumentos")){
@@ -397,11 +397,11 @@ public class VehicleAccidentModel extends BaseModel{
             }catch(Exception ex){
                 ex.printStackTrace();
                 onConnectionResult.onError();
-                Log.i(Config.TAG, "Error create upload file");
+                //Log.i(Config.TAG, "Error create upload file");
             } catch (OutOfMemoryError e) {
                 e.printStackTrace();
                 onConnectionResult.onError();
-                Log.i(Config.TAG, "Error create upload file outofMemory ");
+                //Log.i(Config.TAG, "Error create upload file outofMemory ");
             }
     }
 
@@ -458,7 +458,7 @@ public class VehicleAccidentModel extends BaseModel{
 
                     if(what == MediaRecorder.MEDIA_RECORDER_INFO_MAX_DURATION_REACHED){
                         timeoutRecordAudio.onStop();
-                        Log.i(Config.TAG, "Timeout record audio");
+                        //Log.i(Config.TAG, "Timeout record audio");
 
                     }
                 }
@@ -467,12 +467,12 @@ public class VehicleAccidentModel extends BaseModel{
             try {
                 recorder.prepare();
             } catch (IOException e) {
-                Log.e(Config.TAG, "prepare() failed");
+                //Log.e(Config.TAG, "prepare() failed");
             }
 
             recorder.start();
         } catch (IOException e) {
-            Log.e(Config.TAG, "external storage access error");
+            //Log.e(Config.TAG, "external storage access error");
             return;
         }
 
@@ -500,7 +500,7 @@ public class VehicleAccidentModel extends BaseModel{
         values.put(MediaStore.Audio.Media.MIME_TYPE, "audio/mp4");
         values.put(MediaStore.Audio.Media.DATA, audiofile.getAbsolutePath());
 
-        Log.i(Config.TAG, "Audio Path: " + audiofile.getAbsolutePath());
+        //Log.i(Config.TAG, "Audio Path: " + audiofile.getAbsolutePath());
 
         ContentResolver contentResolver = context.getContentResolver();
         Uri base = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
@@ -526,7 +526,7 @@ public class VehicleAccidentModel extends BaseModel{
 
                 String path = audiofile.getAbsoluteFile().toString();
 
-                Log.i(Config.TAG, path);
+                //Log.i(Config.TAG, path);
 
                 mPlayer.setDataSource(path);
                 mPlayer.prepare();
@@ -545,7 +545,7 @@ public class VehicleAccidentModel extends BaseModel{
                     }
                 });
             } catch (IOException e) {
-                Log.e(Config.TAG, "prepare() failed");
+                //Log.e(Config.TAG, "prepare() failed");
             }
 
         } else {
@@ -651,7 +651,7 @@ public class VehicleAccidentModel extends BaseModel{
         intent.putExtra("plate", plate);
         intent.putExtra("callButton", bt);
 
-        Log.i(Config.TAG, "New 24 hours: " + "CPF " + cpf + " - Plate " + plate);
+        //Log.i(Config.TAG, "New 24 hours: " + "CPF " + cpf + " - Plate " + plate);
 
 
         context.startActivity(intent);
@@ -777,7 +777,7 @@ public class VehicleAccidentModel extends BaseModel{
 
                 mCurrentPhotoPath = "file:" + photoFile.getAbsolutePath();
             } catch (Exception ex) {
-                Log.v(Config.TAG, "Error image = " + ex.toString());
+                //Log.v((Config.TAG, "Error image = " + ex.toString());
             }
 
             if (photoFile != null) {
@@ -1019,7 +1019,7 @@ public class VehicleAccidentModel extends BaseModel{
             }
         }
 
-        Log.i(Config.TAG, "ArraySize: " + arrayOutPutfileUri.size());
+        //Log.i(Config.TAG, "ArraySize: " + arrayOutPutfileUri.size());
     }
 
     /**
@@ -1119,7 +1119,7 @@ public class VehicleAccidentModel extends BaseModel{
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "VehicleAccident: " + result);
+                //Log.i(Config.TAG, "VehicleAccident: " + result);
 
                 try {
                     if(result.contains("numeroAvisoSinistro")){
@@ -1265,17 +1265,17 @@ public class VehicleAccidentModel extends BaseModel{
 
             if(sizeFile <= Config.fileSizeAllowed){
                 ok = true;
-                Log.i(Config.TAG,  "File Size Allowed ok: " + fileSize.length());
+                //Log.i(Config.TAG,  "File Size Allowed ok: " + fileSize.length());
             } else {
                 ok = false;
-                Log.i(Config.TAG,  "File Size Allowed not ok: " + fileSize.length());
+                //Log.i(Config.TAG,  "File Size Allowed not ok: " + fileSize.length());
             }
 
-            Log.i(Config.TAG,  "File Size: " + sizeFile);
+            //Log.i(Config.TAG,  "File Size: " + sizeFile);
 
         } catch(Exception ex){
             ex.printStackTrace();
-            Log.i(Config.TAG,  "File Size Allowed error");
+            //Log.i(Config.TAG,  "File Size Allowed error");
             ok = false;
         }
 

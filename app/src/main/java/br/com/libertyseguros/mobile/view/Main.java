@@ -322,7 +322,7 @@ public class Main extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Log.i(Config.TAG, "PERMISSION_GRANTED - location");
+                    //Log.i(Config.TAG, "PERMISSION_GRANTED - location");
 
                     if (!mainController.getManagerLocation().isLocationDisable()) {
                         mainController.getManagerLocation().setLocation(true);
@@ -335,7 +335,7 @@ public class Main extends AppCompatActivity {
 
                 } else {
 
-                    Log.i(Config.TAG, "PERMISSION_DENIED - location");
+                    //Log.i(Config.TAG, "PERMISSION_DENIED - location");
                     mainController.getManagerLocation().setLocation(true);
 
                 }

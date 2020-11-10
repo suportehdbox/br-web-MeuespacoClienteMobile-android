@@ -540,7 +540,7 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                             startFingerPrints();
                         }
                     } else {
-                        Log.i(Config.TAG, "Fingerprints not present");
+                        //Log.i(Config.TAG, "Fingerprints not present");
                     }
 
                 }
@@ -618,9 +618,9 @@ public class Login extends BaseActionBar implements View.OnClickListener {
             loginController.disableFingerprints(Login.this);
             loginController.getLoginRedesSociais(this, email, id, false);
 
-            Log.i(Config.TAG, "Google ok: " + name + " - " + email + " - " + id);
+            //Log.i(Config.TAG, "Google ok: " + name + " - " + email + " - " + id);
         } else {
-            Log.i(Config.TAG, "Google Error");
+            //Log.i(Config.TAG, "Google Error");
             Toast toast = Toast.makeText(this, getString(R.string.google_sign_error), Toast.LENGTH_SHORT);
             toast.show();
         }

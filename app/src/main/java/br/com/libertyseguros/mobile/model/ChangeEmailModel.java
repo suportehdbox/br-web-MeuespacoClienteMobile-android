@@ -140,7 +140,7 @@ public class ChangeEmailModel extends BaseModel{
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "ChangeEmail: " + result);
+                //Log.i(Config.TAG, "ChangeEmail: " + result);
 
                 try {
 

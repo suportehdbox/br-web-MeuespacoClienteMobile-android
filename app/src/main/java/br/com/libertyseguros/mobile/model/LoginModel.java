@@ -523,7 +523,7 @@ public class LoginModel extends BaseModel {
             @Override
             public void onSucess(String result) {
                 if(!BuildConfig.prod) {
-                    Log.i(Config.TAG, "LoginModel: " + result);
+                    //Log.i(Config.TAG, "LoginModel: " + result);
                 }
 
 

@@ -438,7 +438,7 @@ public class Documents extends BaseActionBar implements View.OnClickListener {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i(Config.TAG, "onActivityResult");
+        //Log.i(Config.TAG, "onActivityResult");
 
         if (!skipOnActivity) {
             if (requestCode == 1 && resultCode == RESULT_OK) {

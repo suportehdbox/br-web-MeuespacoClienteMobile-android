@@ -95,7 +95,7 @@ public class DocumentsAdapter extends BaseAdapter {
         rlContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("teste", "teste1");
+                //Log.i("teste", "teste1");
                 if(documentsData.get(Integer.parseInt(v.getTag().toString())).getPath() == null){
                     documentPicturesController.openDocumentView(context,
                             documentsData.get(Integer.parseInt(v.getTag().toString())).getIdDocumento(), false);

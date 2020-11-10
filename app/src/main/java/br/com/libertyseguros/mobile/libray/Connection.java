@@ -149,8 +149,8 @@ public class Connection {
                     }
 
                     if (!BuildConfig.prod) {
-                        Log.i(Config.TAG, "Connecion URL: " + url.toString());
-                        Log.i(Config.TAG, "Connecion PARAM: " + urlParameters);
+                        //Log.i(Config.TAG, "Connecion URL: " + url.toString());
+                        //Log.i(Config.TAG, "Connecion PARAM: " + urlParameters);
                     }
 
                     if (type == 1) {
@@ -229,7 +229,7 @@ public class Connection {
                             }
 
                             if (!BuildConfig.prod) {
-                                Log.i(Config.TAG, "Response: " + response.toString());
+                                //Log.i(Config.TAG, "Response: " + response.toString());
                             }
                             serverReturn = response.toString();
 
@@ -373,7 +373,7 @@ public class Connection {
                     }
 
                     if (!BuildConfig.prod) {
-                        Log.i(Config.TAG, "Response: " + response.toString());
+                        //Log.i(Config.TAG, "Response: " + response.toString());
                     }
 
                     rd.close();

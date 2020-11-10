@@ -340,7 +340,7 @@ public class HomeOn extends Fragment implements View.OnClickListener, Navigation
                                         try{
                                             vision360CardView.setVisibility(View.INVISIBLE);
                                         }catch (Exception ex){
-                                            Log.i(Config.TAG, ex.toString());
+                                            //Log.i(Config.TAG, ex.toString());
                                         }
                                     }
 
@@ -364,7 +364,7 @@ public class HomeOn extends Fragment implements View.OnClickListener, Navigation
                                                 });
                                             }
                                         }catch (Exception ex){
-                                            Log.i(Config.TAG, ex.toString());
+                                            //Log.i(Config.TAG, ex.toString());
                                         }
                                     }
                                 });
@@ -385,7 +385,7 @@ public class HomeOn extends Fragment implements View.OnClickListener, Navigation
                                                     startFingerPrints();
                                                 }
                                             } else {
-                                                Log.i(Config.TAG, "Fingerprints not present");
+                                                //Log.i(Config.TAG, "Fingerprints not present");
                                             }
 
 
@@ -597,7 +597,7 @@ public class HomeOn extends Fragment implements View.OnClickListener, Navigation
             ivLetter.setImageDrawable(drawable1);
 
         }catch (Exception ex){
-            Log.i(Config.TAG, ex.toString());
+            //Log.i(Config.TAG, ex.toString());
         }
 
 

@@ -157,7 +157,7 @@ public class ChangePasswordModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "ChangePassword: " + result);
+                //Log.i(Config.TAG, "ChangePassword: " + result);
 
                 try {
 

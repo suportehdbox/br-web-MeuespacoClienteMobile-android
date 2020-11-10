@@ -257,7 +257,7 @@ public class RegisterModel extends BaseModel{
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "RegisterModel: " + result);
+                //Log.i(Config.TAG, "RegisterModel: " + result);
 
                 try {
 
@@ -713,7 +713,7 @@ I/LibertySeguros: RegisterModel: {"message":"An error has occurred.","exceptionM
             sb.append(AB.charAt(rnd.nextInt(AB.length())));
 
         sb.append(numbers.charAt(rnd.nextInt(numbers.length())));
-        Log.v(Config.TAG, sb.toString());
+        //Log.v((Config.TAG, sb.toString());
 
         return sb.toString();
 

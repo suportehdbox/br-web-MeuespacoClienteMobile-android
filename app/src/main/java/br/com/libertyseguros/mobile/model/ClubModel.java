@@ -126,7 +126,7 @@ public class ClubModel extends BaseModel{
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "ClubModel: " + result);
+                //Log.i(Config.TAG, "ClubModel: " + result);
 
                 try {
                     clubBeans = gson.fromJson(result, ClubBeans.class);

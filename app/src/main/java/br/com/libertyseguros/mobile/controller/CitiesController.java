@@ -31,7 +31,7 @@ public class CitiesController {
             listener = new ListCitiesAdapter.ListViewClickListener() {
                 @Override
                 public void onItemClicked(CitiesBeans city) {
-                    Log.v("LibertySeguros", city.getCity());
+                    //Log.v(("LibertySeguros", city.getCity());
                     cityModel.updateCitySelectedAndFinish(city);
                 }
             };

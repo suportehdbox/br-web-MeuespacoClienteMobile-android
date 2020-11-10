@@ -217,7 +217,7 @@ public class PolicyModelV2 {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "PolicyModel: " + result);
+                //Log.i(Config.TAG, "PolicyModel: " + result);
 
                 try {
 

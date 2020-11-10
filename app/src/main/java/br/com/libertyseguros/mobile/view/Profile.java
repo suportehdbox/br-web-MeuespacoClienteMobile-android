@@ -256,7 +256,7 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
                     public void onSuccess(LoginResult loginResult) {
                         showLoading(true);
 
-                        Log.i(Config.TAG, "success set Register facebook");
+                        //Log.i(Config.TAG, "success set Register facebook");
 
                         //loginController.setIdFacebook(loginResult.getAccessToken().getUserId() + "");
                         GraphRequest request = GraphRequest.newMeRequest(
@@ -292,7 +292,7 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
                     @Override
                     public void onError(FacebookException exception) {
                         // App code
-                        Log.i(Config.TAG, exception.toString());
+                        //Log.i(Config.TAG, exception.toString());
 
                     }
                 });
@@ -348,11 +348,11 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i(Config.TAG, "onActivityResult");
+        //Log.i(Config.TAG, "onActivityResult");
         Uri uriImage = null;
         String path = "";
         if (requestCode == 1 && resultCode == RESULT_OK) {
-            Log.i(Config.TAG, "OK Camera");
+            //Log.i(Config.TAG, "OK Camera");
 
             if (data != null) {
                 uriImage = data.getData();
@@ -422,9 +422,9 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
             String id = account.getId();
             photoGoole = photo;
             setRegister(id, false);
-            Log.i(Config.TAG, "Google ok: " + name + " - " + email + " - " + id);
+            //Log.i(Config.TAG, "Google ok: " + name + " - " + email + " - " + id);
         } else {
-            Log.i(Config.TAG, "Google Error");
+            //Log.i(Config.TAG, "Google Error");
             Toast toast = Toast.makeText(this, getString(R.string.google_sign_error), Toast.LENGTH_SHORT);
             toast.show();
         }
@@ -545,7 +545,7 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
         this.idFacebook = idFacebook;
         verified = false;
 
-        Log.i(Config.TAG, "Start set Register");
+        //Log.i(Config.TAG, "Start set Register");
 
         registerController = new RegisterController(new OnConnectionResult() {
             @Override
@@ -558,7 +558,7 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
                             try {
 
                                 showLoading(false);
-                                Log.i(Config.TAG, "error set Register");
+                                //Log.i(Config.TAG, "error set Register");
                                 LoginManager.getInstance().logOut();
                                 if (verified) {
                                     RegisterBeans message = registerController.getRegisterMessage();
@@ -603,7 +603,7 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Log.i(Config.TAG, "success set Register");
+                                //Log.i(Config.TAG, "success set Register");
                                 LoginManager.getInstance().logOut();
 
                                 showLoading(false);

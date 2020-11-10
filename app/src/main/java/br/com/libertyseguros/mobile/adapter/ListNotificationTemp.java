@@ -54,7 +54,7 @@ public class ListNotificationTemp extends BaseAdapter {
 
 
 
-        Log.i("teste", "teste: " + getHtml("teste"));
+        //Log.i("teste", "teste: " + getHtml("teste"));
 
         return vi;
     }

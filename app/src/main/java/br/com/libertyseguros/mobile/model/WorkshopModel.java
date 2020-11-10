@@ -98,7 +98,7 @@ public class WorkshopModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "WorkshopModel: " + result);
+                //Log.i(Config.TAG, "WorkshopModel: " + result);
 
                 Gson gson = new Gson();
 

@@ -69,7 +69,7 @@ public class ManagerFile {
         try {
             ip = assetManager.open(name);
         } catch (Exception e) {
-            Log.e(Config.TAG, e.getMessage());
+            //Log.e(Config.TAG, e.getMessage());
         }
 
         if (ip != null) {
@@ -106,13 +106,13 @@ public class ManagerFile {
                 .setStatusListener(new DownloadStatusListenerV1() {
                     @Override
                     public void onDownloadComplete(DownloadRequest downloadRequest) {
-                        Log.i(Config.TAG, "Download OK : " + downloadRequest.getDownloadId());
+                        //Log.i(Config.TAG, "Download OK : " + downloadRequest.getDownloadId());
                         onDownloadFile.onFinish(downloadRequest.getDownloadId(), true, getNameFile(downloadRequest.getDestinationURI().toString()));
                     }
 
                     @Override
                     public void onDownloadFailed(DownloadRequest downloadRequest, int i, String s) {
-                        Log.i(Config.TAG, "Download Error : " + downloadRequest.getDownloadId() + " - ");
+                        //Log.i(Config.TAG, "Download Error : " + downloadRequest.getDownloadId() + " - ");
                         onDownloadFile.onFinish(downloadRequest.getDownloadId(), false,  getNameFile(downloadRequest.getDestinationURI().toString()));
                         downloadRequest.getDestinationURI();
                     }
@@ -124,7 +124,7 @@ public class ManagerFile {
 
         idDownload  = downloadManager.add(downloadRequest);
 
-        Log.i(Config.TAG, "Id download: " + idDownload + " name file: " + name + " " + " url: " + url);
+        //Log.i(Config.TAG, "Id download: " + idDownload + " name file: " + name + " " + " url: " + url);
 
         return idDownload;
     }
@@ -151,7 +151,7 @@ public class ManagerFile {
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), path);
         if (!file.exists()) {
             if (!file.mkdirs()) {
-                Log.i(Config.TAG, "Problem creating Image folder: " + path);
+                //Log.i(Config.TAG, "Problem creating Image folder: " + path);
                 ret = false;
             }
         }
@@ -184,7 +184,7 @@ public class ManagerFile {
             name = nameSplit[nameSplit.length - 1];
 
         } catch(Exception ex){
-            Log.i(Config.TAG, "Erro ao montar nome do pdf");
+            //Log.i(Config.TAG, "Erro ao montar nome do pdf");
         }
 
         return name;

@@ -62,7 +62,7 @@ public class MyGcmListenerService extends GcmListenerService {
 
 
         for (String key : data.keySet()) {
-            Log.v(TAG, key + " = \"" + data.get(key) + "\"");
+            //Log.v((TAG, key + " = \"" + data.get(key) + "\"");
         }
         String message = "";
         if (data.getBundle("notification") != null) {
@@ -79,8 +79,8 @@ public class MyGcmListenerService extends GcmListenerService {
             ex.printStackTrace();
         }
 
-        Log.d(TAG, "From: " + from);
-        Log.d(TAG, "Message: " + message);
+        //Log.d(TAG, "From: " + from);
+        //Log.d(TAG, "Message: " + message);
 
         if (from.startsWith("/topics/")) {
             // message received from some topic.

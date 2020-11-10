@@ -79,7 +79,7 @@ public class ListVehicleAccidentStatusModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "ListVehicleAccidentStatusModel: " + result);
+                //Log.i(Config.TAG, "ListVehicleAccidentStatusModel: " + result);
 
 
                 //result = "{\"claims\":[{\"date\":\"2016-01-01T02:00:00Z\",\"number\":1619414,\"policy\":\"3116516480\",\"status\":\"100\",\"type\":10},{\"date\":\"2016-01-01T02:00:00Z\",\"number\":1621478,\"policy\":\"3116516487\",\"status\":\"20\",\"type\":10},{\"date\":\"2016-05-30T03:00:00Z\",\"number\":1622564,\"policy\":\"3116517374\",\"status\":\"20\",\"type\":10},{\"date\":\"2016-07-30T03:00:00Z\",\"number\":1624087,\"policy\":\"3116519898\",\"status\":\"10\",\"type\":10}],\"sucesso\":true,\"message\":\"\",\"rowsAffected\":0}";

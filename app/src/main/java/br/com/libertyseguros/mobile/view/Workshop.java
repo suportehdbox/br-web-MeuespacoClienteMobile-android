@@ -313,7 +313,7 @@ public class Workshop extends BaseActionBar implements View.OnClickListener {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Log.i(Config.TAG, "PERMISSION_GRANTED - location");
+                    //Log.i(Config.TAG, "PERMISSION_GRANTED - location");
 
                     if (!workshopController.getManagerLocation().isLocationDisable()) {
                         workshopController.getManagerLocation().setLocation(true);
@@ -324,7 +324,7 @@ public class Workshop extends BaseActionBar implements View.OnClickListener {
                         workshopController.getManagerLocation().getOnLocationDialog().click(true);
                     }
                 } else {
-                    Log.i(Config.TAG, "PERMISSION_DENIED - location");
+                    //Log.i(Config.TAG, "PERMISSION_DENIED - location");
                     workshopController.getManagerLocation().setLocation(true);
                     workshopController.OpenWorkshopOff(this, false, 0);
 

@@ -86,20 +86,20 @@ public class ListPolicy extends BaseActionBar{
         lvPolicy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i(Config.TAG, "documents 1");
+                //Log.i(Config.TAG, "documents 1");
 
                 if(policyController.isVehicleAccident()){
                     policyController.openVehicleAccident(ListPolicy.this, position);
-                    Log.i(Config.TAG, "documents a");
+                    //Log.i(Config.TAG, "documents a");
 
                 } else if (policyController.isDocument()) {
-                    Log.i(Config.TAG, "documents b");
+                    //Log.i(Config.TAG, "documents b");
                     policyController.openDocuments(ListPolicy.this, position);
                 }else {
 
                     policyController.openDetail(ListPolicy.this, position, false);
 
-                    Log.i(Config.TAG, "documents c");
+                    //Log.i(Config.TAG, "documents c");
 
                 }
             }

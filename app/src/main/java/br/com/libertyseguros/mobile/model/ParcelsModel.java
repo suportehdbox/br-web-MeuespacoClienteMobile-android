@@ -172,7 +172,7 @@ public class ParcelsModel extends BaseModel{
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "ParcelModel: " + result);
+                //Log.i(Config.TAG, "ParcelModel: " + result);
 
                 if(typeConnection == 1){
                     try {

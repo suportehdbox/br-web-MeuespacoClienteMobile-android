@@ -60,7 +60,7 @@ public class RegistrationIntentService extends IntentService {
             String token = instanceID.getToken(getString(R.string.gcm_defaultSenderId),
                     GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
             // [END get_token]
-            Log.i(Config.TAG, "GCM Registration Token: " + token);
+            //Log.i(Config.TAG, "GCM Registration Token: " + token);
 
             LoadFile lf = new LoadFile();
             lf.savePref(Config.TAGGCM,token, Config.TAG,  getApplicationContext());
@@ -69,7 +69,7 @@ public class RegistrationIntentService extends IntentService {
             sharedPreferences.edit().putString("GCM",token).apply();
 
         } catch (Exception e) {
-            Log.d(TAG, "Failed to complete token refresh", e);
+            //Log.d(TAG, "Failed to complete token refresh", e);
                sharedPreferences.edit().putBoolean(QuickstartPreferences.SENT_TOKEN_TO_SERVER, false).apply();
         }
         // Notify UI that registration has completed, so the progress indicator can be hidden.

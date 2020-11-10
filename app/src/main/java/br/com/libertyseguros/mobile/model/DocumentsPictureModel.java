@@ -125,7 +125,7 @@ public class DocumentsPictureModel extends BaseModel {
             @Override
             public void onError(String msg) {
                 try {
-                    Log.i(Config.TAG, "Error get document");
+                    //Log.i(Config.TAG, "Error get document");
                     onConnectionResult.onError();
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -135,7 +135,7 @@ public class DocumentsPictureModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "Documents: " + result);
+                //Log.i(Config.TAG, "Documents: " + result);
 
                 try {
                     if (result.contains("idDocumento")) {
@@ -210,7 +210,7 @@ public class DocumentsPictureModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "Delete: " + result);
+                //Log.i(Config.TAG, "Delete: " + result);
 
                 try {
                     dim.deleteImageDocuments(idsDeleted, extension);
@@ -259,7 +259,7 @@ public class DocumentsPictureModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "Documents: " + result);
+                //Log.i(Config.TAG, "Documents: " + result);
 
                 try {
                     if (result.contains("conteudo")) {
@@ -353,7 +353,7 @@ public class DocumentsPictureModel extends BaseModel {
 
                 mCurrentPhotoPath = "file:" + photoFile.getAbsolutePath();
             } catch (Exception ex) {
-                Log.v(Config.TAG, "Error image = " + ex.toString());
+                //Log.v((Config.TAG, "Error image = " + ex.toString());
             }
             if (photoFile != null) {
                 outPutfileUri = Uri.fromFile(photoFile);
@@ -465,17 +465,17 @@ public class DocumentsPictureModel extends BaseModel {
 
             if (sizeFile <= Config.fileSizeAllowed) {
                 ok = true;
-                Log.i(Config.TAG, "File Size Allowed ok: " + fileSize.length());
+                //Log.i(Config.TAG, "File Size Allowed ok: " + fileSize.length());
             } else {
                 ok = false;
-                Log.i(Config.TAG, "File Size Allowed not ok: " + fileSize.length());
+                //Log.i(Config.TAG, "File Size Allowed not ok: " + fileSize.length());
             }
 
-            Log.i(Config.TAG, "File Size: " + sizeFile);
+            //Log.i(Config.TAG, "File Size: " + sizeFile);
 
         } catch (Exception ex) {
             ex.printStackTrace();
-            Log.i(Config.TAG, "File Size Allowed error");
+            //Log.i(Config.TAG, "File Size Allowed error");
             ok = false;
         }
 
@@ -711,11 +711,11 @@ public class DocumentsPictureModel extends BaseModel {
         } catch (Exception ex) {
             ex.printStackTrace();
             onConnectionResult.onError();
-            Log.i(Config.TAG, "Error create upload file");
+            //Log.i(Config.TAG, "Error create upload file");
         } catch (OutOfMemoryError e) {
             e.printStackTrace();
             onConnectionResult.onError();
-            Log.i(Config.TAG, "Error create upload file outofMemory ");
+            //Log.i(Config.TAG, "Error create upload file outofMemory ");
         }
 
 
@@ -767,7 +767,7 @@ public class DocumentsPictureModel extends BaseModel {
             @Override
             public void onError(String msg) {
                 try {
-                    Log.i(Config.TAG, "Error upload connection");
+                    //Log.i(Config.TAG, "Error upload connection");
                     onConnectionResult.onError();
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -777,7 +777,7 @@ public class DocumentsPictureModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "Upload: " + result);
+                //Log.i(Config.TAG, "Upload: " + result);
 
                 try {
                     if (result.contains("idDocumento")) {

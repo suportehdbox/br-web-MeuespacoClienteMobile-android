@@ -164,6 +164,8 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    implementation 'com.scottyab:rootbeer-lib:0.0.8' // Detect root
+
 }
 
 apply plugin: 'com.google.gms.google-services'

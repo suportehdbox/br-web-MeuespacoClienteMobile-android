@@ -98,7 +98,7 @@ public class ListVision360Model {
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "ListVehicleAccidentModel: " + result);
+                //Log.i(Config.TAG, "ListVehicleAccidentModel: " + result);
 
                 try {
 

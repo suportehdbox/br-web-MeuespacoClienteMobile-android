@@ -100,7 +100,7 @@ public class NotificationModel extends BaseModel{
 
             @Override
             public void onSucess(String result) {
-                Log.i(Config.TAG, "NotificationModel: " + result);
+                //Log.i(Config.TAG, "NotificationModel: " + result);
 
                 try {
                     if(!result.contains("message")){

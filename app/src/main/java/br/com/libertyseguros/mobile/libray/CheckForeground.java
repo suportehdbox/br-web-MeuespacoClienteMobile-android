@@ -30,7 +30,7 @@ public class CheckForeground {
 				appFound = true;
 			}
 		}
-		Log.v(Config.TAG, "App in Foreground? "+appFound);
+		//Log.v((Config.TAG, "App in Foreground? "+appFound);
 		return appFound;
 	}
 
@@ -49,7 +49,7 @@ public class CheckForeground {
 				}
 			}
 		}
-		Log.v(Config.TAG, "App in Foreground? "+appOpen);
+		//Log.v((Config.TAG, "App in Foreground? "+appOpen);
 		return appOpen;
 	}
 

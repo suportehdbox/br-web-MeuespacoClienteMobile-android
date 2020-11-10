@@ -26,9 +26,9 @@ public class DownloadImageUser {
                 onFinishDownload.onFinish();
 
                 if (success){
-                    Log.i(Config.TAG, "Download Image user");
+                    //Log.i(Config.TAG, "Download Image user");
                 } else {
-                    Log.i(Config.TAG, "Error Download Image user");
+                    //Log.i(Config.TAG, "Error Download Image user");
 
                 }
 
@@ -42,7 +42,7 @@ public class DownloadImageUser {
             managerFile.download(namemImage, url, onDownloadFile, context);
         } else {
 
-            Log.i(Config.TAG, "Image User found");
+            //Log.i(Config.TAG, "Image User found");
             onFinishDownload.onFinish();
         }
 
