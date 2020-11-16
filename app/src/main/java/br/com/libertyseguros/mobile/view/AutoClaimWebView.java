@@ -19,6 +19,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -90,7 +91,9 @@ public class AutoClaimWebView extends BaseActionBar {
             wvClub.setWebViewClient(new MyWebClient());
             wvClub.setWebChromeClient(new MyWebViewClient());
             wvClub.getSettings().setJavaScriptEnabled(true);
-
+            wvClub.getSettings().setAllowFileAccess(true);
+            wvClub.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            wvClub.getSettings().setDomStorageEnabled(true);
             wvClub.loadUrl(controller.getWebViewUrl(this));
         }
 

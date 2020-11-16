@@ -62,8 +62,8 @@ android {
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 448
-            versionName "4.2.3 ACT"
+            versionCode 451
+            versionName "4.2.4 ACT"
             multiDexEnabled true
             isDefault.set(true)
             signingConfig signingConfigs.config
