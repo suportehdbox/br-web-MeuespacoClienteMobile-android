@@ -170,7 +170,7 @@ public class AutoClaimWebView extends BaseActionBar {
                 startActivity(Intent.createChooser(sharingIntent, getResources().getString(R.string.share_title)));
                 // Here we can open new activity
                 return true;
-            } else if (url.contains("quit")) {
+            } else if (url.contains("quit") || url.contains("#home")) {
                 finish();
             }
             view.loadUrl(url);
