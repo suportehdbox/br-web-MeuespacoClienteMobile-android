@@ -65,7 +65,7 @@ android {
             versionCode 454
             versionName "4.2.4 ACT"
             multiDexEnabled true
-            isDefault.set(true)
+            isDefault.set(false)
             signingConfig signingConfigs.config
 
         }
@@ -75,10 +75,10 @@ android {
             buildConfigField "String", "databasename", "\"aliro2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 447
-            versionName "4.2.3 ACT"
+            versionCode 454
+            versionName "4.2.4 ACT"
             multiDexEnabled true
-            isDefault.set(false)
+            isDefault.set(true)
             signingConfig signingConfigs.config
         }
     }
