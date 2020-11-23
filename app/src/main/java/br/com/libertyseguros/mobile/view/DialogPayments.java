@@ -22,6 +22,7 @@ import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.InstallmentsBeans;
 import br.com.libertyseguros.mobile.beans.PaymentPriceBeans;
 import br.com.libertyseguros.mobile.beans.PolicyBeansV2;
+import br.com.libertyseguros.mobile.libray.Security;
 import br.com.libertyseguros.mobile.model.OnPaymentPriceListener;
 import br.com.libertyseguros.mobile.model.PaymentModel;
 import br.com.libertyseguros.mobile.model.PolicyModelV2;
@@ -65,7 +66,11 @@ public class DialogPayments extends Dialog {
         if(currentInsurance == null){
             return;
         }
-
+        Security security = new Security();
+        if (security.isRootedDevice(context)){
+            dismiss();
+            return;
+        }
         title_view = (TextView) findViewById(R.id.tv_title);
         title_view.setText(R.string.TituloPagarParcela);
         payment_title1 = (TextView) findViewById(R.id.txt_payment1);
@@ -321,6 +326,8 @@ public class DialogPayments extends Dialog {
 
     @Override
     public void show() {
+        Security security = new Security();
+
         if(currentInsurance == null){
 
             activity.runOnUiThread(new Runnable() {
@@ -330,6 +337,8 @@ public class DialogPayments extends Dialog {
                 }
             });
             //do nothing
+        }else if (security.isRootedDevice(activity)) {
+            Toast.makeText(activity, activity.getString(R.string.dispositivo_rooted), Toast.LENGTH_LONG).show();
         }else {
             super.show();
         }

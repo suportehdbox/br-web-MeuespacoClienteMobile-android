@@ -6,18 +6,17 @@ import com.scottyab.rootbeer.RootBeer
 
 class Security {
 
-     fun isDeviceCompliance(context: Context): Boolean {
-        if(isEmulatorDevice()){
+    fun isDeviceCompliance(context: Context): Boolean {
+        if (isEmulatorDevice()) {
             return false
         }
-
-        val rootBeer = RootBeer(context)
-        if (rootBeer.isRooted()) {
-            //we found indication of root
-            return false
-        }
-
         return true
+    }
+
+    fun isRootedDevice (context: Context) :Boolean
+    {
+        val rootBeer = RootBeer(context)
+        return rootBeer.isRooted()
     }
 
 
@@ -50,14 +49,14 @@ class Security {
 
         if (Build.HOST.contains("android-test", true)) {
 
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 if (Build.SUPPORTED_ABIS.toList().any { it.equals("armeabi", true) } &&
                         Build.SUPPORTED_ABIS.toList().any { it.equals("unknown", true) }) {
                     return true
                 }
-            }else{
-                if(Build.CPU_ABI.equals("armeabi", true) &&
-                        Build.CPU_ABI.equals("unknown", true) ){
+            } else {
+                if (Build.CPU_ABI.equals("armeabi", true) &&
+                        Build.CPU_ABI.equals("unknown", true)) {
                     return true
                 }
             }
