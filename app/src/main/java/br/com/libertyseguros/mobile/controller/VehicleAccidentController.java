@@ -454,7 +454,12 @@ public class VehicleAccidentController {
         }
 
 
-        url += "?plate=" + plate + "&document=" + getLoginBeans(context).getCpfCnpj() +
+        String cpf = getLoginBeans(context).getCpfCnpj();
+        if(cpf == null || cpf.isEmpty()){
+            cpf = VehicleAccidentModel.cpfCnpj;
+        }
+
+        url += "?plate=" + plate + "&document=" + cpf +
                 "&issuingAgency=" + VehicleAccidentModel.vasb.getIssuingAgency() +
                 "&itemCode=" + VehicleAccidentModel.vasb.getItemCode() +
                 "&brandMarketing=" + BuildConfig.brandMarketing;
