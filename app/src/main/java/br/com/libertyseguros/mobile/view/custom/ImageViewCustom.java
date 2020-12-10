@@ -29,7 +29,7 @@ public class ImageViewCustom extends com.inthecheesefactory.thecheeselibrary.wid
 
         this.context = (Activity) context;
         // TODO Auto-generated constructor stub
-
+        this.setFilterTouchesWhenObscured(true);
 
     }
 

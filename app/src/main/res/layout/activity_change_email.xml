@@ -100,9 +100,10 @@
                     android:id="@+id/bt_next"
                     style="@style/ButtonDefault"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/bt_background_small"
+                    android:filterTouchesWhenObscured="true"
                     android:text="@string/button_next"
-                    android:textColor="@color/color_button_default_app"
-                    android:background="@drawable/bt_background_small"/>
+                    android:textColor="@color/color_button_default_app" />
 
             </LinearLayout>
 

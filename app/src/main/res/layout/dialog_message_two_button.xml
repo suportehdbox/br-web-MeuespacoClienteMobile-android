@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -8,7 +9,6 @@
     android:background="#40000000">
 
     <androidx.cardview.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_default_2"
@@ -47,21 +47,23 @@
                     android:id="@+id/tv_try_again"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/font_default_2"
-                    android:textColor="@color/text_default_3"
                     android:layout_marginLeft="@dimen/margin_default_2"
                     android:layout_marginRight="@dimen/margin_default_6"
-                    android:text="@string/bt_try_again"/>
+                    android:filterTouchesWhenObscured="true"
+                    android:text="@string/bt_try_again"
+                    android:textColor="@color/text_default_3"
+                    android:textSize="@dimen/font_default_2" />
 
                 <TextView
                     android:id="@+id/tv_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/font_default_2"
-                    android:textColor="@color/text_default_3"
                     android:layout_marginLeft="@dimen/margin_default_2"
                     android:layout_marginRight="@dimen/margin_default_4"
-                    android:text="@string/bt_cancel"/>
+                    android:filterTouchesWhenObscured="true"
+                    android:text="@string/bt_cancel"
+                    android:textColor="@color/text_default_3"
+                    android:textSize="@dimen/font_default_2" />
 
             </LinearLayout>
 

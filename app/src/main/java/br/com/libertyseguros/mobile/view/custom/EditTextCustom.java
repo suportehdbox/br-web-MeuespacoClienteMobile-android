@@ -63,6 +63,7 @@ public class EditTextCustom {
         });
 
         etContent = (TextInputEditText) view.findViewById(R.id.et_custom);
+        etContent.setFilterTouchesWhenObscured(true);
 
         textInputLayout  = (TextInputLayout) view.findViewById(R.id.user_text_input_layout);
 

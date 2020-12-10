@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
         android:layout_height="match_parent">
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_app"
@@ -26,37 +25,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:orientation="horizontal"
                 android:weightSum="1">
+
                 <TextView
                     android:id="@+id/tv_titleItem"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/font_default_2"
-                    android:textColor="@color/text_default_6"
                     android:layout_margin="@dimen/margin_default_2"
+                    android:layout_weight="0.75"
+                    android:filterTouchesWhenObscured="true"
                     android:text="@string/payment"
-                    android:layout_weight="0.75"/>
+                    android:textColor="@color/text_default_6"
+                    android:textSize="@dimen/font_default_2" />
 
                 <LinearLayout
                     android:id="@+id/ll_OtherItens"
-                    android:layout_weight="0.25"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent" android:orientation="horizontal" android:gravity="right|center_vertical" android:layout_marginRight="@dimen/margin_default_2">
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/margin_default_2"
+                    android:layout_weight="0.25"
+                    android:filterTouchesWhenObscured="true"
+                    android:gravity="right|center_vertical"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textSize="@dimen/font_default"
-                        android:textColor="@color/text_default_6"
-                        android:textAlignment="center"
                         android:gravity="center_vertical"
+                        android:text="@string/other_item"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_default_6"
 
-                        android:text="@string/other_item"/>
+                        android:textSize="@dimen/font_default" />
 
                     <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:adjustViewBounds="true"
                         android:layout_gravity="center_vertical"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/arrow_list" />
                 </LinearLayout>
             </LinearLayout>

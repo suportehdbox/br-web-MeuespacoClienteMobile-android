@@ -54,9 +54,10 @@
                 android:id="@+id/bt_ok"
                 style="@style/ButtonDefault"
                 android:layout_width="wrap_content"
+                android:background="@drawable/bt_background_app"
+                android:filterTouchesWhenObscured="true"
                 android:text="@string/button_ok_understand"
-                android:textColor="@color/color_button_default_app"
-                android:background="@drawable/bt_background_app"/>
+                android:textColor="@color/color_button_default_app" />
 
 
             <CheckBox
@@ -64,10 +65,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_default_4"
-                android:layout_marginRight="@dimen/margin_default_4"
                 android:layout_marginTop="@dimen/margin_default_4"
+                android:layout_marginRight="@dimen/margin_default_4"
                 android:layout_marginBottom="@dimen/margin_default_4"
-                android:text="@string/free_navigation_check"/>
+                android:filterTouchesWhenObscured="true"
+                android:text="@string/free_navigation_check" />
 
         </LinearLayout>
 

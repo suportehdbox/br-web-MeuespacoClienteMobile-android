@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#40000000"
     android:gravity="center"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_default_2"
@@ -39,6 +40,7 @@
                 style="@style/ButtonDefault"
                 android:layout_width="wrap_content"
                 android:background="@drawable/bt_background_app"
+                android:filterTouchesWhenObscured="true"
                 android:text="@string/button_share"
                 android:textColor="@color/color_button_default_app" />
 
@@ -47,6 +49,7 @@
                 style="@style/ButtonDefault"
                 android:layout_width="wrap_content"
                 android:background="@drawable/bt_background_app_second"
+                android:filterTouchesWhenObscured="true"
                 android:text="@string/button_download"
                 android:textColor="@color/color_button_default_app_second" />
 

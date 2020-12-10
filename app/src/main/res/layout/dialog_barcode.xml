@@ -72,17 +72,19 @@
             android:id="@+id/bt_copy_cod"
             style="@style/ButtonDefault"
             android:layout_width="wrap_content"
+            android:background="@drawable/bt_background_app"
+            android:filterTouchesWhenObscured="true"
             android:text="@string/button_copy_bar_cod"
-            android:textColor="@color/color_button_default_app"
-            android:background="@drawable/bt_background_app"/>
+            android:textColor="@color/color_button_default_app" />
 
         <Button
             android:id="@+id/bt_site_santander"
             style="@style/ButtonDefault"
             android:layout_width="wrap_content"
+            android:background="@drawable/bt_background_app_second"
+            android:filterTouchesWhenObscured="true"
             android:text="@string/button_register"
-            android:textColor="@color/color_button_default_app_second"
-            android:background="@drawable/bt_background_app_second"/>
+            android:textColor="@color/color_button_default_app_second" />
 
         <LinearLayout
             android:id="@+id/ll_instructions_full"
@@ -95,6 +97,7 @@
                 android:id="@+id/tv_instructions_full"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:filterTouchesWhenObscured="true"
                 android:text="@string/instrucao_completa"
                 android:textColor="@color/text_default_6"
                 android:textSize="@dimen/font_default_2" />

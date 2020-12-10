@@ -1,10 +1,11 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:id="@+id/mapFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -82,7 +83,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -97,6 +98,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_default_2"
+                        android:filterTouchesWhenObscured="true"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -104,6 +106,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -129,8 +132,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:background="@color/line_default_1" />
 
 
@@ -139,6 +142,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -162,8 +166,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:background="@color/line_default_1" />
 
 
@@ -172,6 +176,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal"
                             android:visibility="gone">
@@ -199,6 +204,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -222,8 +228,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:background="@color/line_default_1" />
 
 
@@ -232,6 +238,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -255,8 +262,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:background="@color/line_default_1" />
 
 
@@ -265,6 +272,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -289,8 +297,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:background="@color/line_default_1" />
 
                         <LinearLayout
@@ -298,6 +306,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -322,8 +331,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:layout_marginBottom="@dimen/margin_default_2"
                             android:background="@color/line_default_1" />
 
                         <LinearLayout
@@ -331,6 +340,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_default_2"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -353,8 +363,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
-                                android:layout_marginBottom="@dimen/margin_default_2"
                                 android:layout_marginTop="@dimen/margin_default_2"
+                                android:layout_marginBottom="@dimen/margin_default_2"
                                 android:background="@color/line_default_1"
                                 android:visibility="invisible" />
 
@@ -373,28 +383,30 @@
                     android:orientation="vertical">
 
 
-                    <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
+                    <com.facebook.login.widget.LoginButton
                         android:id="@+id/login_button"
                         android:layout_width="match_parent"
-                        android:text=""
                         android:layout_height="60dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="@dimen/margin_default_2"
                         android:layout_marginLeft="@dimen/margin_default_4"
-                        android:layout_marginRight="@dimen/margin_default_4"
                         android:layout_marginTop="@dimen/margin_default_2"
-                        android:paddingBottom="@dimen/margin_default_3"
+                        android:layout_marginRight="@dimen/margin_default_4"
+                        android:layout_marginBottom="@dimen/margin_default_2"
+                        android:filterTouchesWhenObscured="true"
                         android:paddingTop="@dimen/margin_default_3"
-                        facebook:com_facebook_login_text="@string/facebook_button_profile" />
+                        android:paddingBottom="@dimen/margin_default_3"
+                        android:text=""
+                        app:com_facebook_login_text="@string/facebook_button_profile" />
 
                     <com.google.android.gms.common.SignInButton
                         android:id="@+id/login_google"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="@dimen/margin_default_2"
                         android:layout_marginLeft="@dimen/margin_default_4"
                         android:layout_marginRight="@dimen/margin_default_4"
+                        android:layout_marginBottom="@dimen/margin_default_2"
+                        android:filterTouchesWhenObscured="true"
                         android:text="@string/google_button_profile" />
 
                 </LinearLayout>

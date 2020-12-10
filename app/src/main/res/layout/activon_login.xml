@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_app"
@@ -14,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -35,16 +36,17 @@
                         android:src="@drawable/logo_login" />
 
 
-                    <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
+                    <com.facebook.login.widget.LoginButton
                         android:id="@+id/login_button"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="@dimen/margin_default_4"
-                        android:layout_marginRight="@dimen/margin_default_4"
                         android:layout_marginTop="@dimen/margin_default_4"
-                        android:paddingBottom="@dimen/margin_default_3"
+                        android:layout_marginRight="@dimen/margin_default_4"
+                        android:filterTouchesWhenObscured="true"
                         android:paddingTop="@dimen/margin_default_3"
+                        android:paddingBottom="@dimen/margin_default_3"
                         android:text=""
                         facebook:com_facebook_login_text="@string/facebook_button" />
 
@@ -53,11 +55,12 @@
                         android:id="@+id/login_google"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="@dimen/margin_default_4"
-                        android:layout_marginRight="@dimen/margin_default_4"
                         android:layout_marginTop="@dimen/margin_default_4"
-                        android:paddingBottom="@dimen/margin_default_3"
-                        android:layout_gravity="center_horizontal"/>
+                        android:layout_marginRight="@dimen/margin_default_4"
+                        android:filterTouchesWhenObscured="true"
+                        android:paddingBottom="@dimen/margin_default_3" />
 
                     <TextView
                         android:id="@+id/tv_message"

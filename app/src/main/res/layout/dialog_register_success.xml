@@ -39,9 +39,10 @@
         android:id="@+id/bt_ok_success"
         style="@style/ButtonDefault"
         android:layout_width="wrap_content"
+        android:background="@drawable/bt_background_app"
+        android:filterTouchesWhenObscured="true"
         android:text="@string/button_ok_understand"
-        android:textColor="@color/color_button_default_app"
-        android:background="@drawable/bt_background_app"/>
+        android:textColor="@color/color_button_default_app" />
 
     <LinearLayout
         android:layout_width="match_parent"

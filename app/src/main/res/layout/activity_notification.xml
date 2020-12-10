@@ -1,11 +1,11 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -16,15 +16,17 @@
             android:layout_height="match_parent"
             android:weightSum="10"
             android:orientation="vertical">
+
             <ListView
                 android:id="@+id/lv_notification"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="9"
                 android:layout_margin="@dimen/margin_default_2"
+                android:layout_weight="9"
+                android:background="@color/background_app"
                 android:divider="@null"
                 android:dividerHeight="0dp"
-                android:background="@color/background_app"/>
+                android:filterTouchesWhenObscured="true" />
             <TextView
                 android:id="@+id/tv_lgpd"
                 android:layout_width="wrap_content"

@@ -30,6 +30,7 @@ public class TextViewCustom extends TextView{
         super(context);
 
         this.context = (Activity) context;
+        this.setFilterTouchesWhenObscured(true);
         // TODO Auto-generated constructor stub
     }
 

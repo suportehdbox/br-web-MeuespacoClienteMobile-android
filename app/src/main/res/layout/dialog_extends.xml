@@ -103,19 +103,21 @@
                 android:id="@+id/iv_cp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_default_2"
                 android:layout_marginLeft="@dimen/margin_default_6"
+                android:layout_marginTop="@dimen/margin_default_2"
                 android:layout_marginRight="@dimen/margin_default_6"
-                android:src="@drawable/bt_copiar_codigo"/>
+                android:filterTouchesWhenObscured="true"
+                android:src="@drawable/bt_copiar_codigo" />
 
             <ImageView
                 android:id="@+id/iv_ok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_default_2"
                 android:layout_marginLeft="@dimen/margin_default_6"
+                android:layout_marginTop="@dimen/margin_default_2"
                 android:layout_marginRight="@dimen/margin_default_6"
-                android:src="@drawable/bt_ok_text_white"/>
+                android:filterTouchesWhenObscured="true"
+                android:src="@drawable/bt_ok_text_white" />
 
         </LinearLayout>
     </ScrollView>

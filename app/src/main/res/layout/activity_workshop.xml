@@ -3,8 +3,8 @@
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+<RelativeLayout
+    android:layout_width="match_parent"
         android:id="@+id/mapFragmentContainer"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -92,35 +92,37 @@
                         android:id="@+id/iv_search"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="@dimen/margin_default_4"
-                        android:paddingRight="@dimen/margin_default_4"
                         android:layout_marginLeft="@dimen/margin_default_2"
                         android:layout_marginRight="@dimen/margin_default_2"
+                        android:layout_weight="1"
                         android:background="@drawable/round_button_workshop"
+                        android:drawableLeft="@drawable/icon_pin_white"
+                        android:filterTouchesWhenObscured="true"
+                        android:paddingLeft="@dimen/margin_default_4"
+                        android:paddingRight="@dimen/margin_default_4"
                         android:scaleType="centerInside"
                         android:src="@drawable/bt_search_location"
                         android:text="@string/workshop_search_button"
-                        android:drawableLeft="@drawable/icon_pin_white"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_default"
-                        android:layout_weight="1"/>
+                        android:textSize="@dimen/font_default" />
+
                     <Button
                         android:id="@+id/iv_change_search"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_default_2"
+                        android:layout_marginRight="@dimen/margin_default_2"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_button_workshop"
+                        android:drawableLeft="@drawable/icon_arrow_white"
+                        android:filterTouchesWhenObscured="true"
                         android:paddingLeft="@dimen/margin_default_4"
                         android:paddingRight="@dimen/margin_default_4"
-                        android:layout_marginRight="@dimen/margin_default_2"
-                        android:layout_marginLeft="@dimen/margin_default_2"
-                        android:background="@drawable/round_button_workshop"
                         android:scaleType="centerInside"
                         android:src="@drawable/bt_search_location"
                         android:text="@string/workshop_change_search_near"
-                        android:drawableLeft="@drawable/icon_arrow_white"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_default"
-                        android:layout_weight="1"
-                        />
+                        android:textSize="@dimen/font_default" />
                 </LinearLayout>
 
                 <ListView
@@ -131,7 +133,8 @@
                     android:background="@android:color/transparent"
                     android:cacheColorHint="@android:color/transparent"
                     android:divider="@null"
-                    android:dividerHeight="0dp" />
+                    android:dividerHeight="0dp"
+                    android:filterTouchesWhenObscured="true" />
 
             </LinearLayout>
 

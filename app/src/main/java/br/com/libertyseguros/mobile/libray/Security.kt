@@ -2,12 +2,14 @@ package br.com.libertyseguros.mobile.libray
 
 import android.content.Context
 import android.os.Build
+import br.com.libertyseguros.mobile.BuildConfig
 import com.scottyab.rootbeer.RootBeer
 
 class Security {
 
     fun isDeviceCompliance(context: Context): Boolean {
-        if (isEmulatorDevice()) {
+
+        if (isEmulatorDevice() && !BuildConfig.DEBUG) {
             return false
         }
         return true

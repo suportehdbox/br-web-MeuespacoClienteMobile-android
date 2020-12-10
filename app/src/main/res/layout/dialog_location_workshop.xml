@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -8,7 +9,6 @@
     android:background="#40000000">
 
     <androidx.cardview.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_default_2"
@@ -46,11 +46,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
+                android:filterTouchesWhenObscured="true"
+                android:inputType="number"
+                android:paddingTop="@dimen/margin_default_2"
                 android:singleLine="true"
                 android:textColor="@color/text_default_3"
                 android:textColorHint="@color/hint_default_1"
-                android:paddingTop="@dimen/margin_default_2"
-                android:inputType="number"
                 android:textSize="@dimen/font_default_1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -85,10 +86,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
+                android:filterTouchesWhenObscured="true"
+                android:paddingTop="@dimen/margin_default_2"
                 android:singleLine="true"
                 android:textColor="@color/text_default_3"
                 android:textColorHint="@color/hint_default_1"
-                android:paddingTop="@dimen/margin_default_2"
                 android:textSize="@dimen/font_default_1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -109,6 +111,7 @@
             style="@style/ButtonDefault"
             android:layout_width="wrap_content"
             android:background="@drawable/bt_background_app"
+            android:filterTouchesWhenObscured="true"
             android:text="@string/button_location"
             android:textColor="@color/color_button_default_app" />
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_app"
@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/background_register"
@@ -76,6 +76,7 @@
                             android:layout_width="0dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
 
@@ -84,8 +85,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@color/transparente"
-                                android:src="@drawable/bt_auto"
-                                />
+                                android:filterTouchesWhenObscured="true"
+                                android:src="@drawable/bt_auto" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -93,6 +94,7 @@
                             android:layout_width="0dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
 
@@ -101,6 +103,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@color/transparente"
+                                android:filterTouchesWhenObscured="true"
                                 android:src="@drawable/bt_home" />
                         </LinearLayout>
 
@@ -109,6 +112,7 @@
                             android:layout_width="0dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
+                            android:filterTouchesWhenObscured="true"
                             android:gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
 
@@ -117,6 +121,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@color/transparente"
+                                android:filterTouchesWhenObscured="true"
                                 android:src="@drawable/bt_life" />
                         </LinearLayout>
 
@@ -170,7 +175,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_default_4"
                         android:layout_marginRight="@dimen/margin_default_2"
-                        android:button="@drawable/checkbox_login" />
+                        android:button="@drawable/checkbox_login"
+                        android:filterTouchesWhenObscured="true" />
 
                     <LinearLayout
                         android:layout_width="match_parent"

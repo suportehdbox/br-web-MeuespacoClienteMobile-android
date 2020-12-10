@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -16,24 +17,25 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:filterTouchesWhenObscured="true"
+                    android:orientation="vertical">
 
 
-                    <com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <com.google.android.flexbox.FlexboxLayout
                         android:id="@+id/ll_photo"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:filterTouchesWhenObscured="true"
                         app:alignContent="flex_start"
                         app:alignItems="flex_start"
-                        app:flexWrap="wrap"
-                        app:showDivider="beginning|middle"
                         app:dividerDrawable="@null"
-                        app:flexDirection="row">
-                    </com.google.android.flexbox.FlexboxLayout>
+                        app:flexDirection="row"
+                        app:flexWrap="wrap"
+                        app:showDivider="beginning|middle"></com.google.android.flexbox.FlexboxLayout>
 
                 </LinearLayout>
 
