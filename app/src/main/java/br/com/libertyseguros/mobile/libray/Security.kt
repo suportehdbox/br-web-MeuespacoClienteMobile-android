@@ -1,21 +1,28 @@
 package br.com.libertyseguros.mobile.libray
 
+import android.R
 import android.content.Context
 import android.os.Build
+import android.util.Log
 import br.com.libertyseguros.mobile.BuildConfig
 import com.scottyab.rootbeer.RootBeer
+import java.io.IOException
+import java.util.zip.ZipEntry
+import java.util.zip.ZipFile
+
 
 class Security {
 
     fun isDeviceCompliance(context: Context): Boolean {
 
-        if (isEmulatorDevice() && !BuildConfig.DEBUG) {
+        if ((isEmulatorDevice() && !BuildConfig.DEBUG) || !this.crcTest(context)) {
             return false
         }
+
         return true
     }
 
-    fun isRootedDevice (context: Context) :Boolean
+    fun isRootedDevice(context: Context) :Boolean
     {
         val rootBeer = RootBeer(context)
         return rootBeer.isRooted()
@@ -66,6 +73,16 @@ class Security {
 
         return false
 
+    }
+
+    @Throws(IOException::class)
+    private fun crcTest(context: Context): Boolean {
+
+        val dexCrc: Long = context.getString(br.com.libertyseguros.mobile.R.string.crc).toLong()
+        val zf = ZipFile(context.packageCodePath)
+        val ze: ZipEntry = zf.getEntry("classes.dex")
+
+        return ze.getCrc() !== dexCrc
     }
 
 }
