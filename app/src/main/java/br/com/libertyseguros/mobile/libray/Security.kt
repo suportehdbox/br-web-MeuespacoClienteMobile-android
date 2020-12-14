@@ -1,12 +1,17 @@
 package br.com.libertyseguros.mobile.libray
 
-import android.R
 import android.content.Context
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
 import android.os.Build
+import android.util.Base64
 import android.util.Log
 import br.com.libertyseguros.mobile.BuildConfig
+import com.google.android.gms.common.wrappers.Wrappers
 import com.scottyab.rootbeer.RootBeer
 import java.io.IOException
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 
@@ -14,8 +19,11 @@ import java.util.zip.ZipFile
 class Security {
 
     fun isDeviceCompliance(context: Context): Boolean {
-
-        if ((isEmulatorDevice() && !BuildConfig.DEBUG) || !this.crcTest(context)) {
+        if ((isEmulatorDevice() && !BuildConfig.DEBUG)){
+            return false
+        } else if (!this.isValidSignature(context)) {
+            return false
+        } else if (!this.isValidCrc(context)){
             return false
         }
 
@@ -76,13 +84,45 @@ class Security {
     }
 
     @Throws(IOException::class)
-    private fun crcTest(context: Context): Boolean {
+    private fun isValidCrc(context: Context): Boolean {
 
         val dexCrc: Long = context.getString(br.com.libertyseguros.mobile.R.string.crc).toLong()
         val zf = ZipFile(context.packageCodePath)
         val ze: ZipEntry = zf.getEntry("classes.dex")
-
-        return ze.getCrc() !== dexCrc
+//        Log.v(Config.TAG,ze.getCrc().toString())
+        return ze.crc.equals(dexCrc)
     }
 
+    private fun getSignature(context: Context): String {
+        val info: PackageInfo
+        var signatureBase64: String = ""
+
+        try {
+            info = Wrappers.packageManager(context).getPackageInfo(BuildConfig.APPLICATION_ID, PackageManager.GET_SIGNATURES)
+            for (signature in info.signatures) {
+                var md: MessageDigest
+                md = MessageDigest.getInstance("SHA")
+                md.update(signature.toByteArray())
+                signatureBase64 = String(Base64.encode(md.digest(), 0))
+                //String something = new String(Base64.encodeBytes(md.digest()));
+                Log.e("Sign Base64 API < 28 ", signatureBase64!!)
+            }
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+        } catch (e: NoSuchAlgorithmException) {
+            e.printStackTrace()
+        } catch (e: Exception) {
+            Log.e("exception", e.toString())
+        }
+        return signatureBase64
+    }
+
+    private fun isValidSignature(context: Context) : Boolean {
+        if(getSignature(context).isEmpty()){
+            return false
+        }else if(getSignature(context).contains(Config.getSignature())){
+            return true
+        }
+        return false
+    }
 }

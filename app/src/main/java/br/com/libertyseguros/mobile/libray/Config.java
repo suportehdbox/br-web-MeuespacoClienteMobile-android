@@ -76,4 +76,12 @@ public class Config {
     public static boolean hasAutoPolicy = true;
     public static boolean hasHomeAssistance = false;
 
+    public static String getSignature(){
+        if (BuildConfig.DEBUG ){
+            return "flee1FNcko6CrVRQV1B/+Brh59A=";
+        }else{
+            return "etcgAWFodzFRKTaJ/giOb6h0CQc=";
+        }
+    }
+
 }

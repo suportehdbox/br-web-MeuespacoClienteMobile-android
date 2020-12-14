@@ -65,7 +65,7 @@ android {
             versionCode 456
             versionName "4.2.5"
             multiDexEnabled true
-            isDefault.set(true)
+            isDefault.set(false)
             signingConfig signingConfigs.config
 
         }
@@ -78,7 +78,7 @@ android {
             versionCode 456
             versionName "4.2.5"
             multiDexEnabled true
-            isDefault.set(false)
+            isDefault.set(true)
             signingConfig signingConfigs.config
         }
     }
