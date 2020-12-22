@@ -84,4 +84,12 @@ public class Config {
         }
     }
 
+    public static String getCrc(){
+        if (BuildConfig.DEBUG ) {
+            return "2639490455";
+        }else {
+            return "505614897";
+        }
+    }
+
 }
