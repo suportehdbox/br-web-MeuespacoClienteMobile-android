@@ -1,5 +1,6 @@
 package br.com.libertyseguros.mobile.libray
 
+import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
@@ -7,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
+import android.widget.Toast
 import br.com.libertyseguros.mobile.BuildConfig
 import com.google.android.gms.common.wrappers.Wrappers
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -14,20 +16,15 @@ import com.scottyab.rootbeer.RootBeer
 import java.io.IOException
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-import java.util.zip.ZipEntry
-import java.util.zip.ZipFile
 
 
 class Security {
 
-    fun isDeviceCompliance(context: Context): Boolean {
-        if (!this.isValidSignature(context)) {
-            return false
-        } else if (!this.isValidCrc(context)) {
-            return false
-        } else if ((isEmulatorDevice(context) && !BuildConfig.DEBUG)) {
+    fun isDeviceCompliance(context: Activity): Boolean {
+        if ((isEmulatorDevice(context) && !BuildConfig.DEBUG)) {
             return false
         }
+
 
         return true
     }
@@ -39,9 +36,9 @@ class Security {
 
 
     private fun isEmulatorDevice(context: Context): Boolean {
-//        Log.v(Config.TAG, String.format("Prod: %s, Fing: %s, Man: %s, Hwd: %s,  ID: %s, Brd: %s, Model: %s, Bnd: %s, Dev: %s, Host: %s, Usr: %s",
-//        Build.PRODUCT, Build.FINGERPRINT, Build.PRODUCT, Build.MANUFACTURER, Build.HARDWARE, Build.ID, Build.BOARD, Build.MODEL,
-//                Build.BRAND, Build.DEVICE, Build.HOST, Build.USER))
+        Log.v(Config.TAG, String.format("Prod: %s, Fing: %s, Man: %s, Hwd: %s,  ID: %s, Brd: %s, Model: %s, Bnd: %s, Dev: %s, Host: %s, Usr: %s",
+                Build.PRODUCT, Build.FINGERPRINT, Build.MANUFACTURER, Build.HARDWARE, Build.ID, Build.BOARD, Build.MODEL,
+                Build.BRAND, Build.DEVICE, Build.HOST, Build.USER))
 
 
         //STATIC CHECKING
@@ -89,7 +86,7 @@ class Security {
             })
             return true
         }
-//        Removido pois estava dando imcopatibildiade
+//        Removido pois estava dando imcopatibildiade em
 //        else if( Build.USER.equals("android-build", true) ) {
 //            Log.v(Config.TAG, "Emulator 01 - 07 : " + Build.USER)
 //            return true
@@ -134,48 +131,5 @@ class Security {
 
         return false
 
-    }
-
-    @Throws(IOException::class)
-    private fun isValidCrc(context: Context): Boolean {
-//
-//        val dexCrc: Long = Config.getCrc().toLong()
-//        val zf = ZipFile(context.packageCodePath)
-//        val ze: ZipEntry = zf.getEntry("classes.dex")
-//        Log.v(Config.TAG,ze.getCrc().toString())
-        return true//ze.crc.equals(dexCrc)
-    }
-
-    private fun getSignature(context: Context): String {
-        val info: PackageInfo
-        var signatureBase64: String = ""
-
-        try {
-            info = Wrappers.packageManager(context).getPackageInfo(BuildConfig.APPLICATION_ID, PackageManager.GET_SIGNATURES)
-            for (signature in info.signatures) {
-                var md: MessageDigest
-                md = MessageDigest.getInstance("SHA")
-                md.update(signature.toByteArray())
-                signatureBase64 = String(Base64.encode(md.digest(), 0))
-                //String something = new String(Base64.encodeBytes(md.digest()));
-                Log.e("Sign Base64 API < 28 ", signatureBase64!!)
-            }
-        } catch (e: PackageManager.NameNotFoundException) {
-            e.printStackTrace()
-        } catch (e: NoSuchAlgorithmException) {
-            e.printStackTrace()
-        } catch (e: Exception) {
-            Log.e("exception", e.toString())
-        }
-        return signatureBase64
-    }
-
-    private fun isValidSignature(context: Context): Boolean {
-        if (getSignature(context).isEmpty()) {
-            return false
-        } else if (getSignature(context).contains(Config.getSignature())) {
-            return true
-        }
-        return false
     }
 }

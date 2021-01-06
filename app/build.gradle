@@ -4,7 +4,10 @@ apply plugin: 'com.android.application'
 // Apply the Crashlytics Gradle plugin
 apply plugin: 'com.google.firebase.crashlytics'
 android {
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     signingConfigs {
         config {
             keyAlias 'liberty mobile'
@@ -60,12 +63,12 @@ android {
             applicationId 'br.com.libertyseguros.mobile'
             buildConfigField "String", "tag", "\"LibertySeguros\""
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
-            buildConfigField "boolean", "prod", "true"
+            buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 456
-            versionName "4.2.5"
+            versionCode 459
+            versionName "4.2.6 act"
             multiDexEnabled true
-            isDefault.set(false)
+            isDefault.set(true)
             signingConfig signingConfigs.config
 
         }
@@ -73,12 +76,12 @@ android {
             applicationId 'br.com.libertyseguros.aliro'
             buildConfigField "String", "tag", "\"AliroSeguros\""
             buildConfigField "String", "databasename", "\"aliro2020.db\""
-            buildConfigField "boolean", "prod", "true"
+            buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 456
-            versionName "4.2.5"
+            versionCode 459
+            versionName "4.2.6 act"
             multiDexEnabled true
-            isDefault.set(true)
+            isDefault.set(false)
             signingConfig signingConfigs.config
         }
     }
@@ -120,6 +123,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+
     // Testing dependencies
 //    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
@@ -165,7 +169,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.scottyab:rootbeer-lib:0.0.8' // Detect root
-
 }
 
 apply plugin: 'com.google.gms.google-services'
