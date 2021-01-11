@@ -17,16 +17,18 @@ import java.io.IOException
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
-
+interface SecurityListener {
+    public fun onSecutiryCheckComplete(isCompliant : Boolean)
+}
 class Security {
 
-    fun isDeviceCompliance(context: Activity): Boolean {
+    fun isDeviceCompliance(context: Activity, listener: SecurityListener) {
         if ((isEmulatorDevice(context) && !BuildConfig.DEBUG)) {
-            return false
+            listener.onSecutiryCheckComplete(false)
         }
 
 
-        return true
+        listener.onSecutiryCheckComplete(true)
     }
 
     fun isRootedDevice(context: Context): Boolean {
