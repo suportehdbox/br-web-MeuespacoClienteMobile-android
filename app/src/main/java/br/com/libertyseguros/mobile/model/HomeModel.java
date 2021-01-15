@@ -27,6 +27,7 @@ import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.libray.DownloadImageHome;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.libray.Security;
+import br.com.libertyseguros.mobile.libray.SecurityListener;
 import br.com.libertyseguros.mobile.receiver.RegistrationIntentService;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.Main;
@@ -62,11 +63,17 @@ public class HomeModel extends BaseModel {
 
 
         Security sec = new Security();
-        if(!sec.isDeviceCompliance(activity)) {
-            Toast.makeText(activity, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
-            activity.finish();
-            return;
-        }
+        sec.isDeviceCompliance(activity, new SecurityListener() {
+            @Override
+            public void onSecurityCheckComplete(boolean isCompliant) {
+                if(!isCompliant){
+                    Toast.makeText(activity, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
+                    activity.finish();
+                    return;
+                }
+            }
+        });
+
         if (BuildConfig.brandMarketing == 3) {
             if (shouldShowPopUpAgain() && !Config.alreadyShownDialog) {
                 //showDialogNavigation();

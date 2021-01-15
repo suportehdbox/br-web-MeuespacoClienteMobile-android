@@ -18,17 +18,17 @@ import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
 interface SecurityListener {
-    public fun onSecutiryCheckComplete(isCompliant : Boolean)
+    public fun onSecurityCheckComplete(isCompliant : Boolean)
 }
 class Security {
 
     fun isDeviceCompliance(context: Activity, listener: SecurityListener) {
         if ((isEmulatorDevice(context) && !BuildConfig.DEBUG)) {
-            listener.onSecutiryCheckComplete(false)
+            listener.onSecurityCheckComplete(false)
         }
 
 
-        listener.onSecutiryCheckComplete(true)
+        listener.onSecurityCheckComplete(true)
     }
 
     fun isRootedDevice(context: Context): Boolean {
@@ -88,18 +88,12 @@ class Security {
             })
             return true
         }
-//        Removido pois estava dando imcopatibildiade em
+//        Removido pois estava dando imcopatibildiade em alguns devices
 //        else if( Build.USER.equals("android-build", true) ) {
 //            Log.v(Config.TAG, "Emulator 01 - 07 : " + Build.USER)
 //            return true
 //        }
-        else if (Build.BOARD.equals("unknown", true)) {
-            FirebaseAnalytics.getInstance(context).logEvent("security_error", Bundle().apply {
-                this.putString(FirebaseAnalytics.Param.ITEM_NAME, "BOARD")
-                this.putString(FirebaseAnalytics.Param.CONTENT, Build.BOARD)
-            })
-            return true
-        }
+
 
         if (Build.BRAND.contains("generic", true) &&
                 Build.DEVICE.contains("generic", true)) {
