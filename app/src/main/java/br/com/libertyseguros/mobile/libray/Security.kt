@@ -2,24 +2,27 @@ package br.com.libertyseguros.mobile.libray
 
 import android.app.Activity
 import android.content.Context
-import android.content.pm.PackageInfo
-import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.util.Base64
 import android.util.Log
-import android.widget.Toast
 import br.com.libertyseguros.mobile.BuildConfig
-import com.google.android.gms.common.wrappers.Wrappers
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.safetynet.SafetyNet
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.scottyab.rootbeer.RootBeer
-import java.io.IOException
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
+import java.security.SecureRandom
 
 interface SecurityListener {
-    public fun onSecurityCheckComplete(isCompliant : Boolean)
+    public fun onSecurityCheckComplete(isCompliant: Boolean)
 }
+interface DeviceVerificaionListener {
+    public fun onVerificationComplete(jwsResult: String)
+    public fun onVerificationFail(message: String)
+}
+
+
 class Security {
 
     fun isDeviceCompliance(context: Activity, listener: SecurityListener) {
@@ -31,12 +34,52 @@ class Security {
         listener.onSecurityCheckComplete(true)
     }
 
+
+    fun getDeviceVerification(context: Activity, listener: DeviceVerificaionListener){
+        if (GoogleApiAvailability.getInstance()
+                        .isGooglePlayServicesAvailable(context, 13000000) ==
+                ConnectionResult.SUCCESS) {
+            SafetyNet.getClient(context).attest(generateNonce(), "AIzaSyCyPgeh4Hi9nlPcsGHsKCIJPYZV4v_oPUw")
+                    .addOnSuccessListener(context) { response ->
+                        // Indicates communication with the service was successful.
+                        // Use response.getJwsResult() to get the result data.
+                        val result = response.jwsResult
+
+                        Log.v(Config.TAG, result)
+                    }.addOnFailureListener(context) { e ->
+                        // An error occurred while communicating with the service.
+                        if (e is ApiException) {
+                            // An error with the Google Play services API contains some
+                            // additional details.
+                            val apiException = e as ApiException
+
+                            // You can retrieve the status code using the
+                            //apiException.statusCode
+                        } else {
+                            // A different, unknown type of error occurred.
+                            Log.d(Config.TAG, "Error: " + e.message)
+                            var msg = e.localizedMessage
+                            if(msg.isNullOrEmpty()){
+                                msg = "Não foi possível validar o seu dispositivo"
+                            }
+
+                            listener.onVerificationFail(msg)
+                        }
+                    }
+        } else {
+            listener.onVerificationFail("Por favor atualize o Google Play Service")
+        }
+    }
+
     fun isRootedDevice(context: Context): Boolean {
         val rootBeer = RootBeer(context)
         return rootBeer.isRooted()
     }
 
-
+    private fun generateNonce(context:Context, seed: String): ByteArray {
+        val newNounce = seed + Config.getDeviceUID(context)
+        return newNounce.toByteArray()
+    }
     private fun isEmulatorDevice(context: Context): Boolean {
         Log.v(Config.TAG, String.format("Prod: %s, Fing: %s, Man: %s, Hwd: %s,  ID: %s, Brd: %s, Model: %s, Bnd: %s, Dev: %s, Host: %s, Usr: %s",
                 Build.PRODUCT, Build.FINGERPRINT, Build.MANUFACTURER, Build.HARDWARE, Build.ID, Build.BOARD, Build.MODEL,

@@ -19,6 +19,8 @@ import com.datami.smi.SmiSdk;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
+import org.jetbrains.annotations.NotNull;
+
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.NotificationBeans;
@@ -26,6 +28,7 @@ import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.libray.DownloadImageHome;
 import br.com.libertyseguros.mobile.libray.InfoUser;
+import br.com.libertyseguros.mobile.libray.LoginAllowedListener;
 import br.com.libertyseguros.mobile.libray.Security;
 import br.com.libertyseguros.mobile.libray.SecurityListener;
 import br.com.libertyseguros.mobile.receiver.RegistrationIntentService;
@@ -69,6 +72,19 @@ public class HomeModel extends BaseModel {
                 if(!isCompliant){
                     Toast.makeText(activity, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
                     activity.finish();
+                    return;
+                }
+            }
+        });
+
+        sec.isLoginAllowed(activity, new LoginAllowedListener() {
+            @Override
+            public void onLoginAllowedComplete(boolean isAllowed, @NotNull String message) {
+                if(!isAllowed){
+                    if(message.isEmpty()){
+                        message = "error";
+                    }
+                    Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
                     return;
                 }
             }

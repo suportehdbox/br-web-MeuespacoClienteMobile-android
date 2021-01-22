@@ -65,7 +65,7 @@ android {
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
             buildConfigField "boolean", "prod", "true"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 461 
+            versionCode 461
             versionName "4.2.7"
             multiDexEnabled true
             isDefault.set(true)
@@ -169,6 +169,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.scottyab:rootbeer-lib:0.0.8' // Detect root
+    implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
