@@ -1,12 +1,16 @@
 package br.com.libertyseguros.mobile.view;
 
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
@@ -17,6 +21,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.GeolocationPermissions;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -27,6 +32,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import java.io.File;
@@ -53,6 +60,10 @@ public class AutoClaimWebView extends BaseActionBar {
     private String packageName;
     private AssistanceController controller;
     private Dialog dialogMessage;
+
+    private String requestOring = null;
+    private GeolocationPermissions.Callback requestCallback = null;
+    private final int MY_REQUEST_PERMISSION = 91;
 
     @SuppressLint("SetJavaScriptEnabled")
     @SuppressWarnings("unchecked")
@@ -145,6 +156,22 @@ public class AutoClaimWebView extends BaseActionBar {
         if(!controller.checkPermissionsGranted(requestCode, permissions, grantResults,false)){
             dialogMessage.show();
         }
+        switch (requestCode){
+            case MY_REQUEST_PERMISSION:{
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    if(requestCallback != null){
+                        requestCallback.invoke(requestOring, true, true);
+                    }
+                }else{
+                    if(requestCallback != null){
+                        requestCallback.invoke(requestOring, false, false);
+                    }
+                }
+                return;
+            }
+            default:
+                break;
+        }
     }
 
     public class MyWebClient extends WebViewClient {
@@ -189,6 +216,7 @@ public class AutoClaimWebView extends BaseActionBar {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
         }
+
     }
 
     @Override
@@ -229,7 +257,33 @@ public class AutoClaimWebView extends BaseActionBar {
 
     public class MyWebViewClient extends WebChromeClient {
 
+        @Override
+        public void onGeolocationPermissionsShowPrompt(final String origin, final GeolocationPermissions.Callback callback) {
+//            super.onGeolocationPermissionsShowPrompt(origin, callback);
+            requestOring = null;
+            requestCallback = null;
 
+            if(ContextCompat.checkSelfPermission(AutoClaimWebView.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                if(ActivityCompat.shouldShowRequestPermissionRationale(AutoClaimWebView.this, Manifest.permission.ACCESS_FINE_LOCATION)){
+                    new AlertDialog.Builder(AutoClaimWebView.this).setMessage(R.string.location_enable_alert)
+                            .setNeutralButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    requestCallback = callback;
+                                    requestOring = origin;
+                                    ActivityCompat.requestPermissions(AutoClaimWebView.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_REQUEST_PERMISSION);
+                                }
+                            }).show();
+
+                }else{
+                    requestCallback = callback;
+                    requestOring = origin;
+                    ActivityCompat.requestPermissions(AutoClaimWebView.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_REQUEST_PERMISSION);
+                }
+            }else{
+                callback.invoke(origin,true, true);
+            }
+        }
 
         private void showDialog() {
 
