@@ -15,6 +15,7 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.net.URLEncoder;
 
+import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.libray.Config;
@@ -57,6 +58,7 @@ public class MainModel extends BaseModel {
 
     private MenuItem menuWorkshop;
 
+    private LogoutModel logoutModel;
     public MainModel(Activity activity) {
         this.activity = activity;
 
@@ -151,12 +153,8 @@ public class MainModel extends BaseModel {
                     openSupport(activity);
                     break;
                 case R.id.navigation_drawer_item_8:
-                    activity.finish();
-                    loadFile.savePref(Config.TAGHOMEON, "", Config.TAG, activity);
-                    loadFile.savePref(Config.TAGTOKEN, "0", Config.TAG, activity);
-                    infoUser.saveUserInfo("", activity);
-                    it = new Intent(activity, Login.class);
-                    activity.startActivity(it);
+                    logoutModel = new LogoutModel(activity.getApplicationContext());
+                    logoutModel.logout(activity);
                     break;
                 default:
                     break;

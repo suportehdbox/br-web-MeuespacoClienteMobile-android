@@ -63,12 +63,12 @@ android {
             applicationId 'br.com.libertyseguros.mobile'
             buildConfigField "String", "tag", "\"LibertySeguros\""
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
-            buildConfigField "boolean", "prod", "true"
+            buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 461
-            versionName "4.2.7"
+            versionCode 462
+            versionName "4.2.8"
             multiDexEnabled true
-            isDefault.set(true)
+            isDefault.set(false)
             signingConfig signingConfigs.config
 
         }
@@ -76,12 +76,12 @@ android {
             applicationId 'br.com.libertyseguros.aliro'
             buildConfigField "String", "tag", "\"AliroSeguros\""
             buildConfigField "String", "databasename", "\"aliro2020.db\""
-            buildConfigField "boolean", "prod", "true"
+            buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 461
-            versionName "4.2.7"
+            versionCode 462
+            versionName "4.2.8"
             multiDexEnabled true
-            isDefault.set(false)
+            isDefault.set(true)
             signingConfig signingConfigs.config
         }
     }
@@ -169,7 +169,11 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.scottyab:rootbeer-lib:0.0.8' // Detect root
+
     implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
+
+
+
 }
 
 apply plugin: 'com.google.gms.google-services'

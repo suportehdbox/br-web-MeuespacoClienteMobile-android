@@ -25,10 +25,10 @@ import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.NotificationBeans;
 import br.com.libertyseguros.mobile.libray.Config;
+import br.com.libertyseguros.mobile.libray.DeviceVerificaionListener;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.libray.DownloadImageHome;
 import br.com.libertyseguros.mobile.libray.InfoUser;
-import br.com.libertyseguros.mobile.libray.LoginAllowedListener;
 import br.com.libertyseguros.mobile.libray.Security;
 import br.com.libertyseguros.mobile.libray.SecurityListener;
 import br.com.libertyseguros.mobile.receiver.RegistrationIntentService;
@@ -66,6 +66,7 @@ public class HomeModel extends BaseModel {
 
 
         Security sec = new Security();
+
         sec.isDeviceCompliance(activity, new SecurityListener() {
             @Override
             public void onSecurityCheckComplete(boolean isCompliant) {
@@ -77,18 +78,6 @@ public class HomeModel extends BaseModel {
             }
         });
 
-        sec.isLoginAllowed(activity, new LoginAllowedListener() {
-            @Override
-            public void onLoginAllowedComplete(boolean isAllowed, @NotNull String message) {
-                if(!isAllowed){
-                    if(message.isEmpty()){
-                        message = "error";
-                    }
-                    Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
-                    return;
-                }
-            }
-        });
 
         if (BuildConfig.brandMarketing == 3) {
             if (shouldShowPopUpAgain() && !Config.alreadyShownDialog) {

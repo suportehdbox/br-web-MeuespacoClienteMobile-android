@@ -46,6 +46,7 @@ public class HomeOnController {
      */
     public void getHome(Context ctx) {
         homeOnModel.getHome(ctx);
+        homeOnModel.validateDevice();
     }
 
 

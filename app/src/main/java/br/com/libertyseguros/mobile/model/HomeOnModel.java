@@ -5,8 +5,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.net.URLEncoder;
 import java.util.List;
@@ -24,8 +27,10 @@ import br.com.libertyseguros.mobile.beans.PaymentBeans;
 import br.com.libertyseguros.mobile.beans.PolicyBeansV2;
 import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
+import br.com.libertyseguros.mobile.libray.DeviceVerificaionListener;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.libray.LoadFile;
+import br.com.libertyseguros.mobile.libray.Security;
 import br.com.libertyseguros.mobile.util.OnBarCode;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
@@ -177,7 +182,23 @@ public class HomeOnModel extends BaseModel{
         }
     }
 
+    public void validateDevice () {
+        Security sec = new Security();
+        sec.getDeviceVerification(context, loginBeans.getAccess_token(), new DeviceVerificaionListener() {
+            @Override
+            public void onVerificationComplete() {
+                //Success
+            }
 
+            @Override
+            public void onVerificationFail(@NotNull String message) {
+
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                context.finish();
+
+            }
+        });
+    }
 
     /**
      * Method Get Payments Info
@@ -293,6 +314,14 @@ public class HomeOnModel extends BaseModel{
 
                                 loadFile.savePref(Config.TAGHOMEON, result, Config.TAG, context);
                                 loadFile.savePref(Config.TAGHOMEONTIME, System.currentTimeMillis() + "", Config.TAG, context);
+
+
+
+
+
+
+
+
 
                                 onConnectionResult.onSucess();
                             } else {
