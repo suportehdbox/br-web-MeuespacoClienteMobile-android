@@ -66,13 +66,13 @@ public class HomeModel extends BaseModel {
 
 
         Security sec = new Security();
-
+        final  Activity act = activity;
         sec.isDeviceCompliance(activity, new SecurityListener() {
             @Override
             public void onSecurityCheckComplete(boolean isCompliant) {
                 if(!isCompliant){
-                    Toast.makeText(activity, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
-                    activity.finish();
+                    Toast.makeText(act, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
+                    act.finish();
                     return;
                 }
             }
