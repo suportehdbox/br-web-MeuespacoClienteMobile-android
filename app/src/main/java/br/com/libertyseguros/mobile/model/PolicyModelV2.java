@@ -37,6 +37,7 @@ import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.util.OnBarCode;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
+import br.com.libertyseguros.mobile.view.AutoClaimWebView;
 import br.com.libertyseguros.mobile.view.DetailPolicy;
 import br.com.libertyseguros.mobile.view.DialogPayments;
 import br.com.libertyseguros.mobile.view.Documents;
@@ -547,7 +548,13 @@ public class PolicyModelV2 {
         VehicleAccidentModel.vasb.setIssueCode(policyBeans.getInsurances()[index].getIssuances()[0] + "");
         VehicleAccidentModel.vasb.setCiaCode(policyBeans.getInsurances()[index].getCiaCode() + "");
 
-        Intent it = new Intent(ctx, VehicleAccidentStep1.class);
+        Intent it;
+        if(Config.ClaimWebView){
+            it = new Intent(ctx, AutoClaimWebView.class);
+        }else{
+            it = new Intent(ctx, VehicleAccidentStep1.class);
+        }
+
         ctx.startActivity(it);
     }
 

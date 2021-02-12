@@ -22,6 +22,7 @@ import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 
 import br.com.libertyseguros.mobile.view.Assistance24WebView;
+import br.com.libertyseguros.mobile.view.AutoClaimWebView;
 import br.com.libertyseguros.mobile.view.VehicleAccidentStep1;
 
 public class ListVehicleAccidentModel {
@@ -223,7 +224,13 @@ public class ListVehicleAccidentModel {
     public void openVehicleAccident(Context ctx, int index, int type){
         if(type == 0){
             VehicleAccidentModel.vasb = listVehicleAccidentBeans.getInsurances()[index];
-            Intent it = new Intent(ctx, VehicleAccidentStep1.class);
+            Intent it;
+            if(Config.ClaimWebView){
+                it = new Intent(ctx, AutoClaimWebView.class);
+            }else{
+                it = new Intent(ctx, VehicleAccidentStep1.class);
+            }
+
             ctx.startActivity(it);
         } else {
 

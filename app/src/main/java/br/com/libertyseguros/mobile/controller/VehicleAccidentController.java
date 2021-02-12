@@ -12,9 +12,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import br.com.libertyseguros.mobile.BuildConfig;
+import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.NumberWarningVehicleAccidentBeans;
+import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.model.VehicleAccidentModel;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
@@ -434,5 +437,33 @@ public class VehicleAccidentController {
      */
     public void cropImage(Uri uri, int INT_CROP, Activity activity){
 
+    }
+
+
+
+
+    public String getWebViewUrl(Context context){
+        String url = context.getString(R.string.auto_claim_prod);
+
+        if (!BuildConfig.prod) {
+            url = context.getString(R.string.auto_claim_act);
+        }
+        String plate = VehicleAccidentModel.vasb.getLicensePlate();
+        if(plate == null || plate.isEmpty() ){
+            plate = VehicleAccidentModel.vasb.getInsuranceStatus().getLicensePlate();
+        }
+
+
+        String cpf = getLoginBeans(context).getCpfCnpj();
+        if(cpf == null || cpf.isEmpty()){
+            cpf = VehicleAccidentModel.cpfCnpj;
+        }
+
+        url += "?plate=" + plate + "&document=" + cpf +
+                "&issuingAgency=" + VehicleAccidentModel.vasb.getIssuingAgency() +
+                "&itemCode=" + VehicleAccidentModel.vasb.getItemCode() +
+                "&brandMarketing=" + BuildConfig.brandMarketing;
+
+        return url;
     }
 }

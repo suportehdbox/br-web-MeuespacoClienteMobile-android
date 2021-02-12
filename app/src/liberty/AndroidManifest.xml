@@ -218,7 +218,10 @@
             android:name="br.com.libertyseguros.mobile.view.Assistance24WebView"
             android:screenOrientation="portrait"
             android:theme="@style/AppActionBar" />
-
+        <activity
+            android:name="br.com.libertyseguros.mobile.view.AutoClaimWebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppActionBar" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
