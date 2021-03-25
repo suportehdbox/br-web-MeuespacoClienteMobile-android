@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,13 +19,18 @@ import android.widget.Toast;
 import com.datami.smi.SmiSdk;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
+import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.NotificationBeans;
+import br.com.libertyseguros.mobile.beans.UpdateRequiredResponse;
+import br.com.libertyseguros.mobile.controller.FlutterModuleController;
 import br.com.libertyseguros.mobile.libray.Config;
+import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.DeviceVerificaionListener;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.libray.DownloadImageHome;
@@ -32,6 +38,7 @@ import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.libray.Security;
 import br.com.libertyseguros.mobile.libray.SecurityListener;
 import br.com.libertyseguros.mobile.receiver.RegistrationIntentService;
+import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.Main;
 import br.com.libertyseguros.mobile.view.Register;
@@ -48,52 +55,58 @@ public class HomeModel extends BaseModel {
 
     private Dialog dialogFreeNavigation;
 
-    public HomeModel(Activity activity, boolean token) {
+    private Connection conn;
+    private FlutterModuleController flutterModuleController;
+    public HomeModel(Activity activity, final boolean token) {
 
         this.activity = activity;
 
+//        Security sec = new Security();
+        final  Activity act = activity;
+//        sec.isDeviceCompliance(activity, new SecurityListener() {
+//            @Override
+//            public void onSecurityCheckComplete(boolean isCompliant) {
+//                if(!isCompliant){
+//                    Toast.makeText(act, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
+//                    act.finish();
+//                    return;
+//                }
+//            }
+//        });
+
+
+        conn = new Connection(this.activity);
+        flutterModuleController = new FlutterModuleController(this.activity);
+        conn.setOnConnection(new OnConnection() {
+            @Override
+            public void onError(String msg) {
+                //do nothing
+            }
+
+            @Override
+            public void onSucess(String result) {
+                Gson gson = new Gson();
+                UpdateRequiredResponse message = gson.fromJson(result, UpdateRequiredResponse.class);
+                if(message.getUpdatedRequired()){
+                    //Must show dialog
+                    flutterModuleController.ShowUpdateRequired();
+                }else {
+                    if (!token) {
+                        doLoginStuff();
+                    }
+                }
+            }
+        });
+
+        conn.startConnection("Acesso/UpdateRequired","?AppVersion=1", 2);
 
         DocumentsImageManager documentsImageManager = new DocumentsImageManager(activity);
         documentsImageManager.dataExpiration();
-
-        String md5 = getMD5(activity);
-
         dih = new DownloadImageHome(activity);
 
         nameImage = dih.getNameImage();
 
         dih.startDownload();
-
-
-        Security sec = new Security();
-        final  Activity act = activity;
-        sec.isDeviceCompliance(activity, new SecurityListener() {
-            @Override
-            public void onSecurityCheckComplete(boolean isCompliant) {
-                if(!isCompliant){
-                    Toast.makeText(act, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
-                    act.finish();
-                    return;
-                }
-            }
-        });
-
-
-        if (BuildConfig.brandMarketing == 3) {
-            if (shouldShowPopUpAgain() && !Config.alreadyShownDialog) {
-                //showDialogNavigation();
-                //wait for datami response
-            } else {
-                if (!token) {
-                    doLoginStuff();
-                }
-            }
-        } else {
-            if (!token) {
-                doLoginStuff();
-            }
-        }
-
 
     }
 

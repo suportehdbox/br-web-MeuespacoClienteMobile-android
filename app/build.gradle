@@ -4,7 +4,10 @@ apply plugin: 'com.android.application'
 // Apply the Crashlytics Gradle plugin
 apply plugin: 'com.google.firebase.crashlytics'
 android {
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     signingConfigs {
         config {
             keyAlias 'liberty mobile'
@@ -31,7 +34,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
         ndk.abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
-        GoogleServicesPlugin.config.disableVersionCheck = true
+        //GoogleServicesPlugin.config.disableVersionCheck = true
 
 
     }
@@ -62,10 +65,10 @@ android {
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 463
-            versionName "4.2.9 ACT"
+            versionCode 465
+            versionName "4.2.10 act"
             multiDexEnabled true
-            isDefault.set(true)
+            isDefault.set(false)
             signingConfig signingConfigs.config
 
         }
@@ -75,10 +78,10 @@ android {
             buildConfigField "String", "databasename", "\"aliro2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 463
-            versionName "4.2.9 ACT"
+            versionCode 465
+            versionName "4.2.10 act"
             multiDexEnabled true
-            isDefault.set(false)
+            isDefault.set(true)
             signingConfig signingConfigs.config
         }
     }
@@ -113,7 +116,7 @@ allprojects {
 
 dependencies {
 
-
+    implementation project(':flutter')
     implementation('com.datami:smisdk:3.5.2')
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
