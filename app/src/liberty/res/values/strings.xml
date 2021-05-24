@@ -112,7 +112,7 @@
     <string name="register_title1">Cadastre-se. </string>
     <string name="register_title2"> É super rápido!</string>
     <string name="register_warning">Para começar, diga para nós qual é o seu seguro.\nSe tiver mais de um, escolha o que achar melhor!</string>
-    <string name="register_atention"><b>Atenção!</b> Sua senha deve conter letras e números e no mínimo 6 caracteres.</string>
+    <string name="register_atention"><b>Atenção!</b> Sua senha deve conter letras e números e no mínimo 8 caracteres.</string>
     <string name="register_subtitle">Só mais algumas informações:</string>
     <string name="register_name">Nome</string>
     <string name="register_apolice">Apólice</string>
@@ -129,7 +129,7 @@
     <string name="register_cpf_error">Preencha seu CPF</string>
     <string name="register_error_password_confirm">Senha e senha de confirmação devem ser iguais</string>
     <string name="register_error_email_confirm">E-mail e E-mail de confirmação devem ser iguais</string>
-    <string name="register_info_password"><b>Atenção!</b> Sua senha deve conter no mínimo 6 (seis) caracteres entre letras e números. Não é permitido utilizar seu nome, sobrenome ou "&amp;".</string>
+    <string name="register_info_password"><b>Atenção!</b> Sua senha deve conter no mínimo 8 (oito) caracteres entre letras e números. Não é permitido utilizar seu nome, sobrenome ou "&amp;".</string>
     <string name="register_cb_terms">Concordo com os </string>
     <string name="register_cb_terms_2">termos, condições e privacidade, e conheço os tratamentos dos meus dados pessoais.</string>
 
@@ -377,7 +377,7 @@
     <string name="message_error_cpf_email">Email ou CPF válido</string>
     <string name="message_empty_cpf_email">Preencha seu CPF/CNPJ ou E-mail</string>
 
-    <string name="message_error_password">Sua senha deve conter letras e números e no mínimo 6 caracteres.</string>
+    <string name="message_error_password">Sua senha deve conter letras e números e no mínimo 8 caracteres.</string>
     <string name="message_empty_password">Preencha sua Senha</string>
 
     <string name="message_error_cep">Por favor, digite um CEP para continuar!</string>

@@ -49,7 +49,7 @@ android {
         release {
             minifyEnabled true
             firebaseCrashlytics {
-                mappingFileUploadEnabled false
+                mappingFileUploadEnabled true
             }
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -63,12 +63,12 @@ android {
             applicationId 'br.com.libertyseguros.mobile'
             buildConfigField "String", "tag", "\"LibertySeguros\""
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
-            buildConfigField "boolean", "prod", "false"
+            buildConfigField "boolean", "prod", "true"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 465
-            versionName "4.2.10 act"
+            versionCode 470
+            versionName "4.3.0"
             multiDexEnabled true
-            isDefault.set(false)
+            isDefault.set(true)
             signingConfig signingConfigs.config
 
         }
@@ -76,12 +76,12 @@ android {
             applicationId 'br.com.libertyseguros.aliro'
             buildConfigField "String", "tag", "\"AliroSeguros\""
             buildConfigField "String", "databasename", "\"aliro2020.db\""
-            buildConfigField "boolean", "prod", "false"
+            buildConfigField "boolean", "prod", "true"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 465
-            versionName "4.2.10 act"
+            versionCode 470
+            versionName "4.3.0"
             multiDexEnabled true
-            isDefault.set(true)
+            isDefault.set(false)
             signingConfig signingConfigs.config
         }
     }

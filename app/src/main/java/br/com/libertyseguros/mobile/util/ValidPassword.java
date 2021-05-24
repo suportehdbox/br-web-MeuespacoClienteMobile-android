@@ -29,7 +29,7 @@ public class ValidPassword {
 	}
 
 	public boolean checkPassword(String password){
-	    Pattern pattern = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d$@$!%*#?.]{6,}$");
+	    Pattern pattern = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d$@$!%*#?.]{8,}$");
 	    Matcher matcher = pattern.matcher(password);
 
 	    return matcher.matches();
