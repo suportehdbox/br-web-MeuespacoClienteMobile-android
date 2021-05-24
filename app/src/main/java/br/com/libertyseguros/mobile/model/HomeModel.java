@@ -61,44 +61,48 @@ public class HomeModel extends BaseModel {
 
         this.activity = activity;
 
-//        Security sec = new Security();
+        Security sec = new Security();
         final  Activity act = activity;
-//        sec.isDeviceCompliance(activity, new SecurityListener() {
-//            @Override
-//            public void onSecurityCheckComplete(boolean isCompliant) {
-//                if(!isCompliant){
-//                    Toast.makeText(act, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
-//                    act.finish();
-//                    return;
-//                }
-//            }
-//        });
-
-
-        conn = new Connection(this.activity);
-        flutterModuleController = new FlutterModuleController(this.activity);
-        conn.setOnConnection(new OnConnection() {
+        sec.isDeviceCompliance(activity, new SecurityListener() {
             @Override
-            public void onError(String msg) {
-                //do nothing
-            }
-
-            @Override
-            public void onSucess(String result) {
-                Gson gson = new Gson();
-                UpdateRequiredResponse message = gson.fromJson(result, UpdateRequiredResponse.class);
-                if(message.getUpdatedRequired()){
-                    //Must show dialog
-                    flutterModuleController.ShowUpdateRequired();
-                }else {
-                    if (!token) {
-                        doLoginStuff();
-                    }
+            public void onSecurityCheckComplete(boolean isCompliant) {
+                if(!isCompliant){
+                    Toast.makeText(act, "Dispositivo não compatível ou com acesso não permitido ao root", Toast.LENGTH_LONG).show();
+                    act.finish();
+                    return;
                 }
             }
         });
 
-        conn.startConnection("Acesso/UpdateRequired","?AppVersion=1", 2);
+
+        if(!Config.isAlreadyShownUpdate){
+            Config.isAlreadyShownUpdate = true;
+            conn = new Connection(this.activity);
+            flutterModuleController = new FlutterModuleController(this.activity);
+            conn.setOnConnection(new OnConnection() {
+                @Override
+                public void onError(String msg) {
+                    //do nothing
+                }
+
+                @Override
+                public void onSucess(String result) {
+                    Gson gson = new Gson();
+                    UpdateRequiredResponse message = gson.fromJson(result, UpdateRequiredResponse.class);
+                    if(message.getUpdatedRequired()){
+                        //Must show dialog
+                        flutterModuleController.ShowUpdateRequired();
+                    }else {
+                        if (!token) {
+                            doLoginStuff();
+                        }
+                    }
+                }
+            });
+
+            String version = BuildConfig.VERSION_NAME.replace(" act", "");
+            conn.startConnection("Acesso/UpdateRequired","?AppVersion="+version, 2);
+        }
 
         DocumentsImageManager documentsImageManager = new DocumentsImageManager(activity);
         documentsImageManager.dataExpiration();
