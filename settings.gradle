@@ -2,5 +2,5 @@ include ':app', ':gcmsender'
 setBinding(new Binding([gradle: this]))                                // new
 evaluate(new File(                                                     // new
         settingsDir.parentFile,                                              // new
-        'liberty_flutter_modules/.android/include_flutter.groovy'                         // new
+        'br_web_flutter_modules/.android/include_flutter.groovy'                         // new
 ))

@@ -27,5 +27,7 @@
     <string name="lgpd_grupo_liberty_link">canal de comunicação</string>
     <string name="dispositivo_rooted">Smartphones com alterações de software não podem realizar alterações de pagamento. Acesse Meu Espaço na web.</string>
     <string name="crc">2639490455</string>
+    <string name="password_expired">SUA SENHA FOI EXPIRADA!</string>
+    <string name="password_expired_text">Atenção, sua senha foi expirada por conta de uma nova política de segurança da Liberty. Após clicar no botão abaixo, você será redirecionado para cadastrar a sua nova senha. Cadastre o quanto antes para ter acesso ao App da Liberty.</string>
 
 </resources>

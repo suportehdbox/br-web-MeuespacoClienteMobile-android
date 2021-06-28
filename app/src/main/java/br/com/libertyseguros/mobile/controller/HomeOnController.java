@@ -1,8 +1,12 @@
 package br.com.libertyseguros.mobile.controller;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.view.View;
+import android.widget.ImageView;
 
+import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.HomeBeansV2;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
@@ -10,11 +14,13 @@ import br.com.libertyseguros.mobile.model.HomeOnModel;
 import br.com.libertyseguros.mobile.model.PolicyModelV2;
 import br.com.libertyseguros.mobile.util.OnBarCode;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
+import br.com.libertyseguros.mobile.view.ChangePasswordLoginOn;
 import br.com.libertyseguros.mobile.view.Parcels;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeOnController {
     private HomeOnModel homeOnModel;
+    private Dialog dialogPasswordExpired;
 
     public HomeOnController(OnConnectionResult onConnectionResult, Context context) {
         homeOnModel = new HomeOnModel(onConnectionResult, context);
@@ -68,6 +74,28 @@ public class HomeOnController {
      */
     public boolean getImageUser(Context context, CircleImageView ivImageUser) {
         return homeOnModel.getImageUser(context, ivImageUser);
+    }
+
+    public void checkPasswordExpired(Context context){
+        if (getInfoUser().isForceResetPassword()){
+
+            if (dialogPasswordExpired == null) {
+                dialogPasswordExpired = new Dialog(context, R.style.AppThemeDialog);
+                dialogPasswordExpired.setCancelable(false);
+                dialogPasswordExpired.setContentView(R.layout.dialog_password_expired);
+
+                ImageView ivType = (ImageView) dialogPasswordExpired.findViewById(R.id.iv_ok);
+                ivType.setOnClickListener(new View.OnClickListener() {
+                    //    @Override
+                    public void onClick(View v) {
+                        dialogPasswordExpired.dismiss();
+                        Intent it = new Intent(context, ChangePasswordLoginOn.class);
+                        context.startActivity(it);
+                    }
+                });
+            }
+            dialogPasswordExpired.show();
+        }
     }
 
     /**

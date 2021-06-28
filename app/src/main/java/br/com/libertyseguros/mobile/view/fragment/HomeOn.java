@@ -176,6 +176,8 @@ public class HomeOn extends Fragment implements View.OnClickListener, Navigation
     public void onResume() {
         super.onResume();
 
+        homeOnController.checkPasswordExpired(getActivity());
+
         NavigationApplication nav = (NavigationApplication) getActivity().getApplication();
         nav.setNavigationListener(this);
         ServiceFirebaseMessagingService.setOnNotificationListener(nav.getListener());

@@ -16,6 +16,7 @@ public class LoginBeans {
     private String idFacebook;
     private boolean hasFacebook;
     private boolean hasGooglePlus;
+    private boolean forceResetPassword;
 
     public String getPhoto() {
         return Photo;
@@ -126,4 +127,8 @@ public class LoginBeans {
     public void setHasGooglePlus(boolean hasGooglePlus) {
         this.hasGooglePlus = hasGooglePlus;
     }
+
+    public boolean isForceResetPassword() { return forceResetPassword; }
+
+    public void setForceResetPassword(boolean forceResetPassword) {  this.forceResetPassword = forceResetPassword; }
 }

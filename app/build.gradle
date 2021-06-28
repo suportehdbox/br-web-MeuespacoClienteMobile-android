@@ -63,7 +63,7 @@ android {
             applicationId 'br.com.libertyseguros.mobile'
             buildConfigField "String", "tag", "\"LibertySeguros\""
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
-            buildConfigField "boolean", "prod", "true"
+            buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
             versionCode 474
             versionName "4.3.1"
@@ -76,7 +76,7 @@ android {
             applicationId 'br.com.libertyseguros.aliro'
             buildConfigField "String", "tag", "\"AliroSeguros\""
             buildConfigField "String", "databasename", "\"aliro2020.db\""
-            buildConfigField "boolean", "prod", "true"
+            buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
             versionCode 474
             versionName "4.3.1"
