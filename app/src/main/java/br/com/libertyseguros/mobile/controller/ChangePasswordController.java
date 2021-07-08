@@ -128,4 +128,8 @@ public class ChangePasswordController{
     public void openPrivacy(Context context){
         changePasswordModel.openPrivacy(context);
     }
+
+    public void changePasswordExpired(Context context){
+        changePasswordModel.changePasswordExpired(context);
+    }
 }

@@ -321,5 +321,12 @@ public class ChangePasswordModel extends BaseModel {
         context.startActivity(it);
     }
 
+    public void changePasswordExpired(Context context){
+        loginBeans = infoUser.getUserInfo(context);
+        loginBeans.setForceResetPassword(false);
+        String json = gson.toJson(loginBeans);
+        infoUser.saveUserInfo(json, context);
+    }
+
 }
 

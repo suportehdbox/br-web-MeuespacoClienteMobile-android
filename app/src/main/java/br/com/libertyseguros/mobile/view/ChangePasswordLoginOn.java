@@ -2,6 +2,7 @@ package br.com.libertyseguros.mobile.view;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -56,12 +57,15 @@ public class ChangePasswordLoginOn extends BaseActionBar implements View.OnClick
     private TextView etEmail;
 
 
+
     public void onCreate(Bundle bundle){
         super.onCreate(bundle);
 
         setContentView(R.layout.activity_change_password_login_on);
 
         setTitle(getString(R.string.title_action_bar_5));
+
+        final Context _context = getApplicationContext();
 
         mFirebaseAnalytics.setCurrentScreen(this, "Troca Senha", null);
         llContentField = findViewById(R.id.ll_content_field);
@@ -99,8 +103,10 @@ public class ChangePasswordLoginOn extends BaseActionBar implements View.OnClick
                         @Override
                         public void run() {
                         try {
+                            changePasswordController.changePasswordExpired(_context);
                             showLoading(false);
                             dialogSendPassword.show();
+
                         }catch(Exception ex){
                             ex.printStackTrace();
                         }
