@@ -79,5 +79,5 @@ public class Config {
     public static boolean isAlreadyShownUpdate = false;
 
     public final static boolean ClaimWebView = true;
-
+    public static boolean aleradyChangedPassword = false;
 }

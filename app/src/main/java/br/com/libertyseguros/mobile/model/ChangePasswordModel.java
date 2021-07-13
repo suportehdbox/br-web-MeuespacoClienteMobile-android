@@ -326,6 +326,7 @@ public class ChangePasswordModel extends BaseModel {
         loginBeans.setForceResetPassword(false);
         String json = gson.toJson(loginBeans);
         infoUser.saveUserInfo(json, context);
+        Config.aleradyChangedPassword = true;
     }
 
 }

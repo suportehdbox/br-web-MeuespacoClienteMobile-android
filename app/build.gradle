@@ -1,5 +1,3 @@
-import com.google.gms.googleservices.GoogleServicesPlugin
-
 apply plugin: 'com.android.application'
 // Apply the Crashlytics Gradle plugin
 apply plugin: 'com.google.firebase.crashlytics'
@@ -65,7 +63,7 @@ android {
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 476
+            versionCode 477
             versionName "4.3.3act"
             multiDexEnabled true
             isDefault.set(true)
@@ -78,7 +76,7 @@ android {
             buildConfigField "String", "databasename", "\"aliro2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 476
+            versionCode 477
             versionName "4.3.3act"
             multiDexEnabled true
             isDefault.set(false)

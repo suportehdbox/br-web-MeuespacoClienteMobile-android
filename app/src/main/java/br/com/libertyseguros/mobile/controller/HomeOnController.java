@@ -10,6 +10,7 @@ import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.HomeBeansV2;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
+import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.model.HomeOnModel;
 import br.com.libertyseguros.mobile.model.PolicyModelV2;
 import br.com.libertyseguros.mobile.util.OnBarCode;
@@ -77,7 +78,7 @@ public class HomeOnController {
     }
 
     public void checkPasswordExpired(Context context){
-        if (getInfoUser().isForceResetPassword()){
+        if (getInfoUser().isForceResetPassword() && !Config.aleradyChangedPassword ){
 
             if (dialogPasswordExpired == null) {
                 dialogPasswordExpired = new Dialog(context, R.style.AppThemeDialog);
