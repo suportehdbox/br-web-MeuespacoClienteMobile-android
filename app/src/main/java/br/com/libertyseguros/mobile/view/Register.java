@@ -336,7 +336,7 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         etName = new EditTextCustom(this);
         etPolicy = new EditTextCustom(this);
 
-       etPolicy.getEditText().setFilters(new InputFilter[] {new InputFilter.LengthFilter(10)});
+       etPolicy.getEditText().setFilters(new InputFilter[] {new InputFilter.LengthFilter(15)});
         plate_watcher = PlateMaskUtil.insert(etPolicy.getEditText());
         cep_watcher = CepMaskUtil.insert(etPolicy.getEditText());
         date_watcher = DateMaskUtil.insert(etPolicy.getEditText());

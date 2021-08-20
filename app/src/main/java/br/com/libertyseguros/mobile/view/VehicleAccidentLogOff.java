@@ -121,7 +121,7 @@ public class VehicleAccidentLogOff extends BaseActionBar implements View.OnClick
 
 
         InputFilter[] FilterArray1 = new InputFilter[1];
-        FilterArray1[0] = new InputFilter.LengthFilter(10);
+        FilterArray1[0] = new InputFilter.LengthFilter(15);
         etPolicy.getEditText().setFilters(FilterArray1);
 
         llEditText = (LinearLayout) findViewById(R.id.ll_edittext);
