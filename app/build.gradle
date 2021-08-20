@@ -63,7 +63,7 @@ android {
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 479
+            versionCode 480
             versionName "4.3.4act"
             multiDexEnabled true
             isDefault.set(true)
@@ -76,7 +76,7 @@ android {
             buildConfigField "String", "databasename", "\"aliro2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 479
+            versionCode 480
             versionName "4.3.4act"
             multiDexEnabled true
             isDefault.set(false)

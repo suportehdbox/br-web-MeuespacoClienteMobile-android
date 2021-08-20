@@ -591,7 +591,7 @@ I/LibertySeguros: RegisterModel: {"message":"An error has occurred.","exceptionM
                         warning[0] = context.getString(R.string.message_error_plate);
                     }
                 } else {
-                    if (policy.length() != 10) {
+                    if (policy.length() != 10 && policy.length() != 15) {
                         warning[0] = context.getString(R.string.message_error_policy);
                     }
                 }
@@ -603,7 +603,7 @@ I/LibertySeguros: RegisterModel: {"message":"An error has occurred.","exceptionM
                         warning[0] = context.getString(R.string.message_error_cep);
                     }
                 } else {
-                    if (policy.length() != 10) {
+                    if (policy.length() != 10 && policy.length() != 15) {
                         warning[0] = context.getString(R.string.message_error_policy);
                     }
                 }
@@ -615,7 +615,7 @@ I/LibertySeguros: RegisterModel: {"message":"An error has occurred.","exceptionM
                         warning[0] = context.getString(R.string.message_error_bir);
                     }
                 } else {
-                    if (policy.length() != 10) {
+                    if (policy.length() != 10 && policy.length() != 15) {
                         warning[0] = context.getString(R.string.message_error_policy);
                     }
                 }
