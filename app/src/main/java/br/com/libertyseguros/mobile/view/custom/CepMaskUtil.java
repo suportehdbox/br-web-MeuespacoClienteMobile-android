@@ -52,8 +52,8 @@ public abstract class CepMaskUtil {
                     }
                 }else{
                     mascara = str;
-                    if(str.length()>10){
-                        mascara = str.substring(0,10);
+                    if(str.length()>15){
+                        mascara = str.substring(0,15);
                     }
                 }
                 isUpdating = true;
