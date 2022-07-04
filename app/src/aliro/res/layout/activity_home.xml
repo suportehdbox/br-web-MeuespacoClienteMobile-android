@@ -1,5 +1,4 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,11 +8,12 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/iv_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:layout_gravity="center"
             android:background="@drawable/bg_home"
-            android:id="@+id/iv_background" />
+            android:scaleType="centerCrop" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -48,15 +48,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:scaleType="centerInside"
                 android:src="@drawable/logo_liberty"
-                android:visibility="invisible" />
+                />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_default_5"
                 android:layout_alignParentBottom="true"
+                android:layout_marginBottom="60dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -66,6 +67,7 @@
                     android:layout_alignParentBottom="true"
                     android:gravity="center"
                     android:orientation="vertical">
+
                     <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
                         android:id="@+id/bt_login"
                         style="@style/ButtonDefault"
@@ -82,8 +84,20 @@
                         android:text="@string/button_register"
                         android:textColor="@color/color_button_default_1" />
 
+                    <TextView
+                        android:id="@+id/sub_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Precisa de ajuda?" />
 
-
+                    <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                        android:id="@+id/bt_whatsapp"
+                        style="@style/ButtonDefault"
+                        android:layout_width="wrap_content"
+                        android:background="@drawable/bt_background_2"
+                        android:text="@string/button_whatsapp_home"
+                        android:textColor="@color/color_button_default_1" />
                 </LinearLayout>
             </LinearLayout>
 

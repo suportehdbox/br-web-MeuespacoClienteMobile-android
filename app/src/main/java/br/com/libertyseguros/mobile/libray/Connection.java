@@ -4,12 +4,11 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.util.Log;
 
-
-import java.net.HttpURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -149,8 +148,8 @@ public class Connection {
                     }
 
                     if (!BuildConfig.prod) {
-                        //Log.i(Config.TAG, "Connecion URL: " + url.toString());
-                        //Log.i(Config.TAG, "Connecion PARAM: " + urlParameters);
+                        Log.i(Config.TAG, "Connecion URL: " + url.toString());
+                        Log.i(Config.TAG, "Connecion PARAM: " + urlParameters);
                     }
 
                     if (type == 1) {
@@ -181,6 +180,10 @@ public class Connection {
 
                         Response response = client.newCall(request).execute();
 
+                        if (!BuildConfig.prod) {
+                            Log.i(Config.TAG, "Response 3: " + response.toString());
+                        }
+
                         serverReturn = response.body().string();
 
                     } else if (type == 2) {
@@ -207,6 +210,11 @@ public class Connection {
 
                             Response response = client.newCall(request).execute();
 
+
+                            if (!BuildConfig.prod) {
+                                Log.i(Config.TAG, "Response 2: " + response.toString());
+                            }
+
                             serverReturn = response.body().string();
                             //conn.setRequestProperty("Authorization", "Bearer " + infoUser.getUserInfo(context).getAccess_token());
 
@@ -229,8 +237,9 @@ public class Connection {
                             }
 
                             if (!BuildConfig.prod) {
-                                //Log.i(Config.TAG, "Response: " + response.toString());
+                                Log.i(Config.TAG, "Response 3: " + response.toString());
                             }
+
                             serverReturn = response.toString();
 
                             rd.close();
@@ -257,6 +266,10 @@ public class Connection {
 
                         Response response = client.newCall(request).execute();
 
+                        if (!BuildConfig.prod) {
+                            Log.i(Config.TAG, "Response 4: " + response.toString());
+                        }
+
                         serverReturn = response.body().string();
 
                     } else if (type == 4) {
@@ -275,6 +288,11 @@ public class Connection {
 
 
                         Response response = client.newCall(request).execute();
+
+
+                        if (!BuildConfig.prod) {
+                            Log.i(Config.TAG, "Response 5: " + response.toString());
+                        }
 
                         serverReturn = response.body().string();
                     } else if (type == 5) {
@@ -299,12 +317,21 @@ public class Connection {
 
                         Response response = client.newCall(request).execute();
 
+
+                        if (!BuildConfig.prod) {
+                            Log.i(Config.TAG, "Response 6: " + response.toString());
+                        }
+
                         serverReturn = response.body().string();
 
                     }
 
 
                     if (onConnection != null) {
+
+                        if (!BuildConfig.prod) {
+                            Log.i(Config.TAG, "Response On success: " + serverReturn.toString());
+                        }
                         onConnection.onSucess(serverReturn.toString());
                     }
 

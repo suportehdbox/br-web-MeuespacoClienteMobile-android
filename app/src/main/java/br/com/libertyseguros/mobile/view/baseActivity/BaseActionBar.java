@@ -4,18 +4,16 @@ package br.com.libertyseguros.mobile.view.baseActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import br.com.libertyseguros.mobile.R;
-
 import br.com.libertyseguros.mobile.libray.LoadFile;
 import br.com.libertyseguros.mobile.receiver.ServiceFirebaseMessagingService;
 import br.com.libertyseguros.mobile.util.AnalyticsApplication;
@@ -87,7 +85,6 @@ public class BaseActionBar extends AppCompatActivity implements NavigationApplic
         actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.background_action_bar)));
         actionBar.setDisplayShowTitleEnabled(true);
         lf = new LoadFile();
-
 
         //NavigationApplication nav = (NavigationApplication) getApplication();
         //nav.setNavigationListener(this);

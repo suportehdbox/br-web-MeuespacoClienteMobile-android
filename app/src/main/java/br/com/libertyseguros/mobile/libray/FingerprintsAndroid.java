@@ -4,10 +4,12 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.KeyguardManager;
 import android.os.Build;
-import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
-import androidx.core.os.CancellationSignal;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
+import androidx.core.os.CancellationSignal;
+
 import br.com.libertyseguros.mobile.R;
 
 public class FingerprintsAndroid {

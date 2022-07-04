@@ -2,7 +2,6 @@ package br.com.libertyseguros.mobile.libray;
 
 
 import android.content.Context;
-import android.util.Log;
 
 import br.com.libertyseguros.mobile.util.OnDownloadFile;
 

@@ -1,11 +1,9 @@
 package br.com.libertyseguros.mobile.libray;
 
 import android.content.Context;
+import android.provider.Settings;
 
 import br.com.libertyseguros.mobile.BuildConfig;
-
-import android.provider.Settings;
-import android.telephony.TelephonyManager;
 
 public class Config {
 

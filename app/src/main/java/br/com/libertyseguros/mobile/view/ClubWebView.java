@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.core.app.ActivityCompat;
 import android.view.View;
 import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
@@ -17,7 +15,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import java.net.URLEncoder;
+
+import androidx.core.app.ActivityCompat;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.ClubController;

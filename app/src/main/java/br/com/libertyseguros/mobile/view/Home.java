@@ -9,13 +9,13 @@ import android.content.pm.Signature;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.google.android.material.snackbar.Snackbar;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.security.MessageDigest;
@@ -24,9 +24,10 @@ import java.security.NoSuchAlgorithmException;
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.HomeController;
-import br.com.libertyseguros.mobile.model.RegisterModel;
 import br.com.libertyseguros.mobile.controller.RegisterController;
 import br.com.libertyseguros.mobile.libray.LoadFile;
+import br.com.libertyseguros.mobile.listeners.WhatsAppClickListener;
+import br.com.libertyseguros.mobile.model.RegisterModel;
 import br.com.libertyseguros.mobile.util.AnalyticsApplication;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActivity;
@@ -39,11 +40,6 @@ public class Home extends BaseActivity implements View.OnClickListener {
     private RegisterController registerController;
     private HomeController homeController;
     private FirebaseAnalytics mFirebaseAnalytics;
-
-    private ButtonViewCustom btLoginSkip;
-    private ButtonViewCustom btLogin;
-    private ButtonViewCustom btRegister;
-    private ImageViewCustom ivSupport;
 
     private TextView tvMessageDialog;
 
@@ -71,11 +67,7 @@ public class Home extends BaseActivity implements View.OnClickListener {
                 Uri uri = intent.getData();
                 registerActivation = uri.getQueryParameter("token");
 
-                if (registerActivation != null && !registerActivation.equals("")) {
-                    token = true;
-                } else {
-                    token = false;
-                }
+                token = registerActivation != null && !registerActivation.equals("");
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -102,16 +94,19 @@ public class Home extends BaseActivity implements View.OnClickListener {
             ivBackground.setBackgroundColor(getResources().getColor(R.color.background_home));
         }
 
-        btLoginSkip = (ButtonViewCustom) findViewById(R.id.bt_skip);
+        ButtonViewCustom btLoginSkip = (ButtonViewCustom) findViewById(R.id.bt_skip);
         btLoginSkip.setOnClickListener(this);
 
-        btLogin = (ButtonViewCustom) findViewById(R.id.bt_login);
+        ButtonViewCustom btWhats = (ButtonViewCustom) findViewById(R.id.bt_whatsapp);
+        btWhats.setOnClickListener(new WhatsAppClickListener());
+
+        ButtonViewCustom btLogin = (ButtonViewCustom) findViewById(R.id.bt_login);
         btLogin.setOnClickListener(this);
 
-        btRegister = (ButtonViewCustom) findViewById(R.id.bt_register);
+        ButtonViewCustom btRegister = (ButtonViewCustom) findViewById(R.id.bt_register);
         btRegister.setOnClickListener(this);
 
-        ivSupport = (ImageViewCustom) findViewById(R.id.iv_support);
+        ImageViewCustom ivSupport = (ImageViewCustom) findViewById(R.id.iv_support);
         ivSupport.setOnClickListener(this);
 
         printHashKey();
@@ -122,15 +117,12 @@ public class Home extends BaseActivity implements View.OnClickListener {
                 @Override
                 public void onError() {
                     bar.dismiss();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (registerController.getTypeError() == 1) {
-                                dialogMessageTwoButton.show();
-                            } else {
-                                tvMessageDialog.setText(registerController.getRegisterActivationBeans().getMensagem().replace("\\\\n", System.getProperty("line.separator")));
-                                dialogMessage.show();
-                            }
+                    runOnUiThread(() -> {
+                        if (registerController.getTypeError() == 1) {
+                            dialogMessageTwoButton.show();
+                        } else {
+                            tvMessageDialog.setText(registerController.getRegisterActivationBeans().getMensagem().replace("\\\\n", System.getProperty("line.separator")));
+                            dialogMessage.show();
                         }
                     });
 
@@ -139,13 +131,10 @@ public class Home extends BaseActivity implements View.OnClickListener {
                 @Override
                 public void onSucess() {
 
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            bar.dismiss();
-                            tvMessageDialog.setText(registerController.getRegisterActivationBeans().getMensagem());
-                            dialogMessage.show();
-                        }
+                    runOnUiThread(() -> {
+                        bar.dismiss();
+                        tvMessageDialog.setText(registerController.getRegisterActivationBeans().getMensagem());
+                        dialogMessage.show();
                     });
 
                 }
@@ -160,33 +149,29 @@ public class Home extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.bt_skip:
-                homeController.openSkipLogOff();
-                break;
-            case R.id.bt_login:
-                homeController.openLogin();
-                break;
-            case R.id.bt_register:
-                homeController.openRegister();
-                break;
-            case R.id.iv_support:
-                homeController.openSupport(Home.this);
+        int id = v.getId();
+        if (id == R.id.bt_skip) {
+            homeController.openSkipLogOff();
+        } else if (id == R.id.bt_login) {
+            homeController.openLogin();
+        } else if (id == R.id.bt_register) {
+            homeController.openRegister();
+        } else if (id == R.id.iv_support) {
+            homeController.openSupport(Home.this);
 
-                Bundle bundle = new Bundle();
-                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "Clique");
-                bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "Home Inicial");
-                bundle.putString(FirebaseAnalytics.Param.CONTENT, "Facebook Connect");
+            Bundle bundle = new Bundle();
+            bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "Clique");
+            bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "Home Inicial");
+            bundle.putString(FirebaseAnalytics.Param.CONTENT, "Facebook Connect");
 
-                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-
-                break;
+            mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
         }
     }
 
     private void printHashKey() {
 
         try {
+            // FIXME: Android 4.4 Lower this can be exploited
             PackageInfo info = getPackageManager().getPackageInfo(
                     "br.com.libertyseguros.mobile",
                     PackageManager.GET_SIGNATURES);
@@ -195,9 +180,7 @@ public class Home extends BaseActivity implements View.OnClickListener {
                 md.update(signature.toByteArray());
                 //Log.i("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
+        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
 
@@ -234,35 +217,20 @@ public class Home extends BaseActivity implements View.OnClickListener {
 
         tvMessageDialog = (TextView) dialogMessage.findViewById(R.id.tv_dialog_message);
         TextView tvOk = (TextView) dialogMessage.findViewById(R.id.tv_ok);
-        tvOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogMessage.dismiss();
-            }
-        });
+        tvOk.setOnClickListener(v -> dialogMessage.dismiss());
 
         dialogMessageTwoButton = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
         dialogMessageTwoButton.setContentView(R.layout.dialog_message_two_button);
         TextView tvCancel = (TextView) dialogMessageTwoButton.findViewById(R.id.tv_cancel);
-        tvCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogMessageTwoButton.dismiss();
-            }
-        });
+        tvCancel.setOnClickListener(v -> dialogMessageTwoButton.dismiss());
 
         TextView tvTryAgain = (TextView) dialogMessageTwoButton.findViewById(R.id.tv_try_again);
 
-        tvTryAgain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (registerController.getTypeConnection()) {
-                    case RegisterModel.REGISTER_ACTIVATION:
-                        bar.show();
-                        dialogMessageTwoButton.dismiss();
-                        registerController.getRegisterActivation(Home.this, registerActivation);
-                        break;
-                }
+        tvTryAgain.setOnClickListener(v -> {
+            if (registerController.getTypeConnection() == RegisterModel.REGISTER_ACTIVATION) {
+                bar.show();
+                dialogMessageTwoButton.dismiss();
+                registerController.getRegisterActivation(Home.this, registerActivation);
             }
         });
 

@@ -1,11 +1,6 @@
 package br.com.libertyseguros.mobile.view.fragment;
 
 import android.app.Dialog;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +12,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,16 +24,17 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import br.com.libertyseguros.mobile.R;
+import br.com.libertyseguros.mobile.controller.HomeOffController;
+import br.com.libertyseguros.mobile.libray.Config;
+import br.com.libertyseguros.mobile.libray.ManagerLocation;
 import br.com.libertyseguros.mobile.receiver.ServiceFirebaseMessagingService;
 import br.com.libertyseguros.mobile.util.AnalyticsApplication;
 import br.com.libertyseguros.mobile.util.NavigationApplication;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
-import br.com.libertyseguros.mobile.controller.HomeOffController;
-import br.com.libertyseguros.mobile.libray.Config;
-import br.com.libertyseguros.mobile.libray.ManagerLocation;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
 import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 import br.com.libertyseguros.mobile.view.custom.NotificationSnackBar;

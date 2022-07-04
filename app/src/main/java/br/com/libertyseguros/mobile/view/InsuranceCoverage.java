@@ -2,14 +2,11 @@ package br.com.libertyseguros.mobile.view;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.adapter.InsuranceCoverageAdapater;

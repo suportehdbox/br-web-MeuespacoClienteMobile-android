@@ -1,7 +1,5 @@
 package br.com.libertyseguros.mobile.beans;
 
-import br.com.libertyseguros.mobile.R;
-
 public class PaymentPriceBeans {
 
     private String value;

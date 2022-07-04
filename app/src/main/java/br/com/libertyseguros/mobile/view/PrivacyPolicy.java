@@ -7,7 +7,6 @@ import android.webkit.WebView;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 
 public class PrivacyPolicy extends BaseActionBar{

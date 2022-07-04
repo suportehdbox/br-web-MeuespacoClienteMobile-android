@@ -4,19 +4,15 @@ package br.com.libertyseguros.mobile.model;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import com.google.gson.Gson;
 
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.VehicleAccidentStatusBeans;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
-import br.com.libertyseguros.mobile.view.DetailPolicy;
-import br.com.libertyseguros.mobile.view.Main;
 import br.com.libertyseguros.mobile.view.UploadPictures;
 
 public class ListVehicleAccidentStatusModel {

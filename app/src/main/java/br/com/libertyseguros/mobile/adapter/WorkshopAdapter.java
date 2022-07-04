@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
+
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.WorkshopBeans;
 import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +16,6 @@ import java.util.ArrayList;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.DocumentsBeans;
 import br.com.libertyseguros.mobile.controller.DocumentPicturesController;
-import br.com.libertyseguros.mobile.view.Documents;
 
 public class DocumentsAdapter extends BaseAdapter {
 

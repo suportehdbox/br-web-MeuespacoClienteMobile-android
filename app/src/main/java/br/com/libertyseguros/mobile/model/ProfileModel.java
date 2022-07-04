@@ -6,8 +6,6 @@ import android.content.Intent;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
-import java.util.List;
-
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.view.ChangeEmailLoginOn;

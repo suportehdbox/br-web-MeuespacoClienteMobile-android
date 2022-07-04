@@ -1,15 +1,12 @@
 package br.com.libertyseguros.mobile.controller;
 
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.VehicleAccidentStatusBeans;
 import br.com.libertyseguros.mobile.model.ListVehicleAccidentStatusModel;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
-import br.com.libertyseguros.mobile.view.DetailPolicy;
 
 public class ListVehicleAccidentStatusController {
 

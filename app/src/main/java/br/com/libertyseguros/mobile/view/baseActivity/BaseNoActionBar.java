@@ -3,8 +3,9 @@ package br.com.libertyseguros.mobile.view.baseActivity;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.receiver.ServiceFirebaseMessagingService;
@@ -25,7 +26,6 @@ public class BaseNoActionBar extends AppCompatActivity implements NavigationAppl
         super.onCreate(bundle);
 
         getSupportActionBar().hide();
-
 
         //  NavigationApplication nav = (NavigationApplication) getApplication();
         // nav.setNavigationListener(this);

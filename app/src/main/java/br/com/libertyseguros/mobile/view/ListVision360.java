@@ -2,14 +2,14 @@ package br.com.libertyseguros.mobile.view;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import androidx.cardview.widget.CardView;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.cardview.widget.CardView;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;

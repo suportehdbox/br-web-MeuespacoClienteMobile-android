@@ -55,7 +55,7 @@
                     <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
                         android:id="@+id/iv_sinistro"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="180dp"
                         android:layout_marginTop="@dimen/margin_default_2"
                         android:layout_marginBottom="@dimen/margin_default_1"
                         android:background="@null"
@@ -69,7 +69,7 @@
                     <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
                         android:id="@+id/iv_assistance"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="180dp"
                         android:layout_marginTop="@dimen/margin_default_2"
                         android:layout_marginBottom="@dimen/margin_default_1"
                         android:background="@null"
@@ -83,7 +83,7 @@
                     <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
                         android:id="@+id/iv_glass_assistance"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="180dp"
                         android:layout_marginTop="@dimen/margin_default_2"
                         android:layout_marginBottom="@dimen/margin_default_1"
                         android:background="@null"
@@ -97,7 +97,7 @@
                     <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
                         android:id="@+id/iv_home_assistance"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="180dp"
                         android:layout_marginTop="@dimen/margin_default_2"
                         android:layout_marginBottom="@dimen/margin_default_1"
                         android:background="@null"

@@ -4,19 +4,19 @@ buildscript {
         kotlin_version = '1.4.10'
     }
     repositories {
-        google()
+        jcenter()
         maven {
             url "https://maven.google.com"
         }
 
         mavenCentral()
-        jcenter()
+        google()
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
-        classpath 'com.google.gms:google-services:4.3.5'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.1'
+        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 
@@ -28,7 +28,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url "http://salesforce-marketingcloud.github.io/JB4A-SDK-Android/repository" }
+        maven { url "https://salesforce-marketingcloud.github.io/JB4A-SDK-Android/repository" }
         maven { url "https://jitpack.io" }
         maven {
             url 'https://s3.amazonaws.com/sdk-ga-releases.cloudmi.datami.com/android/mvn/smisdk/'

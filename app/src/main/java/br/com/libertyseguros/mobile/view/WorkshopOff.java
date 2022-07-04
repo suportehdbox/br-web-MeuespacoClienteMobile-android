@@ -6,7 +6,6 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +15,6 @@ import br.com.libertyseguros.mobile.controller.WorkshopController;
 import br.com.libertyseguros.mobile.controller.WorkshopOffController;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 import br.com.libertyseguros.mobile.view.custom.MaskEditText;
 
 public class WorkshopOff extends BaseActionBar implements View.OnClickListener{

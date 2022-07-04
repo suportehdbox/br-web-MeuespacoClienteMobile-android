@@ -16,38 +16,40 @@ import br.com.libertyseguros.mobile.R
 import br.com.libertyseguros.mobile.controller.ClubController
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar
 import br.com.libertyseguros.mobile.viewmodel.NovoClubeViewModel
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 
-class NovoClubeLiberty : BaseActionBar(), View.OnClickListener{
+class NovoClubeLiberty : BaseActionBar(), View.OnClickListener {
 
     lateinit var clubController: ClubController
     private lateinit var btPrevious: ImageButton
     private lateinit var btNext: ImageButton
-    private lateinit var pager:ViewPager2
+    private lateinit var pager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_novo_clube_liberty)
-        mFirebaseAnalytics.setCurrentScreen(this, getString(R.string.title_action_bar_11), null)
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, getString(R.string.title_action_bar_11))
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, this.localClassName)
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle)
 
         setTitle(getString(R.string.title_action_bar_11))
-        pager = findViewById<ViewPager2>(R.id.pager)
+        pager = findViewById(R.id.pager)
 
-        btPrevious = findViewById<ImageButton>(R.id.bt_previous)
+        btPrevious = findViewById(R.id.bt_previous)
         btPrevious.setOnClickListener(this)
-        btNext = findViewById<ImageButton>(R.id.bt_next)
+        btNext = findViewById(R.id.bt_next)
         btNext.setOnClickListener(this)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             btPrevious.background.setColorFilter(getColor(R.color.blueDefault), PorterDuff.Mode.SRC_IN)
             btNext.background.setColorFilter(getColor(R.color.blueDefault), PorterDuff.Mode.SRC_IN)
-        }else{
+        } else {
             btPrevious.background.setColorFilter(resources.getColor(R.color.blueDefault), PorterDuff.Mode.SRC_IN)
             btNext.background.setColorFilter(resources.getColor(R.color.blueDefault), PorterDuff.Mode.SRC_IN)
         }
-
-
 
         val demoAdapter = DemoCollectionAdapter(this)
         pager.adapter = demoAdapter
@@ -68,36 +70,36 @@ class NovoClubeLiberty : BaseActionBar(), View.OnClickListener{
         updateButtonsAtPageIndex(0)
     }
 
-    private fun updateButtonsAtPageIndex(index: Int){
+    private fun updateButtonsAtPageIndex(index: Int) {
         btPrevious.visibility = View.VISIBLE
         btNext.visibility = View.VISIBLE
-        when(index){
+        when (index) {
             0 -> {
                 btPrevious.visibility = View.GONE
             }
-            3 ->{
+            3 -> {
                 btNext.visibility = View.GONE
             }
         }
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id){
+        when (v!!.id) {
             btPrevious.id -> {
-                pager.currentItem = pager.currentItem-1
+                pager.currentItem = pager.currentItem - 1
             }
-            btNext.id ->{
-                pager.currentItem = pager.currentItem+1
+            btNext.id -> {
+                pager.currentItem = pager.currentItem + 1
             }
         }
     }
 
 }
 
-class DemoCollectionAdapter(activity: AppCompatActivity) : FragmentStateAdapter (activity) {
+class DemoCollectionAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 
-    val arrayLayout = listOf (R.layout.fragment_club_tutorial, R.layout.fragment_club_tutorial_2, R.layout.fragment_club_tutorial_3, R.layout.fragment_club_tutorial_4)
-    val hasViewMoldel = listOf(false,false,false,true)
+    val arrayLayout = listOf(R.layout.fragment_club_tutorial, R.layout.fragment_club_tutorial_2, R.layout.fragment_club_tutorial_3, R.layout.fragment_club_tutorial_4)
+    val hasViewMoldel = listOf(false, false, false, true)
 
     override fun createFragment(position: Int): Fragment {
         val fragment = TutorialStepFragment()
@@ -108,6 +110,7 @@ class DemoCollectionAdapter(activity: AppCompatActivity) : FragmentStateAdapter 
         }
         return fragment
     }
+
     override fun getItemCount(): Int {
         return arrayLayout.size
     }
@@ -120,15 +123,15 @@ private const val ARG_HAS_VM = "HAS_VM"
 // object in our collection.
 class TutorialStepFragment : Fragment(), View.OnClickListener {
 
-    private lateinit var mViewModel:NovoClubeViewModel
-    private lateinit var checkbox:CheckBox
+    private lateinit var mViewModel: NovoClubeViewModel
+    private lateinit var checkbox: CheckBox
     private lateinit var llCheck: LinearLayout
     private lateinit var btLogin: Button
     private lateinit var btRegister: Button
     private lateinit var btOpen: Button
     private lateinit var txtClub: TextView
     private lateinit var txtTerms: TextView
-    private lateinit var clubController:ClubController
+    private lateinit var clubController: ClubController
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -141,12 +144,12 @@ class TutorialStepFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(arguments!!.getBoolean(ARG_HAS_VM)){
+        if (arguments!!.getBoolean(ARG_HAS_VM)) {
             val factory: ViewModelProvider.Factory = ViewModelProvider.AndroidViewModelFactory(activity!!.application!!)
             mViewModel = ViewModelProvider(this, factory).get(NovoClubeViewModel::class.java)
         }
 
-        if(this::mViewModel.isInitialized){
+        if (this::mViewModel.isInitialized) {
             checkbox = view.findViewById(R.id.checkbox_clube)
             btOpen = view.findViewById(R.id.bt_acessar_clube)
             btLogin = view.findViewById(R.id.bt_login_club)
@@ -165,16 +168,16 @@ class TutorialStepFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private fun updateView(){
-        if (mViewModel.isLoggedIn()){
+    private fun updateView() {
+        if (mViewModel.isLoggedIn()) {
             btLogin.visibility = View.GONE
             btRegister.visibility = View.GONE
             btOpen.visibility = View.VISIBLE
             llCheck.visibility = View.VISIBLE
-            checkbox.isChecked=mViewModel.isAgreed
-            btOpen.isEnabled=mViewModel.buttonEnabled
+            checkbox.isChecked = mViewModel.isAgreed
+            btOpen.isEnabled = mViewModel.buttonEnabled
             txtClub.text = getString(R.string.clube_final_logado)
-        }else{
+        } else {
             btOpen.visibility = View.GONE
             llCheck.visibility = View.GONE
             btLogin.visibility = View.VISIBLE
@@ -186,8 +189,8 @@ class TutorialStepFragment : Fragment(), View.OnClickListener {
 
 
     override fun onClick(v: View?) {
-        when (v!!.id){
-            txtTerms.id ->{
+        when (v!!.id) {
+            txtTerms.id -> {
                 clubController.openTerms(activity)
             }
             btOpen.id -> {

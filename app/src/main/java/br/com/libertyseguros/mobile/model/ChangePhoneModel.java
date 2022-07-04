@@ -2,24 +2,18 @@ package br.com.libertyseguros.mobile.model;
 
 
 import android.content.Context;
-import android.util.Log;
 
 import com.google.gson.Gson;
 
 import java.net.URLEncoder;
 
-import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.InfoPhoneBeans;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
-import br.com.libertyseguros.mobile.util.ValidCNPJ;
-import br.com.libertyseguros.mobile.util.ValidCPF;
-import br.com.libertyseguros.mobile.util.ValidEmail;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChangePhoneModel extends BaseModel {

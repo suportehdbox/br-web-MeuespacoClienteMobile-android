@@ -1,33 +1,16 @@
     package br.com.libertyseguros.mobile.model;
 
 
-import android.content.Context;
-import android.util.Log;
-import android.widget.ListView;
+    import android.content.Context;
 
-import com.google.gson.Gson;
+    import java.util.ArrayList;
+    import java.util.Arrays;
+    import java.util.HashMap;
+    import java.util.List;
 
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
-import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.adapter.InsuranceCoverageAdapater;
-import br.com.libertyseguros.mobile.beans.InsuranceCoverages;
-import br.com.libertyseguros.mobile.beans.LoginBeans;
-import br.com.libertyseguros.mobile.beans.MessageBeans;
-import br.com.libertyseguros.mobile.beans.PolicyBeansV2;
-import br.com.libertyseguros.mobile.libray.Config;
-import br.com.libertyseguros.mobile.libray.Connection;
-import br.com.libertyseguros.mobile.util.OnConnection;
-import br.com.libertyseguros.mobile.util.OnConnectionResult;
-import br.com.libertyseguros.mobile.util.ValidCNPJ;
-import br.com.libertyseguros.mobile.util.ValidCPF;
-import br.com.libertyseguros.mobile.util.ValidEmail;
-import br.com.libertyseguros.mobile.view.InsuranceCoverage;
-import de.hdodenhof.circleimageview.CircleImageView;
+    import br.com.libertyseguros.mobile.adapter.InsuranceCoverageAdapater;
+    import br.com.libertyseguros.mobile.beans.InsuranceCoverages;
+    import br.com.libertyseguros.mobile.beans.PolicyBeansV2;
 
 public class InsuranceCoverageModel extends BaseModel{
 

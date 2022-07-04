@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
-import com.google.android.gms.common.util.Strings;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;

@@ -1,11 +1,7 @@
 package br.com.libertyseguros.mobile.view.custom;
 
-import android.content.pm.PackageManager;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.widget.EditText;
 
 public abstract class PlateMaskUtil {

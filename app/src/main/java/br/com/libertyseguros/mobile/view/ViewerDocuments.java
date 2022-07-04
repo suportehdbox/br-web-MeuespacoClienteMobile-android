@@ -1,14 +1,11 @@
 package br.com.libertyseguros.mobile.view;
 
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
-import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +16,8 @@ import android.widget.TextView;
 
 import com.google.android.flexbox.FlexboxLayout;
 
-import java.util.ArrayList;
-
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.DocumentPicturesController;
-import br.com.libertyseguros.mobile.model.DocumentsPictureModel;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;

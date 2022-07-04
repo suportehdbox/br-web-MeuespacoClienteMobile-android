@@ -2,13 +2,11 @@ package br.com.libertyseguros.mobile.view;
 
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -17,13 +15,8 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import org.apache.http.util.EncodingUtils;
-
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.beans.LoginBeans;
-import br.com.libertyseguros.mobile.libray.InfoUser;
-import br.com.libertyseguros.mobile.util.AnalyticsApplication;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 
 

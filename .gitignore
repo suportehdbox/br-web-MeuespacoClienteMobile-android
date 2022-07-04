@@ -6,4 +6,4 @@ androidRecording/build/
 app/liberty/release/
 app/aliro/release/
 gcmsender/build/
-/.vs
+dist

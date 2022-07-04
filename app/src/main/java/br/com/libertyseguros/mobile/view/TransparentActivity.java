@@ -1,7 +1,8 @@
 package br.com.libertyseguros.mobile.view;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class TransparentActivity extends AppCompatActivity {
 

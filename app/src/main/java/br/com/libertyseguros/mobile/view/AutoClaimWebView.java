@@ -38,7 +38,6 @@ import androidx.core.content.FileProvider;
 
 import java.io.File;
 
-import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.AssistanceController;
 import br.com.libertyseguros.mobile.controller.VehicleAccidentController;

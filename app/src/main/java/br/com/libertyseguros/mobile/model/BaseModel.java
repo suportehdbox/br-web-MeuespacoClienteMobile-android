@@ -11,11 +11,9 @@ import android.location.Geocoder;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.util.Base64;
-import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.Gson;
-
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

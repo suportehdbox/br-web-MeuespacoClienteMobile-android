@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,7 +17,6 @@ import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
 import br.com.libertyseguros.mobile.view.custom.EditTextCustom;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChangeEmailLoginOn extends BaseActionBar implements View.OnClickListener{

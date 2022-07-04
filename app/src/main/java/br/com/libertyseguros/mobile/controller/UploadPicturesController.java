@@ -5,14 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+
 import java.util.ArrayList;
+
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
-import br.com.libertyseguros.mobile.model.DocumentsPictureModel;
 import br.com.libertyseguros.mobile.model.VehicleAccidentModel;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
-import br.com.libertyseguros.mobile.view.ViewerDocuments;
 
 public class UploadPicturesController {
 

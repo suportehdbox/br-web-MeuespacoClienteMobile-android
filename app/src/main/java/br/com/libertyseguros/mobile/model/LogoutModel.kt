@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import br.com.libertyseguros.mobile.BuildConfig
-import br.com.libertyseguros.mobile.beans.LoginBeans
 import br.com.libertyseguros.mobile.libray.Config
 import br.com.libertyseguros.mobile.libray.Connection
 import br.com.libertyseguros.mobile.libray.InfoUser
@@ -20,10 +19,6 @@ class LogoutModel(private val context: Context) {
     private lateinit var activity: Activity
     private val infoUser:InfoUser = InfoUser()
     private val loadFile:LoadFile = LoadFile()
-
-    init {
-
-    }
 
     private fun createConnection() {
         conn = Connection(context)
@@ -43,9 +38,7 @@ class LogoutModel(private val context: Context) {
         createConnection()
 
         var param = ""
-        var lb = LoginBeans()
-
-        lb = infoUser.getUserInfo(activity)
+        val lb = infoUser.getUserInfo(activity)
 
         val token: String = lb.authToken
 
@@ -61,7 +54,7 @@ class LogoutModel(private val context: Context) {
         loadFile.savePref(Config.TAGTOKEN, "0", Config.TAG, activity)
         infoUser.saveUserInfo("", activity)
 
-        val it: Intent = Intent(activity, Login::class.java)
+        val it = Intent(activity, Login::class.java)
         activity.startActivity(it)
 
 

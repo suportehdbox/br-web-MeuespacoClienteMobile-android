@@ -14,8 +14,6 @@ import android.widget.TextView;
 import com.hudomju.swipe.SwipeToDismissTouchListener;
 import com.hudomju.swipe.adapter.ListViewAdapter;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 import br.com.libertyseguros.mobile.BuildConfig;

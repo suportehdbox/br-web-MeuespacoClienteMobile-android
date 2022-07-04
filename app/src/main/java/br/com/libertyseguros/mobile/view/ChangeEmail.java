@@ -15,7 +15,6 @@ import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
 import br.com.libertyseguros.mobile.view.custom.EditTextCustom;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 
 public class ChangeEmail extends BaseActionBar implements View.OnClickListener{
 

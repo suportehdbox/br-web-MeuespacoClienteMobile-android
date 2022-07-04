@@ -5,8 +5,6 @@ import android.content.Context;
 
 import br.com.libertyseguros.mobile.beans.ListVision360Beans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
-import br.com.libertyseguros.mobile.beans.VehicleAccidentSendBeans;
-import br.com.libertyseguros.mobile.model.ListVehicleAccidentModel;
 import br.com.libertyseguros.mobile.model.ListVision360Model;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 

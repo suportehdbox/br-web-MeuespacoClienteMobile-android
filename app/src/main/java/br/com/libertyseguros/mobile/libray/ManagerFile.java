@@ -6,7 +6,6 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.util.Log;
 
 import com.thin.downloadmanager.DefaultRetryPolicy;
 import com.thin.downloadmanager.DownloadRequest;
@@ -16,6 +15,7 @@ import com.thin.downloadmanager.ThinDownloadManager;
 import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
+
 import br.com.libertyseguros.mobile.util.OnDownloadFile;
 public class ManagerFile {
 

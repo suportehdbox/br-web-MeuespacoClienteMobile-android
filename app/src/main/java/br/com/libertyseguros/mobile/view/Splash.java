@@ -1,22 +1,11 @@
 package br.com.libertyseguros.mobile.view;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
-import android.widget.Toast;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import br.com.libertyseguros.mobile.BuildConfig;
-import br.com.libertyseguros.mobile.libray.Security;
-import br.com.libertyseguros.mobile.util.NavigationApplication;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseNoActionBar;
 
 

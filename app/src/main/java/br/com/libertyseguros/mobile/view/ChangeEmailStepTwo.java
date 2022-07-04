@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.ChangeEmailOffController;
 import br.com.libertyseguros.mobile.model.ChangeEmailOffModel;
@@ -18,7 +17,6 @@ import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
 import br.com.libertyseguros.mobile.view.custom.EditTextCustom;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 
 public class ChangeEmailStepTwo extends BaseActionBar implements View.OnClickListener{
 
