@@ -11,18 +11,15 @@ import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.Log;
 
 import com.google.gson.Gson;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,7 +37,6 @@ import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.DocumentView;
-
 import br.com.libertyseguros.mobile.view.Support;
 
 public class DocumentsPictureModel extends BaseModel {

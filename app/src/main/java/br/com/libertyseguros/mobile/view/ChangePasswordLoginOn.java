@@ -1,8 +1,8 @@
 package br.com.libertyseguros.mobile.view;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,7 +17,6 @@ import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
 import br.com.libertyseguros.mobile.view.custom.EditTextCustom;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChangePasswordLoginOn extends BaseActionBar implements View.OnClickListener{

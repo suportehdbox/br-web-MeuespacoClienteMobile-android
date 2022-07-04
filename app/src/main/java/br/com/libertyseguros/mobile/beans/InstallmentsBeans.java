@@ -1,14 +1,21 @@
 package br.com.libertyseguros.mobile.beans;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class InstallmentsBeans {
 
+    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+    private static final long DAY = 1000 * 60 * 60 * 60 * 24L;
     private boolean canExtend;
     private String dueDate;
     private int number;
     private String paidValue;
     private String paymentDate;
     private int status;
+    private boolean isExpired = false;
+    private boolean isPayable = false;
     private String value;
     private int showComponent;
 
@@ -35,7 +42,27 @@ public class InstallmentsBeans {
     }
 
     public void setDueDate(String dueDate) {
+        try {
+            var parsedDueDate = format.parse(dueDate);
+            if (parsedDueDate == null) {
+                parsedDueDate = new Date();
+            }
+            long now = System.currentTimeMillis();
+            var delta = new Date(now + DAY * (number == 1 ? 30 : 8));
+            this.isPayable = parsedDueDate.before(delta);
+            this.isExpired = parsedDueDate.before(new Date());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         this.dueDate = dueDate;
+    }
+
+    public boolean isExpired() {
+        return isExpired;
+    }
+
+    public boolean isPayable() {
+        return isPayable;
     }
 
     public int getNumber() {

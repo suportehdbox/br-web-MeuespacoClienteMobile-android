@@ -7,13 +7,12 @@ import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-
-import androidx.gridlayout.widget.GridLayout;
-
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.gridlayout.widget.GridLayout;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.AssistanceController;

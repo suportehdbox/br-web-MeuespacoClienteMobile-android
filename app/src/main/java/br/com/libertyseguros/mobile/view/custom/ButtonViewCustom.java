@@ -6,15 +6,16 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import androidx.appcompat.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.Button;
 
+import androidx.appcompat.widget.AppCompatButton;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ButtonViewCustom extends AppCompatButton{
+public class ButtonViewCustom extends AppCompatButton {
 
     private Timer timer;
 
@@ -25,8 +26,7 @@ public class ButtonViewCustom extends AppCompatButton{
     /**
      * @param context
      */
-    public ButtonViewCustom(Context context)
-    {
+    public ButtonViewCustom(Context context) {
         super(context);
 
         this.context = (Activity) context;
@@ -40,8 +40,7 @@ public class ButtonViewCustom extends AppCompatButton{
      * @param context
      * @param attrs
      */
-    public ButtonViewCustom(Context context, AttributeSet attrs)
-    {
+    public ButtonViewCustom(Context context, AttributeSet attrs) {
         super(context, attrs);
         // TODO Auto-generated constructor stub
         this.context = (Activity) context;
@@ -57,8 +56,7 @@ public class ButtonViewCustom extends AppCompatButton{
      * @param attrs
      * @param defStyle
      */
-    public ButtonViewCustom(Context context, AttributeSet attrs, int defStyle)
-    {
+    public ButtonViewCustom(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         // TODO Auto-generated constructor stub
         this.context = (Activity) context;
@@ -66,19 +64,15 @@ public class ButtonViewCustom extends AppCompatButton{
     }
 
     @Override
-    protected void onDraw(Canvas canvas)
-    {
+    protected void onDraw(Canvas canvas) {
         // TODO Auto-generated method stub
         super.onDraw(canvas);
 
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event)
-    {
+    public boolean onTouchEvent(MotionEvent event) {
         // TODO Auto-generated method stub
-
-
 
 
         switch (event.getAction()) {
@@ -86,8 +80,9 @@ public class ButtonViewCustom extends AppCompatButton{
                 try {
                     Button view = (Button) this;
                     view.getBackground().setColorFilter(Color.parseColor("#95B7B2B0"), PorterDuff.Mode.SRC_ATOP);
-                    view.invalidate();removeSelect();
-                } catch(Exception ex){
+                    view.invalidate();
+                    removeSelect();
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 break;
@@ -104,7 +99,7 @@ public class ButtonViewCustom extends AppCompatButton{
     }
 
 
-    public void removeSelect(){
+    public void removeSelect() {
         timer = new Timer();
 
         timerTask = new TimerTask() {
@@ -118,8 +113,6 @@ public class ButtonViewCustom extends AppCompatButton{
                         view.invalidate();
                     }
                 });
-
-
             }
         };
 

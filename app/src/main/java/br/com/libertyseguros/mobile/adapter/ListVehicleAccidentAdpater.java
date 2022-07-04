@@ -12,7 +12,6 @@ import android.widget.TextView;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.VehicleAccidentSendBeans;
 import br.com.libertyseguros.mobile.libray.Config;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 
 public class ListVehicleAccidentAdpater extends BaseAdapter {
 

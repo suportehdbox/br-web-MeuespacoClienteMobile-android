@@ -26,7 +26,6 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.core.app.NotificationCompat;
-import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 

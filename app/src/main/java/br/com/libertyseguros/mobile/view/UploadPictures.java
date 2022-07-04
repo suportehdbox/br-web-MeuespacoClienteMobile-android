@@ -9,12 +9,8 @@ import android.graphics.Paint;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import android.text.Html;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Chronometer;
@@ -23,13 +19,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.google.android.flexbox.FlexboxLayout;
 
 import java.util.ArrayList;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.UploadPicturesController;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.model.VehicleAccidentModel;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;

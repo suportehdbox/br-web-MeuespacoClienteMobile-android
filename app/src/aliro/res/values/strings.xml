@@ -143,6 +143,8 @@
     <string name="register_info_password"><b>Atenção!</b> Sua senha deve conter no mínimo 8 (oito) caracteres entre letras e números. Não é permitido utilizar seu nome, sobrenome ou "&amp;".</string>
     <string name="register_cb_terms">Concordo com os </string>
     <string name="register_cb_terms_2">termos, condições e privacidade, e conheço os tratamentos dos meus dados pessoais.</string>
+    <string name="SegundaViaPix">2ª Via QRCode PIX</string>
+    <string name="CopiarPix">Copiar QRCOde PIX</string>
 
 
     <string name="extends_warning">Declaro que não tive sinistro enquanto essa parcela esteve vencida</string>
@@ -628,7 +630,7 @@
     <string name="titulo_boleto_vencido">Seu boleto venceu! :/</string>
     <string name="sub_titulo_boleto_vencido">Para realizar a impressão da 2ª Via você deve acessar o site do Santander e gerar uma nova via com data e valor atualizados.</string>
 
-    <string name="url_glass_assistance">https://www.abraseuatendimento.com.br/aliro</string>
+    <string name="url_glass_assistance">https://www.pilkington.com/pt-br/br/lojas-pilkington/area-do-segurado</string>
     <string name="url_payment">https://portalintegracao.libertyseguros.com.br/PagamentoUI/UI/PagamentoOnline/PagamentoOnlineAPPController.aspx</string>
     <string name="url_payment_act">https://act-dmz.libertyseguros.com.br/PagamentoUI/UI/PagamentoOnline/PagamentoOnlineAPPController.aspx</string>
 
@@ -656,6 +658,7 @@
 
     <string name="button_login">Login</string>
     <string name="button_register">Faça seu cadastro</string>
+    <string name="button_whatsapp_home">Fale Conosco Pelo WhatsApp</string>
     <string name="button_login_after">Logar depois</string>
     <string name="button_club">Acesse o clube</string>
     <string name="button_go">Entrar</string>

@@ -8,7 +8,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -23,7 +22,6 @@ import br.com.libertyseguros.mobile.beans.ExtendsBeans;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.TicketBeans;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.util.OnConnection;

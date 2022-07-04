@@ -8,9 +8,9 @@ import com.google.gson.Gson;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.beans.PaymentAccessBeans;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
+import br.com.libertyseguros.mobile.beans.PaymentAccessBeans;
 import br.com.libertyseguros.mobile.beans.PaymentPriceBeans;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.InfoUser;

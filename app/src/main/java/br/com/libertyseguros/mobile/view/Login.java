@@ -7,25 +7,22 @@ import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.core.app.ActivityCompat;
 import android.text.InputType;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -39,13 +36,11 @@ import com.google.android.gms.common.SignInButton;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Arrays;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.LoginController;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.DownloadImageUser;
 import br.com.libertyseguros.mobile.libray.FingerprintsAndroid;
 import br.com.libertyseguros.mobile.model.LoginModel;
@@ -59,8 +54,6 @@ import br.com.libertyseguros.mobile.view.custom.TextViewCustom;
 public class Login extends BaseActionBar implements View.OnClickListener {
 
     private final int RC_SIGN_IN = 998;
-
-    private ButtonViewCustom btLogin;
 
     private EditTextCustom etEmail;
 
@@ -80,29 +73,11 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
     private LinearLayout llLoading;
 
-    private LinearLayout llContentEditText;
-
     private boolean value;
 
     private CallbackManager callbackManager;
 
-    private LoginButton loginButton;
-
-    private TextViewCustom tvForgotPassword;
-
-    private TextViewCustom tvForgotEmail;
-
-    private TextViewCustom tvRegister;
-
-    private TextViewCustom tvPrivacy;
-
-    private CheckBox cbLogin;
-
-    private ButtonViewCustom btSkip;
-
     private DownloadImageUser downloadImageUser;
-
-    private String msg[];
 
     private boolean loginUser;
 
@@ -125,13 +100,11 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                loginController.openHome(this);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            loginController.openHome(this);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -146,7 +119,7 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
         callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
-                new FacebookCallback<LoginResult>() {
+                new FacebookCallback<>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         showLoading(true);
@@ -161,30 +134,27 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                         loginController.setIdFacebook(loginResult.getAccessToken().getUserId() + "");
                         GraphRequest request = GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(),
-                                new GraphRequest.GraphJSONObjectCallback() {
-                                    @Override
-                                    public void onCompleted(JSONObject object, GraphResponse response) {
-                                        try {
-                                            if (object.has("name")) {
-                                                loginController.setNameFacebook(object.getString("name"));
-                                            } else {
-                                                loginController.setNameFacebook("");
-                                            }
-                                            if (object.has("email")) {
-                                                loginController.setEmailFacebook(object.getString("email"));
-                                            } else {
-                                                loginController.setEmailFacebook("");
-                                            }
-
-                                            loginController.setPhotoGoogle("");
-                                            loginController.setIdFacebook(object.getString("id"));
-
-                                            loginController.disableFingerprints(Login.this);
-                                            loginController.getLoginRedesSociais(Login.this, loginController.getEmailFacebook(), loginController.getIdFacebook(), true);
-
-                                        } catch (JSONException e) {
-                                            e.printStackTrace();
+                                (object, response) -> {
+                                    try {
+                                        if (object.has("name")) {
+                                            loginController.setNameFacebook(object.getString("name"));
+                                        } else {
+                                            loginController.setNameFacebook("");
                                         }
+                                        if (object.has("email")) {
+                                            loginController.setEmailFacebook(object.getString("email"));
+                                        } else {
+                                            loginController.setEmailFacebook("");
+                                        }
+
+                                        loginController.setPhotoGoogle("");
+                                        loginController.setIdFacebook(object.getString("id"));
+
+                                        loginController.disableFingerprints(Login.this);
+                                        loginController.getLoginRedesSociais(Login.this, loginController.getEmailFacebook(), loginController.getIdFacebook(), true);
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
                                     }
                                 });
                         Bundle parameters = new Bundle();
@@ -214,36 +184,33 @@ public class Login extends BaseActionBar implements View.OnClickListener {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
 
-        SignInButton signInButton = (SignInButton) findViewById(R.id.login_google);
+        SignInButton signInButton = findViewById(R.id.login_google);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setOnClickListener(this);
 
         TextView textView = (TextView) signInButton.getChildAt(0);
         textView.setText(getString(R.string.google_button));
 
-        loginButton = (LoginButton) findViewById(R.id.login_button);
+        LoginButton loginButton = findViewById(R.id.login_button);
         loginButton.setBackgroundResource(R.drawable.bt_login_facebook);
         loginButton.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
         loginButton.setText("Login");
 
-        llContent = (LinearLayout) findViewById(R.id.ll_content);
-        llLoading = (LinearLayout) findViewById(R.id.ll_loading);
-        cbLogin = (CheckBox) findViewById(R.id.cb_login);
+        llContent = findViewById(R.id.ll_content);
+        llLoading = findViewById(R.id.ll_loading);
+        CheckBox cbLogin = findViewById(R.id.cb_login);
 
-        cbLogin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+        cbLogin.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
 
-                    Bundle bundle = new Bundle();
-                    bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "Clique");
-                    bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "Login");
-                    bundle.putString(FirebaseAnalytics.Param.CONTENT, "Manter Logado");
+                Bundle bundle1 = new Bundle();
+                bundle1.putString(FirebaseAnalytics.Param.ITEM_ID, "Clique");
+                bundle1.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "Login");
+                bundle1.putString(FirebaseAnalytics.Param.CONTENT, "Manter Logado");
 
-                    mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle1);
 
-                }
             }
         });
 
@@ -252,42 +219,39 @@ public class Login extends BaseActionBar implements View.OnClickListener {
             @Override
             public void onError() {
                 try {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                switch (loginController.getTypeConnection()) {
-                                    case 1:
-                                    case 3:
-                                        if (loginController.getTypeError() == 1) {
+                    runOnUiThread(() -> {
+                        try {
+                            switch (loginController.getTypeConnection()) {
+                                case 1:
+                                case 3:
+                                    if (loginController.getTypeError() == 1) {
+                                        dialogMessageTwoButton.show();
+                                    } else if (loginController.getTypeError() == 2) {
+                                        if (loginController.getMessage() != null) {
+                                            tvMessageDialog.setText(loginController.getMessage().getMessage());
+                                            dialogMessage.show();
+                                        } else {
                                             dialogMessageTwoButton.show();
-                                        } else if (loginController.getTypeError() == 2) {
-                                            if (loginController.getMessage() != null) {
-                                                tvMessageDialog.setText(loginController.getMessage().getMessage());
-                                                dialogMessage.show();
-                                            } else {
-                                                dialogMessageTwoButton.show();
-                                            }
-
-
                                         }
-                                        break;
-                                    case 2:
-                                        LoginManager.getInstance().logOut();
-                                        mGoogleSignInClient.signOut();
 
-                                        if (loginController.getTypeError() == 1) {
-                                            dialogMessageTwoButton.show();
-                                        } else if (loginController.getTypeError() == 2) {
-                                            loginController.openRegister(Login.this, loginController.getEmailFacebook());
-                                        }
-                                        break;
-                                }
 
-                                showLoading(false);
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
+                                    }
+                                    break;
+                                case 2:
+                                    LoginManager.getInstance().logOut();
+                                    mGoogleSignInClient.signOut();
+
+                                    if (loginController.getTypeError() == 1) {
+                                        dialogMessageTwoButton.show();
+                                    } else if (loginController.getTypeError() == 2) {
+                                        loginController.openRegister(Login.this, loginController.getEmailFacebook());
+                                    }
+                                    break;
                             }
+
+                            showLoading(false);
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
                         }
                     });
                 } catch (Exception ex) {
@@ -299,18 +263,10 @@ public class Login extends BaseActionBar implements View.OnClickListener {
             @Override
             public void onSucess() {
                 try {
-                    downloadImageUser = new DownloadImageUser(new DownloadImageUser.OnFinishDownload() {
-                        @Override
-                        public void onFinish() {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    loginController.OpenMainScreen(loginUser);
-                                    showLoading(false);
-                                }
-                            });
-                        }
-                    });
+                    downloadImageUser = new DownloadImageUser(() -> runOnUiThread(() -> {
+                        loginController.OpenMainScreen(loginUser);
+                        showLoading(false);
+                    }));
 
                     String name = loginController.getLoginBeans().getUserName().replace(".", "");
                     name = name.replace(" ", "") + ".jpg";
@@ -318,12 +274,9 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                     downloadImageUser.startDownload(Login.this, name, loginController.getLoginBeans().getPhoto()/*"https://www.facebook.com/images/fb_icon_325x325.png"/*loginController.getLoginBeans().getPhoto()*/);
                 } catch (Exception ex) {
                     try {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                loginController.OpenMainScreen(loginUser);
-                                showLoading(false);
-                            }
+                        runOnUiThread(() -> {
+                            loginController.OpenMainScreen(loginUser);
+                            showLoading(false);
                         });
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -332,29 +285,29 @@ public class Login extends BaseActionBar implements View.OnClickListener {
             }
         });
 
-        tvForgotPassword = (TextViewCustom) findViewById(R.id.tv_forgot_password);
+        TextViewCustom tvForgotPassword = findViewById(R.id.tv_forgot_password);
         tvForgotPassword.setPaintFlags(tvForgotPassword.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tvForgotPassword.setOnClickListener(this);
 
-        tvForgotEmail = (TextViewCustom) findViewById(R.id.tv_forgot_email);
+        TextViewCustom tvForgotEmail = findViewById(R.id.tv_forgot_email);
         tvForgotEmail.setPaintFlags(tvForgotEmail.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tvForgotEmail.setOnClickListener(this);
 
-        tvPrivacy = (TextViewCustom) findViewById(R.id.tv_privacy);
+        TextViewCustom tvPrivacy = findViewById(R.id.tv_privacy);
         tvPrivacy.setPaintFlags(tvPrivacy.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tvPrivacy.setOnClickListener(this);
 
-        tvRegister = (TextViewCustom) findViewById(R.id.tv_not_user);
+        TextViewCustom tvRegister = findViewById(R.id.tv_not_user);
         tvRegister.setPaintFlags(tvRegister.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tvRegister.setOnClickListener(this);
 
-        btLogin = (ButtonViewCustom) findViewById(R.id.bt_login);
+        ButtonViewCustom btLogin = findViewById(R.id.bt_login);
         btLogin.setOnClickListener(this);
 
-        btSkip = (ButtonViewCustom) findViewById(R.id.bt_skip);
+        ButtonViewCustom btSkip = findViewById(R.id.bt_skip);
         btSkip.setOnClickListener(this);
 
-        llContentEditText = (LinearLayout) findViewById(R.id.ll_content_edittext);
+        LinearLayout llContentEditText = findViewById(R.id.ll_content_edittext);
 
         etEmail = new EditTextCustom(this);
         etPassword = new EditTextCustom(this);
@@ -366,12 +319,9 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
         etPassword.getEditText().setImeOptions(EditorInfo.IME_ACTION_DONE);
 
-        etPassword.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                login();
-                return false;
-            }
+        etPassword.getEditText().setOnEditorActionListener((v, actionId, event) -> {
+            login();
+            return false;
         });
 
 
@@ -382,28 +332,21 @@ public class Login extends BaseActionBar implements View.OnClickListener {
     }
 
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.bt_login:
-                login();
-                break;
-            case R.id.tv_forgot_password:
-                loginController.openChangePassword(this);
-                break;
-            case R.id.tv_forgot_email:
-                loginController.openChangeEmail(this);
-                break;
-            case R.id.tv_not_user:
-                loginController.openRegister(this, null);
-                break;
-            case R.id.bt_skip:
-                loginController.openSkipLogOff(Login.this);
-                break;
-            case R.id.tv_privacy:
-                loginController.openLinkTerms(Login.this);
-                break;
-            case R.id.login_google:
-                loginController.signInGoogle(this, mGoogleSignInClient, RC_SIGN_IN);
-                break;
+        int id = view.getId();
+        if (id == R.id.bt_login) {
+            login();
+        } else if (id == R.id.tv_forgot_password) {
+            loginController.openChangePassword(this);
+        } else if (id == R.id.tv_forgot_email) {
+            loginController.openChangeEmail(this);
+        } else if (id == R.id.tv_not_user) {
+            loginController.openRegister(this, null);
+        } else if (id == R.id.bt_skip) {
+            loginController.openSkipLogOff(Login.this);
+        } else if (id == R.id.tv_privacy) {
+            loginController.openLinkTerms(Login.this);
+        } else if (id == R.id.login_google) {
+            loginController.signInGoogle(this, mGoogleSignInClient, RC_SIGN_IN);
         }
     }
 
@@ -413,7 +356,7 @@ public class Login extends BaseActionBar implements View.OnClickListener {
     private void login() {
         loginController.disableFingerprints(this);
 
-        msg = loginController.validField(this, etEmail.getText(), etPassword.getText().toString());
+        String[] msg = loginController.validField(this, etEmail.getText(), etPassword.getText());
 
         boolean error = false;
 
@@ -436,7 +379,7 @@ public class Login extends BaseActionBar implements View.OnClickListener {
         if (!error) {
             showLoading(true);
             loginUser = true;
-            loginController.getLogin(this, etEmail.getText().toString(), etPassword.getText(), true);
+            loginController.getLogin(this, etEmail.getText(), etPassword.getText(), true);
         }
     }
 
@@ -462,13 +405,10 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
         TextView tvCancelFinger = dialogFingerprint.findViewById(R.id.tv_cancel);
 
-        tvCancelFinger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showLoading(false);
-                loginController.removeToken();
-                dialogFingerprint.dismiss();
-            }
+        tvCancelFinger.setOnClickListener(v -> {
+            showLoading(false);
+            loginController.removeToken();
+            dialogFingerprint.dismiss();
         });
 
         dialogMessage = new Dialog(this, R.style.AppThemeDialog);
@@ -480,12 +420,7 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
         TextView tvOk = dialogMessage.findViewById(R.id.tv_ok);
 
-        tvOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogMessage.dismiss();
-            }
-        });
+        tvOk.setOnClickListener(v -> dialogMessage.dismiss());
 
 
         dialogMessageTwoButton = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
@@ -494,32 +429,24 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
         TextView tvCancel = dialogMessageTwoButton.findViewById(R.id.tv_cancel);
 
-        tvCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogMessageTwoButton.dismiss();
-            }
-        });
+        tvCancel.setOnClickListener(v -> dialogMessageTwoButton.dismiss());
 
         TextView tvTryAgain = dialogMessageTwoButton.findViewById(R.id.tv_try_again);
 
-        tvTryAgain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogMessageTwoButton.dismiss();
-                showLoading(true);
+        tvTryAgain.setOnClickListener(v -> {
+            dialogMessageTwoButton.dismiss();
+            showLoading(true);
 
-                switch (loginController.getTypeConnection()) {
-                    case 1:
-                        login();
-                        break;
-                    case 2:
-                        loginController.getLoginRedesSociais(Login.this, loginController.getEmailFacebook(), loginController.getIdFacebook(), loginController.isFacebook());
-                        break;
-                    case 3:
-                        loginToken();
-                        break;
-                }
+            switch (loginController.getTypeConnection()) {
+                case 1:
+                    login();
+                    break;
+                case 2:
+                    loginController.getLoginRedesSociais(Login.this, loginController.getEmailFacebook(), loginController.getIdFacebook(), loginController.isFacebook());
+                    break;
+                case 3:
+                    loginToken();
+                    break;
             }
         });
 
@@ -539,39 +466,33 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                         } else {
                             startFingerPrints();
                         }
-                    } else {
-                        //Log.i(Config.TAG, "Fingerprints not present");
-                    }
+                    }  // Log.i(Config.TAG, "Fingerprints not present");
+
 
                 }
             } else {
                 loginController.getLoginToken(this);
             }
 
-        } else {
-            // loginController.setPermission(this);
         }
 
 
     }
 
     /* Show progress loading
-    * @param v
-    * @param m
-    */
+     * @param v
+     * @param m
+     */
     private void showLoading(boolean v) {
         this.value = v;
 
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (value) {
-                    llLoading.setVisibility(View.VISIBLE);
-                    llContent.setVisibility(View.GONE);
-                } else {
-                    llLoading.setVisibility(View.GONE);
-                    llContent.setVisibility(View.VISIBLE);
-                }
+        runOnUiThread(() -> {
+            if (value) {
+                llLoading.setVisibility(View.VISIBLE);
+                llContent.setVisibility(View.GONE);
+            } else {
+                llLoading.setVisibility(View.GONE);
+                llContent.setVisibility(View.VISIBLE);
             }
         });
 
@@ -628,21 +549,18 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case 1: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                                           String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    if (permissions[0] == Manifest.permission.USE_FINGERPRINT) {
-                        startFingerPrints();
-                    }
-                } else {
-                    finish();
+                if (permissions[0] == Manifest.permission.USE_FINGERPRINT) {
+                    startFingerPrints();
                 }
-                return;
+            } else {
+                finish();
             }
-
         }
     }
 

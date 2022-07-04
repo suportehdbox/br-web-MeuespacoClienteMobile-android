@@ -9,6 +9,7 @@ import br.com.libertyseguros.mobile.R
 import br.com.libertyseguros.mobile.model.BaseModel
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+import com.google.firebase.analytics.FirebaseAnalytics
 
 
 class Lgpd : BaseActionBar() {
@@ -19,7 +20,10 @@ class Lgpd : BaseActionBar() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lgpd)
-        mFirebaseAnalytics.setCurrentScreen(this, getString(R.string.title_action_bar_11), null)
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, getString(R.string.title_action_bar_11))
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, this.localClassName)
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle)
 
         setTitle(getString(R.string.title_action_bar_15))
 
@@ -45,7 +49,7 @@ class Lgpd : BaseActionBar() {
             tvDados.text = Html.fromHtml(builder.toString())
         }
 
-        tvDados.setOnClickListener{ registerModel.openCanalReport(applicationContext) }
+        tvDados.setOnClickListener { registerModel.openCanalReport(applicationContext) }
         btAcessar.setOnClickListener { registerModel.openCanalReport(applicationContext) }
     }
 }

@@ -14,9 +14,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import androidx.annotation.NonNull;
-import androidx.core.content.FileProvider;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.ValueCallback;
@@ -27,12 +24,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.FileProvider;
+
 import java.io.File;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.AssistanceController;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 
 

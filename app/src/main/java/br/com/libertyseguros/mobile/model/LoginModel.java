@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
 
-//import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.gson.Gson;
 
 import java.net.URLEncoder;
+import java.util.Arrays;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
@@ -35,41 +35,23 @@ import br.com.libertyseguros.mobile.view.fragment.HomeOff;
 
 public class LoginModel extends BaseModel {
 
-    private Context context;
-
-    private Connection conn;
-
-    private OnConnectionResult onConnectionResult;
-
-    private ValidCPF validCPF;
-
-    private ValidCNPJ validCNPJ;
-
-    private ValidEmail validEmail;
-
-    private ValidPassword validPassword;
-
-    private int typeError;
-
-    private int typeConnection;
-
-    private String idFacebook;
-
-    private String emailFacebook;
-
-    private String nameFacebook;
-
-    private String photoGoogle;
-
-    private boolean tokenLogin;
-
-    private boolean isFacebook;
-
-    private LoginBeans lb;
-
     private static boolean closeScreen;
-
-    private LoadFile lf;
+    private Context context;
+    private Connection conn;
+    private final OnConnectionResult onConnectionResult;
+    private final ValidCPF validCPF;
+    private final ValidCNPJ validCNPJ;
+    private final ValidEmail validEmail;
+    private int typeError;
+    private int typeConnection;
+    private String idFacebook;
+    private String emailFacebook;
+    private String nameFacebook;
+    private String photoGoogle;
+    private boolean tokenLogin;
+    private boolean isFacebook;
+    private LoginBeans lb;
+    private final LoadFile lf;
 
     private MessageTypeTwoBeans message;
 
@@ -88,30 +70,39 @@ public class LoginModel extends BaseModel {
 
         validEmail = new ValidEmail();
 
-        validPassword = new ValidPassword();
+        new ValidPassword();
 
         lb = new LoginBeans();
 
         lb = infoUser.getUserInfo(context);
 
         String token = loadFile.loadPref(Config.TAG, context, Config.TAGTOKEN);
-        if (token != null && token.equals("1")) {
-            tokenLogin = true;
-        } else {
-            tokenLogin = false;
-        }
+        tokenLogin = token != null && token.equals("1");
 
+    }
+
+    /**
+     * Get boolean Close Screen
+     *
+     */
+    public static boolean isCloseScreen() {
+        return closeScreen;
+    }
+
+    /**
+     * Set boolean Close Screen
+     *
+     */
+    public static void setCloseScreen(boolean closeScreen) {
+        LoginModel.closeScreen = closeScreen;
     }
 
     /**
      * Method login facebook
      *
-     * @param ctx
-     * @param email
-     * @param idFacebook
      */
     public void getLoginRedesSociais(Context ctx, String email, String idFacebook, boolean isFacebook) {
-        String param = "";
+        String param;
         this.idFacebook = idFacebook;
         this.isFacebook = isFacebook;
 
@@ -136,11 +127,11 @@ public class LoginModel extends BaseModel {
 
             param = "grant_type=ControleAcesso&userId=" + URLEncoder.encode(email, "UTF-8") + "&idMidiaSocial=" + URLEncoder.encode(idFacebook, "UTF-8") + "&type=" + type + "&brandMarketing=" + BuildConfig.brandMarketing + "&deviceOS=" + Config.deviceOS + "&deviceModel=" + URLEncoder.encode(Build.MODEL, "UTF-8") + "&deviceId=" + URLEncoder.encode(Config.getDeviceUID(context), "UTF-8") + "&useToken=" + tokenLogin;
 
-            param += "&AppVersion="+BuildConfig.VERSION_NAME;
+            param += "&AppVersion=" + BuildConfig.VERSION_NAME;
 
 
             conn.startConnection("token", param, 1);
-        } catch (Exception ex) {
+        } catch (Exception ignored) {
 
         }
 
@@ -150,10 +141,6 @@ public class LoginModel extends BaseModel {
     /**
      * Method login
      *
-     * @param ctx
-     * @param user
-     * @param password
-     * @param token
      */
     public void login(Context ctx, String user, String password, boolean token) {
         String param = "";
@@ -166,10 +153,21 @@ public class LoginModel extends BaseModel {
 
             createConnection();
 
+            if(user.contains("@")){
+                user = user.replace(" ","");
+            } else {
+                user = user.replace("-","").replace(".","").replace("/","");
+            }
+
+            Log.i(Config.TAG, "contains user @: " + user.contains("@"));
+            Log.i(Config.TAG, "user" + user);
+
             param = "grant_type=ControleAcesso&type=UserAndPwd&userId=" + URLEncoder.encode(user, "UTF-8") + "&pwd=" + URLEncoder.encode(password, "UTF-8") + "&deviceOS=" +
                     Config.deviceOS + "&useToken=" + token + "&deviceId=" + URLEncoder.encode(Config.getDeviceUID(context), "UTF-8") + "&brandMarketing=" + BuildConfig.brandMarketing + "&deviceModel=" + URLEncoder.encode(Build.MODEL, "UTF-8");
 
-            param += "&AppVersion="+BuildConfig.VERSION_NAME;
+            param += "&AppVersion=" + BuildConfig.VERSION_NAME;
+
+            Log.i(Config.TAG, "params: " + param);
 
             tokenLogin = token;
         } catch (Exception ex) {
@@ -181,11 +179,9 @@ public class LoginModel extends BaseModel {
 
     }
 
-
     /**
      * Get boolean token Login
      *
-     * @return
      */
     public boolean isTokenLogin() {
         return tokenLogin;
@@ -194,7 +190,6 @@ public class LoginModel extends BaseModel {
     /**
      * Set boolean Token Login
      *
-     * @param tokenLogin
      */
     public void setTokenLogin(boolean tokenLogin) {
         this.tokenLogin = tokenLogin;
@@ -203,7 +198,6 @@ public class LoginModel extends BaseModel {
     /**
      * Method login token
      *
-     * @param ctx
      */
     public void loginToken(Context ctx) {
 
@@ -218,7 +212,7 @@ public class LoginModel extends BaseModel {
             param = "grant_type=ControleAcesso&type=byAuthToken&authToken=" + URLEncoder.encode(lb.getAuthToken(), "UTF-8") + "&deviceId=" + URLEncoder.encode(Config.getDeviceUID(context) + "", "UTF-8") + "&userId=" + URLEncoder.encode(lb.getCpfCnpj() + "", "UTF-8") + "&brandMarketing=" + BuildConfig.brandMarketing + "&deviceModel=" + URLEncoder.encode(Build.MODEL, "UTF-8");
             //param = "grant_type=ControleAcesso&type=byAuthToken&authToken=" + URLEncoder.encode("coU1W2FqIkGlmxBUBWms1IRjdauSza0v747XJub74B0wSa8sLfNKTSPn6J48XoZZsmz7_6faKZ-KlfKeUAR9XNdtxGMQ_nYbtc6VD_wS7ja8SZAbXavf-K0WAcLOe9BW3bD0Lvvzyhxe_JA9kp6kRQE1WzwOJByvdxqqeMY7DiH1uiO6cmaoN544QIH7nkWsFh5JGLURqAiQFAMgw2OHwLsTZaiJ73be8i9lXUdeigPQPmN6k9r2o2m1ebfaOUDXuV_caQ64jLfhUULKJIKZYcP0F8kZ8adcmhy3n3NhxoaL7AYaIJYsGad-Jx5cKaJXsfZIVBjt4oZA51XXB55d24_sNiagonZoNn51566A_r5vbZzXKPnh-gq8BvXaM_3qSGT7wV-1o_kI3J9LTWZrw1Gp5lovt-scH4cFSJeJAdg", "UTF-8") + "&deviceId=" + URLEncoder.encode(Config.getDeviceUID(context) + "", "UTF-8") + "&userId=" + URLEncoder.encode( "32693587840", "UTF-8") + "&brandMarketing=" + BuildConfig.brandMarketing + "&deviceModel=" + URLEncoder.encode(Build.MODEL, "UTF-8");
 
-            param += "&AppVersion="+BuildConfig.VERSION_NAME;
+            param += "&AppVersion=" + BuildConfig.VERSION_NAME;
 
             tokenLogin = true;
 
@@ -234,29 +228,19 @@ public class LoginModel extends BaseModel {
     /**
      * Validates fields login
      *
-     * @param cpfEmail
-     * @param password
-     * @return
      */
     public String[] validField(Context ctx, String cpfEmail, String password) {
 
         context = ctx;
 
-        String msg[] = new String[2];
+        String[] msg = new String[2];
 
-        for (int ind = 0; ind < msg.length; ind++) {
-            msg[ind] = "";
-        }
+        Arrays.fill(msg, "");
 
         if (password.length() == 0) {
             msg[1] = context.getString(R.string.message_empty_password);
         } else {
-            if (!validPassword.checkPassword(password)) {
-                //msg[1] = context.getString(R.string.message_error_password);
-                msg[1] = "";
-            } else {
-                msg[1] = "";
-            }
+            msg[1] = "";
         }
 
 
@@ -266,13 +250,13 @@ public class LoginModel extends BaseModel {
 
         } else if (!cpfEmail.contains("@")) {
 
-            if (!validCPF.isCPF(cpfEmail) && !validCNPJ.isCNPJ(cpfEmail)) {
+            if (!validCPF.isCPF(cpfEmail.replace(".","").replace("-","")) && !validCNPJ.isCNPJ(cpfEmail.replace(".","").replace("-","").replace("/",""))) {
                 msg[0] = context.getString(R.string.message_error_cpf_cnpj);
             }
 
         } else {
 
-            if (!validEmail.checkemail(cpfEmail)) {
+            if (!validEmail.checkemail(cpfEmail.replace(" ",""))) {
                 msg[0] = context.getString(R.string.message_error_email);
             }
         }
@@ -289,11 +273,9 @@ public class LoginModel extends BaseModel {
         this.typeConnection = typeConnection;
     }
 
-
     /**
      * Get Type of Error
      *
-     * @return
      */
     public int getTypeError() {
         return typeError;
@@ -302,7 +284,6 @@ public class LoginModel extends BaseModel {
     /**
      * Set Type of Error
      *
-     * @param typeError
      */
     public void setTypeError(int typeError) {
         this.typeError = typeError;
@@ -339,7 +320,6 @@ public class LoginModel extends BaseModel {
     /**
      * Get Email Facebook
      *
-     * @return
      */
     public String getEmailFacebook() {
         return emailFacebook;
@@ -348,7 +328,6 @@ public class LoginModel extends BaseModel {
     /**
      * Set email facebook
      *
-     * @param emailFacebook
      */
     public void setEmailFacebook(String emailFacebook) {
         this.emailFacebook = emailFacebook;
@@ -357,7 +336,6 @@ public class LoginModel extends BaseModel {
     /**
      * Get id Facebook
      *
-     * @return
      */
     public String getIdFacebook() {
         return idFacebook;
@@ -366,7 +344,6 @@ public class LoginModel extends BaseModel {
     /**
      * Set id Facebook
      *
-     * @param idFacebook
      */
     public void setIdFacebook(String idFacebook) {
         this.idFacebook = idFacebook;
@@ -375,25 +352,22 @@ public class LoginModel extends BaseModel {
     /**
      * Set name facebook
      *
-     * @param name
-     */
-    public void setNameFacebook(String name) {
-        this.nameFacebook = name;
-    }
-
-    /**
-     * Set name facebook
-     *
-     * @return
      */
     public String getNameFacebook() {
         return nameFacebook;
     }
 
     /**
+     * Set name facebook
+     *
+     */
+    public void setNameFacebook(String name) {
+        this.nameFacebook = name;
+    }
+
+    /**
      * Set Photo Google
      *
-     * @return
      */
     public String getPhotoGoogle() {
         return photoGoogle;
@@ -402,7 +376,6 @@ public class LoginModel extends BaseModel {
     /**
      * Get Photo Google
      *
-     * @param photoGoogle
      */
     public void setPhotoGoogle(String photoGoogle) {
         this.photoGoogle = photoGoogle;
@@ -411,8 +384,6 @@ public class LoginModel extends BaseModel {
     /**
      * Open Screen Register
      *
-     * @param context
-     * @param email
      */
     public void openRegister(Activity context, String email) {
         Intent it = new Intent(context, Register.class);
@@ -443,11 +414,9 @@ public class LoginModel extends BaseModel {
 
     }
 
-
     /**
      * Open Screen Change Password
      *
-     * @param context
      */
     public void openChangePassword(Context context) {
         Intent it = new Intent(context, ChangePassword.class);
@@ -456,11 +425,9 @@ public class LoginModel extends BaseModel {
 
     }
 
-
     /**
      * Open Screen Change Password
      *
-     * @param context
      */
     public void openChangeEmail(Context context) {
         Intent it = new Intent(context, ChangeEmail.class);
@@ -472,7 +439,6 @@ public class LoginModel extends BaseModel {
     /**
      * Open Home
      *
-     * @param context
      */
     public void openHome(Activity context) {
         if (HomeOff.isHomeOff) {
@@ -485,24 +451,6 @@ public class LoginModel extends BaseModel {
         }
 
 
-    }
-
-    /**
-     * Get boolean Close Screen
-     *
-     * @return
-     */
-    public static boolean isCloseScreen() {
-        return closeScreen;
-    }
-
-    /**
-     * Set boolean Close Screen
-     *
-     * @param closeScreen
-     */
-    public static void setCloseScreen(boolean closeScreen) {
-        LoginModel.closeScreen = closeScreen;
     }
 
     private void createConnection() {
@@ -522,36 +470,22 @@ public class LoginModel extends BaseModel {
 
             @Override
             public void onSucess(String result) {
-                if(!BuildConfig.prod) {
-                    //Log.i(Config.TAG, "LoginModel: " + result);
-                }
-
-
                 Gson gson = new Gson();
-
                 try {
                     lb = new LoginBeans();
                     lb = gson.fromJson(result, LoginBeans.class);
                     lb.setIdFacebook(idFacebook);
-
-
                     if (lb.getAccess_token() != null) {
-
                         String json = gson.toJson(lb);
-
                         infoUser.saveUserInfo(json, context);
-
                         if (tokenLogin) {
                             lf.savePref(Config.TAGTOKEN, "1", Config.TAG, context);
                         }
-
                         onConnectionResult.onSucess();
                     } else {
                         typeError = 2;
                         lf.savePref(Config.TAGTOKEN, "0", Config.TAG, context);
-
                         message = gson.fromJson(result, MessageTypeTwoBeans.class);
-
                         onConnectionResult.onError();
                     }
                 } catch (Exception ex) {
@@ -566,7 +500,6 @@ public class LoginModel extends BaseModel {
     /**
      * Get Login Beans
      *
-     * @return
      */
     public LoginBeans getLoginBeans() {
         return lb;
@@ -575,20 +508,8 @@ public class LoginModel extends BaseModel {
     /**
      * Permission Device ID
      *
-     * @param activity
      */
     public void setPermission(Activity activity) {
-//        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED ||
-//                ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-//
-//            ActivityCompat.requestPermissions(activity,
-//                    new String[]{Manifest.permission.READ_PHONE_STATE,
-//                            Manifest.permission.READ_PHONE_STATE},
-//                    1);
-//
-//        } else {
-//
-//        }
 
     }
 
@@ -605,7 +526,6 @@ public class LoginModel extends BaseModel {
     /**
      * Get message error
      *
-     * @return
      */
     public MessageTypeTwoBeans getMessage() {
         return message;
@@ -614,10 +534,9 @@ public class LoginModel extends BaseModel {
     /**
      * Get Enable Fingerprints enable
      *
-     * @param context
      */
     public String isEnableFingerprints(Context context) {
-        String finger = "0";
+        String finger;
 
         finger = lf.loadPref(Config.TAG, context, Config.TAGFINGERENALBE);
 
@@ -631,7 +550,6 @@ public class LoginModel extends BaseModel {
     /**
      * Enable Fingerprints disable
      *
-     * @param context
      */
     public void disableFingerprints(Context context) {
         loadFile.savePref(Config.TAGFINGERENALBE, "0", Config.TAG, context);
@@ -651,9 +569,6 @@ public class LoginModel extends BaseModel {
     /**
      * SingIn Google Plus
      *
-     * @param context
-     * @param mGoogleSignInClient
-     * @param RC_SIGN_IN
      */
     public void signInGoogle(Activity context, GoogleSignInClient mGoogleSignInClient, int RC_SIGN_IN) {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();

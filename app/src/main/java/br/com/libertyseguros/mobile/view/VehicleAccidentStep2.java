@@ -23,7 +23,6 @@ import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
 import br.com.libertyseguros.mobile.view.custom.EditTextCustom;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 import br.com.libertyseguros.mobile.view.custom.PhoneMaskUtil;
 import br.com.libertyseguros.mobile.view.custom.TextViewCustom;
 

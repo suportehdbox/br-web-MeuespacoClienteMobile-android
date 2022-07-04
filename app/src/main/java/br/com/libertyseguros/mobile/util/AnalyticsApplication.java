@@ -2,20 +2,13 @@ package br.com.libertyseguros.mobile.util;
 
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import android.util.Log;
 
 import com.datami.smi.SdState;
 import com.datami.smi.SdStateChangeListener;
 import com.datami.smi.SmiResult;
-
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.installations.FirebaseInstallations;
 
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.firebase.iid.FirebaseInstanceId;
-
-import br.com.libertyseguros.mobile.BuildConfig;
-import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.LoadFile;
 
@@ -88,12 +81,13 @@ public class AnalyticsApplication extends NavigationApplication implements SdSta
     public void onCreate() {
         super.onCreate();
 
-        String deviceGCM = FirebaseInstanceId.getInstance().getToken();
-
-        if (deviceGCM != null) {
-            LoadFile lf = new LoadFile();
-            lf.savePref(Config.TAGGCM, deviceGCM, Config.TAG, this);
-        }
+        FirebaseInstallations.getInstance().getToken(false).addOnCompleteListener(deviceGCM -> {
+            deviceGCM.getResult();
+            if (deviceGCM.isSuccessful()) {
+                LoadFile lf = new LoadFile();
+                lf.savePref(Config.TAGGCM, deviceGCM.getResult().getToken(), Config.TAG, this);
+            }
+        });
 
 
 //        initSalesForce();

@@ -10,6 +10,7 @@ public class ValidEmail {
 	 * @return boolean false to email invalid, true email valid
 	 */
 	public boolean checkemail(String email){
+		email = email.replace(" ","");
 	    Pattern pattern = Pattern.compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 		Matcher matcher = pattern.matcher(email);
 	    return matcher.matches();

@@ -5,25 +5,17 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Locale;
-
-import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.beans.CitiesBeans;
-import br.com.libertyseguros.mobile.beans.InsuranceCoverages;
-
-
 import java.util.HashMap;
 import java.util.List;
 
-
-import android.widget.BaseExpandableListAdapter;
-import android.widget.TextView;
+import br.com.libertyseguros.mobile.R;
+import br.com.libertyseguros.mobile.beans.InsuranceCoverages;
 
 public class InsuranceCoverageAdapater extends BaseExpandableListAdapter {
 

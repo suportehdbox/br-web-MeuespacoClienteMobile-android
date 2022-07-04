@@ -11,12 +11,9 @@ import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import android.text.Html;
 import android.text.InputFilter;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -29,17 +26,17 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.flexbox.FlexboxLayout;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView;
 
-
 import java.util.ArrayList;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.controller.VehicleAccidentController;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.model.VehicleAccidentModel;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;

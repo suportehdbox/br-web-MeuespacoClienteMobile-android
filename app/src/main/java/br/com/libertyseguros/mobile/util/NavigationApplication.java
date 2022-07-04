@@ -7,6 +7,7 @@ import android.content.Context;
 import androidx.multidex.MultiDex;
 
 import com.datami.smi.SmiSdk;
+
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 
@@ -18,8 +19,8 @@ public class NavigationApplication extends Application {
         listener = myListener;
     }
 
-    public NavigationListener getListener(){
-        return  listener;
+    public NavigationListener getListener() {
+        return listener;
     }
 
     public void onCreate() {
@@ -36,10 +37,10 @@ public class NavigationApplication extends Application {
         }
 
         int sdIconId = R.drawable.ic_launcher;
-        Boolean sdkUserMessaging = false; //if “false” the application needs to inform the user about the sponsorship in OnChange callback
+        boolean sdkUserMessaging = false; //if “false” the application needs to inform the user about the sponsorship in OnChange callback
 
 //        if(BuildConfig.brandMarketing == 1){
-            SmiSdk.initSponsoredData(mySdkKey, this, myUserId, sdIconId, sdkUserMessaging);
+        SmiSdk.initSponsoredData(mySdkKey, this, myUserId, sdIconId, sdkUserMessaging);
 //        }
         // Application specific initializations
     }

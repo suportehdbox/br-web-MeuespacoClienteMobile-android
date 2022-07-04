@@ -5,20 +5,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.adapter.InsuranceCoverageAdapater;
-import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.PolicyBeansV2;
 import br.com.libertyseguros.mobile.model.BaseModel;
-import br.com.libertyseguros.mobile.model.ClubModel;
 import br.com.libertyseguros.mobile.model.InsuranceCoverageModel;
-import br.com.libertyseguros.mobile.util.OnConnectionResult;
 
 public class InsuraceCoverageController extends BaseModel{
 

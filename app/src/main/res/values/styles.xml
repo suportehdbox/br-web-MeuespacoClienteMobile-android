@@ -54,8 +54,7 @@
         <item name="android:layout_marginTop">@dimen/margin_default_2</item>
         <item name="android:layout_marginLeft">@dimen/margin_default_4</item>
         <item name="android:layout_marginRight">@dimen/margin_default_4</item>
-        <item name="android:layout_height">45dp</item>
-
+        <item name="android:layout_height">36dp</item>
     </style>
 
     <style name="ButtonDefaultSmall" parent="@android:style/Widget.Button">
@@ -63,13 +62,11 @@
         <item name="android:textAllCaps">false</item>
         <item name="android:layout_height">22dp</item>
         <item name="android:paddingLeft">10dp</item>
-
     </style>
 
     <style name="TextInputLayoutDefault" parent="AppTheme">
         <item name="colorAccent">@color/text_hint_focus
         </item>
     </style>
-
 
 </resources>

@@ -4,12 +4,9 @@ package br.com.libertyseguros.mobile.view;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.adapter.ListVehicleAccidentStatusAdpater;

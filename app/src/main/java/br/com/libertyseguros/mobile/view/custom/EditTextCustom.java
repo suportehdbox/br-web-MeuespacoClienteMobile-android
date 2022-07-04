@@ -1,8 +1,6 @@
 package br.com.libertyseguros.mobile.view.custom;
 
 import android.content.Context;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -13,6 +11,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import br.com.libertyseguros.mobile.R;
 

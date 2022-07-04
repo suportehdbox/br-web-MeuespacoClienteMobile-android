@@ -4,8 +4,6 @@ package br.com.libertyseguros.mobile.controller;
 import android.app.Activity;
 import android.content.Context;
 
-//import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
 import br.com.libertyseguros.mobile.beans.LoginBeans;

@@ -5,13 +5,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Base64;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import java.io.ByteArrayOutputStream;
 
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.controller.DocumentPicturesController;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 

@@ -52,7 +52,8 @@ public class AssistanceController {
     }
 
     public void openGlassAssistance(Context context){
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.url_glass_assistance)));
+        Uri parse = Uri.parse(context.getString(R.string.url_glass_assistance));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, parse);
         context.startActivity(browserIntent);
     }
 

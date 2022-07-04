@@ -1,15 +1,11 @@
 package br.com.libertyseguros.mobile.view.baseActivity;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.TypedValue;
+import android.view.View;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
 import com.google.android.material.snackbar.Snackbar;
 
 import br.com.libertyseguros.mobile.R;
@@ -29,9 +25,12 @@ public class BaseActivity extends Activity implements NavigationApplication.Navi
         ServiceFirebaseMessagingService.setOnNotificationListener(nav.getListener());
     }
 
-    public void onCreate(Bundle bundle) {
+    public void onCreate(Bundle bundle, Bundle savedInstanceState) {
         super.onCreate(bundle);
+        super.onCreate(savedInstanceState);
 
+        View v = findViewById(android.R.id.content);
+        v.setFilterTouchesWhenObscured(true);
 
         // NavigationApplication nav = (NavigationApplication) getApplication();
         //nav.setNavigationListener(this);

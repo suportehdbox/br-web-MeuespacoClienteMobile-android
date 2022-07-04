@@ -2,24 +2,15 @@ package br.com.libertyseguros.mobile.model;
 
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
-
-import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.ListVision360Beans;
 import br.com.libertyseguros.mobile.beans.MessageBeans;
-import br.com.libertyseguros.mobile.beans.VehicleAccidentSendBeans;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
-import br.com.libertyseguros.mobile.view.Assistance24WebView;
-import br.com.libertyseguros.mobile.view.VehicleAccidentStep1;
 
 public class ListVision360Model {
 

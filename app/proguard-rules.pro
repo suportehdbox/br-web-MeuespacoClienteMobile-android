@@ -33,7 +33,6 @@
 -dontwarn retrofit2.Platform$Java8
 
 -keep class com.google.gson.** { *; }
--keep class org.apache.** { *; }
 -keep class com.google.android.** { *; }
 -keep class com.google.android.maps.** { *; }
 -dontwarn com.google.android.maps.**
@@ -108,9 +107,14 @@
 
 
 
--keep class org.apache.http.** { *; }
--dontwarn org.apache.http.**
+-keep class android.net.http.** { *; }
+-keep interface org.apache.** { *; }
+-keep enum org.apache.** { *; }
+-keep class org.apache.** { *; }
 -keep class org.apache.commons.** { *; }
+-keep class org.apache.http.** { *; }
+-keep class org.apache.harmony.** {*;}
+-dontwarn org.apache.http.**
 -dontwarn org.apache.commons.**
 
 
@@ -137,6 +141,7 @@
 -dontwarn javax.annotation.ParametersAreNonnullByDefault
 -dontwarn org.jetbrains.annotations.NotNull
 -dontwarn org.jetbrains.annotations.Nullable
+-dontwarn com.google.firebase.messaging.TopicOperation
 
 # For enumeration classes, see http://proguard.sourceforge.net/manual/examples.html#enumerations
 -keepclassmembers enum * {

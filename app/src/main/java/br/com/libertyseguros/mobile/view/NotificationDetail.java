@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.LoadFile;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 

@@ -4,7 +4,6 @@ package br.com.libertyseguros.mobile.view;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,12 +15,10 @@ import android.widget.TextView;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.adapter.ListPolicyAdapter;
 import br.com.libertyseguros.mobile.controller.PolicyController;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.model.PolicyModelV2;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
-import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 
 public class ListPolicy extends BaseActionBar{
 

@@ -1,18 +1,13 @@
 package br.com.libertyseguros.mobile.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.amulyakhare.textdrawable.TextDrawable;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -25,7 +20,6 @@ import java.util.List;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.AssitanceVision360Beans;
 import br.com.libertyseguros.mobile.beans.Vision360Beans;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.util.LocaleUtils;
 
 public class ListAssistanceVisionAdapter extends BaseAdapter {

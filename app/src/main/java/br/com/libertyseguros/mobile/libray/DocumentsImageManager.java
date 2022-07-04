@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import br.com.libertyseguros.mobile.beans.DocumentsBeans;
-import br.com.libertyseguros.mobile.beans.NotificationBeans;
 
 
 public class DocumentsImageManager {

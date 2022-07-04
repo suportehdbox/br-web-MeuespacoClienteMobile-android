@@ -3,9 +3,6 @@ package br.com.libertyseguros.mobile.model;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
-import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -18,7 +15,6 @@ import br.com.libertyseguros.mobile.beans.MessageBeans;
 import br.com.libertyseguros.mobile.beans.RegisterActivationBeans;
 import br.com.libertyseguros.mobile.beans.RegisterBeans;
 import br.com.libertyseguros.mobile.beans.VerifyBeans;
-import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;

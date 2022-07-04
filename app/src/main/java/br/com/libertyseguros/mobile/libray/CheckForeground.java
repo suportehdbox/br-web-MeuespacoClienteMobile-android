@@ -3,7 +3,6 @@ package br.com.libertyseguros.mobile.libray;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.content.Context;
-import android.util.Log;
 
 import java.util.List;
 

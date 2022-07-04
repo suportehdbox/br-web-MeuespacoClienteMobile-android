@@ -2,8 +2,9 @@ package br.com.libertyseguros.mobile.view.custom;
 
 
 import android.content.Context;
-import com.google.android.material.snackbar.Snackbar;
 import android.view.View;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.view.NotificationDetail;

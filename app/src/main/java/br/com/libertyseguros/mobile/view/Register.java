@@ -2,7 +2,6 @@ package br.com.libertyseguros.mobile.view;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -12,13 +11,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
@@ -40,76 +37,34 @@ public class Register extends BaseActionBar implements View.OnClickListener {
     public static Activity activityBefore_2;
 
     public static Activity activityBefore_3;
-
-    private RegisterController registerController;
-
-    private LoginController loginController;
-
-    private EditTextCustom etName;
-
-    private EditTextCustom etPolicy;
-
-    private EditTextCustom etCPF;
-
-    private EditTextCustom etEmail;
-
-    private EditTextCustom etEmailConfirm;
-
-    private EditTextCustom etPassword;
-
-    private EditTextCustom etPasswordConfirm;
-
-    private TextView tvMsgError;
-
-    private TextViewCustom tvTerms;
-
-    private LinearLayout llContent1;
-
-    private LinearLayout llContent2;
-
-    private LinearLayout llContent3;
-
-    private ButtonViewCustom btRegister;
-
-    private CheckBox cbRegister;
-
-    private boolean value;
-
-    private LinearLayout llLoading;
-
-    private ScrollView llContent;
-
-    private Dialog dialogMessage;
-
-    private Dialog dialogMessageTwoButton;
-
-    private Dialog dialogEditEmail;
-
-    private TextView tvMessageDialog;
-
-    private String emailFacebook;
-
-    private String idFacebook;
-
-    private String nameFacebook;
-
-    private boolean isFacebook;
-
-    private String photoGoogle;
-
-    private boolean login;
-
-    private TextView tvTitlePassword;
-
-
-    private ImageButton bt_auto;
-    private ImageButton bt_home;
-    private ImageButton bt_life;
-
     private static TextWatcher plate_watcher;
     private static TextWatcher cep_watcher;
     private static TextWatcher date_watcher;
-
+    private RegisterController registerController;
+    private LoginController loginController;
+    private EditTextCustom etName;
+    private EditTextCustom etPolicy;
+    private EditTextCustom etCPF;
+    private EditTextCustom etEmail;
+    private EditTextCustom etEmailConfirm;
+    private EditTextCustom etPassword;
+    private EditTextCustom etPasswordConfirm;
+    private TextView tvMsgError;
+    private CheckBox cbRegister;
+    private boolean value;
+    private LinearLayout llLoading;
+    private ScrollView llContent;
+    private Dialog dialogMessage;
+    private Dialog dialogMessageTwoButton;
+    private Dialog dialogEditEmail;
+    private TextView tvMessageDialog;
+    private String idFacebook;
+    private boolean isFacebook;
+    private String photoGoogle;
+    private boolean login;
+    private ImageButton bt_auto;
+    private ImageButton bt_home;
+    private ImageButton bt_life;
     private boolean verified;
 
     public void onCreate(Bundle bundle) {
@@ -121,6 +76,8 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         setTitle(getString(R.string.title_action_bar_3));
 
+        String nameFacebook;
+        String emailFacebook;
         try {
             emailFacebook = getIntent().getStringExtra("email");
             idFacebook = getIntent().getStringExtra("idFacebook");
@@ -148,16 +105,13 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             public void onError() {
                 showLoading(false);
                 try {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
+                    runOnUiThread(() -> {
 
-                            if (loginController.getTypeError() == 1) {
-                                showDialogMessageTwoButton();
-                            } else if (loginController.getTypeError() == 2) {
-                                tvMessageDialog.setText(getString(R.string.message_error_login));
-                                showDialogMessage();
-                            }
+                        if (loginController.getTypeError() == 1) {
+                            showDialogMessageTwoButton();
+                        } else if (loginController.getTypeError() == 2) {
+                            tvMessageDialog.setText(getString(R.string.message_error_login));
+                            showDialogMessage();
                         }
                     });
                 } catch (Exception ex) {
@@ -169,53 +123,50 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             public void onSucess() {
 
                 try {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                showLoading(false);
+                    runOnUiThread(() -> {
+                        try {
+                            showLoading(false);
 
-                                Toast toast = Toast.makeText(Register.this, getString(R.string.register_ok), Toast.LENGTH_LONG);
-                                toast.show();
+                            Toast toast = Toast.makeText(Register.this, getString(R.string.register_ok), Toast.LENGTH_LONG);
+                            toast.show();
 
-                                if (activityBefore != null) {
-                                    try {
-                                        activityBefore.finish();
-                                        activityBefore = null;
+                            if (activityBefore != null) {
+                                try {
+                                    activityBefore.finish();
+                                    activityBefore = null;
 
-                                    } catch (Exception ex) {
-                                        activityBefore = null;
-
-                                    }
+                                } catch (Exception ex) {
+                                    activityBefore = null;
 
                                 }
 
-                                if (activityBefore_2 != null) {
-                                    try {
-                                        activityBefore_2.finish();
-                                        activityBefore_2 = null;
-
-                                    } catch (Exception ex) {
-                                        activityBefore_2 = null;
-
-                                    }
-                                }
-
-                                if (activityBefore_3 != null) {
-                                    try {
-                                        activityBefore_3.finish();
-                                        activityBefore_3 = null;
-
-                                    } catch (Exception ex) {
-                                        activityBefore_3 = null;
-
-                                    }
-                                }
-
-                                loginController.OpenMainScreen(true);
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
                             }
+
+                            if (activityBefore_2 != null) {
+                                try {
+                                    activityBefore_2.finish();
+                                    activityBefore_2 = null;
+
+                                } catch (Exception ex) {
+                                    activityBefore_2 = null;
+
+                                }
+                            }
+
+                            if (activityBefore_3 != null) {
+                                try {
+                                    activityBefore_3.finish();
+                                    activityBefore_3 = null;
+
+                                } catch (Exception ex) {
+                                    activityBefore_3 = null;
+
+                                }
+                            }
+
+                            loginController.OpenMainScreen(true);
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
                         }
                     });
 
@@ -229,62 +180,52 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             @Override
             public void onError() {
                 try {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
+                    runOnUiThread(() -> {
+                        try {
 
-                                showLoading(false);
+                            showLoading(false);
 
-                                if (verified) {
-                                    RegisterBeans message = registerController.getRegisterMessage();
+                            if (verified) {
+                                RegisterBeans message = registerController.getRegisterMessage();
 
-                                    if(message.getMessageCode() != null) {
+                                if (message.getMessageCode() != null) {
 
 
-                                        if (message.getMessageCode().equalsIgnoreCase("ADD_USER_DUPLICATED_EMAIL")) {
-                                            //Change e-mail
+                                    if (message.getMessageCode().equalsIgnoreCase("ADD_USER_DUPLICATED_EMAIL")) {
+                                        //Change e-mail
 
-                                            showRegisterMessage(message.getMessage(), true);
+                                        showRegisterMessage(message.getMessage(), true);
 
-                                        } else if (message.getMessageCode().equalsIgnoreCase("ADD_USER_INACTIVE")) {
-                                            //send activation
-                                            showActiveLink(message.getMessage());
-                                            return;
+                                    } else if (message.getMessageCode().equalsIgnoreCase("ADD_USER_INACTIVE")) {
+                                        //send activation
+                                        showActiveLink(message.getMessage());
+                                        return;
 
-                                        } else if (message.getMessageCode().equalsIgnoreCase("ADD_USER_DUPLICATED") ||
-                                                message.getMessageCode().equalsIgnoreCase("ADD_USER_DUPLICATED_CPFCNPJ")) {
-
-                                            showRegisterMessage(message.getMessage(), false);
-
-                                        } else {
-                                            showRegisterMessage(message.getMessage(), true);
-                                        }
-                                    } else {
-                                        showRegisterMessage(getString(R.string.message_error_server), false);
-
-                                    }
+                                    } else
+                                        showRegisterMessage(message.getMessage(), !message.getMessageCode().equalsIgnoreCase("ADD_USER_DUPLICATED") &&
+                                                !message.getMessageCode().equalsIgnoreCase("ADD_USER_DUPLICATED_CPFCNPJ"));
                                 } else {
-                                    if (registerController.getTypeError() == 1) {
+                                    showRegisterMessage(getString(R.string.message_error_server), false);
+
+                                }
+                            } else {
+                                if (registerController.getTypeError() == 1) {
+                                    showDialogMessageTwoButton();
+                                } else {
+
+                                    if (registerController.getMessage().getMessage() == null) {
                                         showDialogMessageTwoButton();
                                     } else {
-
-                                        if (registerController.getMessage().getMessage() == null) {
-                                            showDialogMessageTwoButton();
-                                        } else {
-                                            tvMessageDialog.setText(registerController.getMessage().getMessage());
-                                            showDialogMessage();
-                                        }
+                                        tvMessageDialog.setText(registerController.getMessage().getMessage());
+                                        showDialogMessage();
                                     }
                                 }
-
-
-                                showLoading(false);
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
                             }
-
+                            showLoading(false);
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
                         }
+
                     });
 
                 } catch (Exception ex) {
@@ -299,23 +240,7 @@ public class Register extends BaseActionBar implements View.OnClickListener {
                 try {
 
                     if (verified) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                // tvMessageDialog.setText(getString(R.string.register_ok));
-                                //dialogMessage.show();
-//                                login = true;
-//
-//                                if(idFacebook.equals("")){
-//                                    loginController.getLogin(Register.this, etEmail.getText(), etPassword.getText(), false);
-//                                } else {
-//                                    loginController.getLoginRedesSociais(Register.this, etEmail.getText(), idFacebook);
-//                                }
-
-                                showRegisterSuccess();
-
-                            }
-                        });
+                        runOnUiThread(() -> showRegisterSuccess());
                     } else {
                         verified = true;
                         registerController.registerSTEP2(Register.this, etPassword.getText(), etCPF.getText(), etEmail.getText(), photoGoogle);
@@ -327,16 +252,16 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             }
         }, idFacebook, isFacebook);
 
-        llLoading = (LinearLayout) findViewById(R.id.ll_loading);
+        llLoading = findViewById(R.id.ll_loading);
 
-        llContent = (ScrollView) findViewById(R.id.sv_content);
+        llContent = findViewById(R.id.sv_content);
 
-        tvTitlePassword = (TextView) findViewById(R.id.tv_title_password);
+        TextView tvTitlePassword = findViewById(R.id.tv_title_password);
 
         etName = new EditTextCustom(this);
         etPolicy = new EditTextCustom(this);
 
-       etPolicy.getEditText().setFilters(new InputFilter[] {new InputFilter.LengthFilter(15)});
+        etPolicy.getEditText().setFilters(new InputFilter[]{new InputFilter.LengthFilter(15)});
         plate_watcher = PlateMaskUtil.insert(etPolicy.getEditText());
         cep_watcher = CepMaskUtil.insert(etPolicy.getEditText());
         date_watcher = DateMaskUtil.insert(etPolicy.getEditText());
@@ -345,14 +270,12 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         etEmail = new EditTextCustom(this);
         etEmail.getEditText().setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
-//        etEmailConfirm = new EditTextCustom(this);
-//        etEmailConfirm.getEditText().setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         etPassword = new EditTextCustom(this);
         etPasswordConfirm = new EditTextCustom(this);
 
-        llContent1 = findViewById(R.id.ll_content_field_1);
-        llContent2 = findViewById(R.id.ll_content_field_2);
-        llContent3 = findViewById(R.id.ll_content_field_3);
+        LinearLayout llContent1 = findViewById(R.id.ll_content_field_1);
+        LinearLayout llContent2 = findViewById(R.id.ll_content_field_2);
+        LinearLayout llContent3 = findViewById(R.id.ll_content_field_3);
 
         if ("".equals(nameFacebook)) {
             etName.config("Name", getString(R.string.hint_name), "", 1);
@@ -373,9 +296,6 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 //            llContent2.addView(etEmailConfirm.config("", getString(R.string.hint_confirm_email), "", 1));
         } else {
             etEmail.getEditText().setText(emailFacebook);
-//            etEmailConfirm.getEditText().setText(emailFacebook);
-//            llContent2.addView(etEmail.config(emailFacebook, getString(R.string.hint_email), "", 1));
-//            llContent2.addView(etEmailConfirm.config(emailFacebook, getString(R.string.hint_confirm_email), "", 1));
         }
 
 
@@ -389,12 +309,12 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         }
 
-        btRegister = findViewById(R.id.bt_register);
+        ButtonViewCustom btRegister = findViewById(R.id.bt_register);
         btRegister.setOnClickListener(this);
 
-        tvMsgError =  findViewById(R.id.tv_check_error);
+        tvMsgError = findViewById(R.id.tv_check_error);
 
-        tvTerms = findViewById(R.id.tv_terms);
+        TextViewCustom tvTerms = findViewById(R.id.tv_terms);
 
         StringBuilder builderTerms = new StringBuilder();
         builderTerms.append(getString(R.string.register_cb_terms));
@@ -412,12 +332,7 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         tvTerms.setOnClickListener(this);
 
         cbRegister = findViewById(R.id.cb_register);
-        cbRegister.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                tvMsgError.setVisibility(View.INVISIBLE);
-            }
-        });
+        cbRegister.setOnCheckedChangeListener((buttonView, isChecked) -> tvMsgError.setVisibility(View.INVISIBLE));
 
 
         bt_auto = findViewById(R.id.ib_auto_register);
@@ -432,10 +347,10 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         if (BuildConfig.brandMarketing == 2) {
             bt_home.setVisibility(View.GONE);
-            ((View) findViewById(R.id.iv_home)).setVisibility(View.GONE);
+            findViewById(R.id.iv_home).setVisibility(View.GONE);
             bt_life.setVisibility(View.GONE);
-            ((View) findViewById(R.id.iv_life)).setVisibility(View.GONE);
-            View auto_view = ((View) findViewById(R.id.iv_auto_register));
+            findViewById(R.id.iv_life).setVisibility(View.GONE);
+            View auto_view = findViewById(R.id.iv_auto_register);
             LinearLayout.LayoutParams childParam1 = (LinearLayout.LayoutParams) auto_view.getLayoutParams();
             childParam1.weight = 3f;
             auto_view.setLayoutParams(childParam1);
@@ -446,9 +361,9 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         builder.append(getString(R.string.lgpd_grupo_liberty));
 
         builder.append(" <u><a href='");
-        if(BuildConfig.prod){
+        if (BuildConfig.prod) {
             builder.append(getString(R.string.url_canal_report_prod));
-        }else{
+        } else {
             builder.append(getString(R.string.url_canal_report_act));
         }
         builder.append("'>");
@@ -461,12 +376,7 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             lgpd.setText(Html.fromHtml(builder.toString()));
         }
 
-        lgpd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registerController.openCanalReport(getApplicationContext());
-            }
-        });
+        lgpd.setOnClickListener(v -> registerController.openCanalReport(getApplicationContext()));
         configDialog();
 
     }
@@ -474,98 +384,85 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.bt_register:
-                String msg[] = registerController.validField(Register.this, etName.getText(), etPolicy.getText(), etCPF.getText(), etEmail.getText(), etEmail.getText(), etPassword.getText(), etPasswordConfirm.getText(), cbRegister.isChecked());
+        int id = view.getId();
+        if (id == R.id.bt_register) {
+            String[] msg = registerController.validField(Register.this, etName.getText(), etPolicy.getText(), etCPF.getText(), etEmail.getText(), etEmail.getText(), etPassword.getText(), etPasswordConfirm.getText(), cbRegister.isChecked());
 
-                boolean error = false;
+            boolean error = false;
 
-                for (int ind = 0; ind < msg.length; ind++) {
-                    if (msg[ind].length() != 0) {
-                        if (!"".equals(idFacebook)) {
-                            if (ind == 3 || ind == 4 || ind == 5 || ind == 6) {
-                                error = false;
-                            } else {
-                                error = true;
-                            }
-                        } else {
-                            error = true;
-                        }
+            for (int ind = 0; ind < msg.length; ind++) {
+                if (msg[ind].length() != 0) {
+                    if (!"".equals(idFacebook)) {
+                        error = ind != 3 && ind != 4 && ind != 5 && ind != 6;
+                    } else {
+                        error = true;
+                    }
 
 
-                        switch (ind) {
-                            case 0:
-                                etName.showMessageError(msg[0]);
-                                break;
-                            case 1:
-                                etPolicy.showMessageError(msg[1]);
-                                break;
-                            case 2:
-                                etCPF.showMessageError(msg[2]);
-                                break;
-                            case 3:
-                                etEmail.showMessageError(msg[3]);
-                                break;
-                            case 4:
-                                etEmail.showMessageError(msg[4]);
-                                break;
-                            case 5:
-                                etPassword.showMessageError(msg[5]);
-                                break;
-                            case 6:
-                                etPasswordConfirm.showMessageError(msg[6]);
-                                break;
-                            case 7:
-                                tvMsgError.setText(msg[7]);
-                                tvMsgError.setVisibility(View.VISIBLE);
-                                break;
-                        }
+                    switch (ind) {
+                        case 0:
+                            etName.showMessageError(msg[0]);
+                            break;
+                        case 1:
+                            etPolicy.showMessageError(msg[1]);
+                            break;
+                        case 2:
+                            etCPF.showMessageError(msg[2]);
+                            break;
+                        case 3:
+                            etEmail.showMessageError(msg[3]);
+                            break;
+                        case 4:
+                            etEmail.showMessageError(msg[4]);
+                            break;
+                        case 5:
+                            etPassword.showMessageError(msg[5]);
+                            break;
+                        case 6:
+                            etPasswordConfirm.showMessageError(msg[6]);
+                            break;
+                        case 7:
+                            tvMsgError.setText(msg[7]);
+                            tvMsgError.setVisibility(View.VISIBLE);
+                            break;
                     }
                 }
+            }
 
-                if (!error) {
-                    showLoading(true);
-                    callRegister();
+            if (!error) {
+                showLoading(true);
+                callRegister();
 //                    registerController.register(Register.this, etPolicy.getText(), etPassword.getText(), etCPF.getText(), etEmail.getText());
-                }
+            }
+        } else if (id == R.id.tv_terms) {
+            registerController.openLinkTerms(Register.this);
+        } else if (id == R.id.ib_auto_register) {
+            setAutoSelected();
+        } else if (id == R.id.ib_home_register) {
+            if (!bt_home.isSelected()) {
+                etPolicy.getEditText().setText("");
+                etPolicy.getEditText().removeTextChangedListener(plate_watcher);
+                etPolicy.getEditText().removeTextChangedListener(date_watcher);
+                etPolicy.getEditText().addTextChangedListener(cep_watcher);
+                etPolicy.getEditText().setInputType(InputType.TYPE_CLASS_NUMBER);
+                etPolicy.getTextInputLayout().setHint(getString(R.string.register_apolice_cep));
+            }
 
-                break;
-            case R.id.tv_terms:
-                registerController.openLinkTerms(Register.this);
-                break;
-            case R.id.ib_auto_register:
-                setAutoSelected();
-
-                break;
-            case R.id.ib_home_register:
-                if (!bt_home.isSelected()) {
-                    etPolicy.getEditText().setText("");
-                    etPolicy.getEditText().removeTextChangedListener(plate_watcher);
-                    etPolicy.getEditText().removeTextChangedListener(date_watcher);
-                    etPolicy.getEditText().addTextChangedListener(cep_watcher);
-                    etPolicy.getEditText().setInputType(InputType.TYPE_CLASS_NUMBER);
-                    etPolicy.getTextInputLayout().setHint(getString(R.string.register_apolice_cep));
-                }
-
-                bt_auto.setSelected(false);
-                bt_life.setSelected(false);
-                bt_home.setSelected(true);
-                break;
-            case R.id.ib_life_register:
-                if (!bt_life.isSelected()) {
-                    etPolicy.getEditText().setText("");
-                    etPolicy.getEditText().removeTextChangedListener(plate_watcher);
-                    etPolicy.getEditText().removeTextChangedListener(cep_watcher);
-                    etPolicy.getEditText().addTextChangedListener(date_watcher);
-                    etPolicy.getEditText().setInputType(InputType.TYPE_CLASS_NUMBER);
-                    etPolicy.getTextInputLayout().setHint(getString(R.string.register_apolice_date));
-                }
-                bt_auto.setSelected(false);
-                bt_life.setSelected(true);
-                bt_home.setSelected(false);
-
-                break;
-
+            bt_auto.setSelected(false);
+            bt_life.setSelected(false);
+            bt_home.setSelected(true);
+        } else if (id == R.id.ib_life_register) {
+            if (!bt_life.isSelected()) {
+                etPolicy.getEditText().setText("");
+                etPolicy.getEditText().removeTextChangedListener(plate_watcher);
+                etPolicy.getEditText().removeTextChangedListener(cep_watcher);
+                etPolicy.getEditText().addTextChangedListener(date_watcher);
+                etPolicy.getEditText().setInputType(InputType.TYPE_CLASS_NUMBER);
+                etPolicy.getTextInputLayout().setHint(getString(R.string.register_apolice_date));
+            }
+            bt_auto.setSelected(false);
+            bt_life.setSelected(true);
+            bt_home.setSelected(false);
         }
     }
 
@@ -594,18 +491,15 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         dialogMessage.setContentView(R.layout.dialog_message);
 
-        tvMessageDialog = (TextView) dialogMessage.findViewById(R.id.tv_dialog_message);
+        tvMessageDialog = dialogMessage.findViewById(R.id.tv_dialog_message);
 
-        TextView tvOk = (TextView) dialogMessage.findViewById(R.id.tv_ok);
+        TextView tvOk = dialogMessage.findViewById(R.id.tv_ok);
 
-        tvOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismissDialogMessage();
+        tvOk.setOnClickListener(v -> {
+            dismissDialogMessage();
 
-                if (getString(R.string.register_ok).equals(tvMessageDialog.getText().toString())) {
-                    finish();
-                }
+            if (getString(R.string.register_ok).equals(tvMessageDialog.getText().toString())) {
+                finish();
             }
         });
 
@@ -616,30 +510,22 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         TextView tvCancel = dialogMessageTwoButton.findViewById(R.id.tv_cancel);
 
-        tvCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismissDialogMessageTwoButton();
-            }
-        });
+        tvCancel.setOnClickListener(v -> dismissDialogMessageTwoButton());
 
         TextView tvTryAgain = dialogMessageTwoButton.findViewById(R.id.tv_try_again);
 
-        tvTryAgain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismissDialogMessageTwoButton();
-                showLoading(true);
+        tvTryAgain.setOnClickListener(v -> {
+            dismissDialogMessageTwoButton();
+            showLoading(true);
 
-                if (login) {
-                    login = false;
-                    loginController.getLogin(Register.this, etEmail.getText(), etPassword.getText(), false);
-                } else {
+            if (login) {
+                login = false;
+                loginController.getLogin(Register.this, etEmail.getText(), etPassword.getText(), false);
+            } else {
 //                    registerController.register(Register.this, etPolicy.getText(), etPassword.getText(), etCPF.getText(), etEmail.getText());
-                    callRegister();
-                }
-
+                callRegister();
             }
+
         });
 
     }
@@ -652,34 +538,25 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         if (shouldEdit) {
             dialogEditEmail.setContentView(R.layout.dialog_message_two_button);
 
-            tvMessageDialog = (TextView) dialogEditEmail.findViewById(R.id.tv_dialog_message);
+            tvMessageDialog = dialogEditEmail.findViewById(R.id.tv_dialog_message);
             tvMessageDialog.setText(message);
 
             etEmail.showMessageError(getString(R.string.email_used));
-            TextView tvCancelEdit = (TextView) dialogEditEmail.findViewById(R.id.tv_cancel);
+            TextView tvCancelEdit = dialogEditEmail.findViewById(R.id.tv_cancel);
             tvCancelEdit.setText(getString(R.string.change_values));
-            tvCancelEdit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialogEditEmail.dismiss();
-
-                }
-            });
-            tvTryAgainEdit = (TextView) dialogEditEmail.findViewById(R.id.tv_try_again);
+            tvCancelEdit.setOnClickListener(v -> dialogEditEmail.dismiss());
+            tvTryAgainEdit = dialogEditEmail.findViewById(R.id.tv_try_again);
         } else {
             dialogEditEmail.setContentView(R.layout.dialog_message);
-            tvMessageDialog = (TextView) dialogEditEmail.findViewById(R.id.tv_dialog_message);
+            tvMessageDialog = dialogEditEmail.findViewById(R.id.tv_dialog_message);
             tvMessageDialog.setText(message);
-            tvTryAgainEdit = (TextView) dialogEditEmail.findViewById(R.id.tv_ok);
+            tvTryAgainEdit = dialogEditEmail.findViewById(R.id.tv_ok);
         }
 
         tvTryAgainEdit.setText(getString(R.string.goto_login));
-        tvTryAgainEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogEditEmail.dismiss();
-                registerController.goBackLogin(Register.this);
-            }
+        tvTryAgainEdit.setOnClickListener(v -> {
+            dialogEditEmail.dismiss();
+            registerController.goBackLogin(Register.this);
         });
 
         dialogEditEmail.show();
@@ -693,30 +570,21 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         dialogEditEmail.setContentView(R.layout.dialog_message_two_button);
 
-        tvMessageDialog = (TextView) dialogEditEmail.findViewById(R.id.tv_dialog_message);
+        tvMessageDialog = dialogEditEmail.findViewById(R.id.tv_dialog_message);
         tvMessageDialog.setText(message);
 
 
-        TextView tvCancelEdit = (TextView) dialogEditEmail.findViewById(R.id.tv_cancel);
+        TextView tvCancelEdit = dialogEditEmail.findViewById(R.id.tv_cancel);
         tvCancelEdit.setText(getString(R.string.bt_no));
-        tvCancelEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogEditEmail.dismiss();
-
-            }
-        });
+        tvCancelEdit.setOnClickListener(v -> dialogEditEmail.dismiss());
 
 
-        TextView tvTryAgainEdit = (TextView) dialogEditEmail.findViewById(R.id.tv_try_again);
+        TextView tvTryAgainEdit = dialogEditEmail.findViewById(R.id.tv_try_again);
         tvTryAgainEdit.setText(getString(R.string.bt_yes));
-        tvTryAgainEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogEditEmail.dismiss();
-                registerController.sendActivtaionLink(Register.this, etCPF.getText());
-                showLoading(true);
-            }
+        tvTryAgainEdit.setOnClickListener(v -> {
+            dialogEditEmail.dismiss();
+            registerController.sendActivtaionLink(Register.this, etCPF.getText());
+            showLoading(true);
         });
         dialogEditEmail.show();
     }
@@ -729,26 +597,20 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         dialogEditEmail.setContentView(R.layout.dialog_register_success);
 
-        Button btOk = (Button) dialogEditEmail.findViewById(R.id.bt_ok_success);
-        btOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogEditEmail.dismiss();
-                registerController.goBackLogin(Register.this);
-            }
+        Button btOk = dialogEditEmail.findViewById(R.id.bt_ok_success);
+        btOk.setOnClickListener(v -> {
+            dialogEditEmail.dismiss();
+            registerController.goBackLogin(Register.this);
         });
 
 
-        TextView tvSendAgain = (TextView) dialogEditEmail.findViewById(R.id.tv_resend_link);
+        TextView tvSendAgain = dialogEditEmail.findViewById(R.id.tv_resend_link);
 
-        tvSendAgain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogEditEmail.dismiss();
-                registerController.sendActivtaionLink(Register.this, etCPF.getText());
-                showLoading(true);
+        tvSendAgain.setOnClickListener(v -> {
+            dialogEditEmail.dismiss();
+            registerController.sendActivtaionLink(Register.this, etCPF.getText());
+            showLoading(true);
 
-            }
         });
 
         dialogEditEmail.show();
@@ -757,23 +619,20 @@ public class Register extends BaseActionBar implements View.OnClickListener {
     }
 
     /* Show progress loading
-    *
-    * @param v
-    * @param m
-    */
+     *
+     * @param v
+     * @param m
+     */
     private void showLoading(boolean v) {
         this.value = v;
 
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (value) {
-                    llLoading.setVisibility(View.VISIBLE);
-                    llContent.setVisibility(View.GONE);
-                } else {
-                    llLoading.setVisibility(View.GONE);
-                    llContent.setVisibility(View.VISIBLE);
-                }
+        runOnUiThread(() -> {
+            if (value) {
+                llLoading.setVisibility(View.VISIBLE);
+                llContent.setVisibility(View.GONE);
+            } else {
+                llLoading.setVisibility(View.GONE);
+                llContent.setVisibility(View.VISIBLE);
             }
         });
 
@@ -790,26 +649,26 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         registerController.validRegister(Register.this, typePolice, etPolicy.getText(), etCPF.getText());
     }
 
-    private void showDialogMessageTwoButton(){
-        if(!(Register.this).isFinishing()) {
+    private void showDialogMessageTwoButton() {
+        if (!(Register.this).isFinishing()) {
             dialogMessageTwoButton.show();
         }
     }
 
-    private void dismissDialogMessageTwoButton(){
-        if(!(Register.this).isFinishing()) {
+    private void dismissDialogMessageTwoButton() {
+        if (!(Register.this).isFinishing()) {
             dialogMessageTwoButton.dismiss();
         }
     }
 
-    private void showDialogMessage(){
-        if(!(Register.this).isFinishing()) {
+    private void showDialogMessage() {
+        if (!(Register.this).isFinishing()) {
             dialogMessage.show();
         }
     }
 
-    private void dismissDialogMessage(){
-        if(!(Register.this).isFinishing()) {
+    private void dismissDialogMessage() {
+        if (!(Register.this).isFinishing()) {
             dialogMessage.dismiss();
         }
     }

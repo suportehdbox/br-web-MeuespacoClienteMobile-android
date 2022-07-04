@@ -13,11 +13,11 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.beans.WorkshopBeans;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.ManagerLocation;
 import br.com.libertyseguros.mobile.util.OnConnection;
+import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.Assistance;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.NovoClubeLiberty;

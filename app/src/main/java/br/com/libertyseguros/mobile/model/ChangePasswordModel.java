@@ -3,7 +3,6 @@ package br.com.libertyseguros.mobile.model;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import com.google.gson.Gson;
 

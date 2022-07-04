@@ -6,38 +6,26 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.datami.smi.SmiSdk;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.gson.Gson;
-
-import org.jetbrains.annotations.NotNull;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
-import br.com.libertyseguros.mobile.beans.MessageBeans;
-import br.com.libertyseguros.mobile.beans.NotificationBeans;
 import br.com.libertyseguros.mobile.beans.UpdateRequiredResponse;
 import br.com.libertyseguros.mobile.controller.FlutterModuleController;
 import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
-import br.com.libertyseguros.mobile.libray.DeviceVerificaionListener;
 import br.com.libertyseguros.mobile.libray.DocumentsImageManager;
 import br.com.libertyseguros.mobile.libray.DownloadImageHome;
 import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.libray.Security;
 import br.com.libertyseguros.mobile.libray.SecurityListener;
-import br.com.libertyseguros.mobile.receiver.RegistrationIntentService;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.Main;

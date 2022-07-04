@@ -16,7 +16,6 @@ import java.util.Locale;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.VehicleAccidentStatusBeans;
-import br.com.libertyseguros.mobile.libray.Config;
 
 public class ListVehicleAccidentStatusAdpater extends BaseAdapter {
 

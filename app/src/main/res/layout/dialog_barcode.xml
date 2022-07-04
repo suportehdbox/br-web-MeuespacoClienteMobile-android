@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/qrcodeBackdrop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D9000000"
+    android:clickable="true"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -11,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_default_2"
         android:background="@color/background_dialog"
+        android:clickable="true"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -30,8 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_default_2"
-            android:layout_marginRight="@dimen/margin_default_2"
             android:layout_marginTop="@dimen/margin_default_2"
+            android:layout_marginRight="@dimen/margin_default_2"
             android:text="@string/cod_success"
             android:textColor="@color/text_default_11"
             android:textSize="@dimen/font_default_2" />
@@ -44,6 +48,14 @@
             android:text="@string/cod_success"
             android:textColor="@color/text_default_11"
             android:textSize="@dimen/font_default_1" />
+
+        <ImageView
+            android:id="@+id/qrcodeView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            app:srcCompat="@drawable/icon_hours" />
 
         <LinearLayout
             android:layout_width="match_parent"

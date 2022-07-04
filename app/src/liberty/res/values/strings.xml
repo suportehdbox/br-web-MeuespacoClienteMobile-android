@@ -417,7 +417,7 @@
 
     <string name="title_phone_3">CAPITAL E REGIÕES METROPOLITANAS</string>
     <string name="phone_3">4004-5423</string>
-    <string name="sub_title_phone_3">Segunda a Sexta das 08h às 20h. Sábado das 08h às 14h</string>
+    <string name="sub_title_phone_3">Segunda a Sexta das 08h às 20h.</string>
 
     <string name="title_phone_4">DEMAIS LOCALIDADES</string>
     <string name="phone_4">0800 709 5423</string>
@@ -633,6 +633,8 @@
     <string name="PagueAgora">Pagar Agora</string>
     <string name="Consultar">Consultar</string>
     <string name="SegundaViaBoleto">2ª Via de Boleto</string>
+    <string name="SegundaViaPix">2ª Via QRCode PIX</string>
+    <string name="CopiarPix">Copiar QRCOde PIX</string>
     <string name="PagamentoOnline">Pagamento online</string>
     <string name="ProrrogarParcela">Prorrogar Parcela</string>
     <string name="ConsultarPagamento">Consultar Pagamento</string>
@@ -651,6 +653,7 @@
     <string name="header_detail_vision">Valor do seu seguro \n  %s</string>
 
     <string name="button_login">Login</string>
+    <string name="button_whatsapp_home">Fale Conosco Pelo WhatsApp</string>
     <string name="button_register">Faça seu cadastro</string>
     <string name="button_login_after">Logar depois</string>
     <string name="button_club">Acesse o clube</string>

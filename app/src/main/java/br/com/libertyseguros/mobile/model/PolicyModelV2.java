@@ -8,10 +8,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import androidx.core.content.FileProvider;
 import android.util.Base64;
-import android.util.Log;
 import android.widget.Toast;
+
+import androidx.core.content.FileProvider;
 
 import com.google.gson.Gson;
 

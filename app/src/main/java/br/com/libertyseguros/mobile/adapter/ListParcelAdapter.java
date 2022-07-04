@@ -2,23 +2,21 @@ package br.com.libertyseguros.mobile.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.net.URLEncoder;
+import androidx.core.content.res.ResourcesCompat;
+
 import java.util.ArrayList;
 
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.InstallmentsBeans;
-import br.com.libertyseguros.mobile.beans.LoginBeans;
-import br.com.libertyseguros.mobile.beans.PolicyBeans;
 import br.com.libertyseguros.mobile.beans.PolicyBeansV2;
-import br.com.libertyseguros.mobile.libray.InfoUser;
 import br.com.libertyseguros.mobile.libray.PolicyCalc;
 import br.com.libertyseguros.mobile.util.OnBarCode;
 import br.com.libertyseguros.mobile.view.DialogPayments;
@@ -27,35 +25,19 @@ import br.com.libertyseguros.mobile.view.custom.ImageViewCustom;
 
 public class ListParcelAdapter extends BaseAdapter {
 
-    private LayoutInflater inflater;
+    private final LayoutInflater inflater;
 
-    private Context context;
-
-    private ArrayList<InstallmentsBeans> list;
-
-    private PolicyCalc policyCalc;
-
-    private TextView tvSize;
-
-    private TextView tvDate;
-
-    private TextView tvValue;
-
-    private TextView tvStatus;
-
-    private ImageViewCustom ivExtends;
-
-    private LinearLayout llLine;
-
-    private OnBarCode barcode;
-
-    private  PolicyBeansV2.InsurancesV2  currentInsurances;
-
+    private final Context context;
+    private final PolicyCalc policyCalc;
+    private final OnBarCode barcode;
+    private final PolicyBeansV2.InsurancesV2 currentInsurances;
     public int issuance;
     public int index = -1;
+    private ArrayList<InstallmentsBeans> list;
+    private ImageViewCustom ivExtends;
     private DialogPayments dialogPayments;
 
-    public ListParcelAdapter(Context context, ArrayList<InstallmentsBeans> list, int issuance, OnBarCode barcode,  PolicyBeansV2.InsurancesV2  insuranceSel ) {
+    public ListParcelAdapter(Context context, ArrayList<InstallmentsBeans> list, int issuance, OnBarCode barcode, PolicyBeansV2.InsurancesV2 insuranceSel) {
         this.context = context;
         this.list = list;
         inflater = LayoutInflater.from(context);
@@ -82,61 +64,57 @@ public class ListParcelAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-
-        View vi = null;
-
+        View vi;
         if (view == null) {
             vi = inflater.inflate(R.layout.item_parcels, null);
         } else {
             vi = view;
         }
+        LinearLayout llLine = vi.findViewById(R.id.ll_line);
 
-        llLine = (LinearLayout) vi.findViewById(R.id.ll_line);
+        TextView tvSize = vi.findViewById(R.id.tv_size);
+        InstallmentsBeans installment = list.get(i);
+        tvSize.setText(installment.getNumber() + "");
 
-        tvSize = (TextView) vi.findViewById(R.id.tv_size);
-        tvSize.setText(list.get(i).getNumber() + "");
+        TextView tvDate = vi.findViewById(R.id.due_date);
+        tvDate.setText(policyCalc.getDate(installment.getDueDate(), context, 2));
 
-        tvDate = (TextView) vi.findViewById(R.id.due_date);
-        tvDate.setText(policyCalc.getDate(list.get(i).getDueDate(), context, 2));
+        TextView tvValue = vi.findViewById(R.id.value);
+        tvValue.setText(policyCalc.getMoney(installment.getValue().replace("R$", "") + "", context));
 
-        tvValue = (TextView) vi.findViewById(R.id.value);
-        tvValue.setText(policyCalc.getMoney(list.get(i).getValue().replace("R$", "") + "", context));
+        TextView tvStatus = vi.findViewById(R.id.tv_status);
 
-        tvStatus = (TextView) vi.findViewById(R.id.tv_status);
-
-        ivExtends = (ImageViewCustom) vi.findViewById(R.id.iv_extends);
+        ivExtends = vi.findViewById(R.id.iv_extends);
         ivExtends.setTag(i + "");
 
-        switch (list.get(i).getStatus()) {
+        if ("PX".equals(installment.getCodigoTipoModalidadeCobranca()) && installment.isExpired()) {
+            installment.setStatus(2);
+        }
+
+        switch (installment.getStatus()) {
             case 1:
                 tvStatus.setText(context.getString(R.string.status_1));
                 tvStatus.setTextColor(context.getResources().getColor(R.color.text_default_7));
                 llLine.setBackgroundColor(context.getResources().getColor(R.color.status_1));
                 ivExtends.setVisibility(View.GONE);
-
                 break;
             case 2:
                 tvStatus.setText(context.getString(R.string.status_2));
                 tvStatus.setTextColor(context.getResources().getColor(R.color.text_default_8));
                 llLine.setBackgroundColor(context.getResources().getColor(R.color.status_2));
-
                 configButtonExtends(i);
-
                 break;
             case 3:
                 tvStatus.setText(context.getString(R.string.status_3_novo));
                 tvStatus.setTextColor(context.getResources().getColor(R.color.text_default_14));
                 llLine.setBackgroundColor(context.getResources().getColor(R.color.status_4));
-
                 configButtonExtends(i);
                 break;
             case 4:
                 tvStatus.setText(context.getString(R.string.status_4));
                 tvStatus.setTextColor(context.getResources().getColor(R.color.text_default_14));
                 llLine.setBackgroundColor(context.getResources().getColor(R.color.status_4));
-
                 configButtonExtends(i);
-
                 break;
             default:
                 tvStatus.setText(context.getString(R.string.status_3));
@@ -148,17 +126,12 @@ public class ListParcelAdapter extends BaseAdapter {
                 break;
         }
 
-        if (list.get(i).getShowComponent() > 0) {
+        if (installment.getShowComponent() > 0) {
             final int index = i;
 
-            ivExtends.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialogPayments = new DialogPayments(context, currentInsurances, list.get(index), issuance, barcode);
-                    dialogPayments.show();
-
-
-                }
+            ivExtends.setOnClickListener(v -> {
+                dialogPayments = new DialogPayments(context, currentInsurances, list.get(index), issuance, barcode);
+                dialogPayments.show();
             });
         }
 
@@ -166,42 +139,45 @@ public class ListParcelAdapter extends BaseAdapter {
         return vi;
     }
 
+    private Drawable getDrawable(int id) {
+        return ResourcesCompat.getDrawable(context.getResources(), id, null);
+    }
 
     private void configButtonExtends(int i) {
-        switch (list.get(i).getShowComponent()) {
+        InstallmentsBeans installment = list.get(i);
+        switch (installment.getShowComponent()) {
             case 0:
                 ivExtends.setVisibility(View.GONE);
                 break;
             case 3:
-                ivExtends.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_pay_now_blue));
+                ivExtends.setImageDrawable(getDrawable(R.drawable.icon_pay_now_blue));
                 ivExtends.setTag(i);
                 ivExtends.setVisibility(View.VISIBLE);
                 break;
             case 2:
             case 5:
             case 6:
-                ivExtends.setImageDrawable(context.getResources().getDrawable(R.drawable.bt_extends));
+                ivExtends.setImageDrawable(getDrawable(R.drawable.bt_extends));
                 ivExtends.setTag(i);
                 ivExtends.setVisibility(View.VISIBLE);
                 break;
             case 1:
             case 4:
             case 7:
-
-                if (list.get(i).getStatus() == 2) {
-                    ivExtends.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_pay_now_red));
-                } else if (list.get(i).getStatus() == 3 || list.get(i).getStatus() == 4) {
-                    ivExtends.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_pay_now_blue));
+                if (installment.getStatus() == 2) {
+                    ivExtends.setImageDrawable(getDrawable(R.drawable.icon_pay_now_red));
+                } else if (installment.getStatus() == 3 || installment.getStatus() == 4) {
+                    ivExtends.setImageDrawable(getDrawable(R.drawable.icon_pay_now_blue));
+                } else if (!"PX".equals(installment.getCodigoTipoModalidadeCobranca())) {
+                    ivExtends.setImageDrawable(getDrawable(R.drawable.icon_pay_now_yellow));
                 } else {
-                    ivExtends.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_pay_now_yellow));
+                    ivExtends.setImageDrawable(getDrawable(R.drawable.icon_pay_now_clean));
                 }
-
                 ivExtends.setTag(i);
                 ivExtends.setVisibility(View.VISIBLE);
-
                 break;
             case 8:
-                ivExtends.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_pay_now_yellow));
+                ivExtends.setImageDrawable(getDrawable(R.drawable.icon_pay_now_yellow));
                 ivExtends.setTag(i);
                 ivExtends.setVisibility(View.VISIBLE);
                 break;
@@ -213,11 +189,6 @@ public class ListParcelAdapter extends BaseAdapter {
         this.notifyDataSetChanged();
     }
 
-    /**
-     * Open Extend Screen
-     *
-     * @param context
-     */
     public void openExtend(Context context, int index) {
         this.index = index;
         Intent it = new Intent(context, ExtendPagament.class);
@@ -227,11 +198,7 @@ public class ListParcelAdapter extends BaseAdapter {
         it.putExtra("ciaCode", currentInsurances.getCiaCode() + "");
         it.putExtra("cliCode", currentInsurances.getCliCode() + "");
 
-        boolean payment = false;
-
-        if (list.get(index).getCodigoTipoModalidadeCobranca().toLowerCase().equals("fb")) {
-            payment = true;
-        }
+        boolean payment = list.get(index).getCodigoTipoModalidadeCobranca().equalsIgnoreCase("fb");
 
         it.putExtra("payment", payment);
         context.startActivity(it);

@@ -4,9 +4,9 @@ package br.com.libertyseguros.mobile.model;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import androidx.fragment.app.Fragment;
-import android.util.Log;
 import android.view.MenuItem;
+
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -15,7 +15,6 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.net.URLEncoder;
 
-import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.LoginBeans;
 import br.com.libertyseguros.mobile.libray.Config;
@@ -24,16 +23,16 @@ import br.com.libertyseguros.mobile.libray.ManagerLocation;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.view.Assistance;
 import br.com.libertyseguros.mobile.view.HomeAssistanceWebView;
-import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.ListPolicy;
+import br.com.libertyseguros.mobile.view.Login;
 import br.com.libertyseguros.mobile.view.Notification;
 import br.com.libertyseguros.mobile.view.NovoClubeLiberty;
+import br.com.libertyseguros.mobile.view.Profile;
 import br.com.libertyseguros.mobile.view.Register;
 import br.com.libertyseguros.mobile.view.Support;
 import br.com.libertyseguros.mobile.view.Workshop;
 import br.com.libertyseguros.mobile.view.fragment.HomeOff;
 import br.com.libertyseguros.mobile.view.fragment.HomeOn;
-import br.com.libertyseguros.mobile.view.Profile;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainModel extends BaseModel {
