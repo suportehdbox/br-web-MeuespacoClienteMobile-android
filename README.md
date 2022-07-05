@@ -1,67 +1,37 @@
-Google Cloud Messaging Quickstart
+
+Android APP
 =================================
 
-Google Cloud Messaging Android Quickstart app demonstrates registering
-an Android app for GCM and handling the receipt of a GCM message.
-InstanceID allows easy registration while GcmReceiver and
-GcmListenerService provide simple means of receiving and handling
-messages.
-
-Introduction
-------------
-
-- [Read more about Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
-
-Getting Started
----------------
-
-- Follow the [quickstart guide](https://developers.google.com/cloud-messaging/)
-  to set up your project in Android Studio.
-- Run the sample on your Android device.
-- Update API_KEY in GcmSender.java, with API key from your project.
-- Run the terminal command to send GCM message to your device.
-- A notification containing the GCM message should be displayed on the
-  device.
-
-NOTE
-----
-
-The GcmSender module in this project is emulating a server for the purposes of
-this sample, but it's not meant to serve as an example for a production app
-server. For information on GCM server implementaion
-see [About GCM Connection Server](https://developers.google.com/cloud-messaging/server)
-
-Screenshots
------------
-![Screenshot](app/src/main/gcm-sample.png)
-
-Support
+Requisitos
 -------
 
-- Stack Overflow: http://stackoverflow.com/questions/tagged/google-cloud-messaging
-
-If you've found an error in this sample, please file an issue:
-https://github.com/googlesamples/google-services/issues
-
-Patches are encouraged, and may be submitted by forking this project and
-submitting a pull request through GitHub.
-
-License
+  - Android Studio e SDK
+  - Flutter SDK
+  - Java
+  
+Setup
 -------
 
-Copyright 2015 Google, Inc.
+  - Clone o repositório do projeto android e o flutter modules em uma mesma pasta, para que mantenham os caminhos relativos.
+  - No projeto do flutter instale as dependecias pelo seguinte comando: flutter build apk
+  - Ao execeutar o build no Android Studio, ele automaticamente instalará as dependencias necessárias para executar o projeto.
 
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at
+Compilação para ACT/PRD
+-------
 
-  http://www.apache.org/licenses/LICENSE-2.0
+  - No arquivo app/build.gradle, dentro da estrutura de productFlavors altere a variavel "prod" para true para que a compilação em Produção e "false" para compilar em ACT
+  - Nessa estrutura também temos os produtos Liberty e Aliro, entao ao compilar é possível escolher os apps que deseja compilar, além disso é ai que alteramos o app escolhido para compilar, no caso isDefault.set(true) trocando entre os flavors você define qual será compilado e executado em tempo de execução/depuração.
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations under
-the License.
+Publicação Loja:
+-------
+
+[Developer Android Publish](https://developer.android.com/studio/publish/upload-bundle?hl=pt-br)
+
+Pontos imortantes:
+-------
+
+  - Para desenvolvimento local a dica é utilizar um smartphone Android, é necessário ativar o modo desenvolvedor, se for preciso utilize execute o projeto pelo botão   , para iniciar em modo debug.
+  - Dentro da pasta  app/src/ temos as pastas main, liberty e aliro, a main é  uma pasta compartilhada entre as duas aplicações temos assets, codigos java e resources, como imagens, textos, layouts.
+    - Na pasta liberty ou aliro, temos a mesma estrutura, porém que ao executar ou compilar o app por exemplo para Liberty, se existir a mesma imagem ou layout ele irá considerar o que temos nas pasta liberty, com isso é que fazemos a customização de cada app.
+    - No caso de strings ele ira concatenar, o que tiver no main + a pasta especifica, e com isso poderá ter textos diferentes para cada plataforma
+  - O projeto está estruturado em MVC, então temos as pasta de Model com regras e conexões, as Controllers fazendo passagem entre a view e a model, e as Views que são nesse caso as Activitys do Android e possuem a montagem das telas, como os listeners dos eventos de UI.
