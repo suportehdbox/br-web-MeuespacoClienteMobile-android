@@ -275,7 +275,8 @@
         </service>
 
         <!-- SmiSdk Intent Service required for all APIs  -->
-        <service android:name="com.datami.smi.SmiIntentService" />
+        <service android:name="com.datami.smi.SmiIntentService"
+            android:exported="true" />
 
 
     </application>

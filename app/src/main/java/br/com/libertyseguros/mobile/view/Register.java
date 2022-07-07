@@ -8,6 +8,7 @@ import android.text.Html;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,11 +18,34 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.safetynet.SafetyNet;
+import com.google.android.gms.safetynet.SafetyNetApi;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.Executor;
+
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
 import br.com.libertyseguros.mobile.beans.RegisterBeans;
 import br.com.libertyseguros.mobile.controller.LoginController;
 import br.com.libertyseguros.mobile.controller.RegisterController;
+import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
@@ -67,10 +91,19 @@ public class Register extends BaseActionBar implements View.OnClickListener {
     private ImageButton bt_life;
     private boolean verified;
 
+
+    String TAG = Register.class.getSimpleName();
+    String SITE_KEY = "6LeeL8wgAAAAAMmM4Pr9QdvkqUdRg5-VnQA5L5Vm";
+    String SECRET_KEY = "6LeeL8wgAAAAAG5cocMGXE1Z8o9957TXG-SxqKhF";
+    RequestQueue queue;
+
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.activity_register);
+
+
+        queue = Volley.newRequestQueue(getApplicationContext());
 
         mFirebaseAnalytics.setCurrentScreen(this, "Cadastro", null);
 
@@ -430,9 +463,27 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             }
 
             if (!error) {
-                showLoading(true);
-                callRegister();
-//                    registerController.register(Register.this, etPolicy.getText(), etPassword.getText(), etCPF.getText(), etEmail.getText());
+                SafetyNet.getClient(this).verifyWithRecaptcha(SITE_KEY)
+                    .addOnSuccessListener(this, new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
+                        @Override
+                        public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
+                            if (!response.getTokenResult().isEmpty()) {
+                                handleSiteVerify(response.getTokenResult());
+                            }
+                        }
+                    })
+                    .addOnFailureListener(this, new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            if (e instanceof ApiException) {
+                                ApiException apiException = (ApiException) e;
+                                Log.d(TAG, "Error message: " +
+                                        CommonStatusCodes.getStatusCodeString(apiException.getStatusCode()));
+                            } else {
+                                Log.d(TAG, "Unknown type of error: " + e.getMessage());
+                            }
+                        }
+                    });
             }
         } else if (id == R.id.tv_terms) {
             registerController.openLinkTerms(Register.this);
@@ -464,6 +515,50 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             bt_life.setSelected(true);
             bt_home.setSelected(false);
         }
+    }
+
+    protected  void handleSiteVerify(final String responseToken){
+        Log.d(TAG, "handleSiteVerify: Success - " + responseToken);
+        //it is google recaptcha siteverify server
+        //you can place your server url
+        String url = "https://www.google.com/recaptcha/api/siteverify";
+        StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            if(jsonObject.getBoolean("success")){
+                                showLoading(true);
+                                callRegister();
+                            } else{
+                                Log.d(TAG, "Error message: recaptcha");
+                            }
+                        } catch (Exception ex) {
+                            Log.d(TAG, "JSON exception: " + ex.getMessage());
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, "Error message: " + error.getMessage());
+                    }
+                }) {
+                    @Override
+                    protected Map<String, String> getParams() {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("secret", SECRET_KEY);
+                        params.put("response", responseToken);
+                        return params;
+                    }
+                 };
+                request.setRetryPolicy(new DefaultRetryPolicy(
+                    50000,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+                );
+                queue.add(request);
     }
 
     private void setAutoSelected() {

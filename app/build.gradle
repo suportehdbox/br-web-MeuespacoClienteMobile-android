@@ -59,8 +59,8 @@ android {
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 494
-            versionName "4.5.1"
+            versionCode 496
+            versionName "4.6.0"
             isDefault.set(true)
             multiDexEnabled true
             signingConfig signingConfigs.config
@@ -71,8 +71,8 @@ android {
             buildConfigField "String", "databasename", "\"aliro2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 494
-            versionName "4.5.1"
+            versionCode 496
+            versionName "4.6.0"
             multiDexEnabled true
             isDefault.set(false)
             signingConfig signingConfigs.config
@@ -172,6 +172,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.scottyab:rootbeer-lib:0.0.8' // Detect root
     implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+    implementation 'com.android.volley:volley:1.1.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
