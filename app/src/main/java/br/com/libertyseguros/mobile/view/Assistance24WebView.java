@@ -29,7 +29,7 @@ import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 
 public class Assistance24WebView extends BaseActionBar {
 
-       private LinearLayout llContent;
+    private LinearLayout llContent;
 
     private WebView wvClub;
 
@@ -50,7 +50,7 @@ public class Assistance24WebView extends BaseActionBar {
         setContentView(R.layout.activity_glass_webview);
 
         wvClub = (WebView) findViewById(R.id.wb_glass);
-//        setTitle(getResources().getString(R.string.title_action_bar_14));
+//      setTitle(getResources().getString(R.string.title_action_bar_14));
 
 
         String url = getString(R.string.assist24_prod);
@@ -74,6 +74,7 @@ public class Assistance24WebView extends BaseActionBar {
             wvClub.getSettings().setJavaScriptEnabled(true);
 
             wvClub.loadUrl(url);
+
 
         }
 

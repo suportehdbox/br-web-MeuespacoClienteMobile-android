@@ -29,6 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.common.util.ArrayUtils;
 import com.google.android.gms.safetynet.SafetyNet;
 import com.google.android.gms.safetynet.SafetyNetApi;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -370,7 +371,6 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         bt_auto = findViewById(R.id.ib_auto_register);
         bt_auto.setOnClickListener(this);
-
         bt_home = findViewById(R.id.ib_home_register);
         bt_home.setOnClickListener(this);
         bt_life = findViewById(R.id.ib_life_register);
@@ -417,8 +417,36 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        boolean bt_auto_1 = bt_auto.isSelected();
+        boolean bt_home_1 = bt_home.isSelected();
+        boolean bt_life_1 = bt_life.isSelected();
+
         int id = view.getId();
         if (id == R.id.bt_register) {
+            String[] typePolicyAuto = {"24","26","31","42"};
+            String[] typePolicyLife = {"69","77","80","81", "82", "91", "93", "98"};
+            String[] typePolicyHome = {"14"};
+
+            if(etPolicy.getText() != null && !etPolicy.getText().isEmpty()){
+                String prefixBoard = etPolicy.getText().substring(0,2);
+
+                if (bt_auto_1 && !ArrayUtils.contains( typePolicyAuto, prefixBoard ) ) {
+                    etPolicy.showMessageError("Opa! Algo está errado. Verifique as informações e tente novamente.");
+                    return;
+                }
+
+                if (bt_home_1 && !ArrayUtils.contains( typePolicyHome, prefixBoard ) ) {
+                    etPolicy.showMessageError("Opa! Algo está errado. Verifique as informações e tente novamente.");
+                    return;
+                }
+
+                if (bt_life_1 && !ArrayUtils.contains( typePolicyLife, prefixBoard ) ) {
+                    etPolicy.showMessageError("Opa! Algo está errado. Verifique as informações e tente novamente.");
+                    return;
+                }
+            }
+
+
             String[] msg = registerController.validField(Register.this, etName.getText(), etPolicy.getText(), etCPF.getText(), etEmail.getText(), etEmail.getText(), etPassword.getText(), etPasswordConfirm.getText(), cbRegister.isChecked());
 
             boolean error = false;
