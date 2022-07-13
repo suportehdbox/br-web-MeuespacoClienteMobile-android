@@ -40,6 +40,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
@@ -426,21 +428,27 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             String[] typePolicyAuto = {"24","26","31","42"};
             String[] typePolicyLife = {"69","77","80","81", "82", "91", "93", "98"};
             String[] typePolicyHome = {"14"};
+            String policy = etPolicy.getText();
+
 
             if(etPolicy.getText() != null && !etPolicy.getText().isEmpty()){
+
                 String prefixBoard = etPolicy.getText().substring(0,2);
 
-                if (bt_auto_1 && !ArrayUtils.contains( typePolicyAuto, prefixBoard ) ) {
+                Boolean isPlace = policy.matches("^[a-zA-z][a-zA-z][a-zA-z]-[0-9][a-zA-z0-9][0-9][0-9]$");
+                if (bt_auto_1 && !isPlace && !ArrayUtils.contains(typePolicyAuto, prefixBoard)) {
                     etPolicy.showMessageError("Opa! Algo está errado. Verifique as informações e tente novamente.");
                     return;
                 }
 
-                if (bt_home_1 && !ArrayUtils.contains( typePolicyHome, prefixBoard ) ) {
+                Boolean isCep = policy.matches("^[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9]$");
+                if (bt_home_1 && !isCep && !ArrayUtils.contains( typePolicyHome, prefixBoard ) ) {
                     etPolicy.showMessageError("Opa! Algo está errado. Verifique as informações e tente novamente.");
                     return;
                 }
 
-                if (bt_life_1 && !ArrayUtils.contains( typePolicyLife, prefixBoard ) ) {
+                Boolean isBirthday = policy.matches("^[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]$");
+                if (bt_life_1 && !isBirthday && !ArrayUtils.contains( typePolicyLife, prefixBoard ) ) {
                     etPolicy.showMessageError("Opa! Algo está errado. Verifique as informações e tente novamente.");
                     return;
                 }
