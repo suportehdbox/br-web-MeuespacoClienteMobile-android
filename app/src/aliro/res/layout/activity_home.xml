@@ -1,24 +1,27 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/frameLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
         <ImageView
             android:id="@+id/iv_background"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@drawable/bg_home"
+            android:layout_height="375dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/bg_home_new"
             android:scaleType="centerCrop" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_default_4"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -43,64 +46,88 @@
 
             </RelativeLayout>
 
-            <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
-                android:id="@+id/iv_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/logo_liberty"
-                />
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="10dp"
                 android:gravity="center"
                 android:orientation="vertical">
+
+
+                <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                    android:id="@+id/iv_logo"
+                    android:layout_width="139dp"
+                    android:layout_height="62dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/logo_liberty" />
+
+                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                    android:id="@+id/bt_login"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bt_background_1"
+                    android:text="@string/button_login"
+                    android:textColor="@color/color_button_default_2" />
+
+                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                    android:id="@+id/bt_register"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bt_background_2"
+                    android:text="@string/button_register"
+                    android:textColor="@color/color_button_default_1" />
+
+                <TextView
+                    android:id="@+id/sub_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Precisa de ajuda?" />
+
+                <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
+                    android:id="@+id/bt_whatsapp"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bt_background_2"
+                    android:text="@string/button_whatsapp_home"
+                    android:textColor="@color/color_button_default_1" />
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:orientation="vertical">
-
-                    <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
-                        android:id="@+id/bt_login"
-                        style="@style/ButtonDefault"
-                        android:layout_width="wrap_content"
-                        android:background="@drawable/bt_background_1"
-                        android:text="@string/button_login"
-                        android:textColor="@color/color_button_default_2" />
-
-                    <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
-                        android:id="@+id/bt_register"
-                        style="@style/ButtonDefault"
-                        android:layout_width="wrap_content"
-                        android:background="@drawable/bt_background_2"
-                        android:text="@string/button_register"
-                        android:textColor="@color/color_button_default_1" />
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/sub_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Precisa de ajuda?" />
-
-                    <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
-                        android:id="@+id/bt_whatsapp"
-                        style="@style/ButtonDefault"
                         android:layout_width="wrap_content"
-                        android:background="@drawable/bt_background_2"
-                        android:text="@string/button_whatsapp_home"
-                        android:textColor="@color/color_button_default_1" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="Uma marca da "
+                        android:textColor="@color/ColorBottom"
+                        android:textSize="13dp" />
+
+                    <br.com.libertyseguros.mobile.view.custom.ImageViewCustom
+                        android:id="@+id/iv_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/logo_liberty_new" />
+
                 </LinearLayout>
+
+
             </LinearLayout>
 
         </RelativeLayout>
+
     </FrameLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
