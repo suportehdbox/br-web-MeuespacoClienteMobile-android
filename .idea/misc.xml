@@ -99,11 +99,16 @@
         <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/vehicle_accident_step1.xml" value="0.3546195652173913" />
         <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/vehicle_accident_step3.xml" value="0.3546195652173913" />
         <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/vehicle_accident_step4.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/activity_home.xml" value="0.3625" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/activity_home_backup.xml" value="0.3625" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/fragment_home_on.xml" value="0.1762917933130699" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/liberty/res/layout/activity_home.xml" value="0.1762917933130699" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/liberty/res/layout/activity_home_liberty.xml" value="0.3625" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="corretto-16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
