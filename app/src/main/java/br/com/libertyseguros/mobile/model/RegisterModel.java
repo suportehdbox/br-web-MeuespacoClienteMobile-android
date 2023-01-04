@@ -138,10 +138,11 @@ public class RegisterModel extends BaseModel{
                 policy = "";
             }
 
+
+            // aqui sem AUTH
             if (idFacebook.equals("")) {
                 param = "Policy=" + URLEncoder.encode(policy, "UTF-8") + "&Pwd=" + URLEncoder.encode(password, "UTF-8") + "&CpfCnpj=" + URLEncoder.encode(cpf, "UTF-8") + "&Email=" + URLEncoder.encode(email, "UTF-8") + "&brandMarketing=" + BuildConfig.brandMarketing;
             } else {
-
                 try {
                     param = "Policy=" + URLEncoder.encode(policy, "UTF-8") + "&CpfCnpj=" + URLEncoder.encode(cpf, "UTF-8") + "&Email=" + URLEncoder.encode(email, "UTF-8") + "&brandMarketing=" + BuildConfig.brandMarketing + "&IdMidiaSocial=" + URLEncoder.encode(idFacebook, "UTF-8") + "&Photo=" + URLEncoder.encode("http=", "UTF-8") + "//" + URLEncoder.encode("graph.facebook.com", "UTF-8") + "/" + idFacebook + "/picture";
 
@@ -151,6 +152,8 @@ public class RegisterModel extends BaseModel{
 
             }
 
+
+            // aqui end point
             conn.startConnectionV2("Acesso/Segurado", param, 1, true);
 
 
@@ -209,6 +212,18 @@ public class RegisterModel extends BaseModel{
         if (!email.equals(confirmEmail)) {
             warning[4] = context.getString(R.string.message_error_email_confirm);
         }
+
+        /*
+        if (password.length() == 0) {
+            String pswd;
+            pswd = generatePassword();
+            confirmPassword = pswd;
+        }
+        */
+
+
+        System.out.println(password);
+        System.out.println(confirmPassword);
 
         if (password.length() == 0) {
             warning[5] = context.getString(R.string.message_empty_password);
@@ -458,6 +473,9 @@ I/LibertySeguros: RegisterModel: {"message":"An error has occurred.","exceptionM
      * @param email
      * @param pwd
      */
+
+
+    // aqui
     public void registerSTEP2(Context context, String cpfCnpj, String email, String pwd, String photoGoogle) {
 
         try {
@@ -693,17 +711,20 @@ I/LibertySeguros: RegisterModel: {"message":"An error has occurred.","exceptionM
             warning[6] = context.getString(R.string.message_error_password_confirm);
         }
 
-
         return warning;
     }
 
 
-    private String generatePassword() {
-        String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@$*()+-";
+    public String generatePassword() {
+
+        //aqui
+
+        //String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@$*()+-";
+        String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@";
         String numbers = "0123456789";
         SecureRandom rnd = new SecureRandom();
 
-        int len = 5;
+        int len = 10;
         StringBuilder sb = new StringBuilder(len);
         for (int i = 0; i < len; i++)
             sb.append(AB.charAt(rnd.nextInt(AB.length())));

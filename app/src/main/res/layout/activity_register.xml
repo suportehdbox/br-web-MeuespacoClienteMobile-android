@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/relativeLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_app"
@@ -16,6 +17,7 @@
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/linearLayoutCaution"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/background_register"
@@ -126,13 +128,14 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_margin="@dimen/margin_default_2"
                         android:text="@string/register_subtitle"
                         android:textAlignment="center"
-                        android:layout_margin="@dimen/margin_default_2"
                         android:textSize="@dimen/font_default_1" />
                 </LinearLayout>
 
@@ -149,9 +152,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_default_4"
+                    android:layout_marginTop="@dimen/margin_default_2"
                     android:layout_marginRight="@dimen/margin_default_4"
                     android:layout_marginBottom="@dimen/margin_default_2"
-                    android:layout_marginTop="@dimen/margin_default_2"
                     android:text="@string/register_info_password"
                     android:textSize="@dimen/font_default_1" />
 
@@ -203,9 +206,9 @@
                     android:id="@+id/tv_check_error"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_default_2"
                     android:layout_marginLeft="@dimen/margin_default_4"
                     android:layout_marginRight="@dimen/margin_default_4"
+                    android:layout_marginBottom="@dimen/margin_default_2"
                     android:textColor="@color/text_default_8"
                     android:textSize="@dimen/font_default_0"
                     android:visibility="invisible" />
@@ -223,12 +226,11 @@
                 <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
                     android:id="@+id/bt_register"
                     style="@style/ButtonDefault"
-                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
+                    android:layout_gravity="center"
                     android:background="@drawable/bt_background_3"
                     android:text="@string/button_send_register"
                     android:textColor="@color/color_button_default_1" />
-
 
 
             </LinearLayout>

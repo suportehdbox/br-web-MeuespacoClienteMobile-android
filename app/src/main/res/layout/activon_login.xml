@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snackbarlocation"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -111,6 +112,7 @@
                         android:id="@+id/bt_login"
                         style="@style/ButtonDefault"
                         android:layout_width="wrap_content"
+                        android:layout_height="48dp"
                         android:background="@drawable/bt_background_3"
                         android:text="@string/button_login"
                         android:textColor="@color/color_button_default_1" />
@@ -144,8 +146,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/margin_default_2"
                         android:layout_marginTop="@dimen/margin_default_6"
+                        android:layout_marginBottom="@dimen/margin_default_2"
                         android:gravity="center">
 
                         <TextView
@@ -161,15 +163,15 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/margin_default_2"
                             android:text="@string/not_user_part2"
-                            android:textColor="@color/text_default_16"
+                            android:textColor="#546E7A"
                             android:textSize="@dimen/font_default_1" />
                     </LinearLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/margin_default_2"
-                        android:layout_marginTop="@dimen/margin_default_6">
+                        android:layout_marginTop="@dimen/margin_default_6"
+                        android:layout_marginBottom="@dimen/margin_default_2">
 
                         <br.com.libertyseguros.mobile.view.custom.ButtonViewCustom
                             android:id="@+id/bt_skip"
@@ -178,7 +180,8 @@
                             android:layout_marginLeft="@dimen/margin_default_2"
                             android:background="@drawable/bt_after_logging_blue"
                             android:text="@string/button_login_after"
-                            android:textColor="@color/color_button_default_3" />
+                            android:textColor="@color/color_button_default_3"
+                            tools:ignore="TouchTargetSizeCheck" />
 
                         <br.com.libertyseguros.mobile.view.custom.TextViewCustom
                             android:id="@+id/tv_privacy"

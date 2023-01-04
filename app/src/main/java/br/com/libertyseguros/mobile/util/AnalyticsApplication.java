@@ -18,6 +18,10 @@ public class AnalyticsApplication extends NavigationApplication implements SdSta
 
     private final String channelId = "Notifications";
 
+
+    public static String email = null;
+
+
     synchronized public FirebaseAnalytics getFirebaseAnalitycs() {
         if (mFirebaseAnalytics == null) {
 

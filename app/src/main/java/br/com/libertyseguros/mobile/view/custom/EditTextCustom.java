@@ -9,6 +9,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -41,6 +42,13 @@ public class EditTextCustom {
 
     private LinearLayout llLine;
 
+    private ImageView icon;
+
+
+    public void setVisible(boolean visible){
+        etContent.setVisibility(visible? View.VISIBLE:View.GONE);
+    }
+
     public EditTextCustom(Context context){
         this.context = context;
 
@@ -54,6 +62,10 @@ public class EditTextCustom {
         tvMsgError = (TextView) view.findViewById(R.id.tv_msg_error);
 
         llClear = (LinearLayout) view.findViewById(R.id.ll_clear);
+
+
+        icon = (ImageView)  view.findViewById(R.id.iv_clear);
+
 
         ivClear = (ImageViewCustom) view.findViewById(R.id.iv_clear);
         ivClear.setOnClickListener(new View.OnClickListener() {
@@ -176,6 +188,12 @@ public class EditTextCustom {
         return etContent.getText().toString();
     }
 
+    public String setText(String texto){
+
+        return  texto;
+    }
+
+
     /**
      * Show Message Error
      */
@@ -248,5 +266,9 @@ public class EditTextCustom {
      */
     public TextInputLayout getTextInputLayout(){
         return textInputLayout;
+    }
+
+    public void hideIcon() {
+        icon.setImageDrawable(null);
     }
 }

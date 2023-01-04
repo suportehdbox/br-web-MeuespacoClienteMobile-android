@@ -10,10 +10,12 @@ import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +39,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 import org.json.JSONObject;
 
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
@@ -49,6 +52,8 @@ import br.com.libertyseguros.mobile.beans.RegisterBeans;
 import br.com.libertyseguros.mobile.controller.LoginController;
 import br.com.libertyseguros.mobile.controller.RegisterController;
 import br.com.libertyseguros.mobile.libray.Config;
+import br.com.libertyseguros.mobile.model.RegisterModel;
+import br.com.libertyseguros.mobile.util.AnalyticsApplication;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.view.baseActivity.BaseActionBar;
 import br.com.libertyseguros.mobile.view.custom.ButtonViewCustom;
@@ -94,6 +99,12 @@ public class Register extends BaseActionBar implements View.OnClickListener {
     private ImageButton bt_life;
     private boolean verified;
 
+    private RelativeLayout relativeLayoutMain;
+    private LinearLayout linearLayoutCaution;
+    private String password;
+    private String passwordConfirm;
+
+    // key
 
     String TAG = Register.class.getSimpleName();
     String SITE_KEY = "6LeeL8wgAAAAAMmM4Pr9QdvkqUdRg5-VnQA5L5Vm";
@@ -105,7 +116,6 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         setContentView(R.layout.activity_register);
 
-
         queue = Volley.newRequestQueue(getApplicationContext());
 
         mFirebaseAnalytics.setCurrentScreen(this, "Cadastro", null);
@@ -114,10 +124,24 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         String nameFacebook;
         String emailFacebook;
+
+
+
+        String email2 = Singleton.getInstance().getEmail();
+        System.out.println(email2);
+
+
+        relativeLayoutMain = findViewById(R.id.relativeLayoutMain);
+
         try {
-            emailFacebook = getIntent().getStringExtra("email");
+
+            emailFacebook = AnalyticsApplication.email;
+
+            System.out.println(emailFacebook);
+
             idFacebook = getIntent().getStringExtra("idFacebook");
             nameFacebook = getIntent().getStringExtra("nameFacebook");
+
             isFacebook = getIntent().getBooleanExtra("isFacebook", false);
             photoGoogle = getIntent().getStringExtra("photoGoogle");
 
@@ -153,6 +177,9 @@ public class Register extends BaseActionBar implements View.OnClickListener {
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
+
+
+
             }
 
             @Override
@@ -279,7 +306,20 @@ public class Register extends BaseActionBar implements View.OnClickListener {
                         runOnUiThread(() -> showRegisterSuccess());
                     } else {
                         verified = true;
+
+
+
+                        System.out.println(etPassword.getText());
+                        System.out.println(etEmail.getText());
+                        System.out.println(photoGoogle);
+
+
+
                         registerController.registerSTEP2(Register.this, etPassword.getText(), etCPF.getText(), etEmail.getText(), photoGoogle);
+
+                        etEmail.getTextInputLayout().setVisibility(View.GONE);
+
+
                     }
 
                 } catch (Exception ex) {
@@ -294,6 +334,9 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         TextView tvTitlePassword = findViewById(R.id.tv_title_password);
 
+        linearLayoutCaution = findViewById(R.id.linearLayoutCaution);
+
+
         etName = new EditTextCustom(this);
         etPolicy = new EditTextCustom(this);
 
@@ -306,6 +349,8 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         etEmail = new EditTextCustom(this);
         etEmail.getEditText().setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+
+
         etPassword = new EditTextCustom(this);
         etPasswordConfirm = new EditTextCustom(this);
 
@@ -332,6 +377,8 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 //            llContent2.addView(etEmailConfirm.config("", getString(R.string.hint_confirm_email), "", 1));
         } else {
             etEmail.getEditText().setText(emailFacebook);
+
+
         }
 
 
@@ -414,6 +461,57 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         lgpd.setOnClickListener(v -> registerController.openCanalReport(getApplicationContext()));
         configDialog();
 
+
+
+
+
+        String email = Singleton.getInstance().getEmail();
+        System.out.println(email);
+
+        etEmail.getEditText().setText(email);
+
+
+
+        if(email!=""){
+            etEmail.getTextInputLayout().setVisibility(View.GONE);
+            etEmail.removeLine();
+
+            etPassword.getTextInputLayout().setVisibility(View.GONE);
+            etPassword.removeLine();
+            etPassword.hideIcon();
+
+            etPasswordConfirm.getTextInputLayout().setVisibility(View.GONE);
+            etPasswordConfirm.removeLine();
+            etPasswordConfirm.hideIcon();
+
+            tvTitlePassword.setVisibility(View.GONE);
+
+            relativeLayoutMain.removeView(linearLayoutCaution);
+
+
+            llContent3.removeAllViews();
+            llContent2.removeAllViews();
+
+        }
+
+
+
+
+        RegisterModel registerModel = new RegisterModel();
+        String pswd = registerModel.generatePassword();
+
+        // aqui continuar
+
+        // passar variaveis
+
+        password = pswd;
+        passwordConfirm = pswd;
+
+
+
+        etPassword.getEditText().setText(pswd);
+        etPasswordConfirm.getEditText().setText(pswd);
+
     }
 
 
@@ -455,7 +553,7 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             }
 
 
-            String[] msg = registerController.validField(Register.this, etName.getText(), etPolicy.getText(), etCPF.getText(), etEmail.getText(), etEmail.getText(), etPassword.getText(), etPasswordConfirm.getText(), cbRegister.isChecked());
+            String[] msg = registerController.validField(Register.this, etName.getText(), etPolicy.getText(), etCPF.getText(), etEmail.getText(), etEmail.getText(), password, passwordConfirm, cbRegister.isChecked());
 
             boolean error = false;
 
@@ -499,10 +597,16 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             }
 
             if (!error) {
+
+                // Aqui register
+                callRegister();
+               /*
+
                 SafetyNet.getClient(this).verifyWithRecaptcha(SITE_KEY)
                     .addOnSuccessListener(this, new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
                         @Override
                         public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
+
                             if (!response.getTokenResult().isEmpty()) {
                                 handleSiteVerify(response.getTokenResult());
                             }
@@ -514,12 +618,15 @@ public class Register extends BaseActionBar implements View.OnClickListener {
                             if (e instanceof ApiException) {
                                 ApiException apiException = (ApiException) e;
                                 Log.d(TAG, "Error message: " +
-                                        CommonStatusCodes.getStatusCodeString(apiException.getStatusCode()));
+                                        CommonS tatusCodes.getStatusCodeString(apiException.getStatusCode()));
                             } else {
                                 Log.d(TAG, "Unknown type of error: " + e.getMessage());
                             }
                         }
                     });
+    */
+
+
             }
         } else if (id == R.id.tv_terms) {
             registerController.openLinkTerms(Register.this);
@@ -581,20 +688,20 @@ public class Register extends BaseActionBar implements View.OnClickListener {
                         Log.d(TAG, "Error message: " + error.getMessage());
                     }
                 }) {
-                    @Override
-                    protected Map<String, String> getParams() {
-                        Map<String, String> params = new HashMap<>();
-                        params.put("secret", SECRET_KEY);
-                        params.put("response", responseToken);
-                        return params;
-                    }
-                 };
-                request.setRetryPolicy(new DefaultRetryPolicy(
-                    50000,
-                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
-                );
-                queue.add(request);
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("secret", SECRET_KEY);
+                params.put("response", responseToken);
+                return params;
+            }
+        };
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                50000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+        );
+        queue.add(request);
     }
 
     private void setAutoSelected() {
@@ -804,4 +911,24 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         }
     }
 
+
+    private String generatePassword() {
+
+        //aqui
+
+        String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@$*()+-";
+        String numbers = "0123456789";
+        SecureRandom rnd = new SecureRandom();
+
+        int len = 5;
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; i++)
+            sb.append(AB.charAt(rnd.nextInt(AB.length())));
+
+        sb.append(numbers.charAt(rnd.nextInt(numbers.length())));
+        //Log.v((Config.TAG, sb.toString());
+
+        return sb.toString();
+
+    }
 }

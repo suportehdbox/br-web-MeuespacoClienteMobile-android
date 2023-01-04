@@ -356,7 +356,6 @@ public class PolicyModelV2 {
      */
     private void shareSecondCopyPolicy(File file){
 
-
             Intent intent = new Intent();
 
             Uri uri = null;

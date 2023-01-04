@@ -30,4 +30,11 @@
     <string name="password_expired">SUA SENHA FOI EXPIRADA!</string>
     <string name="password_expired_text">Atenção, sua senha foi expirada por conta de uma nova política de segurança da Liberty. Após clicar no botão abaixo, você será redirecionado para cadastrar a sua nova senha. Cadastre o quanto antes para ter acesso ao App da Liberty.</string>
 
+
+    <string name="facebook_app_id">1768051176754610</string>
+    <string name="fb_login_protocol_scheme">fb1768051176754610</string>
+    <string name="facebook_client_token">c3bb5ba222a5aaa8a0f825e57b564af8</string>
+
+
+
 </resources>

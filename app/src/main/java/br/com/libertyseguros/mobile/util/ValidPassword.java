@@ -4,7 +4,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ValidPassword {
-
 	/**
 	 * Check password valid
 	 * @return boolean false to password invalid, true password valid
@@ -20,7 +19,6 @@ public class ValidPassword {
 			if(password.contains(userName))
 				return false;
 		}
-
 
 	    Pattern pattern = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d$@$!%*#?.]{6,}$");
 	    Matcher matcher = pattern.matcher(password);

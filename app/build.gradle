@@ -59,7 +59,7 @@ android {
             buildConfigField "String", "databasename", "\"libertymobile2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "1"
-            versionCode 504
+            versionCode 602
             versionName "4.7.0"
             isDefault.set(true)
             multiDexEnabled true
@@ -71,7 +71,7 @@ android {
             buildConfigField "String", "databasename", "\"aliro2020.db\""
             buildConfigField "boolean", "prod", "false"
             buildConfigField "int", "brandMarketing", "2"
-            versionCode 504
+            versionCode 602
             versionName "4.7.0"
             multiDexEnabled true
             isDefault.set(false)
@@ -107,7 +107,7 @@ allprojects {
                     details.useVersion "0.37.0" // Your real React Native version here
                 }
             }
-            force 'com.facebook.android:facebook-android-sdk:4.22.1'
+            force 'com.facebook.android:facebook-android-sdk:13.0.0'
         }
     }
 }
@@ -139,7 +139,7 @@ dependencies {
     implementation 'com.google.code.gson:gson-parent:2.8.6'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
-    implementation 'com.facebook.android:facebook-android-sdk:5.0'
+    implementation 'com.facebook.android:facebook-android-sdk:13.0.0'
     implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     implementation 'de.hdodenhof:circleimageview:2.1.0'
@@ -157,6 +157,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.google.android.gms:play-services-gcm:17.0.0'
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
+
+
 
     implementation 'com.github.yalantis:ucrop:2.2.1-native'
     implementation 'com.soundcloud.android:android-crop:1.0.1@aar'

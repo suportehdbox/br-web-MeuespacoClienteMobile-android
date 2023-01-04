@@ -285,7 +285,7 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
 
                     @Override
                     public void onCancel() {
-                        // App code
+                        System.out.println("aqui");
 
                     }
 
@@ -293,6 +293,7 @@ public class Profile extends BaseActionBar implements View.OnClickListener {
                     public void onError(FacebookException exception) {
                         // App code
                         //Log.i(Config.TAG, exception.toString());
+                        System.out.println("aqui");
 
                     }
                 });
