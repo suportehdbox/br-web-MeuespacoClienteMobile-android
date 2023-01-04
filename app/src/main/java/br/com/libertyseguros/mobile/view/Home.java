@@ -79,7 +79,7 @@ public class Home extends BaseActivity implements View.OnClickListener {
         HomeOff.isHomeOff = false;
 
 
-        TESTE LUCAS
+
         AnalyticsApplication application = (AnalyticsApplication) getApplication();
         mFirebaseAnalytics = application.getFirebaseAnalitycs();
         mFirebaseAnalytics.setCurrentScreen(this, "Tela Inicial", null);
