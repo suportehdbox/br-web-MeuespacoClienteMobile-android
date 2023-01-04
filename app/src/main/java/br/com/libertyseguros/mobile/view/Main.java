@@ -1,6 +1,7 @@
 package br.com.libertyseguros.mobile.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -11,6 +12,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +29,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.amulyakhare.textdrawable.TextDrawable;
+import com.facebook.AccessToken;
+import com.facebook.login.LoginManager;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Arrays;
 
 import br.com.libertyseguros.mobile.BuildConfig;
 import br.com.libertyseguros.mobile.R;
@@ -100,6 +106,9 @@ public class Main extends AppCompatActivity {
             toast = Toast.makeText(this, getString(R.string.message_play_service), Toast.LENGTH_LONG);
             toast.show();
         }
+
+
+
 
     }
 

@@ -76,16 +76,16 @@ public class Home extends BaseActivity implements View.OnClickListener {
             ex.printStackTrace();
         }
 
-
         HomeOff.isHomeOff = false;
 
+
+        TESTE LUCAS
         AnalyticsApplication application = (AnalyticsApplication) getApplication();
         mFirebaseAnalytics = application.getFirebaseAnalitycs();
         mFirebaseAnalytics.setCurrentScreen(this, "Tela Inicial", null);
 
         homeController = new HomeController(this, token);
         ImageView ivBackground = (ImageView) findViewById(R.id.iv_background);
-
 
         if(BuildConfig.brandMarketing == 2) {
             Drawable dr = lf.getImage(this, homeController.getNameImage());
