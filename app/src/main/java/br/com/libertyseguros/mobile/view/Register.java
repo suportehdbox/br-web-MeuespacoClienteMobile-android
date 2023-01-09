@@ -486,7 +486,7 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
 
         // aqui marcio
-        /*
+
         if(email!=""){
             etEmail.getTextInputLayout().setVisibility(View.GONE);
             etEmail.removeLine();
@@ -508,10 +508,8 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             llContent2.removeAllViews();
 
        }
-*/
 
-
-
+        
         RegisterModel registerModel = new RegisterModel();
         String pswd = registerModel.generatePassword();
 
