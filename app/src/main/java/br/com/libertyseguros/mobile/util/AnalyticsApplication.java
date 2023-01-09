@@ -22,6 +22,7 @@ public class AnalyticsApplication extends NavigationApplication implements SdSta
     public static String email = null;
 
 
+
     synchronized public FirebaseAnalytics getFirebaseAnalitycs() {
         if (mFirebaseAnalytics == null) {
 

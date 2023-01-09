@@ -1,19 +1,14 @@
 package br.com.libertyseguros.mobile.view;
 
-import static br.com.libertyseguros.mobile.libray.Config.TAG;
-
 import android.Manifest;
+import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,7 +26,6 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -45,10 +39,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 import br.com.libertyseguros.mobile.R;
@@ -99,14 +90,8 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
     private GoogleSignInClient mGoogleSignInClient;
 
-    private boolean isLoggedIn = false;
 
-
-    private String name = "";
-    private String email = "";
-    private String fbUserID  = "";
-
-
+    private String emailFB = "";
 
     public void onResume() {
         super.onResume();
@@ -127,12 +112,9 @@ public class Login extends BaseActionBar implements View.OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+
     public void onCreate(Bundle bundle) {
-
         super.onCreate(bundle);
-
-        printHashKey(this);
 
         FacebookSdk.sdkInitialize(getApplicationContext());
 
@@ -142,285 +124,13 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
         callbackManager = CallbackManager.Factory.create();
 
-        LoginManager.getInstance().registerCallback(callbackManager,
-                new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
 
-                        GraphRequest request = GraphRequest.newMeRequest(
-
-                                loginResult.getAccessToken(),
-
-                                new GraphRequest.GraphJSONObjectCallback() {
-
-                                    @Override
-                                    public void onCompleted(JSONObject object,
-                                                            GraphResponse response) {
-
-                                        System.out.println("AQUI");
-                                        System.out.println(object);
-
-                                        
-                                        if (object != null) {
-                                            try {
-
-
-                                            if (object.getString("name") != "") {
-                                                name = object.getString("name");
-                                            }
-
-                                            if (object.getString("email") != "") {
-                                                email = object.getString("email");
-                                                Singleton.getInstance().setEmail(email);
-
-                                            }
-
-                                            if (object.getString("id") != "") {
-                                                fbUserID = object.getString("id");
-                                            }
-
-                                                //  disconnectFromFacebook();
-
-                                                // do action after Facebook login success
-                                                // or call your API
-                                            } catch (JSONException | NullPointerException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-
-                        Intent i = new Intent(getApplicationContext(), Register.class);
-
-                        System.out.println(email);
-                        System.out.println(email);
-
-                        i.putExtra("emailFacce",email);
-                        i.putExtra("secondKeyName","SecondKeyValue");
-                        startActivity(i);
-
-                                    }
-                                });
-
-                        Bundle parameters = new Bundle();
-                        parameters.putString(
-                                "fields",
-                                "id, name, email, gender, birthday");
-                        request.setParameters(parameters);
-                        request.executeAsync();
-
-                        /*
-                        Intent i = new Intent(getApplicationContext(), Register.class);
-
-                        System.out.println(email);
-                        System.out.println(email);
-
-                        i.putExtra("emailFacce",email);
-                        i.putExtra("secondKeyName","SecondKeyValue");
-                        startActivity(i);
-
-                         */
-                    }
-
-                    @Override
-                    public void onCancel() {
-                        System.out.println("erro");
-
-                    }
-
-                    @Override
-                    public void onError(FacebookException exception) {
-                        System.out.println("erro 2");
-                    }
-                });
-
-        setContentView(R.layout.activon_login);
-
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        SignInButton signInButton = findViewById(R.id.login_google);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
-        signInButton.setOnClickListener(this);
-
-        TextView textView = (TextView) signInButton.getChildAt(0);
-        textView.setText(getString(R.string.google_button));
-
-        LoginButton loginButton = findViewById(R.id.login_button);
-        loginButton.setBackgroundResource(R.drawable.bt_login_facebook);
-        loginButton.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
-        loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
-        loginButton.setText("Login");
-
-        llContent = findViewById(R.id.ll_content);
-        llLoading = findViewById(R.id.ll_loading);
-        CheckBox cbLogin = findViewById(R.id.cb_login);
-
-        cbLogin.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-
-                Bundle bundle1 = new Bundle();
-                bundle1.putString(FirebaseAnalytics.Param.ITEM_ID, "Clique");
-                bundle1.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "Login");
-                bundle1.putString(FirebaseAnalytics.Param.CONTENT, "Manter Logado");
-
-                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle1);
-
-            }
-        });
-
-
-        loginController = new LoginController(this, new OnConnectionResult() {
-            @Override
-            public void onError() {
-                try {
-                    runOnUiThread(() -> {
-                        try {
-                            switch (loginController.getTypeConnection()) {
-                                case 1:
-                                case 3:
-                                    if (loginController.getTypeError() == 1) {
-                                        dialogMessageTwoButton.show();
-                                    } else if (loginController.getTypeError() == 2) {
-                                        if (loginController.getMessage() != null) {
-                                            tvMessageDialog.setText(loginController.getMessage().getMessage());
-                                            dialogMessage.show();
-                                        } else {
-                                            dialogMessageTwoButton.show();
-                                        }
-
-                                    }
-                                    break;
-                                case 2:
-                                    LoginManager.getInstance().logOut();
-                                    mGoogleSignInClient.signOut();
-
-                                    if (loginController.getTypeError() == 1) {
-                                        dialogMessageTwoButton.show();
-                                    } else if (loginController.getTypeError() == 2) {
-                                        loginController.openRegister(Login.this, loginController.getEmailFacebook());
-                                    }
-                                    break;
-                            }
-
-                            showLoading(false);
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
-                        }
-                    });
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-            @Override
-            public void onSucess() {
-                try {
-                    downloadImageUser = new DownloadImageUser(() -> runOnUiThread(() -> {
-                        loginController.OpenMainScreen(loginUser);
-                        showLoading(false);
-                    }));
-
-                    String name = loginController.getLoginBeans().getUserName().replace(".", "");
-                    name = name.replace(" ", "") + ".jpg";
-
-                    downloadImageUser.startDownload(Login.this, name, loginController.getLoginBeans().getPhoto()/*"https://www.facebook.com/images/fb_icon_325x325.png"/*loginController.getLoginBeans().getPhoto()*/);
-                } catch (Exception ex) {
-                    try {
-                        runOnUiThread(() -> {
-                            loginController.OpenMainScreen(loginUser);
-                            showLoading(false);
-                        });
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
-
-
-        TextViewCustom tvForgotPassword = findViewById(R.id.tv_forgot_password);
-        tvForgotPassword.setPaintFlags(tvForgotPassword.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        tvForgotPassword.setOnClickListener(this);
-
-        TextViewCustom tvForgotEmail = findViewById(R.id.tv_forgot_email);
-        tvForgotEmail.setPaintFlags(tvForgotEmail.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        tvForgotEmail.setOnClickListener(this);
-
-        TextViewCustom tvPrivacy = findViewById(R.id.tv_privacy);
-        tvPrivacy.setPaintFlags(tvPrivacy.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        tvPrivacy.setOnClickListener(this);
-
-        TextViewCustom tvRegister = findViewById(R.id.tv_not_user);
-        tvRegister.setPaintFlags(tvRegister.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        tvRegister.setOnClickListener(this);
-
-        ButtonViewCustom btLogin = findViewById(R.id.bt_login);
-        btLogin.setOnClickListener(this);
-
-        ButtonViewCustom btSkip = findViewById(R.id.bt_skip);
-        btSkip.setOnClickListener(this);
-
-        LinearLayout llContentEditText = findViewById(R.id.ll_content_edittext);
-
-        etEmail = new EditTextCustom(this);
-        etPassword = new EditTextCustom(this);
-
-        etEmail.getEditText().setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
-
-        llContentEditText.addView(etEmail.config("", getString(R.string.email_cpf), "", 1));
-        llContentEditText.addView(etPassword.config("", getString(R.string.password), "", 3));
-
-        etPassword.getEditText().setImeOptions(EditorInfo.IME_ACTION_DONE);
-
-        etPassword.getEditText().setOnEditorActionListener((v, actionId, event) -> {
-            login();
-            return false;
-        });
-
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                AccessToken accessToken = AccessToken.getCurrentAccessToken();
-
-                if (accessToken == null) {
-                    LoginManager.getInstance().logInWithReadPermissions(Login.this, Arrays.asList("public_profile"));
-                } else {
-
-                    Log.i("aqui marcio", "aqui marcio");
-
-                }
-
-            }
-        });
-
-        System.out.println("SUCESSO");
-        System.out.println("SUCESSO");
-
-    }
-
-
-
-    public void _onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-
-        printHashKey(this);
-
-        FacebookSdk.sdkInitialize(getApplicationContext());
-
-        setTitle(getString(R.string.title_action_bar_0));
-
-        mFirebaseAnalytics.setCurrentScreen(this, "Login", null);
-
-        callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         showLoading(true);
-
+// aqui marcio
                         Bundle bundle = new Bundle();
                         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "Clique");
                         bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "Login");
@@ -429,6 +139,9 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
                         loginController.setIdFacebook(loginResult.getAccessToken().getUserId() + "");
+
+
+
                         GraphRequest request = GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(),
                                 (object, response) -> {
@@ -440,9 +153,6 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                                         }
                                         if (object.has("email")) {
                                             loginController.setEmailFacebook(object.getString("email"));
-
-                                            Singleton.getInstance().setEmail(object.getString("email"));
-
 
                                         } else {
                                             loginController.setEmailFacebook("");
@@ -464,26 +174,34 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                         request.executeAsync();
 
 
+
+                        Intent i = new Intent(getApplicationContext(), Register.class);
+                        i.putExtra("emailFB",emailFB);
+                        startActivity(i);
+
+
                     }
 
                     @Override
                     public void onCancel() {
-                        System.out.println("cancel");
+                        Log.i("aqui", "aqui");
                     }
 
                     @Override
                     public void onError(FacebookException exception) {
-                        System.out.println("error");
+                        Log.i("aqui", "aqui");
                     }
                 });
 
         setContentView(R.layout.activon_login);
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
 
         SignInButton signInButton = findViewById(R.id.login_google);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
@@ -498,11 +216,29 @@ public class Login extends BaseActionBar implements View.OnClickListener {
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
         loginButton.setText("Login");
 
-
         llContent = findViewById(R.id.ll_content);
         llLoading = findViewById(R.id.ll_loading);
         CheckBox cbLogin = findViewById(R.id.cb_login);
 
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AccessToken accessToken = AccessToken.getCurrentAccessToken();
+
+                if (accessToken == null) {
+
+                    //LoginManager.getInstance().logInWithReadPermissions(Login.this, Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
+                    LoginManager.getInstance().logInWithReadPermissions(Login.this, Arrays.asList("public_profile"));
+                    //LoginManager.getInstance().logInWithReadPermissions(Login.this, null);
+
+                } else {
+
+                    Log.i("aqui marcio", "aqui marcio");
+
+                }
+            }
+        });
         cbLogin.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
 
@@ -536,6 +272,7 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                                             dialogMessageTwoButton.show();
                                         }
 
+
                                     }
                                     break;
                                 case 2:
@@ -545,6 +282,12 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                                     if (loginController.getTypeError() == 1) {
                                         dialogMessageTwoButton.show();
                                     } else if (loginController.getTypeError() == 2) {
+
+
+
+                                        String x = loginController.getEmailFacebook();
+                                        String jjj = "";
+
                                         loginController.openRegister(Login.this, loginController.getEmailFacebook());
                                     }
                                     break;
@@ -632,28 +375,6 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
     }
 
-
-    public static void printHashKey(Context pContext) {
-
-        try {
-            PackageInfo info = pContext.getPackageManager().getPackageInfo(pContext.getPackageName(), PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                String hashKey = new String(Base64.encode(md.digest(), 0));
-
-                System.out.println("marcio");
-                System.out.println(hashKey);
-                Log.i(TAG, "printHashKey() Hash Key:  MARCIO FERMINO 43999014416 " + hashKey);
-            }
-        } catch (NoSuchAlgorithmException e) {
-            Log.e(TAG, "printHashKey()", e);
-        } catch (Exception e) {
-            Log.e(TAG, "printHashKey()", e);
-        }
-    }
-
-
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.bt_login) {
@@ -702,6 +423,8 @@ public class Login extends BaseActionBar implements View.OnClickListener {
         if (!error) {
             showLoading(true);
             loginUser = true;
+            String x = etEmail.getText();
+
             loginController.getLogin(this, etEmail.getText(), etPassword.getText(), true);
         }
     }
@@ -765,6 +488,9 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                     login();
                     break;
                 case 2:
+
+                    String x = loginController.getEmailFacebook();
+
                     loginController.getLoginRedesSociais(Login.this, loginController.getEmailFacebook(), loginController.getIdFacebook(), loginController.isFacebook());
                     break;
                 case 3:
@@ -845,6 +571,9 @@ public class Login extends BaseActionBar implements View.OnClickListener {
             String name = account.getDisplayName();
             String email = account.getEmail();
 
+
+
+
             String photo = "";
 
             if (account.getPhotoUrl() != null) {
@@ -917,6 +646,5 @@ public class Login extends BaseActionBar implements View.OnClickListener {
         loginController.openHome(this);
     }
 }
-
 
 

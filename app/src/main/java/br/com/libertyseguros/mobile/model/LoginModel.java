@@ -19,6 +19,7 @@ import br.com.libertyseguros.mobile.beans.MessageTypeTwoBeans;
 import br.com.libertyseguros.mobile.libray.Config;
 import br.com.libertyseguros.mobile.libray.Connection;
 import br.com.libertyseguros.mobile.libray.LoadFile;
+import br.com.libertyseguros.mobile.util.AnalyticsApplication;
 import br.com.libertyseguros.mobile.util.OnConnection;
 import br.com.libertyseguros.mobile.util.OnConnectionResult;
 import br.com.libertyseguros.mobile.util.ValidCNPJ;
@@ -31,6 +32,7 @@ import br.com.libertyseguros.mobile.view.Home;
 import br.com.libertyseguros.mobile.view.Main;
 import br.com.libertyseguros.mobile.view.PrivacyPolicy;
 import br.com.libertyseguros.mobile.view.Register;
+import br.com.libertyseguros.mobile.view.Singleton;
 import br.com.libertyseguros.mobile.view.fragment.HomeOff;
 
 public class LoginModel extends BaseModel {
@@ -105,6 +107,7 @@ public class LoginModel extends BaseModel {
         String param;
         this.idFacebook = idFacebook;
         this.isFacebook = isFacebook;
+
 
         try {
             context = ctx;
@@ -294,6 +297,8 @@ public class LoginModel extends BaseModel {
      */
     public void OpenMainScreen(boolean loginUser) {
 
+
+        // aqui marcio
         if (loginUser) {
             loadFile.savePref(Config.TAGLOGINUSER, "1", Config.TAG, context);
 
@@ -322,6 +327,14 @@ public class LoginModel extends BaseModel {
      *
      */
     public String getEmailFacebook() {
+
+      String email = emailFacebook;
+
+      Singleton.getInstance().setEmail(email);
+
+
+        AnalyticsApplication.email = emailFacebook;
+
         return emailFacebook;
     }
 
@@ -330,6 +343,10 @@ public class LoginModel extends BaseModel {
      *
      */
     public void setEmailFacebook(String emailFacebook) {
+
+        String email = emailFacebook;
+
+        AnalyticsApplication.email = emailFacebook;
         this.emailFacebook = emailFacebook;
     }
 
@@ -387,6 +404,10 @@ public class LoginModel extends BaseModel {
      */
     public void openRegister(Activity context, String email) {
         Intent it = new Intent(context, Register.class);
+
+
+
+
         if (email != null) {
             it.putExtra("email", email);
             it.putExtra("idFacebook", idFacebook);

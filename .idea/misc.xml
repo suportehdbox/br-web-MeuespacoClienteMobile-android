@@ -3,21 +3,114 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/liberty/res/layout/activity_detail_policy.xml" value="0.5177703857421876" />
-        <entry key="app/src/main/res/layout/activity_change_email_login_on.xml" value="0.25052083333333336" />
-        <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.25052083333333336" />
-        <entry key="app/src/main/res/layout/activity_cities.xml" value="0.25052083333333336" />
-        <entry key="app/src/main/res/layout/activity_insurace_coverage_header.xml" value="0.22056159420289856" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activon_login.xml" value="0.25052083333333336" />
-        <entry key="app/src/main/res/layout/item_city.xml" value="0.22056159420289856" />
-        <entry key="app/src/main/res/layout/item_detail_policy.xml" value="0.25052083333333336" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/activity_detail_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/activity_home.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/fragment_home_off.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/fragment_home_on.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/liberty/res/layout/activity_detail_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/liberty/res/layout/activity_home.xml" value="0.31068840579710144" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/liberty/res/layout/fragment_home_off.xml" value="1.1380813953488371" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/liberty/res/layout/fragment_home_on.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/action_bar_custom.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_assistance.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_change_email.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_change_email_2.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_change_email_3.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_change_email_login_on.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_change_password.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_change_password_login_on.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_change_phone_login_on.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_cities.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_club.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_club_indisponivel.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_club_webview.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_document_view.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_documents.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_extends.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_glass_webview.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_insurace_coverage_header.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_lgpd.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_list_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_list_vehicle_accident_status.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_main.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_notification.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_notification_detail.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_novo_clube_liberty.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_privacy_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_profile.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_register.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_support.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_support_1.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_support_2.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_upload_pictures.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_viewer_documents.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_vision_360.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_workshop.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activity_workshop_off.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/activon_login.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_barcode.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_change_email.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_change_password.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_change_phone.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_enable_location.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_extends.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_fingerprints.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_free_navigation.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_image.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_message.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_message_bar_code.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_message_permission_location.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_message_terms.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_message_two_button.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_password_expired.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_payments.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_register_success.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/dialog_second_copy_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/edit_text_custom.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/footer_list_apolicy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/fragment_club_tutorial.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/fragment_club_tutorial_2.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/fragment_club_tutorial_3.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/fragment_club_tutorial_4.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/fragment_navigation_drawer.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/header.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/header_list_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_city.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_detail_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_documents.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_insurace_coverage.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_notification.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_notification_menu.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_parcels.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_payment_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_policy.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_salesman.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_spinner.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_vehicle_accident_status.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_vision.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_vision_assistance.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/item_workshop.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/list_group_coverage.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/parcels.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/question_email_change.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/spinner_item.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/teste.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/vehicle_accident_logoff.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/vehicle_accident_step1.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/vehicle_accident_step3.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/liberty-brasil/br-web-MeuespacoClienteMobile-android/app/src/main/res/layout/vehicle_accident_step4.xml" value="0.3546195652173913" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/activity_home.xml" value="0.3625" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/activity_home_backup.xml" value="0.3625" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/aliro/res/layout/fragment_home_on.xml" value="0.1762917933130699" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/liberty/res/layout/activity_home.xml" value="0.1762917933130699" />
+        <entry key="..\:/dev/libertyseguros/br-web-MeuespacoClienteMobile-android/app/src/liberty/res/layout/activity_home_liberty.xml" value="0.3625" />
+        <entry key="app/src/liberty/res/layout/activity_home.xml" value="0.25052083333333336" />
+        <entry key="app/src/main/res/layout/activon_login.xml" value="0.17844202898550723" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

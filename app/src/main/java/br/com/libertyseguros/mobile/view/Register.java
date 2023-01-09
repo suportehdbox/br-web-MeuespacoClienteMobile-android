@@ -2,6 +2,7 @@ package br.com.libertyseguros.mobile.view;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -127,9 +128,22 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
 
 
-        String email2 = Singleton.getInstance().getEmail();
+        //String email2 = Singleton.getInstance().getEmail();
+
+        String email2 = AnalyticsApplication.email;
+
         System.out.println(email2);
 
+
+        Intent myIntent = getIntent();
+
+        // fazer um if caso o singleton estiver nulo
+        // fazer um if caso o singleton estiver nulo
+        // fazer um if caso o singleton estiver nulo
+        // fazer um if caso o singleton estiver nulo
+
+
+        String emailFB = myIntent.getStringExtra("emailFB");
 
         relativeLayoutMain = findViewById(R.id.relativeLayoutMain);
 
@@ -465,13 +479,14 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
 
 
-        String email = Singleton.getInstance().getEmail();
+        String email = AnalyticsApplication.email;
         System.out.println(email);
 
         etEmail.getEditText().setText(email);
 
 
-
+        // aqui marcio
+        /*
         if(email!=""){
             etEmail.getTextInputLayout().setVisibility(View.GONE);
             etEmail.removeLine();
@@ -492,8 +507,8 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             llContent3.removeAllViews();
             llContent2.removeAllViews();
 
-        }
-
+       }
+*/
 
 
 
