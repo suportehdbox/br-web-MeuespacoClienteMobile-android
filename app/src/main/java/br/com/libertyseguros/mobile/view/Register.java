@@ -126,21 +126,12 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         String nameFacebook;
         String emailFacebook;
 
-
-
-        //String email2 = Singleton.getInstance().getEmail();
-
         String email2 = AnalyticsApplication.email;
 
         System.out.println(email2);
 
 
         Intent myIntent = getIntent();
-
-        // fazer um if caso o singleton estiver nulo
-        // fazer um if caso o singleton estiver nulo
-        // fazer um if caso o singleton estiver nulo
-        // fazer um if caso o singleton estiver nulo
 
 
         String emailFB = myIntent.getStringExtra("emailFB");
@@ -485,8 +476,6 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         etEmail.getEditText().setText(email);
 
 
-        // aqui marcio
-
         if(email!=""){
             etEmail.getTextInputLayout().setVisibility(View.GONE);
             etEmail.removeLine();
@@ -509,13 +498,11 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
        }
 
-        
         RegisterModel registerModel = new RegisterModel();
         String pswd = registerModel.generatePassword();
 
-        // aqui continuar
 
-        // passar variaveis
+
 
         password = pswd;
         passwordConfirm = pswd;
