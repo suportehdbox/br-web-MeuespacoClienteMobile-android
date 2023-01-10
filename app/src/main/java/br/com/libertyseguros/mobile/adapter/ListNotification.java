@@ -68,7 +68,6 @@ public class ListNotification extends BaseAdapter {
             public void onClick(View v) {
 
                 onClickList.onDelete(Integer.parseInt(v.getTag().toString()));
-                //remove(Integer.parseInt(v.getTag().toString()));
             }
         });
 
