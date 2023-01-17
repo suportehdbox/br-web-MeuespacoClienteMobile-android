@@ -90,7 +90,6 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
     private GoogleSignInClient mGoogleSignInClient;
 
-
     private String emailFB = "";
 
     private boolean active = true;
@@ -132,7 +131,7 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         showLoading(true);
-// aqui marcio
+
                         Bundle bundle = new Bundle();
                         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "Clique");
                         bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "Login");
@@ -141,8 +140,6 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
                         loginController.setIdFacebook(loginResult.getAccessToken().getUserId() + "");
-
-
 
                         GraphRequest request = GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(),
@@ -175,7 +172,6 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                         request.setParameters(parameters);
                         request.executeAsync();
 
-
                         loginController.openRegister(Login.this, loginController.getEmailFacebook());
 
                         /*
@@ -183,8 +179,6 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                         i.putExtra("emailFB",emailFB);
                         startActivity(i);
                         */
-
-
 
                     }
 
@@ -217,7 +211,7 @@ public class Login extends BaseActionBar implements View.OnClickListener {
         textView.setText(getString(R.string.google_button));
 
         LoginButton loginButton = findViewById(R.id.login_button);
-        loginButton.setBackgroundResource(R.drawable.bt_login_facebook);
+        //loginButton.setBackgroundResource(R.drawable.bt_login_facebook);
         loginButton.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
         loginButton.setText("Login");

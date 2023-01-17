@@ -618,10 +618,7 @@ public class Register extends BaseActionBar implements View.OnClickListener {
                         }
                     });
     */
-
-                finish();
-
-
+                //finish();
             }
         } else if (id == R.id.tv_terms) {
             registerController.openLinkTerms(Register.this);
