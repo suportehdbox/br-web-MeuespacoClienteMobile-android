@@ -93,6 +93,8 @@ public class Login extends BaseActionBar implements View.OnClickListener {
 
     private String emailFB = "";
 
+    private boolean active = true;
+
     public void onResume() {
         super.onResume();
 
@@ -174,10 +176,14 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                         request.executeAsync();
 
 
+                        loginController.openRegister(Login.this, loginController.getEmailFacebook());
 
+                        /*
                         Intent i = new Intent(getApplicationContext(), Register.class);
                         i.putExtra("emailFB",emailFB);
                         startActivity(i);
+                        */
+
 
 
                     }
@@ -284,11 +290,8 @@ public class Login extends BaseActionBar implements View.OnClickListener {
                                     } else if (loginController.getTypeError() == 2) {
 
 
+                                    //loginController.openRegister(Login.this, loginController.getEmailFacebook());
 
-                                        String x = loginController.getEmailFacebook();
-                                        String jjj = "";
-
-                                        loginController.openRegister(Login.this, loginController.getEmailFacebook());
                                     }
                                     break;
                             }

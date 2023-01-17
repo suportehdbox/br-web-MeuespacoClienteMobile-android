@@ -330,9 +330,8 @@ public class LoginModel extends BaseModel {
 
       String email = emailFacebook;
 
-      Singleton.getInstance().setEmail(email);
-
-
+      // retirar
+      //Singleton.getInstance().setEmail(email);
         AnalyticsApplication.email = emailFacebook;
 
         return emailFacebook;
@@ -346,7 +345,7 @@ public class LoginModel extends BaseModel {
 
         String email = emailFacebook;
 
-        AnalyticsApplication.email = emailFacebook;
+       // AnalyticsApplication.email = emailFacebook;
         this.emailFacebook = emailFacebook;
     }
 
@@ -403,6 +402,8 @@ public class LoginModel extends BaseModel {
      *
      */
     public void openRegister(Activity context, String email) {
+
+
         Intent it = new Intent(context, Register.class);
 
 

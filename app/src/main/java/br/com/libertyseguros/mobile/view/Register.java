@@ -112,6 +112,10 @@ public class Register extends BaseActionBar implements View.OnClickListener {
     String SECRET_KEY = "6LeeL8wgAAAAAG5cocMGXE1Z8o9957TXG-SxqKhF";
     RequestQueue queue;
 
+
+    static boolean active = false;
+
+
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
@@ -125,11 +129,6 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
         String nameFacebook;
         String emailFacebook;
-
-        String email2 = AnalyticsApplication.email;
-
-        System.out.println(email2);
-
 
         Intent myIntent = getIntent();
 
@@ -467,9 +466,6 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         configDialog();
 
 
-
-
-
         String email = AnalyticsApplication.email;
         System.out.println(email);
 
@@ -502,11 +498,8 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         String pswd = registerModel.generatePassword();
 
 
-
-
         password = pswd;
         passwordConfirm = pswd;
-
 
 
         etPassword.getEditText().setText(pswd);
@@ -626,6 +619,8 @@ public class Register extends BaseActionBar implements View.OnClickListener {
                     });
     */
 
+                finish();
+
 
             }
         } else if (id == R.id.tv_terms) {
@@ -658,6 +653,9 @@ public class Register extends BaseActionBar implements View.OnClickListener {
             bt_life.setSelected(true);
             bt_home.setSelected(false);
         }
+
+        finish();
+        finish();
     }
 
     protected  void handleSiteVerify(final String responseToken){
@@ -914,7 +912,6 @@ public class Register extends BaseActionBar implements View.OnClickListener {
 
     private String generatePassword() {
 
-        //aqui
 
         String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@$*()+-";
         String numbers = "0123456789";
@@ -931,4 +928,20 @@ public class Register extends BaseActionBar implements View.OnClickListener {
         return sb.toString();
 
     }
+
+    /*
+    @Override
+    public void onStart() {
+        super.onStart();
+        active = true;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        active = false;
+    }
+    */
+
+
 }
